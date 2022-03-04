@@ -31,7 +31,8 @@ Vue.prototype.moment = moment
 
 Vue.use(VueToast, {
     // One of the options
-    position: 'top-right'
+    position: 'top-right',
+    duration:10000
 })
 
 Vue.use(vuetify)

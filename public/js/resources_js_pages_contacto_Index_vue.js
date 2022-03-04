@@ -243,6 +243,16 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -257,6 +267,14 @@ __webpack_require__.r(__webpack_exports__);
   },
   data: function data() {
     return {
+      loading: false,
+      error_email: false,
+      contacto: {
+        nombres: "",
+        emai: "",
+        telefono: "",
+        mensaje: ""
+      },
       lat_as: -12.12856,
       lng_as: -76.9971846,
       mapOptions: {
@@ -292,6 +310,30 @@ __webpack_require__.r(__webpack_exports__);
     getPath: function getPath() {
       var path = window.location.pathname + window.location.search;
       this.$store.dispatch("app/setPath", path);
+    },
+    OnSubmitContacto: function OnSubmitContacto() {
+      var _this = this;
+
+      if (this.contacto.nombres != "" && this.contacto.email != "" && this.contacto.telefono != "" && this.contacto.mensaje != "") {
+        this.loading = true;
+        axios.post("/api/contacto", this.contacto).then(function (res) {
+          _this.loading = false;
+          _this.error_email = false;
+          _this.contacto = {
+            nombres: "",
+            emai: "",
+            telefono: "",
+            mensaje: ""
+          }, Vue.$toast.success("Se guardaron los cambios");
+        })["catch"](function (err) {
+          _this.error_email = true;
+          _this.loading = false;
+          Vue.$toast.error("email inválido");
+        });
+        return;
+      }
+
+      Vue.$toast.warning("Llene todos los campos del formulario");
     }
   }
 });
@@ -1203,6 +1245,13 @@ var render = function () {
                               outlined: "",
                               "hide-details": "auto",
                             },
+                            model: {
+                              value: _vm.contacto.nombres,
+                              callback: function ($$v) {
+                                _vm.$set(_vm.contacto, "nombres", $$v)
+                              },
+                              expression: "contacto.nombres",
+                            },
                           }),
                         ],
                         1
@@ -1217,8 +1266,16 @@ var render = function () {
                             attrs: {
                               color: "primary",
                               label: "Email",
+                              error: _vm.error_email,
                               outlined: "",
                               "hide-details": "auto",
+                            },
+                            model: {
+                              value: _vm.contacto.email,
+                              callback: function ($$v) {
+                                _vm.$set(_vm.contacto, "email", $$v)
+                              },
+                              expression: "contacto.email",
                             },
                           }),
                         ],
@@ -1237,6 +1294,13 @@ var render = function () {
                               outlined: "",
                               "hide-details": "auto",
                             },
+                            model: {
+                              value: _vm.contacto.telefono,
+                              callback: function ($$v) {
+                                _vm.$set(_vm.contacto, "telefono", $$v)
+                              },
+                              expression: "contacto.telefono",
+                            },
                           }),
                         ],
                         1
@@ -1253,6 +1317,13 @@ var render = function () {
                               height: "100",
                               label: "Agrega un mensaje",
                               "hide-details": "auto",
+                            },
+                            model: {
+                              value: _vm.contacto.mensaje,
+                              callback: function ($$v) {
+                                _vm.$set(_vm.contacto, "mensaje", $$v)
+                              },
+                              expression: "contacto.mensaje",
                             },
                           }),
                         ],
@@ -1271,6 +1342,13 @@ var render = function () {
                                 block: "",
                                 color: "primary",
                                 "x-large": "",
+                                loading: _vm.loading,
+                              },
+                              on: {
+                                click: function ($event) {
+                                  $event.preventDefault()
+                                  return _vm.OnSubmitContacto()
+                                },
                               },
                             },
                             [_vm._v("Enviar")]

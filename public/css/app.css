@@ -2,6 +2,22 @@
 @import url(https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,400;1,700&display=swap);
 @import url(https://fonts.googleapis.com/icon?family=Material+Icons);
 @import url(https://cdn.jsdelivr.net/npm/@mdi/font@4.x/css/materialdesignicons.min.css);
+.v-toast__item--success {
+  background-color: #4CAF50 !important;
+}
+
+.v-toast__item--info {
+  background-color: #3F51B5 !important;
+}
+
+.v-toast__item--warning {
+  background-color: #FFC107 !important;
+}
+
+.v-toast__item--error {
+  background-color: #F44336 !important;
+}
+
 /**css**/
 .content-wrap {
   max-width: 1380px;

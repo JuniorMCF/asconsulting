@@ -12,6 +12,24 @@
 // Bootstrap
 //@import '~bootstrap/scss/bootstrap';
 
+.v-toast__item--success {
+    background-color: #4CAF50 !important;
+}
+
+.v-toast__item--info {
+    background-color: #3F51B5 !important;
+}
+
+
+.v-toast__item--warning {
+    background-color: #FFC107 !important;
+}
+
+
+.v-toast__item--error {
+    background-color: #F44336 !important;
+}
+
 /**css**/
 .content-wrap {
     max-width: 1380px;
@@ -27,6 +45,7 @@
     max-width: 1000px;
     background-color: transparent;
 }
+
 .content-wrap-article {
     max-width: 940px;
     background-color: transparent;
@@ -40,7 +59,8 @@
 .v-main {
     padding-top: 0px !important;
 }
-.v-main__admin{
+
+.v-main__admin {
     max-height: calc(100vh - 64px) !important;
     overflow-y: auto;
 }
@@ -76,7 +96,8 @@ header {
 
     font-size: 1.9rem;
 }
-.as-title_large_2{
+
+.as-title_large_2 {
     font-size: 1.9rem;
 }
 
@@ -98,7 +119,8 @@ header {
 .as-text_large {
     font-size: 3.2rem;
 }
-.as-text_medium{
+
+.as-text_medium {
     font-size: 2.0rem;
 }
 
@@ -118,10 +140,12 @@ header {
     margin: 0px auto 0px auto;
     background: white;
 }
-.as-text_underline_app{
+
+.as-text_underline_app {
     font-size: 2.5rem;
     font-weight: bold;
 }
+
 .as-text_underline_app::after {
     position: absolute;
     display: block;
@@ -166,7 +190,7 @@ header {
 
 .after-right_block::after {
     position: absolute;
-    top:2.7rem;
+    top: 2.7rem;
     content: "";
     height: 6px;
     width: 40px;
@@ -174,6 +198,7 @@ header {
     left: 85%;
     background: #000068;
 }
+
 .after-center_block {
     position: relative;
     display: inline-block;
@@ -181,7 +206,7 @@ header {
 
 .after-center_block::after {
     position: absolute;
-    top:2.7rem;
+    top: 2.7rem;
     content: "";
     height: 6px;
     width: 40px;
@@ -190,10 +215,12 @@ header {
     right: 40%;
     background: #000068;
 }
-.as-p_normal{
+
+.as-p_normal {
     font-size: 1.1rem;
 }
-.as-text_underline-init{
+
+.as-text_underline-init {
     font-size: 1.2rem;
     font-weight: bold;
 }
@@ -212,7 +239,8 @@ header {
     .as-title_large {
         font-size: 1rem;
     }
-    .as-title_large_2{
+
+    .as-title_large_2 {
         font-size: 1rem;
     }
 
@@ -233,10 +261,11 @@ header {
     .as-text_large {
         font-size: 1.8rem;
     }
-    .as-text_medium{
+
+    .as-text_medium {
         font-size: 1.1rem;
     }
-    
+
 
     .as-text_underline {
         font-size: 1.8rem;
@@ -253,10 +282,12 @@ header {
         margin: 0px auto 0px auto;
         background: white;
     }
-    .as-text_underline_app{
+
+    .as-text_underline_app {
         font-size: 1.5rem;
         font-weight: bold;
     }
+
     .as-text_underline_app::after {
         position: absolute;
         display: block;
@@ -277,7 +308,8 @@ header {
     .as-li_normal {
         font-size: 1rem;
     }
-    .as-p_normal{
+
+    .as-p_normal {
         font-size: 0.9rem;
     }
 

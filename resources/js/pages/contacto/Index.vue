@@ -39,6 +39,7 @@
                 color="primary"
                 label="Nombres completos"
                 outlined
+                v-model="contacto.nombres"
                 hide-details="auto"
               ></v-text-field>
             </v-col>
@@ -48,7 +49,9 @@
                 class="rounded-0"
                 color="primary"
                 label="Email"
+                :error="error_email"
                 outlined
+                v-model="contacto.email"
                 hide-details="auto"
               ></v-text-field>
             </v-col>
@@ -59,6 +62,7 @@
                 color="primary"
                 label="Teléfono"
                 outlined
+                v-model="contacto.telefono"
                 hide-details="auto"
               ></v-text-field>
             </v-col>
@@ -69,12 +73,19 @@
                 height="100"
                 class="rounded-0"
                 label="Agrega un mensaje"
+                v-model="contacto.mensaje"
                 hide-details="auto"
               ></v-textarea>
             </v-col>
 
             <v-col class="col-12">
-              <v-btn block class="rounded-0 text-normal" color="primary" x-large
+              <v-btn
+                block
+                class="rounded-0 text-normal"
+                color="primary"
+                x-large
+                :loading="loading"
+                @click.prevent="OnSubmitContacto()"
                 >Enviar</v-btn
               >
             </v-col>
@@ -101,7 +112,6 @@
                     :options="markerOptions"
                     :position="{ lat: lat_as, lng: lng_as }"
                   />
-                 
                 </gmaps-map>
               </div>
             </v-col>
@@ -130,6 +140,14 @@ export default {
     gmapsInfoWindow,
   },
   data: () => ({
+    loading: false,
+    error_email:false,
+    contacto: {
+      nombres: "",
+      emai: "",
+      telefono: "",
+      mensaje: "",
+    },
     lat_as: -12.12856,
     lng_as: -76.9971846,
 
@@ -165,6 +183,36 @@ export default {
       let path = window.location.pathname + window.location.search;
 
       this.$store.dispatch("app/setPath", path);
+    },
+    OnSubmitContacto() {
+      if (
+        this.contacto.nombres != "" &&
+        this.contacto.email != "" &&
+        this.contacto.telefono != "" &&
+        this.contacto.mensaje != ""
+      ) {
+        this.loading = true;
+        axios
+          .post("/api/contacto", this.contacto)
+          .then((res) => {
+            this.loading = false;
+            this.error_email = false
+            this.contacto = {
+              nombres: "",
+              emai: "",
+              telefono: "",
+              mensaje: "",
+            },
+              Vue.$toast.success("Se guardaron los cambios");
+          })
+          .catch((err) => {
+            this.error_email = true
+            this.loading = false;
+            Vue.$toast.error("email inválido");
+          });
+        return;
+      }
+      Vue.$toast.warning("Llene todos los campos del formulario");
     },
   },
 };

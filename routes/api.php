@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\API\Auth\AuthController;
+use App\Http\Controllers\API\Web\ContactoController;
 use App\Http\Controllers\API\Web\PostsController;
 use App\Http\Controllers\API\Web\PublicPostController;
 use Illuminate\Support\Facades\Route;
@@ -22,7 +23,12 @@ use Illuminate\Support\Facades\Route;
 
 Route::post('login', [AuthController::class, 'login']);
 
+
+
 Route::post("post/document",[PublicPostController::class,"show"]);
+
+Route::post("contacto",[ContactoController::class,"create"]);
+
 
 Route::group([
     'prefix' => 'oauth'
