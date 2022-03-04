@@ -1,0 +1,175 @@
+<?php
+
+namespace App\Http\Controllers\API\Web;
+
+use App\Http\Controllers\Controller;
+use App\Models\Categoria;
+use App\Models\Post;
+use App\Models\PostCategoria;
+use App\Models\Tag;
+use App\Services\PostServices;
+use Carbon\Carbon;
+use Illuminate\Http\Request;
+use Intervention\Image\Facades\Image;
+
+
+class PostsController extends Controller
+{
+    //
+    public function postsPub()
+    {
+        $posts = Post::where("estado", "publicado")->get();
+
+        //\Log::debug($posts);
+
+        return response()->json($posts, 200);
+    }
+    public function show($id)
+    {
+        $post = Post::find($id);
+        $post_categorias = PostCategoria::join("categorias", "post_categorias.categoria_id", "=", "categorias.id")
+            ->where("post_categorias.post_id", $id)
+            ->select("categorias.*")
+            ->get();
+        $categorias = Categoria::where("estado", 1)->get();
+        $tags = Tag::where("post_id", $id)->get();
+
+        return response()->json([
+            "tags" => $tags,
+            "categorias" => $categorias,
+            "post_categorias" => $post_categorias,
+            "post" => $post
+
+        ], 200);
+    }
+
+    public function addTag(Request $request)
+    {
+
+        Tag::create([
+            "tag" => $request->tag,
+            "post_id" => $request->post_id
+        ]);
+        return response()->json(true, 200);
+    }
+
+    public function deleteTag(Request $request)
+    {
+        Tag::find($request->id)->delete();
+
+        return response()->json(true, 200);
+    }
+    public function savePost(Request $request)
+    {
+        $post = Post::find($request->id);
+
+        $url_foto = $post->foto;
+
+        if ($request->hasFile('file_upload')) {
+            $this->validate($request, [
+                'file_upload' => 'image|mimes:jpg,jpeg,png,gif,svg|max:2048',
+            ]);
+
+            ini_set('memory_limit', '256M');
+
+            \File::delete($post->foto);
+
+            $image_resize = Image::make($request->file_upload->getRealPath());
+            $image_resize->resize(800, null, function ($constraint) {
+                $constraint->aspectRatio();
+                $constraint->upsize();
+            });
+            $image_resize->orientate();
+            $nombre_archivo = time() . "." . $request->file_upload->extension();
+            /**
+             * codigo en produccion php 7.3
+             * 
+             */
+
+            if (!file_exists(public_path('app'))) {
+                mkdir(public_path('app'), 666, true);
+            }
+            $image_resize->save(public_path('app/' . $nombre_archivo));
+
+            $url_foto = '/app/' . $nombre_archivo;
+        }
+
+
+        /**generamos la ruta para el post */
+        $post_services = new PostServices();
+        $nombre_sin_acentos  = $post_services->eliminar_acentos($request->titulo);
+        $nombre_trim = trim($nombre_sin_acentos);
+        $nombre_sin_espacios =  str_replace(' ', '-', $nombre_trim);
+        $nombre_lowecase = strtolower($nombre_sin_espacios . '-' . str_replace(' ', '-', $request->name_district));
+        
+        
+
+        Post::find($request->id)->update($request->except(["file_upload", "foto"]));
+
+        Post::find($request->id)->update([
+            "route" => $nombre_lowecase,
+            "foto" => $url_foto
+        ]);
+
+
+
+        return response()->json(true, 200);
+    }
+
+    public function postBlog(Request $request)
+    {
+        Post::find($request->id)->update([
+            "estado" => "publicado",
+            "fecha_publicacion" => Carbon::now()->toDateTimeString()
+        ]);
+        return response()->json(true, 200);
+    }
+    public function savePostCategorias(Request $request)
+    {
+
+        $post_categorias = json_decode($request->post_categorias, true);
+
+
+        $categorias = Categoria::where("estado", 1)->get();
+
+        $delete_elements = array();
+        foreach ($categorias as $categoria) {
+            $count = 0;
+            foreach ($post_categorias as $post_categoria) {
+                /**Buscamos las categorias que no concuerden con nuestra lista de post_categorias
+                 * y eliminamos los registros existenten en POSTCATEGORIAS
+                 */
+                if ($post_categoria["id"] == $categoria->id) {
+                    $count++;
+                }
+            }
+            if ($count == 0) {
+                array_push($delete_elements, $categoria);
+            }
+        }
+
+        /**ahora eliminamos los registros que existan en POSTCATEGORIAS de las categorias que no deben de estar */
+        foreach ($delete_elements as $del) {
+            $element = PostCategoria::where("post_id", $request->post_id)->where("categoria_id", $del["id"])->first();
+            if ($element) {
+                $element->delete();
+            }
+        }
+
+        /**ahora procedemos a buscar si las categorias enviadas POSTCATEGORIAS no existen y las agregamos una a una */
+
+        foreach ($post_categorias as $post_categoria) {
+            $element = PostCategoria::where("post_id", $request->post_id)->where("categoria_id", $post_categoria["id"])->first();
+
+            if (!$element) {
+                PostCategoria::create([
+                    "post_id" => $request->post_id,
+                    "categoria_id" => $post_categoria["id"]
+                ]);
+            }
+        }
+
+
+        return response()->json(true, 200);
+    }
+}

@@ -1,0 +1,284 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+// Variables
+//@import 'variables';
+
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+
+@import url('https://cdn.jsdelivr.net/npm/@mdi/font@4.x/css/materialdesignicons.min.css');
+
+// Bootstrap
+//@import '~bootstrap/scss/bootstrap';
+
+/**css**/
+.content-wrap {
+    max-width: 1380px;
+    background-color: transparent;
+}
+
+.content-wrap-2 {
+    max-width: 1480px;
+    background-color: transparent;
+}
+
+.content-wrap-0 {
+    max-width: 1000px;
+    background-color: transparent;
+}
+.content-wrap-article {
+    max-width: 940px;
+    background-color: transparent;
+}
+
+
+* {
+    text-decoration: none !important;
+}
+
+.v-main {
+    padding-top: 0px !important;
+}
+.v-main__admin{
+    max-height: calc(100vh - 64px) !important;
+    overflow-y: auto;
+}
+
+header {
+    z-index: 10;
+}
+
+.rotate-180 {
+    transform: rotate(180deg)
+}
+
+.rotate-360 {
+    transform: rotate(360deg)
+}
+
+.text-normal {
+    text-transform: none !important;
+}
+
+/**globals**/
+
+.container-bandwith {
+    height: 110px !important;
+    overflow-y: hidden !important;
+}
+
+
+/*fonts*/
+.as-title_large {
+    position: relative;
+    top: -1px;
+
+    font-size: 1.9rem;
+}
+.as-title_large_2{
+    font-size: 1.9rem;
+}
+
+.content-desc-subtitle {
+    padding: 10px 0px 10px 0px;
+    width: 315px !important;
+    line-height: 1.2;
+}
+
+.as-text_normal {
+    font-size: 1.5rem;
+}
+
+.content-desc-title {
+    width: 350px !important;
+    line-height: 1;
+}
+
+.as-text_large {
+    font-size: 3.2rem;
+}
+.as-text_medium{
+    font-size: 2.0rem;
+}
+
+.as-text_underline {
+    font-size: 3.2rem;
+    font-weight: bold;
+}
+
+.as-text_underline::after {
+    position: absolute;
+    display: block;
+    content: "";
+    height: 8px;
+    width: 46px;
+    left: 0;
+    right: 0;
+    margin: 0px auto 0px auto;
+    background: white;
+}
+.as-text_underline_app{
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+.as-text_underline_app::after {
+    position: absolute;
+    display: block;
+    content: "";
+    height: 6px;
+    width: 40px;
+    left: 0;
+    right: 0;
+    margin: 10px auto 0px auto;
+    background: #000068;
+}
+
+
+.btn-actions {
+    height: 2.7rem;
+    width: 9.2rem;
+    font-size: 0.8rem !important;
+}
+
+.as-text_extraLarge {
+    font-size: 2.7rem;
+    line-height: 1;
+}
+
+.as-li_normal {
+    font-size: 1.4rem;
+}
+
+.line-height_1 {
+    line-height: 1 !important;
+}
+
+.line-height_2 {
+    line-height: 1.7 !important;
+}
+
+
+.after-right_block {
+    position: relative;
+    display: inline-block;
+}
+
+.after-right_block::after {
+    position: absolute;
+    top:2.7rem;
+    content: "";
+    height: 6px;
+    width: 40px;
+    width: 13%;
+    left: 85%;
+    background: #000068;
+}
+.after-center_block {
+    position: relative;
+    display: inline-block;
+}
+
+.after-center_block::after {
+    position: absolute;
+    top:2.7rem;
+    content: "";
+    height: 6px;
+    width: 40px;
+    width: 20%;
+    left: 40%;
+    right: 40%;
+    background: #000068;
+}
+.as-p_normal{
+    font-size: 1.1rem;
+}
+.as-text_underline-init{
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.as-text_underline-init::after {
+    display: block;
+    content: "";
+    height: 6px;
+    width: 40px;
+    left: 0;
+    margin-top: 6px;
+    background: #000068;
+}
+
+@media screen and (max-width: 992px) {
+    .as-title_large {
+        font-size: 1rem;
+    }
+    .as-title_large_2{
+        font-size: 1rem;
+    }
+
+    .as-text_normal {
+        font-size: 0.9rem;
+    }
+
+    .content-desc-subtitle {
+        padding: 0;
+    }
+
+    .btn-actions {
+        height: 1.8rem !important;
+        width: 8rem;
+        font-size: 0.6rem !important;
+    }
+
+    .as-text_large {
+        font-size: 1.8rem;
+    }
+    .as-text_medium{
+        font-size: 1.1rem;
+    }
+    
+
+    .as-text_underline {
+        font-size: 1.8rem;
+    }
+
+    .as-text_underline::after {
+        position: absolute;
+        display: block;
+        content: "";
+        height: 4px;
+        width: 20px;
+        left: 0;
+        right: 0;
+        margin: 0px auto 0px auto;
+        background: white;
+    }
+    .as-text_underline_app{
+        font-size: 1.5rem;
+        font-weight: bold;
+    }
+    .as-text_underline_app::after {
+        position: absolute;
+        display: block;
+        content: "";
+        height: 4px;
+        width: 20px;
+        left: 0;
+        right: 0;
+        margin: 10px auto 0px auto;
+        background: #000068;
+    }
+
+    .as-text_extraLarge {
+        font-size: 1.8rem;
+        line-height: 1;
+    }
+
+    .as-li_normal {
+        font-size: 1rem;
+    }
+    .as-p_normal{
+        font-size: 0.9rem;
+    }
+
+}
