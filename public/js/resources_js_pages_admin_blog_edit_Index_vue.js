@@ -131,7 +131,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
@@ -151,7 +150,7 @@ __webpack_require__.r(__webpack_exports__);
       this.dialog = true;
       this.title = title;
       this.foto = foto;
-      this.content = dedent__WEBPACK_IMPORTED_MODULE_0___default()(content);
+      this.content = content != null ? dedent__WEBPACK_IMPORTED_MODULE_0___default()(content) : '<div></div>';
       return new Promise(function (resolve, reject) {
         _this.resolve = resolve;
         _this.reject = reject;
@@ -358,6 +357,24 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -384,6 +401,7 @@ __webpack_require__.r(__webpack_exports__);
         created_at: "",
         updated_at: ""
       },
+      file: null,
       editorOption: {},
       isPreview: false,
       preview: null,
@@ -430,20 +448,53 @@ __webpack_require__.r(__webpack_exports__);
       var data = new FormData();
       data.append("tag", "#" + this.newTag);
       data.append("post_id", this.document.id);
-      axios({
+      var data_form = new FormData();
+      data_form.append("post_id", this.$route.params.id);
+      data_form.append("post_categorias", JSON.stringify(this.post_categorias));
+      var document_form_data = new FormData();
+
+      for (var key in this.document) {
+        var value = this.document[key] == null ? "" : this.document[key];
+        document_form_data.append(key, value);
+      }
+
+      if (this.preview != null) {
+        document_form_data.append("file_upload", this.preview);
+      }
+
+      if (this.file != null) {
+        document_form_data.append("file", this.file);
+      }
+
+      axios.all([axios({
+        method: "post",
+        url: "/api/oauth/post/save",
+        data: document_form_data,
+        headers: {
+          Authorization: "Bearer " + this.$store.state.auth.token,
+          "Content-Type": "multipart/form-data"
+        }
+      }), axios({
+        method: "post",
+        url: "/api/oauth/post/categorias",
+        data: data_form,
+        headers: {
+          Authorization: "Bearer " + this.$store.state.auth.token
+        }
+      }), axios({
         method: "post",
         url: "/api/oauth/post/add/tag",
         data: data,
         headers: {
           Authorization: "Bearer " + this.$store.state.auth.token
         }
-      }).then(function (res) {
+      })]).then(axios.spread(function () {
         Vue.$toast.success("Tag agregado al post");
         _this.newTag = "";
         _this.loadingTag = false;
 
         _this.getData();
-      })["catch"](function (err) {
+      }))["catch"](function (error) {
         _this.loadingTag = false;
         console.log(err);
       });
@@ -488,6 +539,10 @@ __webpack_require__.r(__webpack_exports__);
         document_form_data.append("file_upload", this.preview);
       }
 
+      if (this.file != null) {
+        document_form_data.append("file", this.file);
+      }
+
       axios.all([axios({
         method: "post",
         url: "/api/oauth/post/save",
@@ -507,6 +562,7 @@ __webpack_require__.r(__webpack_exports__);
         //console.log(responses);
         Vue.$toast.success("Post actualizado!");
         _this3.isPreview = false;
+        _this3.file = null;
         _this3.preview = null;
         _this3.image = null;
         _this3.loadingSavePost = false;
@@ -558,6 +614,10 @@ __webpack_require__.r(__webpack_exports__);
         document_form_data.append("file_upload", this.preview);
       }
 
+      if (this.file != null) {
+        document_form_data.append("file", this.file);
+      }
+
       axios.all([axios({
         method: "post",
         url: "/api/oauth/post/save",
@@ -576,6 +636,7 @@ __webpack_require__.r(__webpack_exports__);
       }),,]).then(axios.spread(function () {
         //console.log(responses);
         Vue.$toast.success("Post actualizado!");
+        _this5.file = null;
         _this5.isPreview = false;
         _this5.preview = null;
         _this5.image = null; //this.loadingPostBlog = false;
@@ -840,7 +901,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.ql-editor{\r\n  height: auto !important;\n}\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.ql-editor {\n    height: auto !important;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -864,7 +925,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.ql-container {\r\n  height: calc(100% - 42px); /* 100% - height of 'ql-toolbar' */\n}\n@media screen and (max-width: 1536px) {\n.ql-container {\r\n    height: calc(100% - 66px); /* 100% - height of 'ql-toolbar' */\n}\n}\n@media screen and (max-width: 600px) {\n.ql-container {\r\n    height: calc(100% - 90px); /* 100% - height of 'ql-toolbar' */\n}\n}\n@media screen and (max-width: 469px) {\n.ql-container {\r\n    height: calc(100% - 100px); /* 100% - height of 'ql-toolbar' */\n}\n}\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.ql-container {\n    height: calc(100% - 42px); /* 100% - height of 'ql-toolbar' */\n}\n@media screen and (max-width: 1536px) {\n.ql-container {\n        height: calc(100% - 66px); /* 100% - height of 'ql-toolbar' */\n}\n}\n@media screen and (max-width: 600px) {\n.ql-container {\n        height: calc(100% - 90px); /* 100% - height of 'ql-toolbar' */\n}\n}\n@media screen and (max-width: 469px) {\n.ql-container {\n        height: calc(100% - 100px); /* 100% - height of 'ql-toolbar' */\n}\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -4257,8 +4318,8 @@ var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "move_children_forward_recursively": () => (/* binding */ move_children_forward_recursively),
-/* harmony export */   "move_children_backwards_with_merging": () => (/* binding */ move_children_backwards_with_merging)
+/* harmony export */   "move_children_backwards_with_merging": () => (/* binding */ move_children_backwards_with_merging),
+/* harmony export */   "move_children_forward_recursively": () => (/* binding */ move_children_forward_recursively)
 /* harmony export */ });
 
 /**
@@ -6807,10 +6868,7 @@ var render = function () {
         [
           _c(
             "v-toolbar",
-            {
-              staticClass: "primary",
-              attrs: { color: _vm.options.color, dense: "", flat: "" },
-            },
+            { attrs: { color: _vm.options.color, dense: "", flat: "" } },
             [
               _c(
                 "v-toolbar-title",
@@ -6844,7 +6902,7 @@ var render = function () {
                 "v-btn",
                 {
                   staticClass: "body-2 font-weight-bold text-normal rounded-0",
-                  attrs: { color: "sky", outlined: "" },
+                  attrs: { color: _vm.options.color, outlined: "" },
                   nativeOn: {
                     click: function ($event) {
                       return _vm.agree.apply(null, arguments)
@@ -6951,8 +7009,9 @@ var render = function () {
                 {
                   staticClass: "body-2 font-weight-bold text-normal rounded-0",
                   attrs: { color: "sky", outlined: "" },
-                  nativeOn: {
+                  on: {
                     click: function ($event) {
+                      $event.preventDefault()
                       return _vm.agree.apply(null, arguments)
                     },
                   },
@@ -6995,9 +7054,13 @@ var render = function () {
   return _c(
     "div",
     [
+      _c("v-card-title", { staticClass: "font-weight-bold px-md-10 px-3" }, [
+        _vm._v(_vm._s(_vm.actualPage)),
+      ]),
+      _vm._v(" "),
       _c(
         "v-container",
-        { staticClass: "pa-0 ma-0", attrs: { fluid: "" } },
+        { staticClass: "pa-0 ma-0 px-md-10 px-3", attrs: { fluid: "" } },
         [
           _c(
             "v-row",
@@ -7032,7 +7095,7 @@ var render = function () {
                         { attrs: { left: "", small: "", color: "sky" } },
                         [_vm._v("mdi-content-save")]
                       ),
-                      _vm._v(" Guardar\n        "),
+                      _vm._v("Guardar\n                "),
                     ],
                     1
                   ),
@@ -7056,7 +7119,7 @@ var render = function () {
                         { attrs: { left: "", small: "", color: "sky" } },
                         [_vm._v("mdi-eye")]
                       ),
-                      _vm._v(" Vista previa\n        "),
+                      _vm._v("Vista previa\n                "),
                     ],
                     1
                   ),
@@ -7074,7 +7137,7 @@ var render = function () {
                         },
                       },
                     },
-                    [_vm._v("\n          Publicar\n        ")]
+                    [_vm._v("Publicar")]
                   ),
                 ],
                 1
@@ -7137,6 +7200,36 @@ var render = function () {
                             _c(
                               "span",
                               { staticClass: "title font-weight-bold" },
+                              [_vm._v("Descripción (opcional)")]
+                            ),
+                          ]),
+                          _vm._v(" "),
+                          _c(
+                            "v-col",
+                            { staticClass: "col-12" },
+                            [
+                              _c("v-text-field", {
+                                attrs: {
+                                  color: "sky",
+                                  value: _vm.document.descripcion,
+                                  label: "Descripción del post",
+                                },
+                                model: {
+                                  value: _vm.document.descripcion,
+                                  callback: function ($$v) {
+                                    _vm.$set(_vm.document, "descripcion", $$v)
+                                  },
+                                  expression: "document.descripcion",
+                                },
+                              }),
+                            ],
+                            1
+                          ),
+                          _vm._v(" "),
+                          _c("v-col", { staticClass: "col-12" }, [
+                            _c(
+                              "span",
+                              { staticClass: "title font-weight-bold" },
                               [_vm._v("Imagen de portada")]
                             ),
                           ]),
@@ -7147,13 +7240,23 @@ var render = function () {
                             "v-col",
                             { staticClass: "col-12" },
                             [
-                              _c("v-img", {
-                                attrs: {
-                                  src: _vm.document.foto,
-                                  height: "643",
-                                  contain: "",
-                                },
-                              }),
+                              _vm.document.foto
+                                ? _c("v-img", {
+                                    attrs: {
+                                      src: _vm.document.foto,
+                                      height: "643",
+                                      contain: "",
+                                    },
+                                  })
+                                : _c(
+                                    "span",
+                                    { staticClass: "caption text-center" },
+                                    [
+                                      _vm._v(
+                                        "No hay una imagen asociada al post"
+                                      ),
+                                    ]
+                                  ),
                             ],
                             1
                           ),
@@ -7165,13 +7268,16 @@ var render = function () {
                               [
                                 _c("v-file-input", {
                                   attrs: {
-                                    label: "Selecciona una imagen",
+                                    label:
+                                      "Selecciona una imagen para la portada",
                                     type: "file",
                                     id: "my-file",
                                     accept: "image/*",
                                     color: "sky",
                                     "show-size": true,
                                     hint: "max 2MB",
+                                    outlined: "",
+                                    dense: "",
                                   },
                                   on: {
                                     change: function ($event) {
@@ -7264,6 +7370,54 @@ var render = function () {
             [
               _c("v-col", { staticClass: "col-12 col-md-8" }, [
                 _c("span", { staticClass: "title font-weight-bold" }, [
+                  _vm._v("Adjuntar PDF (opcional)"),
+                ]),
+              ]),
+              _vm._v(" "),
+              _c(
+                "v-col",
+                { staticClass: "col-12 col-md-8" },
+                [
+                  _c("v-file-input", {
+                    attrs: {
+                      label: "PDF file",
+                      color: "sky",
+                      outlined: "",
+                      dense: "",
+                    },
+                    model: {
+                      value: _vm.file,
+                      callback: function ($$v) {
+                        _vm.file = $$v
+                      },
+                      expression: "file",
+                    },
+                  }),
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _vm.document.file
+                ? _c("div", [
+                    _c("embed", {
+                      attrs: {
+                        src: _vm.document.file,
+                        width: "800px",
+                        height: "400px",
+                      },
+                    }),
+                  ])
+                : _vm._e(),
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "v-row",
+            { staticClass: "justify-center pa-0 ma-0" },
+            [
+              _c("v-col", { staticClass: "col-12 col-md-8" }, [
+                _c("span", { staticClass: "title font-weight-bold" }, [
                   _vm._v("Categorías"),
                 ]),
               ]),
@@ -7346,7 +7500,7 @@ var render = function () {
                               "v-btn",
                               {
                                 staticClass:
-                                  "\n                  rounded-0\n                  my-2\n                  text-normal\n                  white--text\n                  caption\n                  elevation-0\n                  px-16\n                ",
+                                  "rounded-0 my-2 text-normal white--text caption elevation-0 px-16",
                                 attrs: {
                                   large: "",
                                   color: "sky",
@@ -7359,11 +7513,7 @@ var render = function () {
                                   },
                                 },
                               },
-                              [
-                                _vm._v(
-                                  "\n                Agregar tag\n              "
-                                ),
-                              ]
+                              [_vm._v("Agregar tag")]
                             ),
                           ],
                           1
@@ -7389,13 +7539,7 @@ var render = function () {
                                   },
                                 },
                               },
-                              [
-                                _vm._v(
-                                  "\n                " +
-                                    _vm._s(tag.tag) +
-                                    "\n              "
-                                ),
-                              ]
+                              [_vm._v(_vm._s(tag.tag))]
                             )
                           }),
                           1

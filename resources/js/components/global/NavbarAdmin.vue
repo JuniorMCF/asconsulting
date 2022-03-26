@@ -5,7 +5,7 @@
       color="grey lighten-4 elevation-0 header-open ma-0 pa-0 rounded-0"
       flat
     >
-      <v-toolbar color="white" dark class="elevation-1">
+      <v-toolbar color="white" light class="elevation-1">
         <v-app-bar-nav-icon
           id="navbar_icon"
           color="black"
@@ -25,20 +25,21 @@
     <v-navigation-drawer
       absolute
       left
-      class="sky px-3 py-3"
+
+      class="black px-3 py-3"
       v-model="drawer"
     >
       <v-list dense class="pt-0">
-        <v-list-item-content class="sky">
+        <v-list-item-content class="black">
           <v-list-item-title class="title d-flex justify-center align-center">
             <v-card
               class="elevation-0 rounded-0"
-              color="sky"
-              height="50"
-              width="100"
+              color="black"
+              height="60"
+              width="80"
               contain
             >
-              <v-img src="/app/logotransparenteblanco.png"></v-img>
+              <v-img src="/app/white_logo.png"></v-img>
             </v-card>
           </v-list-item-title>
         </v-list-item-content>
@@ -48,23 +49,24 @@
         <v-list-item
           v-for="item in first_items"
           :key="item.title"
-          active-class="black white--text"
+          active-class="grey darken-2 white--text"
           :to="item.route"
         >
-          <v-list-item-title class="caption">Mi sitio</v-list-item-title>
+          <v-list-item-title class="caption white--text">Mi sitio</v-list-item-title>
         </v-list-item>
         <v-list-group
           v-for="item in items_group"
           :key="item.title"
-          active-class="black white--text"
+          active-class="grey darken-2 white--text"
           v-model="item.active"
           no-action
         >
           <template v-slot:activator>
-            <v-list-item-content class="rounded-0">
+            <v-list-item-content class="rounded-0 white--text">
               <v-list-item-title
                 v-text="item.title"
-                class="caption"
+
+                class="caption white--text"
               ></v-list-item-title>
             </v-list-item-content>
           </template>
@@ -73,12 +75,12 @@
             v-for="child in item.subitems"
             :key="child.title"
             :to="child.route"
-            active-class="black white--text"
+            active-class="grey darken-2 white--text"
           >
             <v-list-item-content class="rounded-0">
               <v-list-item-title
                 v-text="child.title"
-                class="caption"
+                class="caption white--text"
               ></v-list-item-title>
             </v-list-item-content>
           </v-list-item>
@@ -157,13 +159,13 @@ export default {
         active: false,
         subitems: [
           {
-            route: "/Contactos",
+            route: "/admin/contactos",
             active: false,
             title: "Contactos",
             icon: "mdi-account",
           },
           {
-            route: "/miembros-de-sitio",
+            route: "/admin/miembros-de-sitio",
             title: "Miembros de sitio",
             active: false,
             icon: "mdi-account",
@@ -177,7 +179,7 @@ export default {
         active: false,
         subitems: [
           {
-            route: "/traffic",
+            route: "/admin/traffic",
             active: false,
             title: "Resumen del tráfico",
             icon: "mdi-account",
@@ -236,7 +238,7 @@ export default {
       }
     },
   },
-  
+
 };
 </script>
 
@@ -271,5 +273,8 @@ export default {
   left: 0px;
    width: 100%;
   transition: all 0.1s ease-out;
+}
+.v-list-item__icon i{
+    color:  white !important;
 }
 </style>

@@ -15,17 +15,22 @@ class CreatePostsTable extends Migration
     {
         Schema::create('posts', function (Blueprint $table) {
             $table->bigIncrements("id");
-            $table->string("foto");
-            $table->text("titulo");
+            $table->string("foto")->nullable();
+            $table->text("titulo")->nullable();
+
             $table->text("contenido")->nullable(); //guarda el html asociado a este post
             $table->string("estado")->default("borrador");//publicado, en papelera, eliminado
+
             $table->timestamp("fecha_publicacion")->nullable();
+            $table->string("publicado_por")->nullable();
+
             $table->timestamp("fecha_creacion")->nullable();
-            
+            $table->string("creado_por")->nullable();
+
             $table->timestamp("fecha_edicion")->nullable();
             $table->string("editado_por")->nullable();
 
-            $table->integer("vistas")->unsigned()->default(0);
+            //$table->integer("vistas")->unsigned()->default(0);
 
             $table->integer("user_id")->unsigned()->nullable();
             $table->foreign("user_id")->references("id")->on("users")->onDelete("cascade");

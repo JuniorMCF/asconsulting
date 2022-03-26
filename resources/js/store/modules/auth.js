@@ -31,6 +31,12 @@ const getters = {
             return state.userLoadStatus;
         }
     },
+    getUserId(state){
+
+        return state.user.id
+    }
+
+
 
 }
 

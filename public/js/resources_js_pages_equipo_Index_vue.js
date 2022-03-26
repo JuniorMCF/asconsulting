@@ -1,3 +1,4 @@
+"use strict";
 (self["webpackChunk"] = self["webpackChunk"] || []).push([["resources_js_pages_equipo_Index_vue"],{
 
 /***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/global/ChatComponent.vue?vue&type=script&lang=js&":
@@ -6,7 +7,6 @@
   \***************************************************************************************************************************************************************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
@@ -19,7 +19,13 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({});
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  data: function data() {
+    return {
+      wame: "https://wa.me/51926302115"
+    };
+  }
+});
 
 /***/ }),
 
@@ -29,7 +35,6 @@ __webpack_require__.r(__webpack_exports__);
   \**************************************************************************************************************************************************************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
@@ -115,16 +120,12 @@ __webpack_require__.r(__webpack_exports__);
   \**************************************************************************************************************************************************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var _components_global_ChatComponent_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../components/global/ChatComponent.vue */ "./resources/js/components/global/ChatComponent.vue");
 /* harmony import */ var _components_global_FooterGlobal_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../components/global/FooterGlobal.vue */ "./resources/js/components/global/FooterGlobal.vue");
-/* harmony import */ var _map_style__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../map_style */ "./resources/js/map_style.js");
-/* harmony import */ var _map_style__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_map_style__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var x5_gmaps__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! x5-gmaps */ "./node_modules/x5-gmaps/dist/x5-gmaps.esm.js");
 //
 //
 //
@@ -164,256 +165,205 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-
-
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   components: {
     ChatComponent: _components_global_ChatComponent_vue__WEBPACK_IMPORTED_MODULE_0__["default"],
-    FooterGlobal: _components_global_FooterGlobal_vue__WEBPACK_IMPORTED_MODULE_1__["default"],
-    gmapsMap: x5_gmaps__WEBPACK_IMPORTED_MODULE_3__.gmapsMap,
-    gmapsMarker: x5_gmaps__WEBPACK_IMPORTED_MODULE_3__.gmapsMarker,
-    gmapsInfoWindow: x5_gmaps__WEBPACK_IMPORTED_MODULE_3__.gmapsInfoWindow
+    FooterGlobal: _components_global_FooterGlobal_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
   },
   data: function data() {
     return {
-      lat_as: -12.12856,
-      lng_as: -76.9971846,
-      mapOptions: {
-        fullscreenControl: false,
-        mapTypeControl: false,
-        rotateControl: false,
-        scaleControl: false,
-        streetViewControl: false,
-        disableDefaultUI: true,
-        zoomControl: false,
-        title: "A&S Consulting Group",
-        center: {
-          lat: -12.12856,
-          lng: -76.9971846
-        },
-        zoom: 17,
-        gestureHandling: "greedy",
-        styles: (_map_style__WEBPACK_IMPORTED_MODULE_2___default().style_map)
-      },
-      markerOptions: {
-        draggable: false,
-        icon: "/app/location_icon.png",
-        animation: 0
-      },
-      empresa: "A&S Consulting Group.",
-      address: "Av. Alfredo Benavides 3695. Santiago de Surco. Lima, Perú."
+      width: 216,
+      height: 216,
+      vertical: true,
+      color: "white"
     };
   },
   mounted: function mounted() {
+    this.onResize();
+    window.addEventListener("resize", this.onResize);
     this.getPath();
   },
   methods: {
     getPath: function getPath() {
       var path = window.location.pathname + window.location.search;
       this.$store.dispatch("app/setPath", path);
+    },
+    onResize: function onResize() {
+      if (window.innerWidth < 960) {
+        this.width = 150;
+        this.height = 150;
+      } else {
+        this.width = 216;
+        this.height = 216;
+      }
     }
   }
 });
-
-/***/ }),
-
-/***/ "./resources/js/map_style.js":
-/*!***********************************!*\
-  !*** ./resources/js/map_style.js ***!
-  \***********************************/
-/***/ ((module) => {
-
-module.exports = {
-  style_map: [{
-    featureType: "administrative",
-    elementType: "geometry.fill",
-    stylers: [{
-      color: "#d6e2e6"
-    }]
-  }, {
-    featureType: "administrative",
-    elementType: "geometry.stroke",
-    stylers: [{
-      color: "#cfd4d5"
-    }]
-  }, {
-    featureType: "administrative",
-    elementType: "labels.text.fill",
-    stylers: [{
-      color: "#7492a8"
-    }]
-  }, {
-    featureType: "administrative.neighborhood",
-    elementType: "labels.text.fill",
-    stylers: [{
-      lightness: 25
-    }]
-  }, {
-    featureType: "landscape.man_made",
-    elementType: "geometry.fill",
-    stylers: [{
-      color: "#dde2e3"
-    }]
-  }, {
-    featureType: "landscape.man_made",
-    elementType: "geometry.stroke",
-    stylers: [{
-      color: "#cfd4d5"
-    }]
-  }, {
-    featureType: "landscape.natural",
-    elementType: "geometry.fill",
-    stylers: [{
-      color: "#dde2e3"
-    }]
-  }, {
-    featureType: "landscape.natural",
-    elementType: "labels.text.fill",
-    stylers: [{
-      color: "#7492a8"
-    }]
-  }, {
-    featureType: "landscape.natural.terrain",
-    stylers: [{
-      visibility: "off"
-    }]
-  }, {
-    featureType: "poi",
-    elementType: "geometry.fill",
-    stylers: [{
-      color: "#dde2e3"
-    }]
-  }, {
-    featureType: "poi",
-    elementType: "labels.icon",
-    stylers: [{
-      saturation: -100
-    }]
-  }, {
-    featureType: "poi",
-    elementType: "labels.text.fill",
-    stylers: [{
-      color: "#588ca4"
-    }]
-  }, {
-    featureType: "poi.park",
-    elementType: "geometry.fill",
-    stylers: [{
-      color: "#a9de83"
-    }]
-  }, {
-    featureType: "poi.park",
-    elementType: "geometry.stroke",
-    stylers: [{
-      color: "#bae6a1"
-    }]
-  }, {
-    featureType: "poi.sports_complex",
-    elementType: "geometry.fill",
-    stylers: [{
-      color: "#c6e8b3"
-    }]
-  }, {
-    featureType: "poi.sports_complex",
-    elementType: "geometry.stroke",
-    stylers: [{
-      color: "#bae6a1"
-    }]
-  }, {
-    featureType: "road",
-    elementType: "labels.icon",
-    stylers: [{
-      saturation: -45
-    }, {
-      lightness: 10
-    }, {
-      visibility: "on"
-    }]
-  }, {
-    featureType: "road",
-    elementType: "labels.text.fill",
-    stylers: [{
-      color: "#41626b"
-    }]
-  }, {
-    featureType: "road.arterial",
-    elementType: "geometry.fill",
-    stylers: [{
-      color: "#ffffff"
-    }]
-  }, {
-    featureType: "road.highway",
-    elementType: "geometry.fill",
-    stylers: [{
-      color: "#c1d1d6"
-    }]
-  }, {
-    featureType: "road.highway",
-    elementType: "geometry.stroke",
-    stylers: [{
-      color: "#a6b5bb"
-    }]
-  }, {
-    featureType: "road.highway",
-    elementType: "labels.icon",
-    stylers: [{
-      visibility: "on"
-    }]
-  }, {
-    featureType: "road.highway.controlled_access",
-    elementType: "geometry.fill",
-    stylers: [{
-      color: "#9fb6bd"
-    }]
-  }, {
-    featureType: "road.local",
-    elementType: "geometry.fill",
-    stylers: [{
-      color: "#ffffff"
-    }]
-  }, {
-    featureType: "transit",
-    elementType: "labels.icon",
-    stylers: [{
-      saturation: -70
-    }]
-  }, {
-    featureType: "transit.line",
-    elementType: "geometry.fill",
-    stylers: [{
-      color: "#b4cbd4"
-    }]
-  }, {
-    featureType: "transit.line",
-    elementType: "labels.text.fill",
-    stylers: [{
-      color: "#588ca4"
-    }]
-  }, {
-    featureType: "transit.station",
-    elementType: "labels.text.fill",
-    stylers: [{
-      color: "#008cb5"
-    }]
-  }, {
-    featureType: "transit.station.airport",
-    elementType: "geometry.fill",
-    stylers: [{
-      saturation: -100
-    }, {
-      lightness: -5
-    }]
-  }, {
-    featureType: "water",
-    elementType: "geometry.fill",
-    stylers: [{
-      color: "#a6cbe3"
-    }]
-  }] // Estilos del mapa
-
-};
 
 /***/ }),
 
@@ -423,7 +373,6 @@ module.exports = {
   \**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /***/ ((module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
@@ -447,7 +396,6 @@ ___CSS_LOADER_EXPORT___.push([module.id, "\n.as-footer_text {\r\n  font-size: 0.
   \**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /***/ ((module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
@@ -458,7 +406,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.container-map {\r\n  height: 350px;\n}\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.container-map {\n    height: 350px;\n}\n.parallax {\n    min-height: 780px;\n\n    /* Create the parallax scrolling effect */\n    background-attachment: fixed;\n    background-position: center;\n    background-repeat: no-repeat;\n    background-size: cover;\n\n    background-image: linear-gradient(\n            to bottom,\n            rgba(31, 38, 99, 0.7),\n            rgba(31, 38, 99, 0.7)\n        ),\n        url(\"/app/equipo.jpg\");\n}\n.text-16 {\n    font-size: 16px;\n}\n.divider {\n    padding: 2px;\n    border-bottom-left-radius: 80px 80px;\n    border-bottom-right-radius: 80px 80px;\n}\n.card-equipo {\n    height: 390px;\n}\n.card-equipo-container {\n    height: 730px;\n}\n.position-linkedin {\n    position: relative;\n}\n@media screen and (max-width: 960px) {\n.card-equipo {\n        height: auto;\n}\n.card-equipo-container {\n        height: auto;\n}\n.position-linkedin {\n        position: absolute;\n        top: 150px;\n        right: calc(50% - 100px);\n}\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -471,7 +419,6 @@ ___CSS_LOADER_EXPORT___.push([module.id, "\n.container-map {\r\n  height: 350px;
   \**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
@@ -501,7 +448,6 @@ var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js
   \**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
@@ -531,7 +477,6 @@ var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js
   \**********************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
@@ -570,7 +515,6 @@ component.options.__file = "resources/js/components/global/ChatComponent.vue"
   \*********************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
@@ -611,7 +555,6 @@ component.options.__file = "resources/js/components/global/FooterGlobal.vue"
   \*********************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
@@ -652,7 +595,6 @@ component.options.__file = "resources/js/pages/equipo/Index.vue"
   \***********************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
@@ -668,7 +610,6 @@ __webpack_require__.r(__webpack_exports__);
   \**********************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
@@ -684,7 +625,6 @@ __webpack_require__.r(__webpack_exports__);
   \**********************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
@@ -700,7 +640,6 @@ __webpack_require__.r(__webpack_exports__);
   \******************************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _node_modules_style_loader_dist_cjs_js_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_2_node_modules_vue_loader_lib_index_js_vue_loader_options_FooterGlobal_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/style-loader/dist/cjs.js!../../../../node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./FooterGlobal.vue?vue&type=style&index=0&lang=css& */ "./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/global/FooterGlobal.vue?vue&type=style&index=0&lang=css&");
 
@@ -713,7 +652,6 @@ __webpack_require__.r(__webpack_exports__);
   \******************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _node_modules_style_loader_dist_cjs_js_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_0_rules_0_use_2_node_modules_vue_loader_lib_index_js_vue_loader_options_Index_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/style-loader/dist/cjs.js!../../../../node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./Index.vue?vue&type=style&index=0&lang=css& */ "./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/pages/equipo/Index.vue?vue&type=style&index=0&lang=css&");
 
@@ -726,7 +664,6 @@ __webpack_require__.r(__webpack_exports__);
   \*****************************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "render": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ChatComponent_vue_vue_type_template_id_299eb344___WEBPACK_IMPORTED_MODULE_0__.render),
@@ -743,7 +680,6 @@ __webpack_require__.r(__webpack_exports__);
   \****************************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "render": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_FooterGlobal_vue_vue_type_template_id_44aae92f___WEBPACK_IMPORTED_MODULE_0__.render),
@@ -760,7 +696,6 @@ __webpack_require__.r(__webpack_exports__);
   \****************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "render": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Index_vue_vue_type_template_id_6180546a___WEBPACK_IMPORTED_MODULE_0__.render),
@@ -777,7 +712,6 @@ __webpack_require__.r(__webpack_exports__);
   \********************************************************************************************************************************************************************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "render": () => (/* binding */ render),
@@ -794,6 +728,9 @@ var render = function () {
         "v-btn",
         {
           attrs: {
+            link: "",
+            href: _vm.wame,
+            target: "_blank",
             fab: "",
             dark: "",
             large: "",
@@ -805,7 +742,7 @@ var render = function () {
         },
         [
           _c("v-icon", { attrs: { large: "", dark: "" } }, [
-            _vm._v("mdi-message-text "),
+            _vm._v("mdi-whatsapp "),
           ]),
         ],
         1
@@ -827,7 +764,6 @@ render._withStripped = true
   \*******************************************************************************************************************************************************************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "render": () => (/* binding */ render),
@@ -1033,7 +969,6 @@ render._withStripped = true
   \*******************************************************************************************************************************************************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "render": () => (/* binding */ render),
@@ -1045,7 +980,7 @@ var render = function () {
   var _c = _vm._self._c || _h
   return _c(
     "v-container",
-    { staticClass: "content-wrap-2 pa-0 mx-auto" },
+    { staticClass: "content-wrap-2 pa-0 mx-auto", attrs: { fluid: "" } },
     [
       _c(
         "v-row",
@@ -1078,17 +1013,18 @@ var render = function () {
                 "span",
                 {
                   staticClass:
-                    "primary--text text-uppercase as-text_extralarge line-height_1 ",
+                    "primary--text text-uppercase as-text_extralarge line-height_1",
                 },
                 [_vm._v("Nuestro")]
               ),
+              _vm._v(" "),
               _c("br"),
               _vm._v(" "),
               _c(
                 "span",
                 {
                   staticClass:
-                    "\n          pl-6\n          primary--text\n          font-weight-bold\n          text-uppercase\n          as-text_extralarge\n          line-height_1\n          after-center_block\n        ",
+                    "pl-6 primary--text font-weight-bold text-uppercase as-text_extralarge line-height_1 after-center_block",
                 },
                 [_vm._v("equipo")]
               ),
@@ -1096,6 +1032,400 @@ var render = function () {
           ),
         ],
         1
+      ),
+      _vm._v(" "),
+      _c(
+        "v-container",
+        { staticClass: "content-wrap-0 pa-0 mx-auto", attrs: { fluid: "" } },
+        [
+          _c(
+            "div",
+            { staticClass: "parallax" },
+            [
+              _c(
+                "v-row",
+                {
+                  staticClass:
+                    "pa-0 ma-0 content-wrap-0 mx-auto my-8 d-flex flex-wrap flex-md-row flex-column",
+                  staticStyle: { "min-height": "740px" },
+                },
+                [
+                  _c(
+                    "v-col",
+                    [
+                      _c(
+                        "v-card",
+                        {
+                          staticClass:
+                            "elevation-0 mx-auto pt-8 d-flex flex-wrap space-between card-equipo-container",
+                          attrs: { color: "transparent" },
+                        },
+                        [
+                          _c(
+                            "div",
+                            { staticClass: "mx-auto" },
+                            [
+                              _c("v-img", {
+                                staticClass: "rounded-circle",
+                                attrs: {
+                                  src: "/app/gerardo_alvarez.jpg",
+                                  height: _vm.height,
+                                  width: _vm.width,
+                                },
+                              }),
+                            ],
+                            1
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "v-card-text",
+                            { staticClass: "text-center card-equipo" },
+                            [
+                              _c("div", { staticClass: "d-block mx-auto" }, [
+                                _c(
+                                  "span",
+                                  {
+                                    staticClass:
+                                      "as-text_normal_2 font-weight-bold white--text",
+                                  },
+                                  [_vm._v("Gerardo")]
+                                ),
+                                _vm._v(" "),
+                                _c("br"),
+                                _vm._v(" "),
+                                _c(
+                                  "span",
+                                  {
+                                    staticClass:
+                                      "as-text_normal_2 pl-7 font-weight-bold white--text",
+                                  },
+                                  [_vm._v("Álvarez")]
+                                ),
+                              ]),
+                              _vm._v(" "),
+                              _c(
+                                "div",
+                                {
+                                  staticClass:
+                                    "text-justify white--text text-16 py-4",
+                                },
+                                [
+                                  _c("span", [
+                                    _vm._v(
+                                      "\n                                    Ejecutivo y consultor de tecnología con\n                                    "
+                                    ),
+                                    _c("strong", [
+                                      _vm._v("18 años de experiencia"),
+                                    ]),
+                                    _vm._v(
+                                      " en el sector\n                                    financiero. Ingeniero de Sistemas titulado, Magister en\n                                    administración de empresas con mención en gestión avanzada\n                                    de proyectos.\n                                    "
+                                    ),
+                                    _c("strong", [
+                                      _vm._v(
+                                        "\n                                        Líder de equipos ágiles con enfoque a resultados y\n                                        satisfacción del cliente.\n                                    "
+                                      ),
+                                    ]),
+                                  ]),
+                                ]
+                              ),
+                            ]
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "v-card-actions",
+                            { staticClass: "align-end" },
+                            [
+                              _c(
+                                "v-btn",
+                                {
+                                  staticClass:
+                                    "elevation-0 px-2 position-linkedin",
+                                  staticStyle: {
+                                    "min-width": "auto !important",
+                                  },
+                                  attrs: {
+                                    large: "",
+                                    color: "#0073b2",
+                                    link: "",
+                                    href: "https://www.linkedin.com/in/gerardo-alvarez/",
+                                    target: "_blank",
+                                  },
+                                },
+                                [
+                                  _c(
+                                    "v-icon",
+                                    { attrs: { color: "white", large: "" } },
+                                    [_vm._v("mdi-linkedin")]
+                                  ),
+                                ],
+                                1
+                              ),
+                            ],
+                            1
+                          ),
+                        ],
+                        1
+                      ),
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c("v-divider", {
+                    staticClass: "divider",
+                    attrs: { vertical: _vm.vertical, color: _vm.color },
+                  }),
+                  _vm._v(" "),
+                  _c(
+                    "v-col",
+                    [
+                      _c(
+                        "v-card",
+                        {
+                          staticClass:
+                            "elevation-0 mx-auto pt-8 d-flex flex-wrap space-between card-equipo-container",
+                          attrs: { color: "transparent" },
+                        },
+                        [
+                          _c(
+                            "div",
+                            { staticClass: "mx-auto" },
+                            [
+                              _c("v-img", {
+                                staticClass: "rounded-circle",
+                                attrs: {
+                                  src: "/app/victor_alvarez.png",
+                                  height: _vm.height,
+                                  width: _vm.width,
+                                },
+                              }),
+                            ],
+                            1
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "v-card-text",
+                            { staticClass: "text-center card-equipo" },
+                            [
+                              _c("div", { staticClass: "d-block mx-auto" }, [
+                                _c(
+                                  "span",
+                                  {
+                                    staticClass:
+                                      "as-text_normal_2 font-weight-bold white--text",
+                                  },
+                                  [_vm._v("Victor")]
+                                ),
+                                _vm._v(" "),
+                                _c("br"),
+                                _vm._v(" "),
+                                _c(
+                                  "span",
+                                  {
+                                    staticClass:
+                                      "as-text_normal_2 pl-7 font-weight-bold white--text",
+                                  },
+                                  [_vm._v("Álvarez")]
+                                ),
+                              ]),
+                              _vm._v(" "),
+                              _c(
+                                "div",
+                                {
+                                  staticClass:
+                                    "text-justify white--text text-16 py-4",
+                                },
+                                [
+                                  _c("span", [
+                                    _vm._v(
+                                      "\n                                    Ejecutivo, consultor financiero y contable con\n                                    "
+                                    ),
+                                    _c("strong", [
+                                      _vm._v("25 años de experiencia"),
+                                    ]),
+                                    _vm._v(
+                                      " Contador con\n                                    estudios especializados en la Contraloría General de la\n                                    República. Auditor Interno en empresas Petroleras\n                                    Comerciales y de Construcción. Asesora a empresas en su\n                                    crecimiento y la reducción de sus costos.\n                                    "
+                                    ),
+                                    _c("strong", [
+                                      _vm._v(
+                                        "\n                                        Experto en la optimización de procesos, reingeniería\n                                        organizacional y saneamiento tributario.\n                                    "
+                                      ),
+                                    ]),
+                                  ]),
+                                ]
+                              ),
+                            ]
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "v-card-actions",
+                            { staticClass: "align-end" },
+                            [
+                              _c(
+                                "v-btn",
+                                {
+                                  staticClass:
+                                    "elevation-0 px-2 position-linkedin",
+                                  staticStyle: {
+                                    "min-width": "auto !important",
+                                  },
+                                  attrs: {
+                                    large: "",
+                                    color: "#0073b2",
+                                    link: "",
+                                    href: "https://www.linkedin.com/in/victor-alvarez-rojas/",
+                                    target: "_blank",
+                                  },
+                                },
+                                [
+                                  _c(
+                                    "v-icon",
+                                    { attrs: { color: "white", large: "" } },
+                                    [_vm._v("mdi-linkedin")]
+                                  ),
+                                ],
+                                1
+                              ),
+                            ],
+                            1
+                          ),
+                        ],
+                        1
+                      ),
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c("v-divider", {
+                    staticClass: "divider",
+                    attrs: { vertical: _vm.vertical, color: _vm.color },
+                  }),
+                  _vm._v(" "),
+                  _c(
+                    "v-col",
+                    [
+                      _c(
+                        "v-card",
+                        {
+                          staticClass:
+                            "elevation-0 mx-auto pt-8 d-flex flex-wrap space-between card-equipo-container",
+                          attrs: { color: "transparent" },
+                        },
+                        [
+                          _c(
+                            "div",
+                            { staticClass: "mx-auto" },
+                            [
+                              _c("v-img", {
+                                staticClass: "rounded-circle",
+                                attrs: {
+                                  src: "/app/jorge_carrera.jpg",
+                                  height: _vm.height,
+                                  width: _vm.width,
+                                },
+                              }),
+                            ],
+                            1
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "v-card-text",
+                            { staticClass: "text-center card-equipo" },
+                            [
+                              _c("div", { staticClass: "d-block mx-auto" }, [
+                                _c(
+                                  "span",
+                                  {
+                                    staticClass:
+                                      "as-text_normal_2 font-weight-bold white--text",
+                                  },
+                                  [_vm._v("Jorge")]
+                                ),
+                                _vm._v(" "),
+                                _c("br"),
+                                _vm._v(" "),
+                                _c(
+                                  "span",
+                                  {
+                                    staticClass:
+                                      "as-text_normal_2 pl-7 font-weight-bold white--text",
+                                  },
+                                  [_vm._v("Carrera")]
+                                ),
+                              ]),
+                              _vm._v(" "),
+                              _c(
+                                "div",
+                                {
+                                  staticClass:
+                                    "text-justify white--text text-16 py-4",
+                                },
+                                [
+                                  _c("span", [
+                                    _vm._v(
+                                      "\n                                    Ejecutivo, consultor, docente y auditor en entidades\n                                    privadas y públicas con más de\n                                    "
+                                    ),
+                                    _c("strong", [
+                                      _vm._v("35 años de experiencia"),
+                                    ]),
+                                    _vm._v(
+                                      " en la dirección de\n                                    empresas. Contador Público Colegiado, Auditor Certificado,\n                                    Maestría en Contabilidad y Doctorado en Administración.\n                                    Experiencia como Gerente apoderado de una Corporación\n                                    Global.\n                                    "
+                                    ),
+                                    _c("strong", [
+                                      _vm._v(
+                                        "\n                                        Líder en Dirección de Control de Gestión y mitigación de\n                                        riesgos.\n                                    "
+                                      ),
+                                    ]),
+                                  ]),
+                                ]
+                              ),
+                            ]
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "v-card-actions",
+                            { staticClass: "align-end" },
+                            [
+                              _c(
+                                "v-btn",
+                                {
+                                  staticClass:
+                                    "elevation-0 px-2 position-linkedin",
+                                  staticStyle: {
+                                    "min-width": "auto !important",
+                                  },
+                                  attrs: {
+                                    large: "",
+                                    color: "#0073b2",
+                                    link: "",
+                                    href: "http://linkedin.com/in/jorge-carreras-aa96a7204",
+                                    target: "_blank",
+                                  },
+                                },
+                                [
+                                  _c(
+                                    "v-icon",
+                                    { attrs: { color: "white", large: "" } },
+                                    [_vm._v("mdi-linkedin")]
+                                  ),
+                                ],
+                                1
+                              ),
+                            ],
+                            1
+                          ),
+                        ],
+                        1
+                      ),
+                    ],
+                    1
+                  ),
+                ],
+                1
+              ),
+            ],
+            1
+          ),
+        ]
       ),
       _vm._v(" "),
       _c("FooterGlobal"),

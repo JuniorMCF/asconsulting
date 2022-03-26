@@ -177,6 +177,9 @@ return [
 
         App\Providers\PermissionsServiceProvider::class,
         Intervention\Image\ImageServiceProvider::class,
+        Stevebauman\Location\LocationServiceProvider::class,
+
+        Barryvdh\DomPDF\ServiceProvider::class,
     ],
 
     /*
@@ -233,6 +236,9 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
 
         'Image' => Intervention\Image\Facades\Image::class,
+        'Location' => Stevebauman\Location\Facades\Location::class,
+
+        'PDF' => Barryvdh\DomPDF\Facade::class,
     ],
 
 ];

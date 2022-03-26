@@ -18,6 +18,10 @@ export default new Vuetify({
                 error: '#B70505',
                 grey:'#919090',
                 gray:'#42677C',
+                success:"#7fcd5e",
+                linkedin:"#0077b5",
+                facebook:"#4464a3",
+                twitter:"#55acee"
             },
         },
     },

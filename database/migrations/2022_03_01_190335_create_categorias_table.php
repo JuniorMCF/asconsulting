@@ -17,6 +17,7 @@ class CreateCategoriasTable extends Migration
             $table->increments("id");
             $table->string("nombre");
             $table->text("titulo")->nullable();
+            $table->string("foto")->nullable();
             $table->text("descripcion")->nullable();
             $table->integer("entradas")->unsigned()->default(0);
             $table->integer("estado")->default(0);//0 deshabilitado 1 habilitado

@@ -1,8 +1,6 @@
 <template>
   <div>
-    <v-card-title>
-      {{ actualPage }}
-    </v-card-title>
+    <v-card-title class="font-weight-bold px-md-10 px-3">{{ actualPage }}</v-card-title>
   </div>
 </template>
 

@@ -1,7 +1,12 @@
 /**Routes for SPA */
 
 const routes = [
-    /**publics */
+
+
+    { path: '*',component: () => import('../pages/notfound/404.vue') },
+
+       /**publics */
+
     {
         path: '/',
         component: () => import('../pages/home/Index.vue'),
@@ -68,17 +73,27 @@ const routes = [
         component: () => import('../pages/post/Index.vue'),
         name: 'show-blog'
     },
+    {
+        path: '/post/categorias/:categoria',
+        component: () => import('../pages/publicaciones/categoria/Index.vue'),
+        name: 'show-blog-categoria'
+    },
+    {
+        path: '/post/tag/:tag',
+        component: () => import('../pages/publicaciones/tag/Index.vue'),
+        name: 'show-blog-tag'
+    },
 
 
 
-    
+
     {
         path: '/login',
         component: () => import('../pages/auth/Login.vue'),
         name: 'login'
     },
     {
-        path: '/misitio',
+        path: '/admin/misitio',
         component: () => import('../pages/admin/misitio/Index.vue'),
         meta: {
             requiresAuth: true
@@ -95,9 +110,17 @@ const routes = [
 
     },
     {
+        path: '/admin/blog/nuevo',
+        name: "new-blog",
+        component: () => import('../pages/admin/blog/blog/NewBlog.vue'),
+        meta: {
+            requiresAuth: true
+        }
+    },
+    {
         path: '/admin/blog/:id/edit',
         component: () => import('../pages/admin/blog/edit/Index.vue'),
-        name:"edit-blog",
+        name: "edit-blog",
         meta: {
             requiresAuth: true
         }
@@ -106,7 +129,7 @@ const routes = [
     {
         path: '/admin/blog/:route',
         component: () => import('../pages/admin/blog/edit/Index.vue'),
-        name:"show-blog",
+        name: "show-blog-admin",
         meta: {
             requiresAuth: true
         }
@@ -124,6 +147,23 @@ const routes = [
     {
         path: '/admin/categorias',
         component: () => import('../pages/admin/blog/categorias/Index.vue'),
+        meta: {
+            requiresAuth: true
+        }
+
+    },
+    {
+        path: '/admin/categorias/nuevo',
+        component: () => import('../pages/admin/blog/categorias/new/Index.vue'),
+        meta: {
+            requiresAuth: true
+        }
+
+    },
+    {
+        path: '/admin/categorias/:id/edit',
+        component: () => import('../pages/admin/blog/categorias/edit/Index.vue'),
+        name: "edit-categoria-blog",
         meta: {
             requiresAuth: true
         }
@@ -157,7 +197,7 @@ const routes = [
     /**contactos */
     {
         path: '/admin/contactos',
-        component: () => import('../pages/admin/contactos/miembros/Index.vue'),
+        component: () => import('../pages/admin/contactos/contactos/Index.vue'),
         meta: {
             requiresAuth: true
         }
@@ -165,7 +205,7 @@ const routes = [
     },
     {
         path: '/admin/miembros-de-sitio',
-        component: () => import('../pages/admin/contactos/contactos/Index.vue'),
+        component: () => import('../pages/admin/contactos/miembros/Index.vue'),
         meta: {
             requiresAuth: true
         }

@@ -40,7 +40,7 @@ export default {
       let path = window.location.pathname + window.location.search;
 
       this.$store.dispatch("app/setPath", path);
-      
+
     },
   },
 

@@ -32,24 +32,43 @@ Vue.prototype.moment = moment
 Vue.use(VueToast, {
     // One of the options
     position: 'top-right',
-    duration:10000
+    duration: 3000
 })
 
 Vue.use(vuetify)
 
+import Quill from 'quill'
 import VueQuillEditor from 'vue-quill-editor'
+
+
+const FontAttributor = Quill.import('formats/font');
+FontAttributor.whitelist = [
+    'Raleway', 'Roboto', 'sans-serif'
+]
+Quill.register(FontAttributor, true);
+
+
+import { ImageDrop } from "quill-image-drop-module";
+import ImageResize from '@taoqf/quill-image-resize-module';
+
+Quill.register("modules/imageDrop", ImageDrop);
+Quill.register('modules/imageResize', ImageResize);
+
+
 
 import 'quill/dist/quill.core.css' // import styles
 import 'quill/dist/quill.snow.css' // for snow theme
 import 'quill/dist/quill.bubble.css' // for bubble theme
 
 Vue.use(VueQuillEditor, {
-    theme: 'snow', modules: {
+    theme: 'snow',
+    modules: {
         toolbar: [
+
             ['bold', 'italic', 'underline', 'strike'],
             ['blockquote', 'code-block'],
-            //[{ 'header': 1 }, { 'header': 2 }], 
-           
+            //[{ 'header': 1 }, { 'header': 2 }],
+
             [{
                 'color': [
 
@@ -76,22 +95,27 @@ Vue.use(VueQuillEditor, {
                     "#FFFFFF",
                 ]
             }],
-            [{ 'font': [] }],
+            [{ 'font': ['Raleway','Roboto'] }],
             [{ 'align': [] }],
-               
             [{ 'header': [1, 2, 3, 4, 5, 6, false] }],
-            [{ 'size': ['small', false, 'large', 'huge'] }], 
+            [{ 'size': ['small', false, 'large', 'huge'] }],
 
-            [{ 'list': 'ordered'}, { 'list': 'bullet' }],
-            [{ 'script': 'sub'}, { 'script': 'super' }],  
-            [{ 'indent': '-1'}, { 'indent': '+1' }],
-            [{ 'direction': 'rtl' }],  
-           
+            [{ 'list': 'ordered' }, { 'list': 'bullet' }],
+            [{ 'script': 'sub' }, { 'script': 'super' }],
+            [{ 'indent': '-1' }, { 'indent': '+1' }],
+            [{ 'direction': 'rtl' }],
+            ['image'],
 
-            ['clean']    
-        ]
+        ],
+        imageDrop: true,
+        imageResize: true,
     }
 })
+
+import VueSocialSharing from 'vue-social-sharing'
+
+Vue.use(VueSocialSharing);
+
 
 const app = new Vue({
     el: "#app",

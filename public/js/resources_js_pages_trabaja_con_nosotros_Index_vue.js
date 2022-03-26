@@ -19,7 +19,13 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({});
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  data: function data() {
+    return {
+      wame: "https://wa.me/51926302115"
+    };
+  }
+});
 
 /***/ }),
 
@@ -281,13 +287,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -308,7 +307,21 @@ __webpack_require__.r(__webpack_exports__);
         profesion: "Administrador"
       }],
       menu: false,
-      date: null
+      date: null,
+      form: {
+        nombres: '',
+        apellidos: '',
+        email: '',
+        telefono: '',
+        profesion: '',
+        fecha_inicio: '',
+        file: null
+      },
+      profesion: {
+        profesion: ''
+      },
+      loadingApply: false,
+      file_error: false
     };
   },
   mounted: function mounted() {
@@ -318,6 +331,71 @@ __webpack_require__.r(__webpack_exports__);
     getPath: function getPath() {
       var path = window.location.pathname + window.location.search;
       this.$store.dispatch("app/setPath", path);
+    },
+    applyNow: function applyNow() {
+      var _this = this;
+
+      this.loadingApply = true;
+      this.form.profesion = this.profesion.profesion;
+      this.form.fecha_inicio = this.date;
+
+      if (this.form.file == null) {
+        Vue.$toast.warning("Documentos obligatorio");
+        this.loadingApply = false;
+        this.file_error = true;
+        return;
+      }
+
+      if (this.form.nombres != '' && this.form.apellidos != '' && this.form.email != '' && this.form.telefono && this.form.fecha_inicio != '' && this.form.profesion != '') {
+        var data = new FormData();
+        data.append("nombres", this.form.nombres);
+        data.append("apellidos", this.form.apellidos);
+        data.append("telefono", this.form.telefono);
+        data.append("email", this.form.email);
+        data.append("profesion", this.form.profesion);
+        data.append("fecha_inicio", this.form.fecha_inicio);
+        data.append("file", this.form.file);
+        var config = {
+          headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'multipart/form-data'
+          }
+        };
+        axios({
+          method: 'post',
+          url: "/api/trabajador",
+          data: data,
+          headers: config
+        }).then(function (res) {
+          console.log(res);
+
+          if (res.status == 200) {
+            Vue.$toast.success("Registro exitoso!, le enviaremos un correo de confirmación");
+            _this.form = {
+              nombres: '',
+              apellidos: '',
+              email: '',
+              telefono: '',
+              profesion: '',
+              fecha_inicio: '',
+              file: null
+            };
+            _this.profesion = {
+              profesion: ''
+            };
+            _this.date = null;
+          } else if (res.status == 201) {
+            Vue.$toast.info("Ya existe un trabajador con este correo");
+          } else if (res.status == 203) {
+            Vue.$toast.error("Formato de archivo inválido");
+          }
+
+          _this.loadingApply = false;
+        })["catch"](function (err) {
+          _this.loadingApply = false;
+          console.log(err);
+        });
+      }
     }
   }
 });
@@ -619,6 +697,9 @@ var render = function () {
         "v-btn",
         {
           attrs: {
+            link: "",
+            href: _vm.wame,
+            target: "_blank",
             fab: "",
             dark: "",
             large: "",
@@ -630,7 +711,7 @@ var render = function () {
         },
         [
           _c("v-icon", { attrs: { large: "", dark: "" } }, [
-            _vm._v("mdi-message-text "),
+            _vm._v("mdi-whatsapp "),
           ]),
         ],
         1
@@ -900,13 +981,14 @@ var render = function () {
                 },
                 [_vm._v("Trabaja con")]
               ),
+              _vm._v(" "),
               _c("br"),
               _vm._v(" "),
               _c(
                 "span",
                 {
                   staticClass:
-                    "\n          pl-6\n          primary--text\n          font-weight-bold\n          text-uppercase\n          as-text_extralarge\n          line-height_1\n          after-right_block\n        ",
+                    "pl-6 primary--text font-weight-bold text-uppercase as-text_extralarge line-height_1 after-right_block",
                 },
                 [_vm._v("nosotros")]
               ),
@@ -927,14 +1009,16 @@ var render = function () {
             "v-col",
             {
               staticClass:
-                "\n        col-12 col-md-10\n        d-flex\n        align-center\n        justify-md-start justify-center\n      ",
+                "col-12 col-md-10 d-flex align-center justify-md-start justify-center",
             },
             [
               _c("div", { staticClass: "text-md-start text-center" }, [
                 _c("span", { staticClass: "as-p_normal primary--text" }, [
-                  _vm._v("\n          Únete a la "),
-                  _c("strong", [_vm._v("firma más especializada ")]),
-                  _vm._v(" del país\n        "),
+                  _vm._v(
+                    "\n                    Únete a la\n                    "
+                  ),
+                  _c("strong", [_vm._v("firma más especializada")]),
+                  _vm._v(" del país\n                "),
                 ]),
               ]),
             ]
@@ -964,6 +1048,13 @@ var render = function () {
                               outlined: "",
                               "hide-details": "auto",
                             },
+                            model: {
+                              value: _vm.form.nombres,
+                              callback: function ($$v) {
+                                _vm.$set(_vm.form, "nombres", $$v)
+                              },
+                              expression: "form.nombres",
+                            },
                           }),
                         ],
                         1
@@ -980,6 +1071,13 @@ var render = function () {
                               label: "Apellidos",
                               outlined: "",
                               "hide-details": "auto",
+                            },
+                            model: {
+                              value: _vm.form.apellidos,
+                              callback: function ($$v) {
+                                _vm.$set(_vm.form, "apellidos", $$v)
+                              },
+                              expression: "form.apellidos",
                             },
                           }),
                         ],
@@ -998,6 +1096,13 @@ var render = function () {
                               outlined: "",
                               "hide-details": "auto",
                             },
+                            model: {
+                              value: _vm.form.email,
+                              callback: function ($$v) {
+                                _vm.$set(_vm.form, "email", $$v)
+                              },
+                              expression: "form.email",
+                            },
                           }),
                         ],
                         1
@@ -1014,6 +1119,13 @@ var render = function () {
                               label: "Teléfono",
                               outlined: "",
                               "hide-details": "auto",
+                            },
+                            model: {
+                              value: _vm.form.telefono,
+                              callback: function ($$v) {
+                                _vm.$set(_vm.form, "telefono", $$v)
+                              },
+                              expression: "form.telefono",
                             },
                           }),
                         ],
@@ -1033,6 +1145,13 @@ var render = function () {
                               outlined: "",
                               "return-object": "",
                               "hide-details": "auto",
+                            },
+                            model: {
+                              value: _vm.profesion,
+                              callback: function ($$v) {
+                                _vm.profesion = $$v
+                              },
+                              expression: "profesion",
                             },
                           }),
                         ],
@@ -1140,11 +1259,7 @@ var render = function () {
                                         },
                                       },
                                     },
-                                    [
-                                      _vm._v(
-                                        "\n                  Cancelar\n                "
-                                      ),
-                                    ]
+                                    [_vm._v("Cancelar")]
                                   ),
                                   _vm._v(" "),
                                   _c(
@@ -1158,11 +1273,7 @@ var render = function () {
                                         },
                                       },
                                     },
-                                    [
-                                      _vm._v(
-                                        "\n                  Aceptar\n                "
-                                      ),
-                                    ]
+                                    [_vm._v("Aceptar")]
                                   ),
                                 ],
                                 1
@@ -1185,7 +1296,15 @@ var render = function () {
                               outlined: "",
                               "prepend-icon": "mdi-paperclip",
                               "show-size": "",
+                              error: _vm.file_error,
                               hint: "Máximo 15MB",
+                            },
+                            model: {
+                              value: _vm.form.file,
+                              callback: function ($$v) {
+                                _vm.$set(_vm.form, "file", $$v)
+                              },
+                              expression: "form.file",
                             },
                           }),
                         ],
@@ -1204,6 +1323,13 @@ var render = function () {
                                 block: "",
                                 color: "primary",
                                 "x-large": "",
+                                loading: _vm.loadingApply,
+                              },
+                              on: {
+                                click: function ($event) {
+                                  $event.preventDefault()
+                                  return _vm.applyNow()
+                                },
                               },
                             },
                             [_vm._v("Aplicar ahora")]

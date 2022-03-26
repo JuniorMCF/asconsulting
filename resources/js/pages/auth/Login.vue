@@ -75,8 +75,8 @@ export default {
             if (res.status == 200) {
               Vue.$toast.success("Bienvenido!");
 
-              
 
+              this.$store.dispatch("app/setPath", "/admin/misitio");
               this.$router.push({
                 path: "/admin/misitio",
               });

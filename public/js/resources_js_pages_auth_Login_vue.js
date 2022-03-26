@@ -89,6 +89,8 @@ __webpack_require__.r(__webpack_exports__);
           if (res.status == 200) {
             Vue.$toast.success("Bienvenido!");
 
+            _this.$store.dispatch("app/setPath", "/admin/misitio");
+
             _this.$router.push({
               path: "/admin/misitio"
             });

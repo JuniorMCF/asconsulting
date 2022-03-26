@@ -7,23 +7,57 @@ use App\Models\Categoria;
 use App\Models\Post;
 use App\Models\PostCategoria;
 use App\Models\Tag;
+use App\Models\User;
 use App\Services\PostServices;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use Intervention\Image\Facades\Image;
-
+use PDF;
 
 class PostsController extends Controller
 {
     //
     public function postsPub()
     {
-        $posts = Post::where("estado", "publicado")->get();
+        $posts = Post::where("estado", "publicado")->with("visualizaciones")
+            ->with("comments")
+            ->with("favoritos")
+            ->with("categorias")->skip(0)->take(5)->get();
 
         //\Log::debug($posts);
 
         return response()->json($posts, 200);
     }
+    public function all()
+    {
+        $posts = Post::where("estado", "publicado")->with("visualizaciones")
+            ->with("comments")
+            ->with("favoritos")
+            ->with("categorias")->get();
+
+        //\Log::debug($posts);
+
+        return response()->json($posts, 200);
+    }
+
+    public function postsEraser()
+    {
+        $posts = Post::where("estado", "borrador")->get();
+
+        //\Log::debug($posts);
+
+        return response()->json($posts, 200);
+    }
+    public function postsPapelera()
+    {
+        $posts = Post::where("estado", "papelera")->get();
+
+        //\Log::debug($posts);
+
+        return response()->json($posts, 200);
+    }
+
     public function show($id)
     {
         $post = Post::find($id);
@@ -65,6 +99,8 @@ class PostsController extends Controller
 
         $url_foto = $post->foto;
 
+
+
         if ($request->hasFile('file_upload')) {
             $this->validate($request, [
                 'file_upload' => 'image|mimes:jpg,jpeg,png,gif,svg|max:2048',
@@ -83,7 +119,7 @@ class PostsController extends Controller
             $nombre_archivo = time() . "." . $request->file_upload->extension();
             /**
              * codigo en produccion php 7.3
-             * 
+             *
              */
 
             if (!file_exists(public_path('app'))) {
@@ -94,6 +130,28 @@ class PostsController extends Controller
             $url_foto = '/app/' . $nombre_archivo;
         }
 
+        $url_pdf = $post->file;
+
+        if ($request->hasFile('file')) {
+            $this->validate($request, [
+                'file' => 'mimes:pdf|max:10000',
+            ]);
+
+            ini_set('memory_limit', -1);
+
+            \File::delete($post->file);
+
+            $file = $request->file("file");
+
+
+            //$pdf = PDF::loadView('pdf.invoice', $file);
+
+
+            $nombre_archivo =  time() . "." . $request->file->extension();
+            $url_pdf = '/app/' . $nombre_archivo;
+
+            file_put_contents(public_path($url_pdf), $file->getContent());
+        }
 
         /**generamos la ruta para el post */
         $post_services = new PostServices();
@@ -101,20 +159,22 @@ class PostsController extends Controller
         $nombre_trim = trim($nombre_sin_acentos);
         $nombre_sin_espacios =  str_replace(' ', '-', $nombre_trim);
         $nombre_lowecase = strtolower($nombre_sin_espacios . '-' . str_replace(' ', '-', $request->name_district));
-        
-        
 
-        Post::find($request->id)->update($request->except(["file_upload", "foto"]));
+
+
+        Post::find($request->id)->update($request->except(["file_upload", "foto", 'pdf_file', 'file']));
 
         Post::find($request->id)->update([
             "route" => $nombre_lowecase,
-            "foto" => $url_foto
+            "foto" => $url_foto,
+            'file' => $url_pdf
         ]);
 
 
 
         return response()->json(true, 200);
     }
+
 
     public function postBlog(Request $request)
     {
@@ -169,6 +229,75 @@ class PostsController extends Controller
             }
         }
 
+
+        return response()->json(true, 200);
+    }
+
+    public function categorias()
+    {
+        $categorias = Categoria::all();
+
+        return response()->json($categorias, 200);
+    }
+    public function newPost(Request $request)
+    {
+        $creador = User::find($request->user_id);
+        $post = new Post();
+        $post->user_id = $request->user_id;
+        $post->fecha_creacion = Carbon::now('GMT-5')->format("Y-m-d h:m:s");
+        $post->creado_por = $creador->name . " " . $creador->last_name;
+        $post->save();
+
+        return response()->json($post->id, 200);
+    }
+
+    public function restorePost(Request $request)
+    {
+        Post::find($request->post_id)->update([
+            "estado" => "borrador",
+            "fecha_creacion" => Carbon::now('GMT-5')->format("Y-m-d h:m:s")
+        ]);
+        return response()->json(true, 200);
+    }
+    public function deletePost(Request $request)
+    {
+        Post::find($request->post_id)->update([
+            "estado" => "eliminado"
+        ]);
+        return response()->json(true, 200);
+    }
+
+
+    public function moveTrash(Request $request)
+    {
+        Post::find($request->post_id)->update([
+            "estado" => "papelera"
+        ]);
+        return response()->json(true, 200);
+    }
+
+    public function trasAll(Request $request)
+    {
+        //\Log::debug($request->all());
+        $posts = json_decode($request->posts, true);
+
+        foreach ($posts as $post) {
+            Post::find($post["id"])->update([
+                "estado" => "papelera"
+            ]);
+        }
+
+        return response()->json(true, 200);
+    }
+    public function deleteAll(Request $request)
+    {
+        $posts = json_decode($request->posts, true);
+
+        foreach ($posts as $post) {
+            Post::find($post["id"])->update([
+                "estado" => "eliminado"
+            ]);
+        }
 
         return response()->json(true, 200);
     }

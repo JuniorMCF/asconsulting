@@ -8,7 +8,7 @@
     persistent
   >
     <v-card>
-      <v-toolbar class="primary" :color="options.color" dense flat>
+      <v-toolbar  :color="options.color" dense flat>
         <v-toolbar-title class="text-body-2 font-weight-bold white--text">
           {{ title }}
         </v-toolbar-title>
@@ -21,7 +21,7 @@
       <v-card-actions class="pt-3">
         <v-spacer></v-spacer>
         <v-btn
-          color="sky"
+          :color="options.color"
           class="body-2 font-weight-bold text-normal rounded-0"
           outlined
           @click.native="agree"

@@ -19,7 +19,13 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({});
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  data: function data() {
+    return {
+      wame: "https://wa.me/51926302115"
+    };
+  }
+});
 
 /***/ }),
 
@@ -484,30 +490,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 
 
@@ -526,6 +508,17 @@ __webpack_require__.r(__webpack_exports__);
   },
   data: function data() {
     return {
+      form: {
+        nombres: '',
+        email: '',
+        telefono: '',
+        servicio: '',
+        comentario: ''
+      },
+      servicio: {
+        nombre: ''
+      },
+      loadAsesoria: false,
       vfOptions: {
         autoplay: true,
         allowToSkipTransition: true,
@@ -588,7 +581,27 @@ __webpack_require__.r(__webpack_exports__);
       },
       vfImages_services: ["/app/tecnologia.webp", "/app/finanzas.webp", "/app/procesos.webp", "/app/pyme_digital.webp"],
       vfTransitions_services: ["slide", "slide", "slide", "slide"],
-      vfCaptions_services: [],
+      vfCaptions_services: [{
+        title: "Tecnología",
+        subtitle: "Nuestros principales servicios:",
+        detalles: ["Software a medida (web / app).", "Soporte técnico computacional (outsourcing).", "Proyectos de TI (ágiles y tradicionales).", "Tableros de control en línea.", "Gestión integral de proveedores."],
+        link: "/tecnologia"
+      }, {
+        title: "Finanzas y Contabilidad",
+        subtitle: "Nuestros principales servicios:",
+        detalles: ["Outsourcing contable.", "Outsourcing de planillas.", "Auditorías especializadas.", "Reestructuración financiera.", "Consultoría tributaria y legal."],
+        link: "/finanzas"
+      }, {
+        title: "Procesos",
+        subtitle: "Nuestros principales servicios:",
+        detalles: ["Diseño y optimización de procesos.", "Inventario de activos (metodología ágil).", "Programa de reducción de costos.", "​Reingeniería organizacional.", "Gestión de riesgos."],
+        link: "/procesos"
+      }, {
+        title: "Pyme Digital",
+        subtitle: "Nuestros principales servicios:",
+        detalles: ["Reactiva tu empresa.", "Mi carta digital."],
+        link: "/"
+      }],
 
       /**data */
       servicios: [{
@@ -612,6 +625,38 @@ __webpack_require__.r(__webpack_exports__);
     getPath: function getPath() {
       var path = window.location.pathname + window.location.search;
       this.$store.dispatch("app/setPath", path);
+    },
+    sendRequest: function sendRequest() {
+      var _this = this;
+
+      this.form.servicio = this.servicio.nombre;
+      this.loadAsesoria = true;
+
+      if (this.form.nombres != '' && this.form.email != '' && this.form.telefono != '' && this.form.servicio != '' && this.form.comentario != '') {
+        //let data = new FormData(this.form)
+        axios.post("/api/asesoria", this.form).then(function (res) {
+          Vue.$toast.success("Su solicitud de asesoría ha sido enviada, nos comunicaremos con ud");
+          _this.loadAsesoria = false;
+          _this.form = {
+            nombres: '',
+            email: '',
+            telefono: '',
+            servicio: '',
+            comentario: ''
+          };
+          _this.servicio = {
+            nombre: ''
+          };
+          _this.loadAsesoria = false;
+        })["catch"](function (err) {
+          _this.loadAsesoria = false;
+          Vue.$toast.error("Error de conexión");
+        });
+        return;
+      }
+
+      Vue.$toast.warning("Llene todos los campos del formulario");
+      this.loadAsesoria = false;
     }
   }
 });
@@ -700,7 +745,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.fixed-top {\r\n  position: absolute;\r\n  top: -87px;\r\n  z-index: 1;\r\n  margin-left: auto;\r\n  margin-right: auto;\r\n  left: 0;\r\n  right: 0;\r\n  width: 1480px;\n}\n.vue-flux .flux-caption {\r\n  margin: 0 auto;\r\n  color: white;\r\n  background-color: transparent;\n}\n.flux-caption {\r\n  width: 400px;\r\n  height: 25%;\r\n  /* centrar vertical y horizontalmente */\r\n  position: absolute;\r\n  top: 30%;\n}\n.flux-overlap {\r\n  position: absolute;\r\n  z-index: 5;\r\n  height: 100%;\r\n  width: 1480px;\r\n  background-color: rgba(0, 0, 102, 0.38) !important;\n}\n.flux-overlap-servicios {\r\n  position: absolute;\r\n  z-index: 5;\r\n  height: 500px;\r\n  width: 1480px;\r\n  background-color: rgba(0, 0, 102, 0.38) !important;\n}\n.flux-content {\r\n  z-index: 6;\n}\n.flux-pagination li {\r\n  color: white;\r\n  margin: 0px 4.5px 0px 4.5px !important;\r\n  background-color: white;\r\n  padding: 0px !important;\r\n  width: 12px !important;\r\n  height: 12px !important;\r\n  border-radius: 1.6rem;\n}\n.current {\r\n  color: rgba(255, 255, 255, 0.8);\n}\n.image-as {\r\n  height: 124px;\r\n  width: 240px;\n}\n.flux-container {\r\n  height: 817px !important;\n}\n.flux-servicios {\r\n  height: 500px !important;\n}\n.main-content {\r\n  position: absolute;\r\n  top: calc(817px - 87px);\n}\r\n\r\n/*.container-different {\r\n  position: relative;\r\n  top: -300px;\r\n}*/\n.text-line-card {\r\n  line-height: 1.3;\n}\n.container-card {\r\n  max-width: 442px;\r\n  background-color: #ededed !important;\n}\n@media screen and (max-width: 992px) {\n.image-as {\r\n    height: 4rem;\r\n    width: 8rem;\n}\n.flux-container {\r\n    height: 500px !important;\n}\n.flux-overlap {\r\n    position: absolute;\r\n    z-index: 5;\r\n    height: 100%;\r\n    width: 100%;\r\n    background-color: rgba(0, 0, 102, 0.38) !important;\n}\n.flux-content {\r\n    z-index: 2;\n}\n.main-content {\r\n    position: absolute;\r\n    top: calc(500px - 87px);\n}\n.flux-servicios {\r\n    height: 400px !important;\n}\n.flux-overlap-servicios {\r\n    position: absolute;\r\n    z-index: 5;\r\n    height: 400px;\r\n    width: 100%;\r\n    background-color: rgba(0, 0, 102, 0.38) !important;\n}\n}\r\n\r\n/**flux controls */\n.flux-controls .play {\r\n  display: none !important;\n}\n.flux-controls .pause {\r\n  display: none !important;\n}\n.flux-button svg circle {\r\n  fill: transparent;\r\n  color: white;\n}\n.flux-button:hover svg svg polyline {\r\n  stroke: white !important;\n}\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.fixed-top {\n    position: absolute;\n    top: -87px;\n    z-index: 1;\n    margin-left: auto;\n    margin-right: auto;\n    left: 0;\n    right: 0;\n    width: 1480px;\n}\n.vue-flux .flux-caption {\n    margin: 0 auto;\n    color: white;\n    background-color: transparent;\n}\n.flux-caption {\n    width: 400px;\n    height: 25%;\n    /* centrar vertical y horizontalmente */\n    position: absolute;\n    top: 30%;\n}\n.flux-overlap {\n    position: absolute;\n    z-index: 5;\n    height: 100%;\n    width: 1480px;\n    background-color: rgba(0, 0, 102, 0.38) !important;\n}\n.flux-overlap-servicios {\n    position: absolute;\n    z-index: 5;\n    height: 500px;\n    width: 1480px;\n    background-color: rgba(0, 0, 102, 0.38) !important;\n}\n.flux-content {\n    z-index: 6;\n}\n.flux-pagination li {\n    color: white;\n    margin: 0px 4.5px 0px 4.5px !important;\n    background-color: white;\n    padding: 0px !important;\n    width: 12px !important;\n    height: 12px !important;\n    border-radius: 1.6rem;\n}\n.current {\n    color: rgba(255, 255, 255, 0.8);\n}\n.image-as {\n    height: 124px;\n    width: 240px;\n}\n.flux-container {\n    height: 817px !important;\n}\n.flux-servicios {\n    height: 500px !important;\n}\n.main-content {\n    position: absolute;\n    top: calc(817px - 87px);\n}\n\n/*.container-different {\n  position: relative;\n  top: -300px;\n}*/\n.text-line-card {\n    line-height: 1.3;\n}\n.container-card {\n    max-width: 442px;\n    background-color: #ededed !important;\n}\n@media screen and (max-width: 992px) {\n.image-as {\n        height: 4rem;\n        width: 8rem;\n}\n.flux-container {\n        height: 500px !important;\n}\n.flux-overlap {\n        position: absolute;\n        z-index: 5;\n        height: 100%;\n        width: 100%;\n        background-color: rgba(0, 0, 102, 0.38) !important;\n}\n.flux-content {\n        z-index: 2;\n}\n.main-content {\n        position: absolute;\n        top: calc(500px - 87px);\n}\n.flux-servicios {\n        height: 400px !important;\n}\n.flux-overlap-servicios {\n        position: absolute;\n        z-index: 5;\n        height: 400px;\n        width: 100%;\n        background-color: rgba(0, 0, 102, 0.38) !important;\n}\n}\n\n/**flux controls */\n.flux-controls .play {\n    display: none !important;\n}\n.flux-controls .pause {\n    display: none !important;\n}\n.flux-button svg circle {\n    fill: transparent;\n    color: white;\n}\n.flux-button:hover svg svg polyline {\n    stroke: white !important;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -1188,6 +1233,9 @@ var render = function () {
         "v-btn",
         {
           attrs: {
+            link: "",
+            href: _vm.wame,
+            target: "_blank",
             fab: "",
             dark: "",
             large: "",
@@ -1199,7 +1247,7 @@ var render = function () {
         },
         [
           _c("v-icon", { attrs: { large: "", dark: "" } }, [
-            _vm._v("mdi-message-text "),
+            _vm._v("mdi-whatsapp "),
           ]),
         ],
         1
@@ -1518,11 +1566,9 @@ var render = function () {
                                                                   [
                                                                     _c("span", [
                                                                       _vm._v(
-                                                                        "\n                          " +
-                                                                          _vm._s(
-                                                                            element.text
-                                                                          ) +
-                                                                          "\n                        "
+                                                                        _vm._s(
+                                                                          element.text
+                                                                        )
                                                                       ),
                                                                     ]),
                                                                   ]
@@ -1535,11 +1581,9 @@ var render = function () {
                                                                   },
                                                                   [
                                                                     _vm._v(
-                                                                      "\n                        " +
-                                                                        _vm._s(
-                                                                          element.text
-                                                                        ) +
-                                                                        "\n                      "
+                                                                      _vm._s(
+                                                                        element.text
+                                                                      )
                                                                     ),
                                                                   ]
                                                                 ),
@@ -1567,10 +1611,12 @@ var render = function () {
                                                     },
                                                     [
                                                       _vm._v(
-                                                        _vm._s(
-                                                          captionProps.text
-                                                            .subtitle_image
-                                                        )
+                                                        "\n                                        " +
+                                                          _vm._s(
+                                                            captionProps.text
+                                                              .subtitle_image
+                                                          ) +
+                                                          "\n                                    "
                                                       ),
                                                     ]
                                                   ),
@@ -1663,7 +1709,7 @@ var render = function () {
                                                   "div",
                                                   {
                                                     staticClass:
-                                                      "\n                      content-desc-title\n                      mx-auto\n                      d-flex\n                      justify-space-between\n                      my-6\n                    ",
+                                                      "content-desc-title mx-auto d-flex justify-space-between my-6",
                                                   },
                                                   _vm._l(
                                                     captionProps.text.actions,
@@ -1717,11 +1763,9 @@ var render = function () {
                                                                         },
                                                                         [
                                                                           _vm._v(
-                                                                            "\n                          " +
-                                                                              _vm._s(
-                                                                                action.title
-                                                                              ) +
-                                                                              "\n                        "
+                                                                            _vm._s(
+                                                                              action.title
+                                                                            )
                                                                           ),
                                                                         ]
                                                                       ),
@@ -1757,6 +1801,7 @@ var render = function () {
                                                 fab: "",
                                                 outlined: "",
                                                 color: "white",
+                                                href: "#ayudanos",
                                               },
                                             },
                                             [
@@ -1766,11 +1811,7 @@ var render = function () {
                                                   staticClass: "white--text",
                                                   attrs: { large: "" },
                                                 },
-                                                [
-                                                  _vm._v(
-                                                    "\n                    mdi-chevron-down\n                  "
-                                                  ),
-                                                ]
+                                                [_vm._v("mdi-chevron-down")]
                                               ),
                                             ],
                                             1
@@ -1815,6 +1856,7 @@ var render = function () {
             {
               staticClass:
                 "pa-0 ma-0 content-wrap-2 mx-auto container-bandwith",
+              attrs: { id: "ayudanos" },
             },
             [
               _c(
@@ -1831,7 +1873,7 @@ var render = function () {
             "v-row",
             {
               staticClass:
-                "\n        ma-0\n        pa-0\n        my-5\n        d-flex\n        justify-center\n        content-wrap-2\n        mx-auto\n        container-different\n      ",
+                "ma-0 pa-0 my-5 d-flex justify-center content-wrap-2 mx-auto container-different",
             },
             [
               _c(
@@ -1855,14 +1897,18 @@ var render = function () {
                             "span",
                             { staticClass: "as-title_large alternative--text" },
                             [
-                              _vm._v("\n              Ayudamos a "),
-                              _c("strong", [_vm._v(" cumplir los objetivos ")]),
-                              _vm._v(" de nuestros\n              clientes, "),
+                              _vm._v(
+                                "\n                            Ayudamos a\n                            "
+                              ),
+                              _c("strong", [_vm._v("cumplir los objetivos")]),
+                              _vm._v(
+                                " de nuestros\n                            clientes,\n                            "
+                              ),
                               _c("strong", [
-                                _vm._v(" promoviendo su crecimiento "),
+                                _vm._v("promoviendo su crecimiento"),
                               ]),
                               _vm._v(
-                                ",\n              rentabilidad y la gestión de sus riesgos.\n            "
+                                ",\n                            rentabilidad y la gestión de sus riesgos.\n                        "
                               ),
                             ]
                           ),
@@ -1889,7 +1935,7 @@ var render = function () {
                 "v-col",
                 {
                   staticClass:
-                    "\n          col-12 col-md-6\n          pa-5\n          d-flex\n          align-center\n          justify-md-end justify-center\n        ",
+                    "col-12 col-md-6 pa-5 d-flex align-center justify-md-end justify-center",
                 },
                 [
                   _c(
@@ -1928,13 +1974,14 @@ var render = function () {
                           { staticClass: "as-text_extraLarge primary--text" },
                           [_vm._v("¿Qué nos")]
                         ),
+                        _vm._v(" "),
                         _c("br"),
                         _vm._v(" "),
                         _c(
                           "span",
                           {
                             staticClass:
-                              "\n                as-text_extraLarge\n                pl-7\n                font-weight-bold\n                text-uppercase\n                primary--text\n              ",
+                              "as-text_extraLarge pl-7 font-weight-bold text-uppercase primary--text",
                           },
                           [_vm._v("diferencia?")]
                         ),
@@ -1948,8 +1995,10 @@ var render = function () {
               _c("v-col", { staticClass: "col-12 col-md-6 pa-5" }, [
                 _c("ul", [
                   _c("li", { staticClass: "as-li_normal primary--text" }, [
-                    _vm._v("\n            Asesores con más de "),
-                    _c("strong", [_vm._v(" 20 años de experiencia. ")]),
+                    _vm._v(
+                      "\n                        Asesores con más de\n                        "
+                    ),
+                    _c("strong", [_vm._v("20 años de experiencia.")]),
                   ]),
                   _vm._v(" "),
                   _c("li", { staticClass: "as-li_normal primary--text" }, [
@@ -1957,21 +2006,15 @@ var render = function () {
                   ]),
                   _vm._v(" "),
                   _c("li", { staticClass: "as-li_normal primary--text" }, [
-                    _vm._v(
-                      "\n            Metodología ágil y colaborativa.\n          "
-                    ),
+                    _vm._v("Metodología ágil y colaborativa."),
                   ]),
                   _vm._v(" "),
                   _c("li", { staticClass: "as-li_normal primary--text" }, [
-                    _vm._v(
-                      "\n            Conocimiento del mercado.\n          "
-                    ),
+                    _vm._v("Conocimiento del mercado."),
                   ]),
                   _vm._v(" "),
                   _c("li", { staticClass: "as-li_normal primary--text" }, [
-                    _vm._v(
-                      "\n            Enfoque digital y de experiencia al usuario (UX).\n          "
-                    ),
+                    _vm._v("Enfoque digital y de experiencia al usuario (UX)."),
                   ]),
                 ]),
               ]),
@@ -2008,8 +2051,9 @@ var render = function () {
                     { staticClass: "text-uppercase white--text text-center" },
                     [
                       _c("span", { staticClass: "as-text_extraLarge" }, [
-                        _vm._v(" Nuestros"),
+                        _vm._v("Nuestros"),
                       ]),
+                      _vm._v(" "),
                       _c("br"),
                       _vm._v(" "),
                       _c(
@@ -2018,7 +2062,7 @@ var render = function () {
                           staticClass:
                             "as-text_extraLarge pl-16 font-weight-bold",
                         },
-                        [_vm._v("\n            Servicios\n          ")]
+                        [_vm._v("Servicios")]
                       ),
                     ]
                   ),
@@ -2059,7 +2103,109 @@ var render = function () {
                       {
                         key: "caption",
                         fn: function () {
-                          return undefined
+                          return [
+                            _c("flux-caption", {
+                              staticStyle: { position: "absolute", top: "10%" },
+                              scopedSlots: _vm._u([
+                                {
+                                  key: "default",
+                                  fn: function (captionProps) {
+                                    return [
+                                      _c(
+                                        "p",
+                                        {
+                                          staticClass:
+                                            "white--text as-text_extraLarge mb-0 font-weight-bold mx-auto",
+                                          staticStyle: {
+                                            width: "350px",
+                                            "line-height": "1",
+                                          },
+                                        },
+                                        [
+                                          _vm._v(
+                                            _vm._s(captionProps.text.title)
+                                          ),
+                                        ]
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "p",
+                                        {
+                                          staticClass:
+                                            "white--text as-text_normal my-4",
+                                        },
+                                        [
+                                          _vm._v(
+                                            _vm._s(captionProps.text.subtitle)
+                                          ),
+                                        ]
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "ul",
+                                        {
+                                          staticClass:
+                                            "white--text text-start mx-auto",
+                                          staticStyle: { "max-width": "350px" },
+                                        },
+                                        _vm._l(
+                                          captionProps.text.detalles,
+                                          function (element, i) {
+                                            return _c(
+                                              "li",
+                                              {
+                                                key: "data" + i,
+                                                staticClass:
+                                                  "white--text text-subtitle-1",
+                                              },
+                                              [_vm._v(_vm._s(element))]
+                                            )
+                                          }
+                                        ),
+                                        0
+                                      ),
+                                      _vm._v(" "),
+                                      _c("v-hover", {
+                                        scopedSlots: _vm._u(
+                                          [
+                                            {
+                                              key: "default",
+                                              fn: function (ref) {
+                                                var hover = ref.hover
+                                                return [
+                                                  _c(
+                                                    "v-btn",
+                                                    {
+                                                      staticClass:
+                                                        "white--text font-weight-bold text-normal my-10 px-10",
+                                                      class: {
+                                                        "primary--text white":
+                                                          hover,
+                                                      },
+                                                      attrs: {
+                                                        to: captionProps.text
+                                                          .link,
+                                                        outlined: "",
+                                                        rounded: "",
+                                                        color: "white",
+                                                      },
+                                                    },
+                                                    [_vm._v("Ver más")]
+                                                  ),
+                                                ]
+                                              },
+                                            },
+                                          ],
+                                          null,
+                                          true
+                                        ),
+                                      }),
+                                    ]
+                                  },
+                                },
+                              ]),
+                            }),
+                          ]
                         },
                         proxy: true,
                       },
@@ -2104,7 +2250,7 @@ var render = function () {
                 "v-col",
                 {
                   staticClass:
-                    "\n          col-12 col-md-5\n          d-flex\n          align-center\n          justify-md-end justify-center\n        ",
+                    "col-12 col-md-5 d-flex align-center justify-md-end justify-center",
                 },
                 [
                   _c("div", { staticClass: "d-block" }, [
@@ -2113,13 +2259,14 @@ var render = function () {
                       { staticClass: "as-text_extraLarge primary--text" },
                       [_vm._v("Solicita tu")]
                     ),
+                    _vm._v(" "),
                     _c("br"),
                     _vm._v(" "),
                     _c(
                       "span",
                       {
                         staticClass:
-                          "\n              as-text_extraLarge\n              pl-7\n              font-weight-bold\n              text-uppercase\n              primary--text\n            ",
+                          "as-text_extraLarge pl-7 font-weight-bold text-uppercase primary--text",
                       },
                       [_vm._v("asesoría")]
                     ),
@@ -2151,6 +2298,13 @@ var render = function () {
                                   outlined: "",
                                   "hide-details": "auto",
                                 },
+                                model: {
+                                  value: _vm.form.nombres,
+                                  callback: function ($$v) {
+                                    _vm.$set(_vm.form, "nombres", $$v)
+                                  },
+                                  expression: "form.nombres",
+                                },
                               }),
                             ],
                             1
@@ -2168,6 +2322,13 @@ var render = function () {
                                   outlined: "",
                                   "hide-details": "auto",
                                 },
+                                model: {
+                                  value: _vm.form.email,
+                                  callback: function ($$v) {
+                                    _vm.$set(_vm.form, "email", $$v)
+                                  },
+                                  expression: "form.email",
+                                },
                               }),
                             ],
                             1
@@ -2184,6 +2345,13 @@ var render = function () {
                                   label: "Teléfono",
                                   outlined: "",
                                   "hide-details": "auto",
+                                },
+                                model: {
+                                  value: _vm.form.telefono,
+                                  callback: function ($$v) {
+                                    _vm.$set(_vm.form, "telefono", $$v)
+                                  },
+                                  expression: "form.telefono",
                                 },
                               }),
                             ],
@@ -2204,6 +2372,13 @@ var render = function () {
                                   "return-object": "",
                                   "hide-details": "auto",
                                 },
+                                model: {
+                                  value: _vm.servicio,
+                                  callback: function ($$v) {
+                                    _vm.servicio = $$v
+                                  },
+                                  expression: "servicio",
+                                },
                               }),
                             ],
                             1
@@ -2220,6 +2395,13 @@ var render = function () {
                                   height: "100",
                                   label: "Comentarios",
                                   "hide-details": "auto",
+                                },
+                                model: {
+                                  value: _vm.form.comentario,
+                                  callback: function ($$v) {
+                                    _vm.$set(_vm.form, "comentario", $$v)
+                                  },
+                                  expression: "form.comentario",
                                 },
                               }),
                             ],
@@ -2262,7 +2444,17 @@ var render = function () {
                                 "v-btn",
                                 {
                                   staticClass: "text-normal px-10 rounded-0",
-                                  attrs: { color: "primary", "x-large": "" },
+                                  attrs: {
+                                    loading: _vm.loadAsesoria,
+                                    color: "primary",
+                                    "x-large": "",
+                                  },
+                                  on: {
+                                    click: function ($event) {
+                                      $event.preventDefault()
+                                      return _vm.sendRequest()
+                                    },
+                                  },
                                 },
                                 [_c("h4", [_vm._v("Enviar solicitud")])]
                               ),

@@ -19,7 +19,13 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({});
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  data: function data() {
+    return {
+      wame: "https://wa.me/51926302115"
+    };
+  }
+});
 
 /***/ }),
 
@@ -675,6 +681,9 @@ var render = function () {
         "v-btn",
         {
           attrs: {
+            link: "",
+            href: _vm.wame,
+            target: "_blank",
             fab: "",
             dark: "",
             large: "",
@@ -686,7 +695,7 @@ var render = function () {
         },
         [
           _c("v-icon", { attrs: { large: "", dark: "" } }, [
-            _vm._v("mdi-message-text "),
+            _vm._v("mdi-whatsapp "),
           ]),
         ],
         1
