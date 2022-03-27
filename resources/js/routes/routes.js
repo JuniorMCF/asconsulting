@@ -92,14 +92,14 @@ const routes = [
         component: () => import('../pages/auth/Login.vue'),
         name: 'login'
     },
-    {
+    /*{
         path: '/admin/misitio',
         component: () => import('../pages/admin/misitio/Index.vue'),
         meta: {
             requiresAuth: true
         }
 
-    },
+    },*/
     /**blog admin */
     {
         path: '/admin/blog',

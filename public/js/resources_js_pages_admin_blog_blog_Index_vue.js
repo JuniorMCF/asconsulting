@@ -419,7 +419,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         }
       }) //.post("/api/oauth/posts/pub", headers)
       .then(function (res) {
-        console.log(res);
+        //console.log(res);
         _this.posts = res.data;
       })["catch"](function (err) {
         console.log(err.response); //Vue.$toast.error("");

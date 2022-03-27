@@ -224,19 +224,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -251,6 +238,17 @@ __webpack_require__.r(__webpack_exports__);
     this.getPath();
     this.$store.dispatch("app/changeTitlePage", "Nosotros | Mi sitio");
     document.title = this.$store.state.app.title_page;
+    /**for visite */
+
+    this.$store.dispatch("app/openPage", {
+      page: window.location.pathname,
+      link: window.location.host + window.location.pathname
+    });
+  },
+  destroyed: function destroyed() {
+    this.$store.dispatch("app/closePage", {
+      visita_id: this.$store.state.app.visita_id
+    });
   },
   methods: {
     getPath: function getPath() {
@@ -301,7 +299,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.card-grey {\r\n  background-color: #d4d4d4 !important;\r\n  width: 100%;\r\n  height: 418px;\n}\n.card-gray {\r\n  background-color: #ededed !important;\r\n  width: 100%;\r\n  height: 418px;\n}\n.container-mision_visionLogo {\r\n  height: 100px;\r\n  width: 100px;\n}\n.title-letter_space1 {\r\n  letter-spacing: 3px;\n}\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.card-grey {\n    background-color: #d4d4d4 !important;\n    width: 100%;\n    height: 418px;\n}\n.card-gray {\n    background-color: #ededed !important;\n    width: 100%;\n    height: 418px;\n}\n.container-mision_visionLogo {\n    height: 100px;\n    width: 100px;\n}\n.title-letter_space1 {\n    letter-spacing: 3px;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -893,9 +891,7 @@ var render = function () {
       _vm._v(" "),
       _c(
         "v-row",
-        {
-          staticClass: "pa-0 ma-0 content-wrap-0 mx-auto align-center  mb-10 ",
-        },
+        { staticClass: "pa-0 ma-0 content-wrap-0 mx-auto align-center mb-10" },
         [
           _c(
             "v-col",
@@ -909,13 +905,14 @@ var render = function () {
                 },
                 [_vm._v("Acerca de")]
               ),
+              _vm._v(" "),
               _c("br"),
               _vm._v(" "),
               _c(
                 "span",
                 {
                   staticClass:
-                    "\n          pl-6\n          primary--text\n          font-weight-bold\n          text-uppercase\n          as-text_extralarge\n          line-height_1\n          after-right_block\n        ",
+                    "pl-6 primary--text font-weight-bold text-uppercase as-text_extralarge line-height_1 after-right_block",
                 },
                 [_vm._v("nosotros")]
               ),
@@ -931,7 +928,7 @@ var render = function () {
                 { staticClass: "primary--text text-justify as-p_normal ma-0" },
                 [
                   _vm._v(
-                    "\n        Somos una empresa de origen peruano que brinda servicios de\n        consultoría especializada en los diversos sectores empresariales,\n        contribuyendo con nuestros socios estratégicos en su crecimiento\n        económico, rentabilidad y gestión del riesgo. ​\n      "
+                    "\n                Somos una empresa de origen peruano que brinda servicios de\n                consultoría especializada en los diversos sectores empresariales,\n                contribuyendo con nuestros socios estratégicos en su crecimiento\n                económico, rentabilidad y gestión del riesgo. ​\n            "
                   ),
                 ]
               ),
@@ -941,11 +938,11 @@ var render = function () {
                 { staticClass: "primary--text text-justify as-p_normal ma-0" },
                 [
                   _vm._v(
-                    "\n        A través de nuestras tres líneas de servicio integradas - tecnología,\n        finanzas y procesos – y\n        "
+                    "\n                A través de nuestras tres líneas de servicio integradas - tecnología,\n                finanzas y procesos – y\n                "
                   ),
-                  _c("strong", [_vm._v(" nuestra experiencia en el sector ")]),
+                  _c("strong", [_vm._v("nuestra experiencia en el sector")]),
                   _vm._v(
-                    ", ofrecemos\n        servicios personalizados y ágiles acordes con los cambios del mercado\n        y las nuevas preferencias de los consumidores.\n      "
+                    ", ofrecemos\n                servicios personalizados y ágiles acordes con los cambios del mercado\n                y las nuevas preferencias de los consumidores.\n            "
                   ),
                 ]
               ),
@@ -957,7 +954,7 @@ var render = function () {
       _vm._v(" "),
       _c(
         "v-row",
-        { staticClass: "pa-0 ma-0 content-wrap-0 mx-auto align-center " },
+        { staticClass: "pa-0 ma-0 content-wrap-0 mx-auto align-center" },
         [
           _c("v-card", {
             staticClass: "col-12 primary pa-2 rounded-0 elevation-1",
@@ -1019,7 +1016,7 @@ var render = function () {
                         },
                         [
                           _vm._v(
-                            "\n              Ayudamos a cumplir los objetivos de nuestros clientes como sus\n              socios estratégicos.\n            "
+                            "\n                            Ayudamos a cumplir los objetivos de nuestros clientes como sus\n                            socios estratégicos.\n                        "
                           ),
                         ]
                       ),
@@ -1081,7 +1078,7 @@ var render = function () {
                         },
                         [
                           _vm._v(
-                            "\n              Ser la empresa consultora más reconocida de Latinoamérica, por\n              el éxito empresarial de sus clientes, el profesionalismo de sus\n              colaboradores y el enfoque innovador y eficiente de sus\n              servicios.\n            "
+                            "\n                            Ser la empresa consultora más reconocida de Latinoamérica, por\n                            el éxito empresarial de sus clientes, el profesionalismo de sus\n                            colaboradores y el enfoque innovador y eficiente de sus\n                            servicios.\n                        "
                           ),
                         ]
                       ),
@@ -1101,7 +1098,7 @@ var render = function () {
         "v-row",
         {
           staticClass:
-            "pa-0 ma-0 content-wrap-0 mx-auto align-center mb-10 pb-16  ",
+            "pa-0 ma-0 content-wrap-0 mx-auto align-center mb-10 pb-16",
         },
         [
           _c("v-card", {

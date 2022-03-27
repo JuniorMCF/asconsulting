@@ -89,10 +89,10 @@ __webpack_require__.r(__webpack_exports__);
           if (res.status == 200) {
             Vue.$toast.success("Bienvenido!");
 
-            _this.$store.dispatch("app/setPath", "/admin/misitio");
+            _this.$store.dispatch("app/setPath", "/admin/blog");
 
             _this.$router.push({
-              path: "/admin/misitio"
+              path: "/admin/blog"
             });
           } else {
             Vue.$toast.error("Credenciales inválidas");

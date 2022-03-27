@@ -241,14 +241,12 @@
                                         v-if="!post.descripcion"
                                         class="ql-editor pa-0"
                                         v-html="post.contenido"
-
                                     ></div>
                                     <div v-else class="ql-editor pt-0 px-0">
                                         <p class="ql-align-justify pa-0">
                                             <span
                                                 class="pa-0 primary--text ql-editor ql-font-Raleway ql-size-large"
                                                 v-html="post.descripcion"
-
                                             ></span>
                                         </p>
                                     </div>
@@ -271,6 +269,7 @@
                                     </span>
                                     <v-btn
                                         v-on:click.prevent="like(post)"
+
                                         dark
                                         icon
                                         text
@@ -440,14 +439,12 @@
                                         v-if="!post.descripcion"
                                         class="ql-editor pa-0"
                                         v-html="post.contenido"
-
                                     ></div>
                                     <div v-else class="ql-editor pt-0 px-0">
                                         <p class="ql-align-justify pa-0">
                                             <span
                                                 class="pa-0 primary--text ql-editor ql-font-Raleway ql-size-large"
                                                 v-html="post.descripcion"
-
                                             ></span>
                                         </p>
                                     </div>
@@ -522,6 +519,17 @@ export default {
     mounted() {
         this.getPath();
         this.getData();
+        /**for visite */
+        this.$store.dispatch("app/openPage", {
+  page: window.location.pathname,
+            link: window.location.host + window.location.pathname
+        })
+
+    },
+    destroyed() {
+        this.$store.dispatch("app/closePage", {
+            visita_id: this.$store.state.app.visita_id
+        })
     },
     methods: {
         getPath() {

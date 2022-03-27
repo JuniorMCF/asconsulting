@@ -160,14 +160,17 @@ class PostsController extends Controller
         $nombre_sin_espacios =  str_replace(' ', '-', $nombre_trim);
         $nombre_lowecase = strtolower($nombre_sin_espacios . '-' . str_replace(' ', '-', $request->name_district));
 
-
+        $content = strip_tags( $request->contenido );
+	    $word_count = str_word_count( $content );
+        $tiempo_estimado = ceil($word_count / 250 );
 
         Post::find($request->id)->update($request->except(["file_upload", "foto", 'pdf_file', 'file']));
 
         Post::find($request->id)->update([
             "route" => $nombre_lowecase,
             "foto" => $url_foto,
-            'file' => $url_pdf
+            'file' => $url_pdf,
+            'lectura'=>$tiempo_estimado
         ]);
 
 

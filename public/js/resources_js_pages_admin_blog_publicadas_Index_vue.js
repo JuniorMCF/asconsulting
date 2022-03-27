@@ -510,7 +510,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         }
       }) //.post("/api/oauth/posts/pub", headers)
       .then(function (res) {
-        console.log(res);
+        //console.log(res);
         _this.posts = res.data;
       })["catch"](function (err) {
         console.log(err.response); //Vue.$toast.error("");
@@ -583,7 +583,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         }
       }) //.post("/api/oauth/posts/pub", headers)
       .then(function (res) {
-        console.log(res);
+        //console.log(res);
         var post_id = res.data;
 
         _this3.$router.push({
@@ -611,7 +611,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
               Authorization: "Bearer " + _this4.$store.state.auth.token
             }
           }).then(function (res) {
-            console.log(res);
+            //console.log(res)
             _this4.selected = [];
 
             _this4.getData();

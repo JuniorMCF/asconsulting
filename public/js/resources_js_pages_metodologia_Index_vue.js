@@ -249,30 +249,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -322,6 +298,17 @@ __webpack_require__.r(__webpack_exports__);
   },
   mounted: function mounted() {
     this.getPath();
+    /**for visite */
+
+    this.$store.dispatch("app/openPage", {
+      page: window.location.pathname,
+      link: window.location.host + window.location.pathname
+    });
+  },
+  destroyed: function destroyed() {
+    this.$store.dispatch("app/closePage", {
+      visita_id: this.$store.state.app.visita_id
+    });
   },
   methods: {
     getPath: function getPath() {
@@ -372,7 +359,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.container-map[data-v-842aedf0] {\r\n  height: 350px;\n}\n.steps-container[data-v-842aedf0] {\r\n  background-color: #ededed !important;\n}\n.theme--light.v-timeline[data-v-842aedf0]:before {\r\n  background: #000068;\r\n  padding-top: 10px;\n}\n.card-title-fases[data-v-842aedf0] {\r\n  position: relative;\r\n  top: 10px;\r\n  left: 10px;\n}\r\n\r\n/*fases*/\n.fase-1[data-v-842aedf0] {\r\n  position: absolute;\r\n  top: 200px;\r\n  left: 35px;\n}\n.fase-1 h5[data-v-842aedf0] {\r\n  text-align: center;\r\n  width: 140px;\n}\n.fase-1 p[data-v-842aedf0] {\r\n  max-width: 140px;\r\n  line-height: 1;\r\n  text-align: center;\n}\n.fase-2[data-v-842aedf0] {\r\n  position: absolute;\r\n  top: 315px;\r\n  left: 285px;\n}\n.fase-2 h5[data-v-842aedf0] {\r\n  text-align: center;\r\n  width: 140px;\n}\n.fase-2 p[data-v-842aedf0] {\r\n  max-width: 140px;\r\n  line-height: 1;\r\n  text-align: center;\n}\n.fase-3[data-v-842aedf0] {\r\n  position: absolute;\r\n  top: 100px;\r\n  left: 430px;\n}\n.fase-3 h5[data-v-842aedf0] {\r\n  text-align: center;\r\n  width: 140px;\n}\n.fase-3 p[data-v-842aedf0] {\r\n  max-width: 140px;\r\n  line-height: 1;\r\n  text-align: center;\n}\n.fase-4[data-v-842aedf0] {\r\n  position: absolute;\r\n  top: 315px;\r\n  right: 265px;\n}\n.fase-4 h5[data-v-842aedf0] {\r\n  text-align: center;\r\n  width: 140px;\n}\n.fase-4 p[data-v-842aedf0] {\r\n  max-width: 140px;\r\n  line-height: 1;\r\n  text-align: center;\n}\n.fase-5[data-v-842aedf0] {\r\n  position: absolute;\r\n  top: 200px;\r\n  right: 20px;\n}\n.fase-5 h5[data-v-842aedf0] {\r\n  text-align: center;\r\n  width: 140px;\n}\n.fase-5 p[data-v-842aedf0] {\r\n  max-width: 140px;\r\n  line-height: 1;\r\n  text-align: center;\n}\n.fases[data-v-842aedf0] {\r\n  display: none;\n}\n@media screen and (max-width: 992px) {\n.fase-1[data-v-842aedf0] {\r\n    position: absolute;\r\n    top: 28%;\r\n    left: 2%;\r\n    width: 15%;\n}\n.fase-1 h5[data-v-842aedf0] {\r\n    text-align: center;\r\n    font-size: 50% !important;\r\n    width: 100%;\n}\n.fase-1 p[data-v-842aedf0] {\r\n    display: none;\n}\n.fase-2[data-v-842aedf0] {\r\n    position: absolute;\r\n    top: 51%;\r\n    left: 28%;\r\n    width: 15%;\n}\n.fase-2 h5[data-v-842aedf0] {\r\n    text-align: center;\r\n    font-size: 50% !important;\r\n    width: 100%;\n}\n.fase-2 p[data-v-842aedf0] {\r\n    display: none;\n}\n.fase-3[data-v-842aedf0] {\r\n    position: absolute;\r\n    top: 20%;\r\n    left: 44%;\r\n    width: 15%;\n}\n.fase-3 h5[data-v-842aedf0] {\r\n    text-align: center;\r\n    width: 100%;\r\n    font-size: 50% !important;\n}\n.fase-3 p[data-v-842aedf0] {\r\n    display: none;\n}\n.fase-4[data-v-842aedf0] {\r\n    position: absolute;\r\n    top: 51%;\r\n    right: 26%;\r\n    width: 15%;\n}\n.fase-4 h5[data-v-842aedf0] {\r\n    text-align: center;\r\n    width: 100%;\r\n    font-size: 50% !important;\n}\n.fase-4 p[data-v-842aedf0] {\r\n    display: none;\n}\n.fase-5[data-v-842aedf0] {\r\n    position: absolute;\r\n    top: 28%;\r\n    right: 1%;\r\n    width: 15%;\n}\n.fase-5 h5[data-v-842aedf0] {\r\n    max-width: 100%;\r\n    text-align: center;\r\n    font-size: 50% !important;\n}\n.fase-5 p[data-v-842aedf0] {\r\n    display: none;\n}\n.fases[data-v-842aedf0] {\r\n    display: block;\n}\n.fase-title[data-v-842aedf0]{\r\n    font-size: 50% !important;\r\n    line-height:1;\n}\n.fase-subtitle[data-v-842aedf0]{\r\n    font-size: 50% !important;\r\n     line-height:0.7;\n}\n}\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.container-map[data-v-842aedf0] {\n    height: 350px;\n}\n.steps-container[data-v-842aedf0] {\n    background-color: #ededed !important;\n}\n.theme--light.v-timeline[data-v-842aedf0]:before {\n    background: #000068;\n    padding-top: 10px;\n}\n.card-title-fases[data-v-842aedf0] {\n    position: relative;\n    top: 10px;\n    left: 10px;\n}\n\n/*fases*/\n.fase-1[data-v-842aedf0] {\n    position: absolute;\n    top: 200px;\n    left: 35px;\n}\n.fase-1 h5[data-v-842aedf0] {\n    text-align: center;\n    width: 140px;\n}\n.fase-1 p[data-v-842aedf0] {\n    max-width: 140px;\n    line-height: 1;\n    text-align: center;\n}\n.fase-2[data-v-842aedf0] {\n    position: absolute;\n    top: 315px;\n    left: 285px;\n}\n.fase-2 h5[data-v-842aedf0] {\n    text-align: center;\n    width: 140px;\n}\n.fase-2 p[data-v-842aedf0] {\n    max-width: 140px;\n    line-height: 1;\n    text-align: center;\n}\n.fase-3[data-v-842aedf0] {\n    position: absolute;\n    top: 100px;\n    left: 430px;\n}\n.fase-3 h5[data-v-842aedf0] {\n    text-align: center;\n    width: 140px;\n}\n.fase-3 p[data-v-842aedf0] {\n    max-width: 140px;\n    line-height: 1;\n    text-align: center;\n}\n.fase-4[data-v-842aedf0] {\n    position: absolute;\n    top: 315px;\n    right: 265px;\n}\n.fase-4 h5[data-v-842aedf0] {\n    text-align: center;\n    width: 140px;\n}\n.fase-4 p[data-v-842aedf0] {\n    max-width: 140px;\n    line-height: 1;\n    text-align: center;\n}\n.fase-5[data-v-842aedf0] {\n    position: absolute;\n    top: 200px;\n    right: 20px;\n}\n.fase-5 h5[data-v-842aedf0] {\n    text-align: center;\n    width: 140px;\n}\n.fase-5 p[data-v-842aedf0] {\n    max-width: 140px;\n    line-height: 1;\n    text-align: center;\n}\n.fases[data-v-842aedf0] {\n    display: none;\n}\n@media screen and (max-width: 992px) {\n.fase-1[data-v-842aedf0] {\n        position: absolute;\n        top: 28%;\n        left: 2%;\n        width: 15%;\n}\n.fase-1 h5[data-v-842aedf0] {\n        text-align: center;\n        font-size: 50% !important;\n        width: 100%;\n}\n.fase-1 p[data-v-842aedf0] {\n        display: none;\n}\n.fase-2[data-v-842aedf0] {\n        position: absolute;\n        top: 51%;\n        left: 28%;\n        width: 15%;\n}\n.fase-2 h5[data-v-842aedf0] {\n        text-align: center;\n        font-size: 50% !important;\n        width: 100%;\n}\n.fase-2 p[data-v-842aedf0] {\n        display: none;\n}\n.fase-3[data-v-842aedf0] {\n        position: absolute;\n        top: 20%;\n        left: 44%;\n        width: 15%;\n}\n.fase-3 h5[data-v-842aedf0] {\n        text-align: center;\n        width: 100%;\n        font-size: 50% !important;\n}\n.fase-3 p[data-v-842aedf0] {\n        display: none;\n}\n.fase-4[data-v-842aedf0] {\n        position: absolute;\n        top: 51%;\n        right: 26%;\n        width: 15%;\n}\n.fase-4 h5[data-v-842aedf0] {\n        text-align: center;\n        width: 100%;\n        font-size: 50% !important;\n}\n.fase-4 p[data-v-842aedf0] {\n        display: none;\n}\n.fase-5[data-v-842aedf0] {\n        position: absolute;\n        top: 28%;\n        right: 1%;\n        width: 15%;\n}\n.fase-5 h5[data-v-842aedf0] {\n        max-width: 100%;\n        text-align: center;\n        font-size: 50% !important;\n}\n.fase-5 p[data-v-842aedf0] {\n        display: none;\n}\n.fases[data-v-842aedf0] {\n        display: block;\n}\n.fase-title[data-v-842aedf0] {\n        font-size: 50% !important;\n        line-height: 1;\n}\n.fase-subtitle[data-v-842aedf0] {\n        font-size: 50% !important;\n        line-height: 0.7;\n}\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -983,13 +970,14 @@ var render = function () {
                 },
                 [_vm._v("Nuestra")]
               ),
+              _vm._v(" "),
               _c("br"),
               _vm._v(" "),
               _c(
                 "span",
                 {
                   staticClass:
-                    "\n          pl-6\n          primary--text\n          font-weight-bold\n          text-uppercase\n          as-text_extralarge\n          line-height_1\n          after-center_block\n        ",
+                    "pl-6 primary--text font-weight-bold text-uppercase as-text_extralarge line-height_1 after-center_block",
                 },
                 [_vm._v("Metodología")]
               ),
@@ -1015,7 +1003,7 @@ var render = function () {
                 },
                 [
                   _vm._v(
-                    "\n        Promovemos el trabajo colaborativo, que considera las necesidades\n        cambiantes de nuestros clientes y del mercado.​\n      "
+                    "\n                Promovemos el trabajo colaborativo, que considera las necesidades\n                cambiantes de nuestros clientes y del mercado.​\n            "
                   ),
                 ]
               ),
@@ -1030,7 +1018,7 @@ var render = function () {
                 },
                 [
                   _vm._v(
-                    "\n        Nuestras tres líneas de servicio integradas - tecnología, finanzas y\n        procesos - utilizan la siguiente metodología:\n      "
+                    "\n                Nuestras tres líneas de servicio integradas - tecnología, finanzas y\n                procesos - utilizan la siguiente metodología:\n            "
                   ),
                 ]
               ),
@@ -1059,9 +1047,9 @@ var render = function () {
                     "p",
                     {
                       staticClass:
-                        "\n            as-text_underline-init-large\n            line-height_1\n            primary--text\n            my-0\n            card-title-fases\n          ",
+                        "as-text_underline-init-large line-height_1 primary--text my-0 card-title-fases",
                     },
-                    [_vm._v("\n          FASES\n        ")]
+                    [_vm._v("FASES")]
                   ),
                   _vm._v(" "),
                   _c("v-img", { attrs: { src: "/app/steps.png" } }),
@@ -1074,9 +1062,7 @@ var render = function () {
                     ),
                     _vm._v(" "),
                     _c("p", { staticClass: "caption alternative--text" }, [
-                      _vm._v(
-                        "\n            Alcance, estructura y objetivos del servicio.\n          "
-                      ),
+                      _vm._v("Alcance, estructura y objetivos del servicio."),
                     ]),
                   ]),
                   _vm._v(" "),
@@ -1089,7 +1075,7 @@ var render = function () {
                     _vm._v(" "),
                     _c("p", { staticClass: "caption alternative--text" }, [
                       _vm._v(
-                        "\n            La información actual y relevante de la empresa para el desarrollo\n            del servicio (financiera, procesos y tecnología).\n          "
+                        "\n                        La información actual y relevante de la empresa para el desarrollo\n                        del servicio (financiera, procesos y tecnología).\n                    "
                       ),
                     ]),
                   ]),
@@ -1103,7 +1089,7 @@ var render = function () {
                     _vm._v(" "),
                     _c("p", { staticClass: "caption alternative--text" }, [
                       _vm._v(
-                        "\n            El estado actual de la empresa comparándola con las mejores\n            prácticas y nuestros modelos\n          "
+                        "\n                        El estado actual de la empresa comparándola con las mejores\n                        prácticas y nuestros modelos\n                    "
                       ),
                     ]),
                   ]),
@@ -1116,9 +1102,7 @@ var render = function () {
                     ),
                     _vm._v(" "),
                     _c("p", { staticClass: "caption alternative--text" }, [
-                      _vm._v(
-                        "\n            La propuesta de valor integral.\n          "
-                      ),
+                      _vm._v("La propuesta de valor integral."),
                     ]),
                   ]),
                   _vm._v(" "),
@@ -1130,9 +1114,7 @@ var render = function () {
                     ),
                     _vm._v(" "),
                     _c("p", { staticClass: "caption alternative--text" }, [
-                      _vm._v(
-                        "\n            Propuesta de valor integral.\n          "
-                      ),
+                      _vm._v("Propuesta de valor integral."),
                     ]),
                   ]),
                   _vm._v(" "),
@@ -1155,7 +1137,7 @@ var render = function () {
                         },
                         [
                           _vm._v(
-                            "\n              Alcance, estructura y objetivos del servicio.\n            "
+                            "Alcance, estructura y objetivos del servicio."
                           ),
                         ]
                       ),
@@ -1179,7 +1161,7 @@ var render = function () {
                         },
                         [
                           _vm._v(
-                            "\n              La información actual y relevante de la empresa para el\n              desarrollo del servicio (financiera, procesos y tecnología).\n            "
+                            "\n                            La información actual y relevante de la empresa para el\n                            desarrollo del servicio (financiera, procesos y tecnología).\n                        "
                           ),
                         ]
                       ),
@@ -1203,7 +1185,7 @@ var render = function () {
                         },
                         [
                           _vm._v(
-                            "\n              El estado actual de la empresa comparándola con las mejores\n              prácticas y nuestros modelos\n            "
+                            "\n                            El estado actual de la empresa comparándola con las mejores\n                            prácticas y nuestros modelos\n                        "
                           ),
                         ]
                       ),
@@ -1225,11 +1207,7 @@ var render = function () {
                           staticClass:
                             "caption alternative--text fase-subtitle",
                         },
-                        [
-                          _vm._v(
-                            "\n              La propuesta de valor integral.\n            "
-                          ),
-                        ]
+                        [_vm._v("La propuesta de valor integral.")]
                       ),
                     ]),
                     _vm._v(" "),
@@ -1249,11 +1227,7 @@ var render = function () {
                           staticClass:
                             "caption alternative--text fase-subtitle",
                         },
-                        [
-                          _vm._v(
-                            "\n              Propuesta de valor integral.\n            "
-                          ),
-                        ]
+                        [_vm._v("Propuesta de valor integral.")]
                       ),
                     ]),
                   ]),

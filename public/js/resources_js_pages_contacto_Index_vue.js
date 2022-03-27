@@ -245,20 +245,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 
 
@@ -311,6 +297,17 @@ __webpack_require__.r(__webpack_exports__);
   },
   mounted: function mounted() {
     this.getPath();
+    /**for visite */
+
+    this.$store.dispatch("app/openPage", {
+      page: window.location.pathname,
+      link: window.location.host + window.location.pathname
+    });
+  },
+  destroyed: function destroyed() {
+    this.$store.dispatch("app/closePage", {
+      visita_id: this.$store.state.app.visita_id
+    });
   },
   methods: {
     getPath: function getPath() {
@@ -585,7 +582,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.container-map {\r\n  height: 350px;\n}\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.container-map {\n    height: 350px;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -1207,13 +1204,14 @@ var render = function () {
                 },
                 [_vm._v("Ponte en")]
               ),
+              _vm._v(" "),
               _c("br"),
               _vm._v(" "),
               _c(
                 "span",
                 {
                   staticClass:
-                    "\n          pl-6\n          primary--text\n          font-weight-bold\n          text-uppercase\n          as-text_extralarge\n          line-height_1\n          after-right_block\n        ",
+                    "pl-6 primary--text font-weight-bold text-uppercase as-text_extralarge line-height_1 after-right_block",
                 },
                 [_vm._v("contacto")]
               ),
@@ -1409,9 +1407,9 @@ var render = function () {
                                 [_vm._v("mdi-map-marker")]
                               ),
                               _vm._v(
-                                "\n              " +
+                                "\n                            " +
                                   _vm._s(_vm.address) +
-                                  "\n            "
+                                  "\n                        "
                               ),
                             ],
                             1

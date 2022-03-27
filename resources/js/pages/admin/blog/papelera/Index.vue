@@ -186,7 +186,7 @@ export default {
             })
                 //.post("/api/oauth/posts/pub", headers)
                 .then((res) => {
-                    console.log(res);
+                    //console.log(res);
                     this.posts = res.data;
                 })
                 .catch((err) => {
@@ -252,7 +252,7 @@ export default {
             })
                 //.post("/api/oauth/posts/pub", headers)
                 .then((res) => {
-                    console.log(res);
+                    //console.log(res);
                     const post_id = res.data;
                     this.$router.push({ name: "edit-blog", params: { id: post_id } });
                 }).catch((err) => {
@@ -273,7 +273,7 @@ export default {
                     })
 
                         .then((res) => {
-                            console.log(res)
+                            //console.log(res)
                             this.selected = []
                             this.getData()
                         }).catch((err) => {

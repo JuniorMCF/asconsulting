@@ -377,7 +377,9 @@ export default {
         this.onResize();
         window.addEventListener("resize", this.onResize);
     },
-    mounted() { },
+    mounted() { 
+        
+    },
     methods: {
         onResize() {
             if (window.innerWidth > 960) {

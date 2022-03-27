@@ -75,7 +75,7 @@ export default {
                 data: data,
                 headers: { Authorization: "Bearer " + this.$store.state.auth.token },
             }).then(res => {
-                console.log(res)
+                //console.log(res)
                 this.categoria = res.data
             }).catch(err => {
                 console.log(err)

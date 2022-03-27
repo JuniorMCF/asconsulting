@@ -26,6 +26,7 @@ class PublicPostController extends Controller
             ->with("comments")
             ->with("categorias")
             ->with("favoritos")
+            ->where("posts.estado","=","publicado")
             ->where("route", $request->route)
             ->select("posts.*", "users.name", "users.last_name", "users.foto as user_foto")
 
@@ -109,6 +110,7 @@ class PublicPostController extends Controller
             ->with("comments")
             ->with("favoritos")
             ->with("categorias")
+            ->where("posts.estado","=","publicado")
             ->select("posts.*", "users.name", "users.last_name", "users.foto as user_foto")
             ->orderBy("posts.fecha_publicacion", "desc")
             ->get();
@@ -128,6 +130,7 @@ class PublicPostController extends Controller
             ->with("comments")
             ->with("favoritos")
             ->with("categorias")
+            ->where("posts.estado","=","publicado")
             ->select("posts.*", "users.name", "users.last_name", "users.foto as user_foto")
             ->orderBy("posts.fecha_publicacion", "desc")
             ->get();
@@ -167,18 +170,19 @@ class PublicPostController extends Controller
             ->with("favoritos")
             ->with("categorias")
             ->with("tags")
+            ->where("posts.estado","=","publicado")
             ->select("posts.*", "users.name", "users.last_name", "users.foto as user_foto")
             ->orderBy("posts.fecha_publicacion", "desc")
             ->get();
 
 
 
-        \Log::debug($tag);
+        //\Log::debug($tag);
 
         $new_filter = array();
 
         foreach ($posts as $post) {
-            \Log::debug( $post->tags);
+            //\Log::debug( $post->tags);
             $item_filter = $post->tags->filter(function ($item) use ($tag) {
                 if ($item->tag == '#'.$tag) {
                     return $item;
@@ -206,7 +210,7 @@ class PublicPostController extends Controller
             ->with("visualizaciones")
             ->with("comments")
             ->with("categorias")
-
+            ->where("posts.estado","=","publicado")
             ->select("posts.*", "users.name", "users.last_name", "users.foto as user_foto")
             ->get();
 

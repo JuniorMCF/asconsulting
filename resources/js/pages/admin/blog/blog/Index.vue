@@ -178,7 +178,7 @@ export default {
             })
                 //.post("/api/oauth/posts/pub", headers)
                 .then((res) => {
-                    console.log(res);
+                    //console.log(res);
                     this.posts = res.data;
                 })
                 .catch((err) => {

@@ -320,7 +320,7 @@ __webpack_require__.r(__webpack_exports__);
           Authorization: "Bearer " + this.$store.state.auth.token
         }
       }).then(function (res) {
-        console.log(res);
+        //console.log(res);
         _this2.categorias = res.data;
       })["catch"](function (err) {
         console.log(err);

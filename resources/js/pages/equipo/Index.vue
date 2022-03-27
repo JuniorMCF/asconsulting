@@ -220,6 +220,18 @@ export default {
         this.onResize();
         window.addEventListener("resize", this.onResize);
         this.getPath();
+
+        /**for visite */
+        this.$store.dispatch("app/openPage", {
+            page: window.location.pathname,
+            link: window.location.host + window.location.pathname
+        })
+
+    },
+    destroyed() {
+        this.$store.dispatch("app/closePage", {
+            visita_id: this.$store.state.app.visita_id
+        })
     },
     methods: {
         getPath() {

@@ -348,6 +348,12 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
 
 
 
@@ -540,6 +546,17 @@ __webpack_require__.r(__webpack_exports__);
   },
   mounted: function mounted() {
     this.getPath();
+    /**for visite */
+
+    this.$store.dispatch("app/openPage", {
+      page: window.location.pathname,
+      link: window.location.host + window.location.pathname
+    });
+  },
+  destroyed: function destroyed() {
+    this.$store.dispatch("app/closePage", {
+      visita_id: this.$store.state.app.visita_id
+    });
   },
   methods: {
     getPath: function getPath() {
@@ -598,7 +615,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.overlap-video[data-v-ef265716] {\r\n  position: absolute;\r\n  z-index: 1;\r\n  height: 326px;\r\n  width: 100%;\r\n  background-color: rgba(0, 0, 102, 0.38) !important;\n}\n.container-card[data-v-ef265716]{\r\n    background-color: #ededed !important;\n}\n.container-video[data-v-ef265716] {\r\n  max-height: 326px;\r\n  overflow: hidden;\n}\n#myVideo[data-v-ef265716] {\r\n  position: relative;\r\n  width: 100%;\r\n  transform: translateY(-25%);\n}\n.size_img[data-v-ef265716] {\r\n  height: 89px;\r\n  z-index: 2;\r\n  width: 89px;\n}\n.content-img[data-v-ef265716] {\r\n  position: absolute;\r\n  width: 100%;\r\n  z-index: 2;\r\n  top: 2.8rem;\n}\n.span_title[data-v-ef265716] {\r\n  padding: 10px 0px 0px 0px;\r\n  margin: 0px !important;\r\n  font-size: 3rem;\n}\n@media screen and (max-width: 960px) {\n.overlap-video[data-v-ef265716] {\r\n    position: absolute;\r\n    z-index: 1;\r\n    height: 135px;\r\n    width: 100%;\r\n    background-color: rgba(0, 0, 102, 0.38) !important;\n}\n.container-video[data-v-ef265716] {\r\n    max-height: 135px;\r\n    overflow: hidden;\n}\n#myVideo[data-v-ef265716] {\r\n    position: relative;\r\n    width: 100%;\r\n    transform: translateY(-20%);\n}\n.size_img[data-v-ef265716] {\r\n    height: 60px;\r\n    z-index: 2;\r\n    width: 60px;\n}\n.content-img[data-v-ef265716] {\r\n    position: absolute;\r\n    width: 100%;\r\n    z-index: 2;\r\n    top: 1.2rem !important;\n}\n.span_title[data-v-ef265716] {\r\n    font-size: 1.4rem;\r\n    padding: 5px 0px 0px 0px;\r\n    margin: 0px !important;\n}\n}\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.overlap-video[data-v-ef265716] {\n    position: absolute;\n    z-index: 1;\n    height: 326px;\n    width: 100%;\n    background-color: rgba(0, 0, 102, 0.38) !important;\n}\n.container-card[data-v-ef265716] {\n    background-color: #ededed !important;\n}\n.container-video[data-v-ef265716] {\n    max-height: 326px;\n    overflow: hidden;\n}\n#myVideo[data-v-ef265716] {\n    position: relative;\n    width: 100%;\n    transform: translateY(-25%);\n}\n.size_img[data-v-ef265716] {\n    height: 89px;\n    z-index: 2;\n    width: 89px;\n}\n.content-img[data-v-ef265716] {\n    position: absolute;\n    width: 100%;\n    z-index: 2;\n    top: 2.8rem;\n}\n.span_title[data-v-ef265716] {\n    padding: 10px 0px 0px 0px;\n    margin: 0px !important;\n    font-size: 3rem;\n}\n@media screen and (max-width: 960px) {\n.overlap-video[data-v-ef265716] {\n        position: absolute;\n        z-index: 1;\n        height: 135px;\n        width: 100%;\n        background-color: rgba(0, 0, 102, 0.38) !important;\n}\n.container-video[data-v-ef265716] {\n        max-height: 135px;\n        overflow: hidden;\n}\n#myVideo[data-v-ef265716] {\n        position: relative;\n        width: 100%;\n        transform: translateY(-20%);\n}\n.size_img[data-v-ef265716] {\n        height: 60px;\n        z-index: 2;\n        width: 60px;\n}\n.content-img[data-v-ef265716] {\n        position: absolute;\n        width: 100%;\n        z-index: 2;\n        top: 1.2rem !important;\n}\n.span_title[data-v-ef265716] {\n        font-size: 1.4rem;\n        padding: 5px 0px 0px 0px;\n        margin: 0px !important;\n}\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 

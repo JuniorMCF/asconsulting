@@ -23,7 +23,11 @@
                 ></v-text-field>
             </v-col>-->
         </v-row>
-        <v-row class="pa-0 ma-0 content-wrap-article mx-auto elevation-0" v-if="loadingFilterPosts" style="min-height:calc(100vh - 250px);">
+        <v-row
+            class="pa-0 ma-0 content-wrap-article mx-auto elevation-0"
+            v-if="loadingFilterPosts"
+            style="min-height:calc(100vh - 250px);"
+        >
             <v-col class="col-12 ma-0 pa-4 px-md-16 d-flex flex-wrap align-center">
                 <v-card-text class="content-wrap-0 mx-auto">
                     <div style="height: 50px">
@@ -274,7 +278,10 @@
         <!--posts vistos ultimamente-->
 
         <!--comentarios-->
-        <v-row class="pa-0 ma-0 content-wrap-article mx-auto elevation-0"  v-if="!loadingFilterPosts">
+        <v-row
+            class="pa-0 ma-0 content-wrap-article mx-auto elevation-0"
+            v-if="!loadingFilterPosts"
+        >
             <v-col class="col-12 mt-3 pa-4 px-md-16">
                 <v-card-text class="pa-0 align-center d-flex flex-wrap">
                     <span class="primary--text title">Comentarios</span>
@@ -370,7 +377,10 @@
                 </div>
             </v-col>
         </v-row>
-        <v-row class="pa-0 ma-0 content-wrap-article mx-auto elevation-0"  v-if="!loadingFilterPosts">
+        <v-row
+            class="pa-0 ma-0 content-wrap-article mx-auto elevation-0"
+            v-if="!loadingFilterPosts"
+        >
             <v-col
                 class="col-12 d-flex flex-wrap pa-4 px-md-16"
                 v-for="comment in post.comments"
@@ -470,7 +480,7 @@ import ConfirmDialog from "../../components/utils/ConfirmDialog.vue";
 import SharedDialog from "../../components/utils/SharedDialog.vue"
 import LottieAnimation from "lottie-web-vue";
 export default {
-    components: { ChatComponent, FooterGlobal, VEmojiPicker, ConfirmDialog, SharedDialog,LottieAnimation },
+    components: { ChatComponent, FooterGlobal, VEmojiPicker, ConfirmDialog, SharedDialog, LottieAnimation },
     data: () => ({
         post: {
             name: "",
@@ -499,6 +509,19 @@ export default {
     mounted() {
         this.getPath();
         this.getData();
+
+
+        /**for visite */
+        this.$store.dispatch("app/openPage", {
+             page: window.location.pathname,
+            link: window.location.host + window.location.pathname
+        })
+
+    },
+    destroyed() {
+        this.$store.dispatch("app/closePage", {
+            visita_id: this.$store.state.app.visita_id
+        })
     },
     methods: {
         getPath() {
@@ -593,7 +616,7 @@ export default {
                     /**agregamos la categorias todos al inicio */
                 })
                 .catch((err) => {
-                     this.loadingFilterPosts = false
+                    this.loadingFilterPosts = false
                     console.log(err);
                 });
         },
@@ -653,11 +676,11 @@ export default {
                 this.$router.push({ name: "show-blog-categoria", params: { categoria: categoria.nombre.toLowerCase() } })
             }
         },
-        goToCategorys(categoria){
+        goToCategorys(categoria) {
             this.$router.push({
-                name:"show-blog-categoria",
-                params:{
-                    categoria:categoria.nombre_categoria.toLowerCase()
+                name: "show-blog-categoria",
+                params: {
+                    categoria: categoria.nombre_categoria.toLowerCase()
                 }
             })
         }

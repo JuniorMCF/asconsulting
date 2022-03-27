@@ -269,51 +269,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 
 
@@ -463,6 +418,17 @@ __webpack_require__.r(__webpack_exports__);
     this.onResize();
     window.addEventListener("resize", this.onResize);
     this.getPath();
+    /**for visite */
+
+    this.$store.dispatch("app/openPage", {
+      page: window.location.pathname,
+      link: window.location.host + window.location.pathname
+    });
+  },
+  destroyed: function destroyed() {
+    this.$store.dispatch("app/closePage", {
+      visita_id: this.$store.state.app.visita_id
+    });
   },
   methods: {
     getPath: function getPath() {
@@ -524,7 +490,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n#myVideo {\r\n  position: absolute;\r\n  z-index: 0;\r\n  max-width: 1480px;\r\n  height: auto;\n}\n.container-testimonios {\r\n  width: 1480px;\r\n  height: 723px;\n}\n.content-testimonios {\r\n  position: absolute;\r\n  z-index: 2 !important;\r\n  width: 1480px;\r\n  height: 900px;\n}\n.border-card {\r\n  background: transparent;\r\n  border: 1rem solid transparent;\n}\n.circle-img {\r\n  border-radius: 50% !important;\n}\n.carousel-3d-container .carousel-3d-slide {\r\n  padding: 20px;\n}\n.content-card {\r\n  max-width: 400px;\n}\n.flux-overlap-video {\r\n  position: absolute;\r\n  z-index: 1;\r\n  height: 850px;\r\n  width: 100%;\r\n  background-color: rgba(0, 0, 102, 0.38) !important;\n}\n@media screen and (max-width: 1480px) {\n.container-testimonios {\r\n    background-image: url(\"/app/bg_video.jpg\");\r\n    background-repeat: no-repeat;\r\n    background-size: 100% 100%;\r\n    width: 100%;\r\n    height: 700px;\n}\n.content-testimonios {\r\n    position: absolute;\r\n    z-index: 2 !important;\r\n    width: 100%;\r\n    height: 700px;\n}\n#myVideo {\r\n    display: none;\n}\n.flux-overlap-video {\r\n    position: absolute;\r\n    z-index: 1;\r\n    height: 700px;\r\n    width: 100%;\r\n    background-color: rgba(0, 0, 102, 0.38) !important;\n}\n}\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n#myVideo {\n    position: absolute;\n    z-index: 0;\n    max-width: 1480px;\n    height: auto;\n}\n.container-testimonios {\n    width: 1480px;\n    height: 723px;\n}\n.content-testimonios {\n    position: absolute;\n    z-index: 2 !important;\n    width: 1480px;\n    height: 900px;\n}\n.border-card {\n    background: transparent;\n    border: 1rem solid transparent;\n}\n.circle-img {\n    border-radius: 50% !important;\n}\n.carousel-3d-container .carousel-3d-slide {\n    padding: 20px;\n}\n.content-card {\n    max-width: 400px;\n}\n.flux-overlap-video {\n    position: absolute;\n    z-index: 1;\n    height: 850px;\n    width: 100%;\n    background-color: rgba(0, 0, 102, 0.38) !important;\n}\n@media screen and (max-width: 1480px) {\n.container-testimonios {\n        background-image: url(\"/app/bg_video.jpg\");\n        background-repeat: no-repeat;\n        background-size: 100% 100%;\n        width: 100%;\n        height: 700px;\n}\n.content-testimonios {\n        position: absolute;\n        z-index: 2 !important;\n        width: 100%;\n        height: 700px;\n}\n#myVideo {\n        display: none;\n}\n.flux-overlap-video {\n        position: absolute;\n        z-index: 1;\n        height: 700px;\n        width: 100%;\n        background-color: rgba(0, 0, 102, 0.38) !important;\n}\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -4942,13 +4908,14 @@ var render = function () {
                 },
                 [_vm._v("Nuestros")]
               ),
+              _vm._v(" "),
               _c("br"),
               _vm._v(" "),
               _c(
                 "span",
                 {
                   staticClass:
-                    "\n          pl-6\n          primary--text\n          font-weight-bold\n          text-uppercase\n          as-text_extralarge\n          line-height_1\n          after-right_block\n        ",
+                    "pl-6 primary--text font-weight-bold text-uppercase as-text_extralarge line-height_1 after-right_block",
                 },
                 [_vm._v("clientes")]
               ),
@@ -4964,7 +4931,7 @@ var render = function () {
                 { staticClass: "primary--text text-justify as-p_normal ma-0" },
                 [
                   _vm._v(
-                    "\n        Ellos confian en nosotros para conseguir sus objetivos.\n      "
+                    "Ellos confian en nosotros para conseguir sus objetivos."
                   ),
                 ]
               ),
@@ -4978,7 +4945,7 @@ var render = function () {
         "v-row",
         {
           staticClass:
-            "\n      pa-0\n      ma-0\n      content-wrap-0\n      mx-auto\n      align-center\n      mb-10\n      justify-content-center\n    ",
+            "pa-0 ma-0 content-wrap-0 mx-auto align-center mb-10 justify-content-center",
         },
         [
           _c("v-card-text", { staticClass: "pa-3 my-5" }, [
@@ -4986,7 +4953,7 @@ var render = function () {
               "span",
               {
                 staticClass:
-                  "\n          primary--text\n          as-text_underline-init\n          font-weight-bold\n          text-uppercase\n        ",
+                  "primary--text as-text_underline-init font-weight-bold text-uppercase",
               },
               [_vm._v("Empresas internacionales")]
             ),
@@ -5010,7 +4977,7 @@ var render = function () {
               "span",
               {
                 staticClass:
-                  "\n          primary--text\n          as-text_underline-init\n          font-weight-bold\n          text-uppercase\n        ",
+                  "primary--text as-text_underline-init font-weight-bold text-uppercase",
               },
               [_vm._v("Empresas nacionales")]
             ),
@@ -5036,7 +5003,7 @@ var render = function () {
         "v-row",
         {
           staticClass:
-            "\n      pa-0\n      ma-0\n      content-wrap-2\n      mx-auto\n      align-center\n      mb-10\n      justify-content-center\n    ",
+            "pa-0 ma-0 content-wrap-2 mx-auto align-center mb-10 justify-content-center",
         },
         [
           _c(
@@ -5114,25 +5081,13 @@ var render = function () {
                         {
                           staticClass: "secondary--text font-weight-bold my-2",
                         },
-                        [
-                          _vm._v(
-                            "\n            " +
-                              _vm._s(testimonio.nombre) +
-                              "\n          "
-                          ),
-                        ]
+                        [_vm._v(_vm._s(testimonio.nombre))]
                       ),
                       _vm._v(" "),
                       _c(
                         "h1",
                         { staticClass: "white--text font-weight-bold my-2" },
-                        [
-                          _vm._v(
-                            "\n            " +
-                              _vm._s(testimonio.cargo) +
-                              "\n          "
-                          ),
-                        ]
+                        [_vm._v(_vm._s(testimonio.cargo))]
                       ),
                       _vm._v(" "),
                       _c("p", { staticClass: "white--text my-2 mt-4" }, [
@@ -5142,13 +5097,7 @@ var render = function () {
                       _c(
                         "p",
                         { staticClass: "white--text font-weight-bold my-2" },
-                        [
-                          _vm._v(
-                            "\n            " +
-                              _vm._s(testimonio.fecha) +
-                              "\n          "
-                          ),
-                        ]
+                        [_vm._v(_vm._s(testimonio.fecha))]
                       ),
                     ]
                   ),
@@ -5161,14 +5110,18 @@ var render = function () {
                         "p",
                         [
                           _c("span", { staticClass: "secondary--text" }, [
-                            _vm._v("Proyecto: "),
+                            _vm._v("Proyecto:"),
                           ]),
                           _vm._v(" "),
                           _vm._l(testimonio.proyect, function (element, index) {
                             return _c("span", { key: "proy" + index }, [
                               element.type == "normal"
                                 ? _c("span", { staticClass: "white--text" }, [
-                                    _vm._v(_vm._s(element.text)),
+                                    _vm._v(
+                                      "\n                                " +
+                                        _vm._s(element.text) +
+                                        "\n                            "
+                                    ),
                                   ])
                                 : _c(
                                     "span",
@@ -5176,7 +5129,13 @@ var render = function () {
                                       staticClass:
                                         "white--text font-weight-bold",
                                     },
-                                    [_vm._v(_vm._s(element.text))]
+                                    [
+                                      _vm._v(
+                                        "\n                                " +
+                                          _vm._s(element.text) +
+                                          "\n                            "
+                                      ),
+                                    ]
                                   ),
                             ])
                           }),
@@ -5188,14 +5147,18 @@ var render = function () {
                         "p",
                         [
                           _c("span", { staticClass: "secondary--text" }, [
-                            _vm._v("Cliente: "),
+                            _vm._v("Cliente:"),
                           ]),
                           _vm._v(" "),
                           _vm._l(testimonio.cliente, function (element, index) {
                             return _c("span", { key: "cli" + index }, [
                               element.type == "normal"
                                 ? _c("span", { staticClass: "white--text" }, [
-                                    _vm._v(_vm._s(element.text)),
+                                    _vm._v(
+                                      "\n                                " +
+                                        _vm._s(element.text) +
+                                        "\n                            "
+                                    ),
                                   ])
                                 : _c(
                                     "span",
@@ -5203,7 +5166,13 @@ var render = function () {
                                       staticClass:
                                         "white--text font-weight-bold",
                                     },
-                                    [_vm._v(_vm._s(element.text))]
+                                    [
+                                      _vm._v(
+                                        "\n                                " +
+                                          _vm._s(element.text) +
+                                          "\n                            "
+                                      ),
+                                    ]
                                   ),
                             ])
                           }),

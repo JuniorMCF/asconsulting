@@ -4,8 +4,10 @@ use App\Http\Controllers\API\Auth\AuthController;
 use App\Http\Controllers\Api\Web\AsesoriaController;
 use App\Http\Controllers\Api\Web\CategoryController;
 use App\Http\Controllers\API\Web\ContactoController;
+use App\Http\Controllers\API\Web\ContactosController;
 use App\Http\Controllers\API\Web\PostsController;
 use App\Http\Controllers\API\Web\PublicPostController;
+use App\Http\Controllers\API\Web\StatisticsController;
 use App\Http\Controllers\Api\Web\TrabajadorController;
 use App\Http\Controllers\Api\Web\WritersController;
 use Illuminate\Support\Facades\Route;
@@ -42,6 +44,12 @@ Route::post("post/favorite",[PublicPostController::class,"setFavorite"]);
 Route::post("contacto",[ContactoController::class,"create"]);
 Route::post("asesoria",[AsesoriaController::class,"create"]);
 Route::post("trabajador",[TrabajadorController::class,"create"]);
+
+Route::post('open-page',[StatisticsController::class,"open"]);
+Route::post('close-page',[StatisticsController::class,"close"]);
+
+
+
 
 Route::group([
     'prefix' => 'oauth'
@@ -84,5 +92,7 @@ Route::group([
 
 
         Route::get('writers',[WritersController::class,"all"]);
+
+        Route::get('contactos/all',[ContactosController::class,"all"]);
     });
 });

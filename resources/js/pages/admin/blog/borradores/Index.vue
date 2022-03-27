@@ -254,7 +254,7 @@ export default {
             })
 
                 .then((res) => {
-                    console.log(res)
+                    //console.log(res)
                     this.selected = []
                     this.getData()
                 }).catch((err) => {

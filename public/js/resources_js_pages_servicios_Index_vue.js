@@ -204,25 +204,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -309,6 +290,17 @@ __webpack_require__.r(__webpack_exports__);
     this.getPath();
     this.$store.dispatch("app/changeTitlePage", "Servicios | Mi sitio");
     document.title = this.$store.state.app.title_page;
+    /**for visite */
+
+    this.$store.dispatch("app/openPage", {
+      page: window.location.pathname,
+      link: window.location.host + window.location.pathname
+    });
+  },
+  destroyed: function destroyed() {
+    this.$store.dispatch("app/closePage", {
+      visita_id: this.$store.state.app.visita_id
+    });
   },
   methods: {
     getPath: function getPath() {
@@ -359,7 +351,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.overlap-servicios {\r\n  position: absolute;\r\n  top: 0px;\r\n  z-index: 1;\r\n  height: 481px;\r\n  width: 100%;\r\n  background-color: rgba(0, 0, 102, 0.44) !important;\n}\n.img-overlap {\r\n  position: absolute;\r\n  z-index: 0;\r\n  top: 0px;\r\n  height: 481px;\r\n  width: 100%;\r\n  background-color: rgba(0, 0, 102, 0.44) !important;\n}\n.content-servicio {\r\n  position: absolute;\r\n  top: 0px;\r\n  z-index: 2;\r\n  height: 481px;\r\n  width: 100%;\n}\n.container-servicio {\r\n  height: 481px;\r\n  width: 100%;\n}\n.li-circle {\r\n  list-style-type: none;\r\n  position: relative;\n}\n.li-circle::before {\r\n  content: \"⬤\";\r\n  position: absolute;\r\n  left: -1.2rem; /* Adjust this value so that it appears where you want. */\r\n  font-size: 0.5rem; /* Adjust this value so that it appears what size you want. */\n}\n.bottom_button{\r\n  position:  absolute;\r\n  bottom: 2.5rem;\r\n  left:0;\r\n  right: 0;\r\n  margin: 0px auto 0px auto;\n}\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.overlap-servicios {\n    position: absolute;\n    top: 0px;\n    z-index: 1;\n    height: 481px;\n    width: 100%;\n    background-color: rgba(0, 0, 102, 0.44) !important;\n}\n.img-overlap {\n    position: absolute;\n    z-index: 0;\n    top: 0px;\n    height: 481px;\n    width: 100%;\n    background-color: rgba(0, 0, 102, 0.44) !important;\n}\n.content-servicio {\n    position: absolute;\n    top: 0px;\n    z-index: 2;\n    height: 481px;\n    width: 100%;\n}\n.container-servicio {\n    height: 481px;\n    width: 100%;\n}\n.li-circle {\n    list-style-type: none;\n    position: relative;\n}\n.li-circle::before {\n    content: \"⬤\";\n    position: absolute;\n    left: -1.2rem; /* Adjust this value so that it appears where you want. */\n    font-size: 0.5rem; /* Adjust this value so that it appears what size you want. */\n}\n.bottom_button {\n    position: absolute;\n    bottom: 2.5rem;\n    left: 0;\n    right: 0;\n    margin: 0px auto 0px auto;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -965,13 +957,14 @@ var render = function () {
                 },
                 [_vm._v("Nuestros")]
               ),
+              _vm._v(" "),
               _c("br"),
               _vm._v(" "),
               _c(
                 "span",
                 {
                   staticClass:
-                    "\n          pl-6\n          primary--text\n          font-weight-bold\n          text-uppercase\n          as-text_extralarge\n          line-height_1\n          after-right_block\n        ",
+                    "pl-6 primary--text font-weight-bold text-uppercase as-text_extralarge line-height_1 after-right_block",
                 },
                 [_vm._v("servicios")]
               ),
@@ -987,7 +980,7 @@ var render = function () {
                 { staticClass: "primary--text text-justify as-p_normal ma-0" },
                 [
                   _vm._v(
-                    "\n        Conoce los diferentes servicios que tenemos para ti y tu empresa.\n      "
+                    "Conoce los diferentes servicios que tenemos para ti y tu empresa."
                   ),
                 ]
               ),
@@ -1023,13 +1016,7 @@ var render = function () {
                               staticClass:
                                 "white--text font-weight-bold as-text_extralarge",
                             },
-                            [
-                              _vm._v(
-                                "\n              " +
-                                  _vm._s(servicio.title) +
-                                  "\n            "
-                              ),
-                            ]
+                            [_vm._v(_vm._s(servicio.title))]
                           ),
                           _vm._v(" "),
                           _c(
@@ -1038,20 +1025,14 @@ var render = function () {
                               staticClass:
                                 "white--text font-weight-bold as-p_normal text-left px-md-6 px-0",
                             },
-                            [
-                              _vm._v(
-                                "\n              " +
-                                  _vm._s(servicio.subtitle) +
-                                  "\n            "
-                              ),
-                            ]
+                            [_vm._v(_vm._s(servicio.subtitle))]
                           ),
                         ]
                       ),
                       _vm._v(" "),
                       _c(
                         "v-card-text",
-                        { staticClass: "px-6 pl-md-13 pr-10  py-0" },
+                        { staticClass: "px-6 pl-md-13 pr-10 py-0" },
                         [
                           _c(
                             "ul",
@@ -1064,13 +1045,7 @@ var render = function () {
                                   staticClass:
                                     "white--text text-left as-p_normal li-circle py-1",
                                 },
-                                [
-                                  _vm._v(
-                                    "\n                " +
-                                      _vm._s(element.text) +
-                                      "\n              "
-                                  ),
-                                ]
+                                [_vm._v(_vm._s(element.text))]
                               )
                             }),
                             0
@@ -1098,13 +1073,7 @@ var render = function () {
                                   to: action.src,
                                 },
                               },
-                              [
-                                _vm._v(
-                                  "\n              " +
-                                    _vm._s(action.title) +
-                                    "\n            "
-                                ),
-                              ]
+                              [_vm._v(_vm._s(action.title))]
                             )
                           }),
                           _vm._v(" "),

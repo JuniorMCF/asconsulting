@@ -76,9 +76,9 @@ export default {
               Vue.$toast.success("Bienvenido!");
 
 
-              this.$store.dispatch("app/setPath", "/admin/misitio");
+              this.$store.dispatch("app/setPath", "/admin/blog");
               this.$router.push({
-                path: "/admin/misitio",
+                path: "/admin/blog",
               });
             } else {
               Vue.$toast.error("Credenciales inválidas");

@@ -192,7 +192,7 @@ export default {
                 url: "/api/oauth/all-categorys",
                 headers: { Authorization: "Bearer " + this.$store.state.auth.token },
             }).then(res => {
-                console.log(res);
+                //console.log(res);
                 this.categorias = res.data;
             }).catch(err => {
                 console.log(err);

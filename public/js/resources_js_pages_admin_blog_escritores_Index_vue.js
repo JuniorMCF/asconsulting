@@ -180,7 +180,7 @@ __webpack_require__.r(__webpack_exports__);
         }
       }) //.post("/api/oauth/posts/pub", headers)
       .then(function (res) {
-        console.log(res);
+        //console.log(res);
         _this.users = res.data;
       })["catch"](function (err) {
         console.log(err.response); //Vue.$toast.error("");

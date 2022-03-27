@@ -365,7 +365,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
           Authorization: "Bearer " + this.$store.state.auth.token
         }
       }).then(function (res) {
-        console.log(res);
+        //console.log(res)
         _this4.selected = [];
 
         _this4.getData();

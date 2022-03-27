@@ -10,13 +10,13 @@ const state = () => ({
     title_page : "Empresa Consultora Peruana | A&S Consulting Group | Santiago de Surco",
     path:"/",
     actual_page:"",
-    
+    visita_id:-1//para las estadisticas de visitas a la pagina
 })
 
 // getters
 const getters = {
     notPublic(state){
-        
+
         /**verificamos que la path no sea publica
          * para ver que navbar mostramos
          */
@@ -24,7 +24,7 @@ const getters = {
             return true
         }
         return false
-    }
+    },
 
 }
 
@@ -47,8 +47,32 @@ const actions = {
         commit("saveActualPage",value)
     },
     changeTitlePage({ commit },value){
-        
+
         commit('changeTitlePage',value)
+    },
+    openPage(context,payload){
+
+        let data = new FormData()
+        data.append("page",payload.page)
+        data.append("link",payload.link)
+        axios.post('/api/open-page',data).then(res=>{
+
+            if(res.data.id > 0){
+                context.commit('openPage',res.data.id)
+            }
+        }).catch(err => {
+
+        })
+    },
+    closePage(context,payload){
+
+        let data = new FormData()
+        data.append("visita_id",payload.visita_id)
+        axios.post('/api/close-page',data).then(res=>{
+            console.log("pagina visitada")
+        }).catch(err => {
+
+        })
     }
 }
 
@@ -66,7 +90,11 @@ const mutations = {
     },
     saveActualPage(state,value){
         state.actual_page = value
-    }
+    },
+    openPage(state,visita_id){
+        state.visita_id = visita_id
+    },
+
 
 }
 
