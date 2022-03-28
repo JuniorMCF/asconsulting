@@ -26,7 +26,7 @@ class StatisticsController extends Controller
     }
     public function close(Request $request)
     {
-        \Log::debug($request);
+        //\Log::debug($request);
         Visita::find($request->visita_id)->update([
             "tiempo_salida" => Carbon::now('GMT-5')->format("Y-m-d h:m:s")
         ]);

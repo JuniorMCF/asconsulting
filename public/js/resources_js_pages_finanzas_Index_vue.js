@@ -702,6 +702,8 @@ __webpack_require__.r(__webpack_exports__);
   },
   mounted: function mounted() {
     this.getPath();
+    this.$store.dispatch("app/changeTitlePage", "Finanzas y Contabilidad A&S");
+    document.title = this.$store.state.app.title_page;
     this.$store.dispatch("app/openPage", {
       page: window.location.pathname,
       link: window.location.host + window.location.pathname

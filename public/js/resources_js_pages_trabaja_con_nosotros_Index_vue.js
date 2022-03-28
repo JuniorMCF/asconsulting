@@ -326,6 +326,8 @@ __webpack_require__.r(__webpack_exports__);
   },
   mounted: function mounted() {
     this.getPath();
+    this.$store.dispatch("app/changeTitlePage", "Trabaja con nosotros | Mi sitio");
+    document.title = this.$store.state.app.title_page;
     /**for visite */
 
     this.$store.dispatch("app/openPage", {

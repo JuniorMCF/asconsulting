@@ -5,11 +5,13 @@ namespace App\Http\Controllers\API\Web;
 use App\Http\Controllers\Controller;
 use App\Models\Categoria;
 use App\Models\Comment;
+use App\Models\Contactpage;
 use App\Models\Favorito;
 use App\Models\Post;
 use App\Models\Tag;
 use App\Models\User;
 use App\Models\Visualizacione;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Stevebauman\Location\Facades\Location;
@@ -273,5 +275,20 @@ class PublicPostController extends Controller
             "estado" => $request->estado,
         ]);
         return response()->json(["message" => "favorito creado"], 200);
+    }
+
+    public function newsletter(Request $request){
+        Contactpage::create([
+            "email1"=>$request->email,
+            "estado"=>"Suscrito",
+            "fuente"=>"Envío de formulario",
+            "ultima_actividad"=>"Se creó contacto",
+            "fecha_ultima_actividad"=>Carbon::now('GMT-5')->format("Y-m-d h:m:s"),
+            "etiquetas"=>"Me contactó"
+        ]);
+
+        //send email for suscription
+
+        return response()->json(true,200);
     }
 }

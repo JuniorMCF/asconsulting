@@ -10,7 +10,9 @@ const state = () => ({
     title_page : "Empresa Consultora Peruana | A&S Consulting Group | Santiago de Surco",
     path:"/",
     actual_page:"",
-    visita_id:-1//para las estadisticas de visitas a la pagina
+    visita_id:-1,//para las estadisticas de visitas a la pagina
+
+    newsletter:true,
 })
 
 // getters
@@ -73,6 +75,9 @@ const actions = {
         }).catch(err => {
 
         })
+    },
+    closeNewsletter(context,payload){
+        context.commit('closeNewsletter')
     }
 }
 
@@ -94,7 +99,9 @@ const mutations = {
     openPage(state,visita_id){
         state.visita_id = visita_id
     },
-
+    closeNewsletter(state){
+        state.newsletter = false
+    }
 
 }
 

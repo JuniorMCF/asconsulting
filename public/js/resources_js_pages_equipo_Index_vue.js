@@ -347,6 +347,8 @@ __webpack_require__.r(__webpack_exports__);
     this.onResize();
     window.addEventListener("resize", this.onResize);
     this.getPath();
+    this.$store.dispatch("app/changeTitlePage", "Equipo A&S");
+    document.title = this.$store.state.app.title_page;
     /**for visite */
 
     this.$store.dispatch("app/openPage", {

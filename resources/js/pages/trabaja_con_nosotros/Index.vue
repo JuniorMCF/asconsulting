@@ -199,9 +199,18 @@ export default {
 
     mounted() {
         this.getPath();
+
+        this.$store.dispatch(
+            "app/changeTitlePage",
+            "Trabaja con nosotros | Mi sitio"
+        );
+        document.title = this.$store.state.app.title_page;
+
+
+
         /**for visite */
         this.$store.dispatch("app/openPage", {
-             page: window.location.pathname,
+            page: window.location.pathname,
             link: window.location.host + window.location.pathname
         })
 

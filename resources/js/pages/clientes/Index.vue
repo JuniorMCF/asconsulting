@@ -327,9 +327,15 @@ export default {
         this.onResize();
         window.addEventListener("resize", this.onResize);
         this.getPath();
+        this.$store.dispatch(
+            "app/changeTitlePage",
+            "Clientes | A&S Consulting Group | Santiago de Surco"
+        );
+        document.title = this.$store.state.app.title_page;
+
         /**for visite */
         this.$store.dispatch("app/openPage", {
-           page: window.location.pathname,
+            page: window.location.pathname,
             link: window.location.host + window.location.pathname
         })
 

@@ -269,7 +269,6 @@
                                     </span>
                                     <v-btn
                                         v-on:click.prevent="like(post)"
-
                                         dark
                                         icon
                                         text
@@ -489,6 +488,8 @@
         <FooterGlobal></FooterGlobal>
         <SharedDialog ref="sharedDialog"></SharedDialog>
         <ChatComponent></ChatComponent>
+
+        <NewsletterDialog ref="newsletterDialog"></NewsletterDialog>
     </v-container>
 </template>
 
@@ -498,9 +499,10 @@ import FooterGlobal from "../../components/global/FooterGlobal.vue";
 import LottieAnimation from "lottie-web-vue";
 
 import SharedDialog from "../../components/utils/SharedDialog.vue"
+import NewsletterDialog from "../../components/utils/NewsletterDialog.vue";
 
 export default {
-    components: { ChatComponent, FooterGlobal, LottieAnimation, SharedDialog },
+    components: { ChatComponent, FooterGlobal, LottieAnimation, SharedDialog, NewsletterDialog },
     data: () => ({
         categorias: [],
         posts_todos: [],
@@ -518,12 +520,26 @@ export default {
 
     mounted() {
         this.getPath();
+
+        this.$store.dispatch(
+            "app/changeTitlePage",
+            "Publicaciones | A&S"
+        );
+        document.title = this.$store.state.app.title_page;
+
+
+
         this.getData();
         /**for visite */
         this.$store.dispatch("app/openPage", {
-  page: window.location.pathname,
+            page: window.location.pathname,
             link: window.location.host + window.location.pathname
         })
+        if (this.$store.state.app.newsletter) {
+            setTimeout(
+                () => this.openNewsLetter()
+                , 3000)
+        }
 
     },
     destroyed() {
@@ -556,6 +572,22 @@ export default {
                 return;
             }
             this.posts = this.posts_todos;
+        },
+        openNewsLetter() {
+            this.$refs.newsletterDialog.open().then(res => {
+                if (res.status == 200) {
+                    let data = new FormData()
+                    data.append("email", res.response)
+                    axios.post("/api/newsletter", data).then(res => {
+                        this.$store.dispatch('app/closeNewsletter',{})
+                        Vue.$toast.success("Suscrito a nuestro contenido.")
+                    }).catch(err => {
+
+                    })
+                }
+            }).catch(err => {
+
+            })
         },
         searchPost() {
             this.isFiltered = true;
@@ -685,7 +717,7 @@ export default {
     padding: 0px 16px 0px 16px;
     max-height: 90px;
     overflow: hidden;
-    font-size: 0.7rem !important;
+    font-size: 0.65rem !important;
 }
 @media screen and (max-width: 960px) {
     .contenido-container {
@@ -693,7 +725,7 @@ export default {
         padding: 0px 16px 0px 16px;
         max-height: 90px;
         overflow: hidden;
-        font-size: 0.7rem !important;
+        font-size: 0.65rem !important;
     }
 }
 </style>

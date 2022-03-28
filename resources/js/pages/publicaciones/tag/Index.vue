@@ -517,10 +517,17 @@ export default {
 
     mounted() {
         this.getPath();
+
+        this.$store.dispatch(
+            "app/changeTitlePage",
+            "Publicaciones | A&S"
+        );
+        document.title = this.$store.state.app.title_page;
+
         this.getData();
         /**for visite */
         this.$store.dispatch("app/openPage", {
-             page: window.location.pathname,
+            page: window.location.pathname,
             link: window.location.host + window.location.pathname
         })
 
@@ -683,6 +690,15 @@ export default {
     padding: 0px 16px 0px 16px;
     max-height: 90px;
     overflow: hidden;
-    font-size: 0.7rem !important;
+    font-size: 0.65rem !important;
+}
+@media screen and (max-width: 960px) {
+    .contenido-container {
+        max-width: 890px;
+        padding: 0px 16px 0px 16px;
+        max-height: 90px;
+        overflow: hidden;
+        font-size: 0.65rem !important;
+    }
 }
 </style>

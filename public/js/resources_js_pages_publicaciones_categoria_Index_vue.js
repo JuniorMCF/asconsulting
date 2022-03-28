@@ -777,6 +777,8 @@ __webpack_require__.r(__webpack_exports__);
   },
   mounted: function mounted() {
     this.getPath();
+    this.$store.dispatch("app/changeTitlePage", "Publicaciones | A&S");
+    document.title = this.$store.state.app.title_page;
     this.getData();
     /**for visite */
 
@@ -1000,7 +1002,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.card-as {\n    border: solid 1px #000066 !important;\n}\n.ql-editor {\n    height: auto !important;\n}\n.content-detail {\n    max-height: 150px;\n    overflow: hidden;\n}\n.contenido-container {\n    max-width: 460px;\n    padding: 0px 16px 0px 16px;\n    max-height: 90px;\n    overflow: hidden;\n    font-size: 0.7rem !important;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.card-as {\n    border: solid 1px #000066 !important;\n}\n.ql-editor {\n    height: auto !important;\n}\n.content-detail {\n    max-height: 150px;\n    overflow: hidden;\n}\n.contenido-container {\n    max-width: 460px;\n    padding: 0px 16px 0px 16px;\n    max-height: 90px;\n    overflow: hidden;\n    font-size: 0.65rem !important;\n}\n@media screen and (max-width: 960px) {\n.contenido-container {\n        max-width: 890px;\n        padding: 0px 16px 0px 16px;\n        max-height: 90px;\n        overflow: hidden;\n        font-size: 0.65rem !important;\n}\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 

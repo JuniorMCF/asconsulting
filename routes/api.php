@@ -35,7 +35,7 @@ Route::post("post/document",[PublicPostController::class,"show"]);
 Route::get("posts/all",[PublicPostController::class,"all"]);
 Route::get("posts/categoria/{categoria}",[PublicPostController::class,"filterCategory"]);
 Route::get("posts/tag/{tag}",[PublicPostController::class,"filterTag"]);
-
+Route::post("newsletter",[PublicPostController::class,"newsletter"]);
 
 Route::get("posts/all/{search}/filter",[PublicPostController::class,"filter"]);
 Route::post("post/comment",[PublicPostController::class,"comment"]);

@@ -335,6 +335,12 @@ export default {
 
     mounted() {
         this.getPath();
+         this.$store.dispatch(
+            "app/changeTitlePage",
+            "Tecnología A&S"
+        );
+        document.title = this.$store.state.app.title_page;
+
 
         /**for visite */
         this.$store.dispatch("app/openPage", {

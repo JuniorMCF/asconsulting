@@ -220,7 +220,11 @@ export default {
         this.onResize();
         window.addEventListener("resize", this.onResize);
         this.getPath();
-
+ this.$store.dispatch(
+            "app/changeTitlePage",
+            "Equipo A&S"
+        );
+        document.title = this.$store.state.app.title_page;
         /**for visite */
         this.$store.dispatch("app/openPage", {
             page: window.location.pathname,
