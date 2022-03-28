@@ -5,7 +5,7 @@
                 <v-card-text class="d-flex justify-center align-center pa-0 flex-wrap py-4">
                     <v-app-bar-nav-icon
                         color="primary"
-                        class="d-md-none d-inline-flex"
+                        class="d-lg-none d-inline-flex"
                         @click="drawer = !drawer"
                     ></v-app-bar-nav-icon>
 
@@ -23,7 +23,7 @@
 
                     <v-spacer></v-spacer>
 
-                    <ul class="d-none d-md-inline-flex">
+                    <ul class="d-none d-lg-inline-flex">
                         <li v-for="(item, index) in items" :key="'items' + index">
                             <v-hover v-slot="{ hover }">
                                 <router-link :to="item.route">
@@ -377,8 +377,8 @@ export default {
         this.onResize();
         window.addEventListener("resize", this.onResize);
     },
-    mounted() { 
-        
+    mounted() {
+
     },
     methods: {
         onResize() {

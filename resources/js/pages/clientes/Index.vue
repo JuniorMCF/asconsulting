@@ -399,10 +399,21 @@ export default {
 .flux-overlap-video {
     position: absolute;
     z-index: 1;
-    height: 850px;
+    height: 850px !important;
     width: 100%;
     background-color: rgba(0, 0, 102, 0.38) !important;
 }
+
+.carousel-3d-slider{
+    max-height: 700px !important;
+}
+.carousel-3d-container{
+max-height: 700px !important;
+}
+.carousel-3d-slide ,.v-card ,.border-card  {
+    max-height: 700px !important;
+}
+
 @media screen and (max-width: 1480px) {
     .container-testimonios {
         background-image: url("/app/bg_video.jpg");
@@ -423,7 +434,7 @@ export default {
     .flux-overlap-video {
         position: absolute;
         z-index: 1;
-        height: 700px;
+        height: 700px !important;
         width: 100%;
         background-color: rgba(0, 0, 102, 0.38) !important;
     }
