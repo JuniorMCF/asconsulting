@@ -24,7 +24,7 @@ class StatisticsController extends Controller
         if($locationData){
             $visita->zip = $locationData->countryCode == null ? '' : $locationData->countryCode;
             $visita->country = $locationData->countryName == null ? '' : $locationData->countryName;
-            $visita->city = $locationData->city == null ? '' : $locationData->city;
+            $visita->city = $locationData->cityName == null ? '' : $locationData->cityName;
         }
 
         $visita->tiempo_inicial = Carbon::now('GMT-5')->format("Y-m-d h:m:s");

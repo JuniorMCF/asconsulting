@@ -51,7 +51,7 @@ class PublicPostController extends Controller
                 "ip" => $userIp,
                 "country" => $locationData->countryName,
                 "zip"=>$locationData->countryCode,
-                "city"=>$locationData->city
+                "city"=>$locationData->cityName
             ]);
             //return response()->json(true, 200);
         } else {
