@@ -56,14 +56,6 @@
             </v-list>
 
             <v-list>
-                <!--<v-list-item
-                    v-for="item in first_items"
-                    :key="item.title"
-                    active-class="grey darken-2 white--text"
-                    :to="item.route"
-                >
-                    <v-list-item-title class="caption white--text">Mi sitio</v-list-item-title>
-                </v-list-item>-->
                 <v-list-group
                     v-for="item in items_group"
                     :key="item.title"
@@ -99,14 +91,6 @@ export default {
         drawer: true,
         active: 0,
 
-
-        /*first_items: [
-            {
-                route: "/admin/misitio",
-                title: "Inicio",
-                icon: "mdi-home",
-            },
-        ],*/
         items_group: [
             {
                 route: "/admin/blog",
@@ -191,7 +175,7 @@ export default {
     mounted() {
         this.onResize();
         window.addEventListener("resize", this.onResize);
-        console.log(this.$store.state.app.actual_page)
+
         this.setItemActive(this.$store.state.app.actual_page)
     },
     methods: {
@@ -257,7 +241,6 @@ export default {
     },
     computed: {
         user(){
-            console.log( this.$store.state.auth.user)
             return this.$store.state.auth.user
         }
     }
@@ -266,7 +249,7 @@ export default {
 </script>
 
 
-<style>
+<style >
 .header-open {
     position: absolute;
     top: 0px;

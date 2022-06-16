@@ -2,7 +2,7 @@
     <v-container class="content-wrap-2 pa-0 mx-auto">
         <v-row class="pa-0 ma-0 content-wrap-2 mx-auto">
             <v-col class="col-12 pa-0 ma-0 container-bandwith">
-                <v-img src="/app/bandwith.PNG "></v-img>
+                <v-img src="/app/bandwith.png "></v-img>
             </v-col>
         </v-row>
 
@@ -23,7 +23,7 @@
             </v-col>
         </v-row>
 
-        <v-row class="pa-0 ma-0 content-wrap-0 mx-auto align-center mb-10">
+        <v-row class="pa-0 ma-0  content-wrap-0 mx-auto align-center mb-10">
             <v-col class="col-12 col-md-6 px-2" v-for="(servicio, index) in servicios" :key="index">
                 <v-card class="elevation-0 rounded-0 container-servicio">
                     <v-card-text class="pa-10 text-center content-servicio">
@@ -84,7 +84,7 @@ export default {
     data: () => ({
         servicios: [
             {
-                src: "/app/tecnologia.JPG",
+                src: "/app/tecnologia.jpg",
                 title: "Tecnología",
                 subtitle: "Nuestros principales servicios:",
                 details: [

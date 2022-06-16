@@ -5,9 +5,8 @@
             <v-row class="pa-0 ma-0">
                 <v-col class="pa-0 ma-0 col-12">
                     <v-card-text class="px-0 py-0">
-                        <p
-                            class="caption ma-0"
-                        >Administra a los escritores de tu blog, crea y personaliza sus perfiles públicos. Todos aquí tienen permiso para escribir entradas.</p>
+                        <p class="caption ma-0">Administra a los escritores de tu blog, crea y personaliza sus perfiles
+                            públicos. Todos aquí tienen permiso para escribir entradas.</p>
                     </v-card-text>
                 </v-col>
             </v-row>
@@ -15,35 +14,14 @@
         <v-container fluid class="pa-0 ma-0 px-md-10 px-3">
             <v-row class="pa-0 ma-0">
                 <v-col class="col-12 pa-0 ma-0">
-                    <v-data-table
-                        :headers="headers"
-                        :items="users"
-                        :search="search"
-                        sort-by="calories"
-                        class="elevation-0 px-0 rounded-0"
-                        hide-default-footer
-                        disable-pagination
-                    >
+                    <v-data-table :headers="headers" :items="users" :search="search" sort-by="calories"
+                        class="elevation-0 px-0 rounded-0" hide-default-footer disable-pagination>
                         <template v-slot:item.foto="{ item }">
                             <div class="pa-2">
-                                <v-img
-                                    v-if="item.foto"
-                                    :src="item.foto"
-                                    height="60"
-                                    width="42"
-                                    class="mx-auto"
-                                ></v-img>
-                                <div
-                                    v-else
-                                    class="gray lighten-5 rounded-lg align-center justify-center d-flex mx-auto"
-                                    style="width:60px;height:60px;"
-                                >
-                                    <v-btn
-                                        fab
-                                        color="white"
-                                        x-small
-                                        class="elevation-0 disable-events"
-                                    >
+                                <v-img v-if="item.foto" :src="item.foto" height="60" width="42" class="mx-auto"></v-img>
+                                <div v-else class="gray lighten-5 rounded-lg align-center justify-center d-flex mx-auto"
+                                    style="width:60px;height:60px;">
+                                    <v-btn fab color="white" x-small class="elevation-0 disable-events">
                                         <v-icon color="sky">mdi-image-outline</v-icon>
                                     </v-btn>
                                 </div>
@@ -69,27 +47,15 @@
 
                             <v-menu bottom left>
                                 <template v-slot:activator="{ on, attrs }">
-                                    <v-btn
-                                        dark
-                                        icon
-                                        v-bind="attrs"
-                                        v-on="on"
-                                        text
-                                        class="elevation-0 sky--text"
-                                        fab
-                                        x-small
-                                    >
+                                    <v-btn dark icon v-bind="attrs" v-on="on" text class="elevation-0 sky--text" fab
+                                        x-small v-if="item.roles[0].slug != 'propietario'">
                                         <v-icon>mdi-dots-vertical</v-icon>
                                     </v-btn>
                                 </template>
 
                                 <v-list>
-                                    <v-list-item
-                                        v-for="(option, i) in options"
-                                        :key="'options' + i"
-                                        link
-                                        @click.prevent="OnClickOption(option, item)"
-                                    >
+                                    <v-list-item v-for="(option, i) in options" :key="'options' + i" link
+                                        @click.prevent="OnClickOption(option, item)">
                                         <v-list-item-title class="caption">
                                             <v-icon small left>{{ option.icon }}</v-icon>
                                             {{ option.title }}
@@ -106,11 +72,17 @@
                 </v-col>
             </v-row>
         </v-container>
+        <ChangeRoleDialog ref="changeRoleDialog"></ChangeRoleDialog>
     </div>
 </template>
 
 <script>
+import ChangeRoleDialog from '../../../../components/utils/ChangeRoleDialog.vue';
 export default {
+    name:'escritores-component',
+    components:{
+        ChangeRoleDialog
+    },
     data: () => ({
         headers: [
             {
@@ -131,7 +103,7 @@ export default {
         ],
         users: [],
         search: null,
-        options:[
+        options: [
             {
                 icon: "mdi-restore",
                 title: "Cambiar rol",
@@ -170,6 +142,26 @@ export default {
                     //Vue.$toast.error("");
                 });
         },
+        OnClickOption(option, item) {
+            //console.log(item.route)
+            switch (option.title) {
+                case "Cambiar rol":
+                    this.$refs.changeRoleDialog.open(item,item.roles[0]).then(res=>{
+                        if(res){
+                            this.getData()
+                        }
+                    }).catch(err=>{
+
+                    })
+                    break
+                case "Editar":
+                    break
+                case "Eliminar":
+                    break
+                default:
+            }
+
+        }
     },
     computed: {
         actualPage() {

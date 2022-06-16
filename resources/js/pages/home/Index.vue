@@ -116,7 +116,7 @@
         <v-container fluid class="pa-0 ma-0 main-content">
             <v-row class="pa-0 ma-0 content-wrap-2 mx-auto container-bandwith" id="ayudanos">
                 <v-col class="col-12 pa-0 ma-0">
-                    <v-img src="/app/bandwith.PNG"></v-img>
+                    <v-img src="/app/bandwith.png"></v-img>
                 </v-col>
             </v-row>
 
@@ -187,7 +187,7 @@
 
             <v-row class="pa-0 ma-0 content-wrap-2 mx-auto">
                 <v-col class="col-12 pa-0 ma-0 rotate-180 container-bandwith">
-                    <v-img src="/app/bandwith.PNG "></v-img>
+                    <v-img src="/app/bandwith.png "></v-img>
                 </v-col>
             </v-row>
             <v-row class="pa-0 ma-0 primary content-wrap-2 mx-auto">
@@ -251,7 +251,7 @@
             </v-row>
             <v-row class="pa-0 ma-0 content-wrap-2 mx-auto container-bandwith">
                 <v-col class="col-12 pa-0 ma-0">
-                    <v-img src="/app/bandwith.PNG"></v-img>
+                    <v-img src="/app/bandwith.png"></v-img>
                 </v-col>
             </v-row>
 
@@ -404,7 +404,7 @@ export default {
         vfTransitions: ["fade", "fade"],
         vfCaptions: [
             {
-                image: "/app/logo_home.PNG",
+                image: "/app/logo_home.png",
                 subtitle_image: "Consulting Group",
                 title: null,
                 subtitle: [

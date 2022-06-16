@@ -6,17 +6,27 @@ use App\Http\Controllers\Controller;
 use App\Models\Visita;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Stevebauman\Location\Facades\Location;
 
 class StatisticsController extends Controller
 {
     //
     public function open(Request $request)
     {
+        $locationData = Location::get( $request->ip());
+
 
         $visita = new Visita();
         $visita->page = $request->page;
         $visita->link = $request->link;
         $visita->ip = $request->ip();
+
+        if($locationData){
+            $visita->zip = $locationData->countryCode == null ? '' : $locationData->countryCode;
+            $visita->country = $locationData->countryName == null ? '' : $locationData->countryName;
+            $visita->city = $locationData->city == null ? '' : $locationData->city;
+        }
+
         $visita->tiempo_inicial = Carbon::now('GMT-5')->format("Y-m-d h:m:s");
         $visita->save();
 

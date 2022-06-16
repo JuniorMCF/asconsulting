@@ -13,7 +13,7 @@ class TrabajadorController extends Controller
     //
     public function create(Request $request)
     {
-        \Log::debug($request->all());
+
         $trabajador = Trabajadore::where("email", $request->email)->get()->first();
         if ($trabajador) {
             return response(true, 201);

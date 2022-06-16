@@ -40,8 +40,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-//
-//
+function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
+
+function _regeneratorRuntime() { "use strict"; /*! regenerator-runtime -- Copyright (c) 2014-present, Facebook, Inc. -- license (MIT): https://github.com/facebook/regenerator/blob/main/LICENSE */ _regeneratorRuntime = function _regeneratorRuntime() { return exports; }; var exports = {}, Op = Object.prototype, hasOwn = Op.hasOwnProperty, $Symbol = "function" == typeof Symbol ? Symbol : {}, iteratorSymbol = $Symbol.iterator || "@@iterator", asyncIteratorSymbol = $Symbol.asyncIterator || "@@asyncIterator", toStringTagSymbol = $Symbol.toStringTag || "@@toStringTag"; function define(obj, key, value) { return Object.defineProperty(obj, key, { value: value, enumerable: !0, configurable: !0, writable: !0 }), obj[key]; } try { define({}, ""); } catch (err) { define = function define(obj, key, value) { return obj[key] = value; }; } function wrap(innerFn, outerFn, self, tryLocsList) { var protoGenerator = outerFn && outerFn.prototype instanceof Generator ? outerFn : Generator, generator = Object.create(protoGenerator.prototype), context = new Context(tryLocsList || []); return generator._invoke = function (innerFn, self, context) { var state = "suspendedStart"; return function (method, arg) { if ("executing" === state) throw new Error("Generator is already running"); if ("completed" === state) { if ("throw" === method) throw arg; return doneResult(); } for (context.method = method, context.arg = arg;;) { var delegate = context.delegate; if (delegate) { var delegateResult = maybeInvokeDelegate(delegate, context); if (delegateResult) { if (delegateResult === ContinueSentinel) continue; return delegateResult; } } if ("next" === context.method) context.sent = context._sent = context.arg;else if ("throw" === context.method) { if ("suspendedStart" === state) throw state = "completed", context.arg; context.dispatchException(context.arg); } else "return" === context.method && context.abrupt("return", context.arg); state = "executing"; var record = tryCatch(innerFn, self, context); if ("normal" === record.type) { if (state = context.done ? "completed" : "suspendedYield", record.arg === ContinueSentinel) continue; return { value: record.arg, done: context.done }; } "throw" === record.type && (state = "completed", context.method = "throw", context.arg = record.arg); } }; }(innerFn, self, context), generator; } function tryCatch(fn, obj, arg) { try { return { type: "normal", arg: fn.call(obj, arg) }; } catch (err) { return { type: "throw", arg: err }; } } exports.wrap = wrap; var ContinueSentinel = {}; function Generator() {} function GeneratorFunction() {} function GeneratorFunctionPrototype() {} var IteratorPrototype = {}; define(IteratorPrototype, iteratorSymbol, function () { return this; }); var getProto = Object.getPrototypeOf, NativeIteratorPrototype = getProto && getProto(getProto(values([]))); NativeIteratorPrototype && NativeIteratorPrototype !== Op && hasOwn.call(NativeIteratorPrototype, iteratorSymbol) && (IteratorPrototype = NativeIteratorPrototype); var Gp = GeneratorFunctionPrototype.prototype = Generator.prototype = Object.create(IteratorPrototype); function defineIteratorMethods(prototype) { ["next", "throw", "return"].forEach(function (method) { define(prototype, method, function (arg) { return this._invoke(method, arg); }); }); } function AsyncIterator(generator, PromiseImpl) { function invoke(method, arg, resolve, reject) { var record = tryCatch(generator[method], generator, arg); if ("throw" !== record.type) { var result = record.arg, value = result.value; return value && "object" == _typeof(value) && hasOwn.call(value, "__await") ? PromiseImpl.resolve(value.__await).then(function (value) { invoke("next", value, resolve, reject); }, function (err) { invoke("throw", err, resolve, reject); }) : PromiseImpl.resolve(value).then(function (unwrapped) { result.value = unwrapped, resolve(result); }, function (error) { return invoke("throw", error, resolve, reject); }); } reject(record.arg); } var previousPromise; this._invoke = function (method, arg) { function callInvokeWithMethodAndArg() { return new PromiseImpl(function (resolve, reject) { invoke(method, arg, resolve, reject); }); } return previousPromise = previousPromise ? previousPromise.then(callInvokeWithMethodAndArg, callInvokeWithMethodAndArg) : callInvokeWithMethodAndArg(); }; } function maybeInvokeDelegate(delegate, context) { var method = delegate.iterator[context.method]; if (undefined === method) { if (context.delegate = null, "throw" === context.method) { if (delegate.iterator["return"] && (context.method = "return", context.arg = undefined, maybeInvokeDelegate(delegate, context), "throw" === context.method)) return ContinueSentinel; context.method = "throw", context.arg = new TypeError("The iterator does not provide a 'throw' method"); } return ContinueSentinel; } var record = tryCatch(method, delegate.iterator, context.arg); if ("throw" === record.type) return context.method = "throw", context.arg = record.arg, context.delegate = null, ContinueSentinel; var info = record.arg; return info ? info.done ? (context[delegate.resultName] = info.value, context.next = delegate.nextLoc, "return" !== context.method && (context.method = "next", context.arg = undefined), context.delegate = null, ContinueSentinel) : info : (context.method = "throw", context.arg = new TypeError("iterator result is not an object"), context.delegate = null, ContinueSentinel); } function pushTryEntry(locs) { var entry = { tryLoc: locs[0] }; 1 in locs && (entry.catchLoc = locs[1]), 2 in locs && (entry.finallyLoc = locs[2], entry.afterLoc = locs[3]), this.tryEntries.push(entry); } function resetTryEntry(entry) { var record = entry.completion || {}; record.type = "normal", delete record.arg, entry.completion = record; } function Context(tryLocsList) { this.tryEntries = [{ tryLoc: "root" }], tryLocsList.forEach(pushTryEntry, this), this.reset(!0); } function values(iterable) { if (iterable) { var iteratorMethod = iterable[iteratorSymbol]; if (iteratorMethod) return iteratorMethod.call(iterable); if ("function" == typeof iterable.next) return iterable; if (!isNaN(iterable.length)) { var i = -1, next = function next() { for (; ++i < iterable.length;) { if (hasOwn.call(iterable, i)) return next.value = iterable[i], next.done = !1, next; } return next.value = undefined, next.done = !0, next; }; return next.next = next; } } return { next: doneResult }; } function doneResult() { return { value: undefined, done: !0 }; } return GeneratorFunction.prototype = GeneratorFunctionPrototype, define(Gp, "constructor", GeneratorFunctionPrototype), define(GeneratorFunctionPrototype, "constructor", GeneratorFunction), GeneratorFunction.displayName = define(GeneratorFunctionPrototype, toStringTagSymbol, "GeneratorFunction"), exports.isGeneratorFunction = function (genFun) { var ctor = "function" == typeof genFun && genFun.constructor; return !!ctor && (ctor === GeneratorFunction || "GeneratorFunction" === (ctor.displayName || ctor.name)); }, exports.mark = function (genFun) { return Object.setPrototypeOf ? Object.setPrototypeOf(genFun, GeneratorFunctionPrototype) : (genFun.__proto__ = GeneratorFunctionPrototype, define(genFun, toStringTagSymbol, "GeneratorFunction")), genFun.prototype = Object.create(Gp), genFun; }, exports.awrap = function (arg) { return { __await: arg }; }, defineIteratorMethods(AsyncIterator.prototype), define(AsyncIterator.prototype, asyncIteratorSymbol, function () { return this; }), exports.AsyncIterator = AsyncIterator, exports.async = function (innerFn, outerFn, self, tryLocsList, PromiseImpl) { void 0 === PromiseImpl && (PromiseImpl = Promise); var iter = new AsyncIterator(wrap(innerFn, outerFn, self, tryLocsList), PromiseImpl); return exports.isGeneratorFunction(outerFn) ? iter : iter.next().then(function (result) { return result.done ? result.value : iter.next(); }); }, defineIteratorMethods(Gp), define(Gp, toStringTagSymbol, "Generator"), define(Gp, iteratorSymbol, function () { return this; }), define(Gp, "toString", function () { return "[object Generator]"; }), exports.keys = function (object) { var keys = []; for (var key in object) { keys.push(key); } return keys.reverse(), function next() { for (; keys.length;) { var key = keys.pop(); if (key in object) return next.value = key, next.done = !1, next; } return next.done = !0, next; }; }, exports.values = values, Context.prototype = { constructor: Context, reset: function reset(skipTempReset) { if (this.prev = 0, this.next = 0, this.sent = this._sent = undefined, this.done = !1, this.delegate = null, this.method = "next", this.arg = undefined, this.tryEntries.forEach(resetTryEntry), !skipTempReset) for (var name in this) { "t" === name.charAt(0) && hasOwn.call(this, name) && !isNaN(+name.slice(1)) && (this[name] = undefined); } }, stop: function stop() { this.done = !0; var rootRecord = this.tryEntries[0].completion; if ("throw" === rootRecord.type) throw rootRecord.arg; return this.rval; }, dispatchException: function dispatchException(exception) { if (this.done) throw exception; var context = this; function handle(loc, caught) { return record.type = "throw", record.arg = exception, context.next = loc, caught && (context.method = "next", context.arg = undefined), !!caught; } for (var i = this.tryEntries.length - 1; i >= 0; --i) { var entry = this.tryEntries[i], record = entry.completion; if ("root" === entry.tryLoc) return handle("end"); if (entry.tryLoc <= this.prev) { var hasCatch = hasOwn.call(entry, "catchLoc"), hasFinally = hasOwn.call(entry, "finallyLoc"); if (hasCatch && hasFinally) { if (this.prev < entry.catchLoc) return handle(entry.catchLoc, !0); if (this.prev < entry.finallyLoc) return handle(entry.finallyLoc); } else if (hasCatch) { if (this.prev < entry.catchLoc) return handle(entry.catchLoc, !0); } else { if (!hasFinally) throw new Error("try statement without catch or finally"); if (this.prev < entry.finallyLoc) return handle(entry.finallyLoc); } } } }, abrupt: function abrupt(type, arg) { for (var i = this.tryEntries.length - 1; i >= 0; --i) { var entry = this.tryEntries[i]; if (entry.tryLoc <= this.prev && hasOwn.call(entry, "finallyLoc") && this.prev < entry.finallyLoc) { var finallyEntry = entry; break; } } finallyEntry && ("break" === type || "continue" === type) && finallyEntry.tryLoc <= arg && arg <= finallyEntry.finallyLoc && (finallyEntry = null); var record = finallyEntry ? finallyEntry.completion : {}; return record.type = type, record.arg = arg, finallyEntry ? (this.method = "next", this.next = finallyEntry.finallyLoc, ContinueSentinel) : this.complete(record); }, complete: function complete(record, afterLoc) { if ("throw" === record.type) throw record.arg; return "break" === record.type || "continue" === record.type ? this.next = record.arg : "return" === record.type ? (this.rval = this.arg = record.arg, this.method = "return", this.next = "end") : "normal" === record.type && afterLoc && (this.next = afterLoc), ContinueSentinel; }, finish: function finish(finallyLoc) { for (var i = this.tryEntries.length - 1; i >= 0; --i) { var entry = this.tryEntries[i]; if (entry.finallyLoc === finallyLoc) return this.complete(entry.completion, entry.afterLoc), resetTryEntry(entry), ContinueSentinel; } }, "catch": function _catch(tryLoc) { for (var i = this.tryEntries.length - 1; i >= 0; --i) { var entry = this.tryEntries[i]; if (entry.tryLoc === tryLoc) { var record = entry.completion; if ("throw" === record.type) { var thrown = record.arg; resetTryEntry(entry); } return thrown; } } throw new Error("illegal catch attempt"); }, delegateYield: function delegateYield(iterable, resultName, nextLoc) { return this.delegate = { iterator: values(iterable), resultName: resultName, nextLoc: nextLoc }, "next" === this.method && (this.arg = undefined), ContinueSentinel; } }, exports; }
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
 //
 //
 //
@@ -105,6 +111,49 @@ __webpack_require__.r(__webpack_exports__);
       address: "Av. Alfredo Benavides 3695. Surco."
     };
   },
+  methods: {
+    openEmail: function openEmail() {
+      var _this = this;
+
+      return _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee() {
+        var shareData;
+        return _regeneratorRuntime().wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                shareData = {
+                  title: 'A&S Consulting Group',
+                  text: 'Solicita tu asesoría',
+                  url: _this.email
+                };
+                _context.prev = 1;
+                _context.next = 4;
+                return navigator.share(shareData);
+
+              case 4:
+                console.log("OpenBrowserEmail");
+                _context.next = 10;
+                break;
+
+              case 7:
+                _context.prev = 7;
+                _context.t0 = _context["catch"](1);
+                console.log(_context.t0);
+
+              case 10:
+              case "end":
+                return _context.stop();
+            }
+          }
+        }, _callee, null, [[1, 7]]);
+      }))();
+    },
+    goToLocation: function goToLocation() {
+      this.$router.push({
+        name: 'contacto'
+      });
+    }
+  },
   computed: {
     yearActual: function yearActual() {
       var now = new Date();
@@ -126,24 +175,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 //
 //
 //
@@ -200,11 +231,13 @@ __webpack_require__.r(__webpack_exports__);
       });
     },
     agree: function agree() {
-      this.resolve({
-        response: this.correo,
-        status: 200
-      });
-      this.dialog = false;
+      if (this.correo != null && this.correo != '') {
+        this.resolve({
+          response: this.correo,
+          status: 200
+        });
+        this.dialog = false;
+      } else {}
     },
     cancel: function cancel() {
       this.resolve({
@@ -1084,7 +1117,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.as-footer_text {\r\n  font-size: 0.8rem;\n}\n.footer-logo {\r\n  height: 116px !important;\r\n  width: 112px !important;\n}\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.as-footer_text {\n    font-size: 0.8rem;\n}\n.footer-logo {\n    height: 116px !important;\n    width: 112px !important;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -1108,7 +1141,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.custom-dialog {\n    align-self: flex-start;\n    margin:0px;\n}\n.bg-newsletter{\n      background-color: rgb(204, 204, 204) !important;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.custom-dialog {\n    align-self: flex-start;\n    margin: 0px;\n}\n.bg-newsletter {\n    background-color: rgb(204, 204, 204) !important;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -1600,7 +1633,7 @@ if (GlobalVue) {
   function _typeof$6(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof$6 = function _typeof(obj) { return typeof obj; }; } else { _typeof$6 = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof$6(obj); }
   var subframeEnabled = true;
   var expressionsPlugin = null;
-  var idPrefix = '';
+  var idPrefix$1 = '';
   var isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
   var _shouldRoundValues = false;
   var bmPow = Math.pow;
@@ -1724,7 +1757,7 @@ if (GlobalVue) {
     var _count = 0;
     return function createID() {
       _count += 1;
-      return idPrefix + '__lottie_element_' + _count;
+      return idPrefix$1 + '__lottie_element_' + _count;
     };
   }();
 
@@ -1913,11 +1946,11 @@ if (GlobalVue) {
   };
 
   var setIdPrefix = function setIdPrefix(value) {
-    idPrefix = value;
+    idPrefix$1 = value;
   };
 
   var getIdPrefix = function getIdPrefix() {
-    return idPrefix;
+    return idPrefix$1;
   };
 
   function createNS(type) {
@@ -3013,7 +3046,7 @@ if (GlobalVue) {
             markerData.payload = parsePayloadLines(_markers[i].cm);
           } catch (__) {
             markerData.payload = {
-              name: _markers[i]
+              name: _markers[i].cm
             };
           }
         }
@@ -3104,6 +3137,7 @@ if (GlobalVue) {
     this.configAnimation = this.configAnimation.bind(this);
     this.onSetupError = this.onSetupError.bind(this);
     this.onSegmentComplete = this.onSegmentComplete.bind(this);
+    this.drawnFrameEvent = new BMEnterFrameEvent('drawnFrame', 0, 0, 0);
   };
 
   extendPrototype([BaseEvent], AnimationItem);
@@ -3424,6 +3458,7 @@ if (GlobalVue) {
 
     if (this.isPaused === true) {
       this.isPaused = false;
+      this.trigger('_pause');
       this.audioController.resume();
 
       if (this._idle) {
@@ -3440,6 +3475,7 @@ if (GlobalVue) {
 
     if (this.isPaused === false) {
       this.isPaused = true;
+      this.trigger('_play');
       this._idle = true;
       this.trigger('_idle');
       this.audioController.pause();
@@ -3800,12 +3836,26 @@ if (GlobalVue) {
     return isFrame ? this.totalFrames : this.totalFrames / this.frameRate;
   };
 
+  AnimationItem.prototype.updateDocumentData = function (path, documentData, index) {
+    try {
+      var element = this.renderer.getElementByPath(path);
+      element.updateDocumentData(documentData, index);
+    } catch (error) {// TODO: decide how to handle catch case
+    }
+  };
+
   AnimationItem.prototype.trigger = function (name) {
     if (this._cbs && this._cbs[name]) {
       switch (name) {
         case 'enterFrame':
-        case 'drawnFrame':
           this.triggerEvent(name, new BMEnterFrameEvent(name, this.currentFrame, this.totalFrames, this.frameModifier));
+          break;
+
+        case 'drawnFrame':
+          this.drawnFrameEvent.currentTime = this.currentFrame;
+          this.drawnFrameEvent.totalTime = this.totalFrames;
+          this.drawnFrameEvent.direction = this.frameModifier;
+          this.triggerEvent(name, this.drawnFrameEvent);
           break;
 
         case 'loopComplete':
@@ -6594,7 +6644,7 @@ if (GlobalVue) {
   lottie.useWebWorker = setWebWorker;
   lottie.setIDPrefix = setPrefix;
   lottie.__getFactory = getFactory;
-  lottie.version = '5.9.1';
+  lottie.version = '5.9.4';
 
   function checkReady() {
     if (document.readyState === 'complete') {
@@ -6618,7 +6668,7 @@ if (GlobalVue) {
     return null;
   }
 
-  var queryString;
+  var queryString = '';
 
   if (standalone) {
     var scripts = document.getElementsByTagName('script');
@@ -6626,7 +6676,7 @@ if (GlobalVue) {
     var myScript = scripts[index] || {
       src: ''
     };
-    queryString = myScript.src.replace(/^[^\?]+\??/, ''); // eslint-disable-line no-useless-escape
+    queryString = myScript.src ? myScript.src.replace(/^[^\?]+\??/, '') : ''; // eslint-disable-line no-useless-escape
 
     renderer = getQueryVariable('renderer');
   }
@@ -8026,28 +8076,47 @@ if (GlobalVue) {
       }
     }
 
-    function createHelper(def, fontData) {
-      var tHelper = createNS('text');
-      tHelper.style.fontSize = '100px'; // tHelper.style.fontFamily = fontData.fFamily;
-
+    function createHelper(fontData, def) {
+      var engine = document.body && def ? 'svg' : 'canvas';
+      var helper;
       var fontProps = getFontProperties(fontData);
-      tHelper.setAttribute('font-family', fontData.fFamily);
-      tHelper.setAttribute('font-style', fontProps.style);
-      tHelper.setAttribute('font-weight', fontProps.weight);
-      tHelper.textContent = '1';
 
-      if (fontData.fClass) {
-        tHelper.style.fontFamily = 'inherit';
-        tHelper.setAttribute('class', fontData.fClass);
+      if (engine === 'svg') {
+        var tHelper = createNS('text');
+        tHelper.style.fontSize = '100px'; // tHelper.style.fontFamily = fontData.fFamily;
+
+        tHelper.setAttribute('font-family', fontData.fFamily);
+        tHelper.setAttribute('font-style', fontProps.style);
+        tHelper.setAttribute('font-weight', fontProps.weight);
+        tHelper.textContent = '1';
+
+        if (fontData.fClass) {
+          tHelper.style.fontFamily = 'inherit';
+          tHelper.setAttribute('class', fontData.fClass);
+        } else {
+          tHelper.style.fontFamily = fontData.fFamily;
+        }
+
+        def.appendChild(tHelper);
+        helper = tHelper;
       } else {
-        tHelper.style.fontFamily = fontData.fFamily;
+        var tCanvasHelper = new OffscreenCanvas(500, 500).getContext('2d');
+        tCanvasHelper.font = fontProps.style + ' ' + fontProps.weight + ' 100px ' + fontData.fFamily;
+        helper = tCanvasHelper;
       }
 
-      def.appendChild(tHelper);
-      var tCanvasHelper = createTag('canvas').getContext('2d');
-      tCanvasHelper.font = fontData.fWeight + ' ' + fontData.fStyle + ' 100px ' + fontData.fFamily; // tCanvasHelper.font = ' 100px '+ fontData.fFamily;
+      function measure(text) {
+        if (engine === 'svg') {
+          helper.textContent = text;
+          return helper.getComputedTextLength();
+        }
 
-      return tHelper;
+        return helper.measureText(text).width;
+      }
+
+      return {
+        measureText: measure
+      };
     }
 
     function addFonts(fontData, defs) {
@@ -8058,6 +8127,16 @@ if (GlobalVue) {
 
       if (this.chars) {
         this.isLoaded = true;
+        this.fonts = fontData.list;
+        return;
+      }
+
+      if (!document.body) {
+        this.isLoaded = true;
+        fontData.list.forEach(function (data) {
+          data.helper = createHelper(data);
+          data.cache = {};
+        });
         this.fonts = fontData.list;
         return;
       }
@@ -8133,7 +8212,7 @@ if (GlobalVue) {
           }
         }
 
-        fontArr[i].helper = createHelper(defs, fontArr[i]);
+        fontArr[i].helper = createHelper(fontArr[i], defs);
         fontArr[i].cache = {};
         this.fonts.push(fontArr[i]);
       }
@@ -8208,20 +8287,14 @@ if (GlobalVue) {
       var index = _char2.charCodeAt(0);
 
       if (!fontData.cache[index + 1]) {
-        var tHelper = fontData.helper; // Canvas version
-        // fontData.cache[index] = tHelper.measureText(char).width / 100;
-        // SVG version
-        // console.log(tHelper.getBBox().width)
+        var tHelper = fontData.helper;
 
         if (_char2 === ' ') {
-          tHelper.textContent = '|' + _char2 + '|';
-          var doubleSize = tHelper.getComputedTextLength();
-          tHelper.textContent = '||';
-          var singleSize = tHelper.getComputedTextLength();
+          var doubleSize = tHelper.measureText('|' + _char2 + '|');
+          var singleSize = tHelper.measureText('||');
           fontData.cache[index + 1] = (doubleSize - singleSize) / 100;
         } else {
-          tHelper.textContent = _char2;
-          fontData.cache[index + 1] = tHelper.getComputedTextLength() / 100;
+          fontData.cache[index + 1] = tHelper.measureText(_char2) / 100;
         }
       }
 
@@ -10151,9 +10224,15 @@ if (GlobalVue) {
     this.audio = this.globalData.audioController.createAudio(assetPath);
     this._currentTime = 0;
     this.globalData.audioController.addAudio(this);
+    this._volumeMultiplier = 1;
+    this._volume = 1;
+    this._previousVolume = null;
     this.tm = data.tm ? PropertyFactory.getProp(this, data.tm, 0, globalData.frameRate, this) : {
       _placeholder: true
     };
+    this.lv = PropertyFactory.getProp(this, data.au && data.au.lv ? data.au.lv : {
+      k: [100]
+    }, 1, 0.01, this);
   }
 
   AudioElement.prototype.prepareFrame = function (num) {
@@ -10165,6 +10244,14 @@ if (GlobalVue) {
       this._currentTime = timeRemapped;
     } else {
       this._currentTime = num / this.data.sr;
+    }
+
+    this._volume = this.lv.v[0];
+    var totalVolume = this._volume * this._volumeMultiplier;
+
+    if (this._previousVolume !== totalVolume) {
+      this._previousVolume = totalVolume;
+      this.audio.volume(totalVolume);
     }
   };
 
@@ -10205,7 +10292,9 @@ if (GlobalVue) {
   };
 
   AudioElement.prototype.volume = function (volumeValue) {
-    this.audio.volume(volumeValue);
+    this._volumeMultiplier = volumeValue;
+    this._previousVolume = volumeValue * this._volume;
+    this.audio.volume(this._previousVolume);
   };
 
   AudioElement.prototype.getBaseElement = function () {
@@ -10372,6 +10461,31 @@ if (GlobalVue) {
         this.globalData.projectInterface.registerComposition(comp);
       }
     }
+  };
+
+  BaseRenderer.prototype.getElementByPath = function (path) {
+    var pathValue = path.shift();
+    var element;
+
+    if (typeof pathValue === 'number') {
+      element = this.elements[pathValue];
+    } else {
+      var i;
+      var len = this.elements.length;
+
+      for (i = 0; i < len; i += 1) {
+        if (this.elements[i].data.nm === pathValue) {
+          element = this.elements[i];
+          break;
+        }
+      }
+    }
+
+    if (path.length === 0) {
+      return element;
+    }
+
+    return element.getElementByPath(path);
   };
 
   BaseRenderer.prototype.setupGlobalData = function (animData, fontsContainer) {
@@ -10765,582 +10879,12 @@ if (GlobalVue) {
     return ob;
   }();
 
-  function SVGTintFilter(filter, filterManager) {
-    this.filterManager = filterManager;
-    var feColorMatrix = createNS('feColorMatrix');
-    feColorMatrix.setAttribute('type', 'matrix');
-    feColorMatrix.setAttribute('color-interpolation-filters', 'linearRGB');
-    feColorMatrix.setAttribute('values', '0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0');
-    feColorMatrix.setAttribute('result', 'f1');
-    filter.appendChild(feColorMatrix);
-    feColorMatrix = createNS('feColorMatrix');
-    feColorMatrix.setAttribute('type', 'matrix');
-    feColorMatrix.setAttribute('color-interpolation-filters', 'sRGB');
-    feColorMatrix.setAttribute('values', '1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 1 0');
-    feColorMatrix.setAttribute('result', 'f2');
-    filter.appendChild(feColorMatrix);
-    this.matrixFilter = feColorMatrix;
-
-    if (filterManager.effectElements[2].p.v !== 100 || filterManager.effectElements[2].p.k) {
-      var feMerge = createNS('feMerge');
-      filter.appendChild(feMerge);
-      var feMergeNode;
-      feMergeNode = createNS('feMergeNode');
-      feMergeNode.setAttribute('in', 'SourceGraphic');
-      feMerge.appendChild(feMergeNode);
-      feMergeNode = createNS('feMergeNode');
-      feMergeNode.setAttribute('in', 'f2');
-      feMerge.appendChild(feMergeNode);
-    }
-  }
-
-  SVGTintFilter.prototype.renderFrame = function (forceRender) {
-    if (forceRender || this.filterManager._mdf) {
-      var colorBlack = this.filterManager.effectElements[0].p.v;
-      var colorWhite = this.filterManager.effectElements[1].p.v;
-      var opacity = this.filterManager.effectElements[2].p.v / 100;
-      this.matrixFilter.setAttribute('values', colorWhite[0] - colorBlack[0] + ' 0 0 0 ' + colorBlack[0] + ' ' + (colorWhite[1] - colorBlack[1]) + ' 0 0 0 ' + colorBlack[1] + ' ' + (colorWhite[2] - colorBlack[2]) + ' 0 0 0 ' + colorBlack[2] + ' 0 0 0 ' + opacity + ' 0');
-    }
-  };
-
-  function SVGFillFilter(filter, filterManager) {
-    this.filterManager = filterManager;
-    var feColorMatrix = createNS('feColorMatrix');
-    feColorMatrix.setAttribute('type', 'matrix');
-    feColorMatrix.setAttribute('color-interpolation-filters', 'sRGB');
-    feColorMatrix.setAttribute('values', '1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 1 0');
-    filter.appendChild(feColorMatrix);
-    this.matrixFilter = feColorMatrix;
-  }
-
-  SVGFillFilter.prototype.renderFrame = function (forceRender) {
-    if (forceRender || this.filterManager._mdf) {
-      var color = this.filterManager.effectElements[2].p.v;
-      var opacity = this.filterManager.effectElements[6].p.v;
-      this.matrixFilter.setAttribute('values', '0 0 0 0 ' + color[0] + ' 0 0 0 0 ' + color[1] + ' 0 0 0 0 ' + color[2] + ' 0 0 0 ' + opacity + ' 0');
-    }
-  };
-
-  function SVGStrokeEffect(elem, filterManager) {
-    this.initialized = false;
-    this.filterManager = filterManager;
-    this.elem = elem;
-    this.paths = [];
-  }
-
-  SVGStrokeEffect.prototype.initialize = function () {
-    var elemChildren = this.elem.layerElement.children || this.elem.layerElement.childNodes;
-    var path;
-    var groupPath;
-    var i;
-    var len;
-
-    if (this.filterManager.effectElements[1].p.v === 1) {
-      len = this.elem.maskManager.masksProperties.length;
-      i = 0;
-    } else {
-      i = this.filterManager.effectElements[0].p.v - 1;
-      len = i + 1;
-    }
-
-    groupPath = createNS('g');
-    groupPath.setAttribute('fill', 'none');
-    groupPath.setAttribute('stroke-linecap', 'round');
-    groupPath.setAttribute('stroke-dashoffset', 1);
-
-    for (i; i < len; i += 1) {
-      path = createNS('path');
-      groupPath.appendChild(path);
-      this.paths.push({
-        p: path,
-        m: i
-      });
-    }
-
-    if (this.filterManager.effectElements[10].p.v === 3) {
-      var mask = createNS('mask');
-      var id = createElementID();
-      mask.setAttribute('id', id);
-      mask.setAttribute('mask-type', 'alpha');
-      mask.appendChild(groupPath);
-      this.elem.globalData.defs.appendChild(mask);
-      var g = createNS('g');
-      g.setAttribute('mask', 'url(' + getLocationHref() + '#' + id + ')');
-
-      while (elemChildren[0]) {
-        g.appendChild(elemChildren[0]);
-      }
-
-      this.elem.layerElement.appendChild(g);
-      this.masker = mask;
-      groupPath.setAttribute('stroke', '#fff');
-    } else if (this.filterManager.effectElements[10].p.v === 1 || this.filterManager.effectElements[10].p.v === 2) {
-      if (this.filterManager.effectElements[10].p.v === 2) {
-        elemChildren = this.elem.layerElement.children || this.elem.layerElement.childNodes;
-
-        while (elemChildren.length) {
-          this.elem.layerElement.removeChild(elemChildren[0]);
-        }
-      }
-
-      this.elem.layerElement.appendChild(groupPath);
-      this.elem.layerElement.removeAttribute('mask');
-      groupPath.setAttribute('stroke', '#fff');
-    }
-
-    this.initialized = true;
-    this.pathMasker = groupPath;
-  };
-
-  SVGStrokeEffect.prototype.renderFrame = function (forceRender) {
-    if (!this.initialized) {
-      this.initialize();
-    }
-
-    var i;
-    var len = this.paths.length;
-    var mask;
-    var path;
-
-    for (i = 0; i < len; i += 1) {
-      if (this.paths[i].m !== -1) {
-        mask = this.elem.maskManager.viewData[this.paths[i].m];
-        path = this.paths[i].p;
-
-        if (forceRender || this.filterManager._mdf || mask.prop._mdf) {
-          path.setAttribute('d', mask.lastPath);
-        }
-
-        if (forceRender || this.filterManager.effectElements[9].p._mdf || this.filterManager.effectElements[4].p._mdf || this.filterManager.effectElements[7].p._mdf || this.filterManager.effectElements[8].p._mdf || mask.prop._mdf) {
-          var dasharrayValue;
-
-          if (this.filterManager.effectElements[7].p.v !== 0 || this.filterManager.effectElements[8].p.v !== 100) {
-            var s = Math.min(this.filterManager.effectElements[7].p.v, this.filterManager.effectElements[8].p.v) * 0.01;
-            var e = Math.max(this.filterManager.effectElements[7].p.v, this.filterManager.effectElements[8].p.v) * 0.01;
-            var l = path.getTotalLength();
-            dasharrayValue = '0 0 0 ' + l * s + ' ';
-            var lineLength = l * (e - s);
-            var segment = 1 + this.filterManager.effectElements[4].p.v * 2 * this.filterManager.effectElements[9].p.v * 0.01;
-            var units = Math.floor(lineLength / segment);
-            var j;
-
-            for (j = 0; j < units; j += 1) {
-              dasharrayValue += '1 ' + this.filterManager.effectElements[4].p.v * 2 * this.filterManager.effectElements[9].p.v * 0.01 + ' ';
-            }
-
-            dasharrayValue += '0 ' + l * 10 + ' 0 0';
-          } else {
-            dasharrayValue = '1 ' + this.filterManager.effectElements[4].p.v * 2 * this.filterManager.effectElements[9].p.v * 0.01;
-          }
-
-          path.setAttribute('stroke-dasharray', dasharrayValue);
-        }
-      }
-    }
-
-    if (forceRender || this.filterManager.effectElements[4].p._mdf) {
-      this.pathMasker.setAttribute('stroke-width', this.filterManager.effectElements[4].p.v * 2);
-    }
-
-    if (forceRender || this.filterManager.effectElements[6].p._mdf) {
-      this.pathMasker.setAttribute('opacity', this.filterManager.effectElements[6].p.v);
-    }
-
-    if (this.filterManager.effectElements[10].p.v === 1 || this.filterManager.effectElements[10].p.v === 2) {
-      if (forceRender || this.filterManager.effectElements[3].p._mdf) {
-        var color = this.filterManager.effectElements[3].p.v;
-        this.pathMasker.setAttribute('stroke', 'rgb(' + bmFloor(color[0] * 255) + ',' + bmFloor(color[1] * 255) + ',' + bmFloor(color[2] * 255) + ')');
-      }
-    }
-  };
-
-  function SVGTritoneFilter(filter, filterManager) {
-    this.filterManager = filterManager;
-    var feColorMatrix = createNS('feColorMatrix');
-    feColorMatrix.setAttribute('type', 'matrix');
-    feColorMatrix.setAttribute('color-interpolation-filters', 'linearRGB');
-    feColorMatrix.setAttribute('values', '0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0');
-    feColorMatrix.setAttribute('result', 'f1');
-    filter.appendChild(feColorMatrix);
-    var feComponentTransfer = createNS('feComponentTransfer');
-    feComponentTransfer.setAttribute('color-interpolation-filters', 'sRGB');
-    filter.appendChild(feComponentTransfer);
-    this.matrixFilter = feComponentTransfer;
-    var feFuncR = createNS('feFuncR');
-    feFuncR.setAttribute('type', 'table');
-    feComponentTransfer.appendChild(feFuncR);
-    this.feFuncR = feFuncR;
-    var feFuncG = createNS('feFuncG');
-    feFuncG.setAttribute('type', 'table');
-    feComponentTransfer.appendChild(feFuncG);
-    this.feFuncG = feFuncG;
-    var feFuncB = createNS('feFuncB');
-    feFuncB.setAttribute('type', 'table');
-    feComponentTransfer.appendChild(feFuncB);
-    this.feFuncB = feFuncB;
-  }
-
-  SVGTritoneFilter.prototype.renderFrame = function (forceRender) {
-    if (forceRender || this.filterManager._mdf) {
-      var color1 = this.filterManager.effectElements[0].p.v;
-      var color2 = this.filterManager.effectElements[1].p.v;
-      var color3 = this.filterManager.effectElements[2].p.v;
-      var tableR = color3[0] + ' ' + color2[0] + ' ' + color1[0];
-      var tableG = color3[1] + ' ' + color2[1] + ' ' + color1[1];
-      var tableB = color3[2] + ' ' + color2[2] + ' ' + color1[2];
-      this.feFuncR.setAttribute('tableValues', tableR);
-      this.feFuncG.setAttribute('tableValues', tableG);
-      this.feFuncB.setAttribute('tableValues', tableB); // var opacity = this.filterManager.effectElements[2].p.v/100;
-      // this.matrixFilter.setAttribute('values',(colorWhite[0]- colorBlack[0])+' 0 0 0 '+ colorBlack[0] +' '+ (colorWhite[1]- colorBlack[1]) +' 0 0 0 '+ colorBlack[1] +' '+ (colorWhite[2]- colorBlack[2]) +' 0 0 0 '+ colorBlack[2] +' 0 0 0 ' + opacity + ' 0');
-    }
-  };
-
-  function SVGProLevelsFilter(filter, filterManager) {
-    this.filterManager = filterManager;
-    var effectElements = this.filterManager.effectElements;
-    var feComponentTransfer = createNS('feComponentTransfer');
-
-    if (effectElements[10].p.k || effectElements[10].p.v !== 0 || effectElements[11].p.k || effectElements[11].p.v !== 1 || effectElements[12].p.k || effectElements[12].p.v !== 1 || effectElements[13].p.k || effectElements[13].p.v !== 0 || effectElements[14].p.k || effectElements[14].p.v !== 1) {
-      this.feFuncR = this.createFeFunc('feFuncR', feComponentTransfer);
-    }
-
-    if (effectElements[17].p.k || effectElements[17].p.v !== 0 || effectElements[18].p.k || effectElements[18].p.v !== 1 || effectElements[19].p.k || effectElements[19].p.v !== 1 || effectElements[20].p.k || effectElements[20].p.v !== 0 || effectElements[21].p.k || effectElements[21].p.v !== 1) {
-      this.feFuncG = this.createFeFunc('feFuncG', feComponentTransfer);
-    }
-
-    if (effectElements[24].p.k || effectElements[24].p.v !== 0 || effectElements[25].p.k || effectElements[25].p.v !== 1 || effectElements[26].p.k || effectElements[26].p.v !== 1 || effectElements[27].p.k || effectElements[27].p.v !== 0 || effectElements[28].p.k || effectElements[28].p.v !== 1) {
-      this.feFuncB = this.createFeFunc('feFuncB', feComponentTransfer);
-    }
-
-    if (effectElements[31].p.k || effectElements[31].p.v !== 0 || effectElements[32].p.k || effectElements[32].p.v !== 1 || effectElements[33].p.k || effectElements[33].p.v !== 1 || effectElements[34].p.k || effectElements[34].p.v !== 0 || effectElements[35].p.k || effectElements[35].p.v !== 1) {
-      this.feFuncA = this.createFeFunc('feFuncA', feComponentTransfer);
-    }
-
-    if (this.feFuncR || this.feFuncG || this.feFuncB || this.feFuncA) {
-      feComponentTransfer.setAttribute('color-interpolation-filters', 'sRGB');
-      filter.appendChild(feComponentTransfer);
-      feComponentTransfer = createNS('feComponentTransfer');
-    }
-
-    if (effectElements[3].p.k || effectElements[3].p.v !== 0 || effectElements[4].p.k || effectElements[4].p.v !== 1 || effectElements[5].p.k || effectElements[5].p.v !== 1 || effectElements[6].p.k || effectElements[6].p.v !== 0 || effectElements[7].p.k || effectElements[7].p.v !== 1) {
-      feComponentTransfer.setAttribute('color-interpolation-filters', 'sRGB');
-      filter.appendChild(feComponentTransfer);
-      this.feFuncRComposed = this.createFeFunc('feFuncR', feComponentTransfer);
-      this.feFuncGComposed = this.createFeFunc('feFuncG', feComponentTransfer);
-      this.feFuncBComposed = this.createFeFunc('feFuncB', feComponentTransfer);
-    }
-  }
-
-  SVGProLevelsFilter.prototype.createFeFunc = function (type, feComponentTransfer) {
-    var feFunc = createNS(type);
-    feFunc.setAttribute('type', 'table');
-    feComponentTransfer.appendChild(feFunc);
-    return feFunc;
-  };
-
-  SVGProLevelsFilter.prototype.getTableValue = function (inputBlack, inputWhite, gamma, outputBlack, outputWhite) {
-    var cnt = 0;
-    var segments = 256;
-    var perc;
-    var min = Math.min(inputBlack, inputWhite);
-    var max = Math.max(inputBlack, inputWhite);
-    var table = Array.call(null, {
-      length: segments
-    });
-    var colorValue;
-    var pos = 0;
-    var outputDelta = outputWhite - outputBlack;
-    var inputDelta = inputWhite - inputBlack;
-
-    while (cnt <= 256) {
-      perc = cnt / 256;
-
-      if (perc <= min) {
-        colorValue = inputDelta < 0 ? outputWhite : outputBlack;
-      } else if (perc >= max) {
-        colorValue = inputDelta < 0 ? outputBlack : outputWhite;
-      } else {
-        colorValue = outputBlack + outputDelta * Math.pow((perc - inputBlack) / inputDelta, 1 / gamma);
-      }
-
-      table[pos] = colorValue;
-      pos += 1;
-      cnt += 256 / (segments - 1);
-    }
-
-    return table.join(' ');
-  };
-
-  SVGProLevelsFilter.prototype.renderFrame = function (forceRender) {
-    if (forceRender || this.filterManager._mdf) {
-      var val;
-      var effectElements = this.filterManager.effectElements;
-
-      if (this.feFuncRComposed && (forceRender || effectElements[3].p._mdf || effectElements[4].p._mdf || effectElements[5].p._mdf || effectElements[6].p._mdf || effectElements[7].p._mdf)) {
-        val = this.getTableValue(effectElements[3].p.v, effectElements[4].p.v, effectElements[5].p.v, effectElements[6].p.v, effectElements[7].p.v);
-        this.feFuncRComposed.setAttribute('tableValues', val);
-        this.feFuncGComposed.setAttribute('tableValues', val);
-        this.feFuncBComposed.setAttribute('tableValues', val);
-      }
-
-      if (this.feFuncR && (forceRender || effectElements[10].p._mdf || effectElements[11].p._mdf || effectElements[12].p._mdf || effectElements[13].p._mdf || effectElements[14].p._mdf)) {
-        val = this.getTableValue(effectElements[10].p.v, effectElements[11].p.v, effectElements[12].p.v, effectElements[13].p.v, effectElements[14].p.v);
-        this.feFuncR.setAttribute('tableValues', val);
-      }
-
-      if (this.feFuncG && (forceRender || effectElements[17].p._mdf || effectElements[18].p._mdf || effectElements[19].p._mdf || effectElements[20].p._mdf || effectElements[21].p._mdf)) {
-        val = this.getTableValue(effectElements[17].p.v, effectElements[18].p.v, effectElements[19].p.v, effectElements[20].p.v, effectElements[21].p.v);
-        this.feFuncG.setAttribute('tableValues', val);
-      }
-
-      if (this.feFuncB && (forceRender || effectElements[24].p._mdf || effectElements[25].p._mdf || effectElements[26].p._mdf || effectElements[27].p._mdf || effectElements[28].p._mdf)) {
-        val = this.getTableValue(effectElements[24].p.v, effectElements[25].p.v, effectElements[26].p.v, effectElements[27].p.v, effectElements[28].p.v);
-        this.feFuncB.setAttribute('tableValues', val);
-      }
-
-      if (this.feFuncA && (forceRender || effectElements[31].p._mdf || effectElements[32].p._mdf || effectElements[33].p._mdf || effectElements[34].p._mdf || effectElements[35].p._mdf)) {
-        val = this.getTableValue(effectElements[31].p.v, effectElements[32].p.v, effectElements[33].p.v, effectElements[34].p.v, effectElements[35].p.v);
-        this.feFuncA.setAttribute('tableValues', val);
-      }
-    }
-  };
-
-  function SVGDropShadowEffect(filter, filterManager) {
-    var filterSize = filterManager.container.globalData.renderConfig.filterSize;
-    filter.setAttribute('x', filterSize.x);
-    filter.setAttribute('y', filterSize.y);
-    filter.setAttribute('width', filterSize.width);
-    filter.setAttribute('height', filterSize.height);
-    this.filterManager = filterManager;
-    var feGaussianBlur = createNS('feGaussianBlur');
-    feGaussianBlur.setAttribute('in', 'SourceAlpha');
-    feGaussianBlur.setAttribute('result', 'drop_shadow_1');
-    feGaussianBlur.setAttribute('stdDeviation', '0');
-    this.feGaussianBlur = feGaussianBlur;
-    filter.appendChild(feGaussianBlur);
-    var feOffset = createNS('feOffset');
-    feOffset.setAttribute('dx', '25');
-    feOffset.setAttribute('dy', '0');
-    feOffset.setAttribute('in', 'drop_shadow_1');
-    feOffset.setAttribute('result', 'drop_shadow_2');
-    this.feOffset = feOffset;
-    filter.appendChild(feOffset);
-    var feFlood = createNS('feFlood');
-    feFlood.setAttribute('flood-color', '#00ff00');
-    feFlood.setAttribute('flood-opacity', '1');
-    feFlood.setAttribute('result', 'drop_shadow_3');
-    this.feFlood = feFlood;
-    filter.appendChild(feFlood);
-    var feComposite = createNS('feComposite');
-    feComposite.setAttribute('in', 'drop_shadow_3');
-    feComposite.setAttribute('in2', 'drop_shadow_2');
-    feComposite.setAttribute('operator', 'in');
-    feComposite.setAttribute('result', 'drop_shadow_4');
-    filter.appendChild(feComposite);
-    var feMerge = createNS('feMerge');
-    filter.appendChild(feMerge);
-    var feMergeNode;
-    feMergeNode = createNS('feMergeNode');
-    feMerge.appendChild(feMergeNode);
-    feMergeNode = createNS('feMergeNode');
-    feMergeNode.setAttribute('in', 'SourceGraphic');
-    this.feMergeNode = feMergeNode;
-    this.feMerge = feMerge;
-    this.originalNodeAdded = false;
-    feMerge.appendChild(feMergeNode);
-  }
-
-  SVGDropShadowEffect.prototype.renderFrame = function (forceRender) {
-    if (forceRender || this.filterManager._mdf) {
-      if (forceRender || this.filterManager.effectElements[4].p._mdf) {
-        this.feGaussianBlur.setAttribute('stdDeviation', this.filterManager.effectElements[4].p.v / 4);
-      }
-
-      if (forceRender || this.filterManager.effectElements[0].p._mdf) {
-        var col = this.filterManager.effectElements[0].p.v;
-        this.feFlood.setAttribute('flood-color', rgbToHex(Math.round(col[0] * 255), Math.round(col[1] * 255), Math.round(col[2] * 255)));
-      }
-
-      if (forceRender || this.filterManager.effectElements[1].p._mdf) {
-        this.feFlood.setAttribute('flood-opacity', this.filterManager.effectElements[1].p.v / 255);
-      }
-
-      if (forceRender || this.filterManager.effectElements[2].p._mdf || this.filterManager.effectElements[3].p._mdf) {
-        var distance = this.filterManager.effectElements[3].p.v;
-        var angle = (this.filterManager.effectElements[2].p.v - 90) * degToRads;
-        var x = distance * Math.cos(angle);
-        var y = distance * Math.sin(angle);
-        this.feOffset.setAttribute('dx', x);
-        this.feOffset.setAttribute('dy', y);
-      }
-      /* if(forceRender || this.filterManager.effectElements[5].p._mdf){
-              if(this.filterManager.effectElements[5].p.v === 1 && this.originalNodeAdded) {
-                  this.feMerge.removeChild(this.feMergeNode);
-                  this.originalNodeAdded = false;
-              } else if(this.filterManager.effectElements[5].p.v === 0 && !this.originalNodeAdded) {
-                  this.feMerge.appendChild(this.feMergeNode);
-                  this.originalNodeAdded = true;
-              }
-          } */
-
-    }
-  };
-
-  var _svgMatteSymbols = [];
-
-  function SVGMatte3Effect(filterElem, filterManager, elem) {
-    this.initialized = false;
-    this.filterManager = filterManager;
-    this.filterElem = filterElem;
-    this.elem = elem;
-    elem.matteElement = createNS('g');
-    elem.matteElement.appendChild(elem.layerElement);
-    elem.matteElement.appendChild(elem.transformedElement);
-    elem.baseElement = elem.matteElement;
-  }
-
-  SVGMatte3Effect.prototype.findSymbol = function (mask) {
-    var i = 0;
-    var len = _svgMatteSymbols.length;
-
-    while (i < len) {
-      if (_svgMatteSymbols[i] === mask) {
-        return _svgMatteSymbols[i];
-      }
-
-      i += 1;
-    }
-
-    return null;
-  };
-
-  SVGMatte3Effect.prototype.replaceInParent = function (mask, symbolId) {
-    var parentNode = mask.layerElement.parentNode;
-
-    if (!parentNode) {
-      return;
-    }
-
-    var children = parentNode.children;
-    var i = 0;
-    var len = children.length;
-
-    while (i < len) {
-      if (children[i] === mask.layerElement) {
-        break;
-      }
-
-      i += 1;
-    }
-
-    var nextChild;
-
-    if (i <= len - 2) {
-      nextChild = children[i + 1];
-    }
-
-    var useElem = createNS('use');
-    useElem.setAttribute('href', '#' + symbolId);
-
-    if (nextChild) {
-      parentNode.insertBefore(useElem, nextChild);
-    } else {
-      parentNode.appendChild(useElem);
-    }
-  };
-
-  SVGMatte3Effect.prototype.setElementAsMask = function (elem, mask) {
-    if (!this.findSymbol(mask)) {
-      var symbolId = createElementID();
-      var masker = createNS('mask');
-      masker.setAttribute('id', mask.layerId);
-      masker.setAttribute('mask-type', 'alpha');
-
-      _svgMatteSymbols.push(mask);
-
-      var defs = elem.globalData.defs;
-      defs.appendChild(masker);
-      var symbol = createNS('symbol');
-      symbol.setAttribute('id', symbolId);
-      this.replaceInParent(mask, symbolId);
-      symbol.appendChild(mask.layerElement);
-      defs.appendChild(symbol);
-      var useElem = createNS('use');
-      useElem.setAttribute('href', '#' + symbolId);
-      masker.appendChild(useElem);
-      mask.data.hd = false;
-      mask.show();
-    }
-
-    elem.setMatte(mask.layerId);
-  };
-
-  SVGMatte3Effect.prototype.initialize = function () {
-    var ind = this.filterManager.effectElements[0].p.v;
-    var elements = this.elem.comp.elements;
-    var i = 0;
-    var len = elements.length;
-
-    while (i < len) {
-      if (elements[i] && elements[i].data.ind === ind) {
-        this.setElementAsMask(this.elem, elements[i]);
-      }
-
-      i += 1;
-    }
-
-    this.initialized = true;
-  };
-
-  SVGMatte3Effect.prototype.renderFrame = function () {
-    if (!this.initialized) {
-      this.initialize();
-    }
-  };
-
-  function SVGGaussianBlurEffect(filter, filterManager) {
-    // Outset the filter region by 100% on all sides to accommodate blur expansion.
-    filter.setAttribute('x', '-100%');
-    filter.setAttribute('y', '-100%');
-    filter.setAttribute('width', '300%');
-    filter.setAttribute('height', '300%');
-    this.filterManager = filterManager;
-    var feGaussianBlur = createNS('feGaussianBlur');
-    filter.appendChild(feGaussianBlur);
-    this.feGaussianBlur = feGaussianBlur;
-  }
-
-  SVGGaussianBlurEffect.prototype.renderFrame = function (forceRender) {
-    if (forceRender || this.filterManager._mdf) {
-      // Empirical value, matching AE's blur appearance.
-      var kBlurrinessToSigma = 0.3;
-      var sigma = this.filterManager.effectElements[0].p.v * kBlurrinessToSigma; // Dimensions mapping:
-      //
-      //   1 -> horizontal & vertical
-      //   2 -> horizontal only
-      //   3 -> vertical only
-      //
-
-      var dimensions = this.filterManager.effectElements[1].p.v;
-      var sigmaX = dimensions == 3 ? 0 : sigma; // eslint-disable-line eqeqeq
-
-      var sigmaY = dimensions == 2 ? 0 : sigma; // eslint-disable-line eqeqeq
-
-      this.feGaussianBlur.setAttribute('stdDeviation', sigmaX + ' ' + sigmaY); // Repeat edges mapping:
-      //
-      //   0 -> off -> duplicate
-      //   1 -> on  -> wrap
-
-      var edgeMode = this.filterManager.effectElements[2].p.v == 1 ? 'wrap' : 'duplicate'; // eslint-disable-line eqeqeq
-
-      this.feGaussianBlur.setAttribute('edgeMode', edgeMode);
-    }
-  };
-
   var registeredEffects = {};
+  var idPrefix = 'filter_result_';
 
   function SVGEffects(elem) {
     var i;
+    var source = 'SourceGraphic';
     var len = elem.data.ef ? elem.data.ef.length : 0;
     var filId = createElementID();
     var fil = filtersFactory.createFilter(filId, true);
@@ -11354,36 +10898,12 @@ if (GlobalVue) {
 
       if (registeredEffects[type]) {
         var Effect = registeredEffects[type].effect;
-        filterManager = new Effect(fil, elem.effectsManager.effectElements[i], elem);
+        filterManager = new Effect(fil, elem.effectsManager.effectElements[i], elem, idPrefix + count, source);
+        source = idPrefix + count;
 
         if (registeredEffects[type].countsAsEffect) {
           count += 1;
         }
-      }
-
-      if (elem.data.ef[i].ty === 20) {
-        count += 1;
-        filterManager = new SVGTintFilter(fil, elem.effectsManager.effectElements[i]);
-      } else if (elem.data.ef[i].ty === 21) {
-        count += 1;
-        filterManager = new SVGFillFilter(fil, elem.effectsManager.effectElements[i]);
-      } else if (elem.data.ef[i].ty === 22) {
-        filterManager = new SVGStrokeEffect(elem, elem.effectsManager.effectElements[i]);
-      } else if (elem.data.ef[i].ty === 23) {
-        count += 1;
-        filterManager = new SVGTritoneFilter(fil, elem.effectsManager.effectElements[i]);
-      } else if (elem.data.ef[i].ty === 24) {
-        count += 1;
-        filterManager = new SVGProLevelsFilter(fil, elem.effectsManager.effectElements[i]);
-      } else if (elem.data.ef[i].ty === 25) {
-        count += 1;
-        filterManager = new SVGDropShadowEffect(fil, elem.effectsManager.effectElements[i]);
-      } else if (elem.data.ef[i].ty === 28) {
-        // count += 1;
-        filterManager = new SVGMatte3Effect(fil, elem.effectsManager.effectElements[i], elem);
-      } else if (elem.data.ef[i].ty === 29) {
-        count += 1;
-        filterManager = new SVGGaussianBlurEffect(fil, elem.effectsManager.effectElements[i]);
       }
 
       if (filterManager) {
@@ -14480,6 +14000,27 @@ if (GlobalVue) {
     return textContents;
   };
 
+  SVGTextLottieElement.prototype.buildShapeData = function (data, scale) {
+    // data should probably be cloned to apply scale separately to each instance of a text on different layers
+    // but since text internal content gets only rendered once and then it's never rerendered,
+    // it's probably safe not to clone data and reuse always the same instance even if the object is mutated.
+    // Avoiding cloning is preferred since cloning each character shape data is expensive
+    if (data.shapes && data.shapes.length) {
+      var shape = data.shapes[0];
+
+      if (shape.it) {
+        var shapeItem = shape.it[shape.it.length - 1];
+
+        if (shapeItem.s) {
+          shapeItem.s.k[0] = scale;
+          shapeItem.s.k[1] = scale;
+        }
+      }
+    }
+
+    return data;
+  };
+
   SVGTextLottieElement.prototype.buildNewText = function () {
     this.addDynamicProperty(this);
     var i;
@@ -14604,7 +14145,6 @@ if (GlobalVue) {
         }
 
         matrixHelper.reset();
-        matrixHelper.scale(documentData.finalSize / 100, documentData.finalSize / 100);
 
         if (singleShape) {
           if (letters[i].n) {
@@ -14622,7 +14162,7 @@ if (GlobalVue) {
 
         if (usesGlyphs) {
           charData = this.globalData.fontManager.getCharData(documentData.finalText[i], fontData.fStyle, this.globalData.fontManager.getFontByName(documentData.f).fFamily);
-          var glyphElement;
+          var glyphElement; // t === 1 means the character has been replaced with an animated shaped
 
           if (charData.t === 1) {
             glyphElement = new SVGCompElement(charData.data, this.globalData, this);
@@ -14630,18 +14170,28 @@ if (GlobalVue) {
             var data = emptyShapeData;
 
             if (charData.data && charData.data.shapes) {
-              data = charData.data;
+              data = this.buildShapeData(charData.data, documentData.finalSize);
             }
 
             glyphElement = new SVGShapeElement(data, this.globalData, this);
+          }
+
+          if (this.textSpans[i].glyph) {
+            var glyph = this.textSpans[i].glyph;
+            this.textSpans[i].childSpan.removeChild(glyph.layerElement);
+            glyph.destroy();
           }
 
           this.textSpans[i].glyph = glyphElement;
           glyphElement._debug = true;
           glyphElement.prepareFrame(0);
           glyphElement.renderFrame();
-          this.textSpans[i].childSpan.appendChild(glyphElement.layerElement);
-          this.textSpans[i].childSpan.setAttribute('transform', 'scale(' + documentData.finalSize / 100 + ',' + documentData.finalSize / 100 + ')');
+          this.textSpans[i].childSpan.appendChild(glyphElement.layerElement); // when using animated shapes, the layer will be scaled instead of replacing the internal scale
+          // this might have issues with strokes and might need a different solution
+
+          if (charData.t === 1) {
+            this.textSpans[i].childSpan.setAttribute('transform', 'scale(' + documentData.finalSize / 100 + ',' + documentData.finalSize / 100 + ')');
+          }
         } else {
           if (singleShape) {
             tSpan.setAttribute('transform', 'translate(' + matrixHelper.props[12] + ',' + matrixHelper.props[13] + ')');
@@ -14836,6 +14386,14 @@ if (GlobalVue) {
       this.svgElement.style.height = '100%';
       this.svgElement.style.transform = 'translate3d(0,0,0)';
       this.svgElement.style.contentVisibility = this.renderConfig.contentVisibility;
+    }
+
+    if (this.renderConfig.width) {
+      this.svgElement.setAttribute('width', this.renderConfig.width);
+    }
+
+    if (this.renderConfig.height) {
+      this.svgElement.setAttribute('height', this.renderConfig.height);
     }
 
     if (this.renderConfig.className) {
@@ -15197,7 +14755,9 @@ if (GlobalVue) {
         height: config && config.filterSize && config.filterSize.height || '100%',
         x: config && config.filterSize && config.filterSize.x || '0%',
         y: config && config.filterSize && config.filterSize.y || '0%'
-      }
+      },
+      width: config && config.width,
+      height: config && config.height
     };
     this.globalData = {
       _mdf: false,
@@ -19273,7 +18833,7 @@ if (GlobalVue) {
       } // Bundlers will see these as dead code and unless we reference them
 
 
-      executeExpression.__preventDeadCodeRemoval = [$bm_transform, anchorPoint, velocity, inPoint, outPoint, width, height, name, loop_in, loop_out, smooth, toComp, fromCompToSurface, toWorld, fromWorld, mask, position, rotation, scale, thisComp, numKeys, active, wiggle, loopInDuration, loopOutDuration, comp, lookAt, easeOut, easeIn, ease, nearestKey, key, text, textIndex, textTotal, selectorValue, framesToTime, timeToFrames, sourceRectAtTime, substring, substr, posterizeTime, index, globalData];
+      executeExpression.__preventDeadCodeRemoval = [$bm_transform, anchorPoint, time, velocity, inPoint, outPoint, width, height, name, loop_in, loop_out, smooth, toComp, fromCompToSurface, toWorld, fromWorld, mask, position, rotation, scale, thisComp, numKeys, active, wiggle, loopInDuration, loopOutDuration, comp, lookAt, easeOut, easeIn, ease, nearestKey, key, text, textIndex, textTotal, selectorValue, framesToTime, timeToFrames, sourceRectAtTime, substring, substr, posterizeTime, index, globalData];
       return executeExpression;
     }
 
@@ -19914,6 +19474,579 @@ if (GlobalVue) {
   function initialize() {
     addDecorator();
   }
+
+  function SVGComposableEffect() {}
+
+  SVGComposableEffect.prototype = {
+    createMergeNode: function createMergeNode(resultId, ins) {
+      var feMerge = createNS('feMerge');
+      feMerge.setAttribute('result', resultId);
+      var feMergeNode;
+      var i;
+
+      for (i = 0; i < ins.length; i += 1) {
+        feMergeNode = createNS('feMergeNode');
+        feMergeNode.setAttribute('in', ins[i]);
+        feMerge.appendChild(feMergeNode);
+        feMerge.appendChild(feMergeNode);
+      }
+
+      return feMerge;
+    }
+  };
+
+  function SVGTintFilter(filter, filterManager, elem, id, source) {
+    this.filterManager = filterManager;
+    var feColorMatrix = createNS('feColorMatrix');
+    feColorMatrix.setAttribute('type', 'matrix');
+    feColorMatrix.setAttribute('color-interpolation-filters', 'linearRGB');
+    feColorMatrix.setAttribute('values', '0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0');
+    feColorMatrix.setAttribute('result', id + '_tint_1');
+    filter.appendChild(feColorMatrix);
+    feColorMatrix = createNS('feColorMatrix');
+    feColorMatrix.setAttribute('type', 'matrix');
+    feColorMatrix.setAttribute('color-interpolation-filters', 'sRGB');
+    feColorMatrix.setAttribute('values', '1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 1 0');
+    feColorMatrix.setAttribute('result', id + '_tint_2');
+    filter.appendChild(feColorMatrix);
+    this.matrixFilter = feColorMatrix;
+    var feMerge = this.createMergeNode(id, [source, id + '_tint_1', id + '_tint_2']);
+    filter.appendChild(feMerge);
+  }
+
+  extendPrototype([SVGComposableEffect], SVGTintFilter);
+
+  SVGTintFilter.prototype.renderFrame = function (forceRender) {
+    if (forceRender || this.filterManager._mdf) {
+      var colorBlack = this.filterManager.effectElements[0].p.v;
+      var colorWhite = this.filterManager.effectElements[1].p.v;
+      var opacity = this.filterManager.effectElements[2].p.v / 100;
+      this.matrixFilter.setAttribute('values', colorWhite[0] - colorBlack[0] + ' 0 0 0 ' + colorBlack[0] + ' ' + (colorWhite[1] - colorBlack[1]) + ' 0 0 0 ' + colorBlack[1] + ' ' + (colorWhite[2] - colorBlack[2]) + ' 0 0 0 ' + colorBlack[2] + ' 0 0 0 ' + opacity + ' 0');
+    }
+  };
+
+  function SVGFillFilter(filter, filterManager, elem, id) {
+    this.filterManager = filterManager;
+    var feColorMatrix = createNS('feColorMatrix');
+    feColorMatrix.setAttribute('type', 'matrix');
+    feColorMatrix.setAttribute('color-interpolation-filters', 'sRGB');
+    feColorMatrix.setAttribute('values', '1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 1 0');
+    feColorMatrix.setAttribute('result', id);
+    filter.appendChild(feColorMatrix);
+    this.matrixFilter = feColorMatrix;
+  }
+
+  SVGFillFilter.prototype.renderFrame = function (forceRender) {
+    if (forceRender || this.filterManager._mdf) {
+      var color = this.filterManager.effectElements[2].p.v;
+      var opacity = this.filterManager.effectElements[6].p.v;
+      this.matrixFilter.setAttribute('values', '0 0 0 0 ' + color[0] + ' 0 0 0 0 ' + color[1] + ' 0 0 0 0 ' + color[2] + ' 0 0 0 ' + opacity + ' 0');
+    }
+  };
+
+  function SVGStrokeEffect(fil, filterManager, elem) {
+    this.initialized = false;
+    this.filterManager = filterManager;
+    this.elem = elem;
+    this.paths = [];
+  }
+
+  SVGStrokeEffect.prototype.initialize = function () {
+    var elemChildren = this.elem.layerElement.children || this.elem.layerElement.childNodes;
+    var path;
+    var groupPath;
+    var i;
+    var len;
+
+    if (this.filterManager.effectElements[1].p.v === 1) {
+      len = this.elem.maskManager.masksProperties.length;
+      i = 0;
+    } else {
+      i = this.filterManager.effectElements[0].p.v - 1;
+      len = i + 1;
+    }
+
+    groupPath = createNS('g');
+    groupPath.setAttribute('fill', 'none');
+    groupPath.setAttribute('stroke-linecap', 'round');
+    groupPath.setAttribute('stroke-dashoffset', 1);
+
+    for (i; i < len; i += 1) {
+      path = createNS('path');
+      groupPath.appendChild(path);
+      this.paths.push({
+        p: path,
+        m: i
+      });
+    }
+
+    if (this.filterManager.effectElements[10].p.v === 3) {
+      var mask = createNS('mask');
+      var id = createElementID();
+      mask.setAttribute('id', id);
+      mask.setAttribute('mask-type', 'alpha');
+      mask.appendChild(groupPath);
+      this.elem.globalData.defs.appendChild(mask);
+      var g = createNS('g');
+      g.setAttribute('mask', 'url(' + getLocationHref() + '#' + id + ')');
+
+      while (elemChildren[0]) {
+        g.appendChild(elemChildren[0]);
+      }
+
+      this.elem.layerElement.appendChild(g);
+      this.masker = mask;
+      groupPath.setAttribute('stroke', '#fff');
+    } else if (this.filterManager.effectElements[10].p.v === 1 || this.filterManager.effectElements[10].p.v === 2) {
+      if (this.filterManager.effectElements[10].p.v === 2) {
+        elemChildren = this.elem.layerElement.children || this.elem.layerElement.childNodes;
+
+        while (elemChildren.length) {
+          this.elem.layerElement.removeChild(elemChildren[0]);
+        }
+      }
+
+      this.elem.layerElement.appendChild(groupPath);
+      this.elem.layerElement.removeAttribute('mask');
+      groupPath.setAttribute('stroke', '#fff');
+    }
+
+    this.initialized = true;
+    this.pathMasker = groupPath;
+  };
+
+  SVGStrokeEffect.prototype.renderFrame = function (forceRender) {
+    if (!this.initialized) {
+      this.initialize();
+    }
+
+    var i;
+    var len = this.paths.length;
+    var mask;
+    var path;
+
+    for (i = 0; i < len; i += 1) {
+      if (this.paths[i].m !== -1) {
+        mask = this.elem.maskManager.viewData[this.paths[i].m];
+        path = this.paths[i].p;
+
+        if (forceRender || this.filterManager._mdf || mask.prop._mdf) {
+          path.setAttribute('d', mask.lastPath);
+        }
+
+        if (forceRender || this.filterManager.effectElements[9].p._mdf || this.filterManager.effectElements[4].p._mdf || this.filterManager.effectElements[7].p._mdf || this.filterManager.effectElements[8].p._mdf || mask.prop._mdf) {
+          var dasharrayValue;
+
+          if (this.filterManager.effectElements[7].p.v !== 0 || this.filterManager.effectElements[8].p.v !== 100) {
+            var s = Math.min(this.filterManager.effectElements[7].p.v, this.filterManager.effectElements[8].p.v) * 0.01;
+            var e = Math.max(this.filterManager.effectElements[7].p.v, this.filterManager.effectElements[8].p.v) * 0.01;
+            var l = path.getTotalLength();
+            dasharrayValue = '0 0 0 ' + l * s + ' ';
+            var lineLength = l * (e - s);
+            var segment = 1 + this.filterManager.effectElements[4].p.v * 2 * this.filterManager.effectElements[9].p.v * 0.01;
+            var units = Math.floor(lineLength / segment);
+            var j;
+
+            for (j = 0; j < units; j += 1) {
+              dasharrayValue += '1 ' + this.filterManager.effectElements[4].p.v * 2 * this.filterManager.effectElements[9].p.v * 0.01 + ' ';
+            }
+
+            dasharrayValue += '0 ' + l * 10 + ' 0 0';
+          } else {
+            dasharrayValue = '1 ' + this.filterManager.effectElements[4].p.v * 2 * this.filterManager.effectElements[9].p.v * 0.01;
+          }
+
+          path.setAttribute('stroke-dasharray', dasharrayValue);
+        }
+      }
+    }
+
+    if (forceRender || this.filterManager.effectElements[4].p._mdf) {
+      this.pathMasker.setAttribute('stroke-width', this.filterManager.effectElements[4].p.v * 2);
+    }
+
+    if (forceRender || this.filterManager.effectElements[6].p._mdf) {
+      this.pathMasker.setAttribute('opacity', this.filterManager.effectElements[6].p.v);
+    }
+
+    if (this.filterManager.effectElements[10].p.v === 1 || this.filterManager.effectElements[10].p.v === 2) {
+      if (forceRender || this.filterManager.effectElements[3].p._mdf) {
+        var color = this.filterManager.effectElements[3].p.v;
+        this.pathMasker.setAttribute('stroke', 'rgb(' + bmFloor(color[0] * 255) + ',' + bmFloor(color[1] * 255) + ',' + bmFloor(color[2] * 255) + ')');
+      }
+    }
+  };
+
+  function SVGTritoneFilter(filter, filterManager, elem, id) {
+    this.filterManager = filterManager;
+    var feColorMatrix = createNS('feColorMatrix');
+    feColorMatrix.setAttribute('type', 'matrix');
+    feColorMatrix.setAttribute('color-interpolation-filters', 'linearRGB');
+    feColorMatrix.setAttribute('values', '0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0');
+    filter.appendChild(feColorMatrix);
+    var feComponentTransfer = createNS('feComponentTransfer');
+    feComponentTransfer.setAttribute('color-interpolation-filters', 'sRGB');
+    feComponentTransfer.setAttribute('result', id);
+    this.matrixFilter = feComponentTransfer;
+    var feFuncR = createNS('feFuncR');
+    feFuncR.setAttribute('type', 'table');
+    feComponentTransfer.appendChild(feFuncR);
+    this.feFuncR = feFuncR;
+    var feFuncG = createNS('feFuncG');
+    feFuncG.setAttribute('type', 'table');
+    feComponentTransfer.appendChild(feFuncG);
+    this.feFuncG = feFuncG;
+    var feFuncB = createNS('feFuncB');
+    feFuncB.setAttribute('type', 'table');
+    feComponentTransfer.appendChild(feFuncB);
+    this.feFuncB = feFuncB;
+    filter.appendChild(feComponentTransfer);
+  }
+
+  SVGTritoneFilter.prototype.renderFrame = function (forceRender) {
+    if (forceRender || this.filterManager._mdf) {
+      var color1 = this.filterManager.effectElements[0].p.v;
+      var color2 = this.filterManager.effectElements[1].p.v;
+      var color3 = this.filterManager.effectElements[2].p.v;
+      var tableR = color3[0] + ' ' + color2[0] + ' ' + color1[0];
+      var tableG = color3[1] + ' ' + color2[1] + ' ' + color1[1];
+      var tableB = color3[2] + ' ' + color2[2] + ' ' + color1[2];
+      this.feFuncR.setAttribute('tableValues', tableR);
+      this.feFuncG.setAttribute('tableValues', tableG);
+      this.feFuncB.setAttribute('tableValues', tableB);
+    }
+  };
+
+  function SVGProLevelsFilter(filter, filterManager, elem, id) {
+    this.filterManager = filterManager;
+    var effectElements = this.filterManager.effectElements;
+    var feComponentTransfer = createNS('feComponentTransfer'); // Red
+
+    if (effectElements[10].p.k || effectElements[10].p.v !== 0 || effectElements[11].p.k || effectElements[11].p.v !== 1 || effectElements[12].p.k || effectElements[12].p.v !== 1 || effectElements[13].p.k || effectElements[13].p.v !== 0 || effectElements[14].p.k || effectElements[14].p.v !== 1) {
+      this.feFuncR = this.createFeFunc('feFuncR', feComponentTransfer);
+    } // Green
+
+
+    if (effectElements[17].p.k || effectElements[17].p.v !== 0 || effectElements[18].p.k || effectElements[18].p.v !== 1 || effectElements[19].p.k || effectElements[19].p.v !== 1 || effectElements[20].p.k || effectElements[20].p.v !== 0 || effectElements[21].p.k || effectElements[21].p.v !== 1) {
+      this.feFuncG = this.createFeFunc('feFuncG', feComponentTransfer);
+    } // Blue
+
+
+    if (effectElements[24].p.k || effectElements[24].p.v !== 0 || effectElements[25].p.k || effectElements[25].p.v !== 1 || effectElements[26].p.k || effectElements[26].p.v !== 1 || effectElements[27].p.k || effectElements[27].p.v !== 0 || effectElements[28].p.k || effectElements[28].p.v !== 1) {
+      this.feFuncB = this.createFeFunc('feFuncB', feComponentTransfer);
+    } // Alpha
+
+
+    if (effectElements[31].p.k || effectElements[31].p.v !== 0 || effectElements[32].p.k || effectElements[32].p.v !== 1 || effectElements[33].p.k || effectElements[33].p.v !== 1 || effectElements[34].p.k || effectElements[34].p.v !== 0 || effectElements[35].p.k || effectElements[35].p.v !== 1) {
+      this.feFuncA = this.createFeFunc('feFuncA', feComponentTransfer);
+    } // RGB
+
+
+    if (this.feFuncR || this.feFuncG || this.feFuncB || this.feFuncA) {
+      feComponentTransfer.setAttribute('color-interpolation-filters', 'sRGB');
+      filter.appendChild(feComponentTransfer);
+    }
+
+    if (effectElements[3].p.k || effectElements[3].p.v !== 0 || effectElements[4].p.k || effectElements[4].p.v !== 1 || effectElements[5].p.k || effectElements[5].p.v !== 1 || effectElements[6].p.k || effectElements[6].p.v !== 0 || effectElements[7].p.k || effectElements[7].p.v !== 1) {
+      feComponentTransfer = createNS('feComponentTransfer');
+      feComponentTransfer.setAttribute('color-interpolation-filters', 'sRGB');
+      feComponentTransfer.setAttribute('result', id);
+      filter.appendChild(feComponentTransfer);
+      this.feFuncRComposed = this.createFeFunc('feFuncR', feComponentTransfer);
+      this.feFuncGComposed = this.createFeFunc('feFuncG', feComponentTransfer);
+      this.feFuncBComposed = this.createFeFunc('feFuncB', feComponentTransfer);
+    }
+  }
+
+  SVGProLevelsFilter.prototype.createFeFunc = function (type, feComponentTransfer) {
+    var feFunc = createNS(type);
+    feFunc.setAttribute('type', 'table');
+    feComponentTransfer.appendChild(feFunc);
+    return feFunc;
+  };
+
+  SVGProLevelsFilter.prototype.getTableValue = function (inputBlack, inputWhite, gamma, outputBlack, outputWhite) {
+    var cnt = 0;
+    var segments = 256;
+    var perc;
+    var min = Math.min(inputBlack, inputWhite);
+    var max = Math.max(inputBlack, inputWhite);
+    var table = Array.call(null, {
+      length: segments
+    });
+    var colorValue;
+    var pos = 0;
+    var outputDelta = outputWhite - outputBlack;
+    var inputDelta = inputWhite - inputBlack;
+
+    while (cnt <= 256) {
+      perc = cnt / 256;
+
+      if (perc <= min) {
+        colorValue = inputDelta < 0 ? outputWhite : outputBlack;
+      } else if (perc >= max) {
+        colorValue = inputDelta < 0 ? outputBlack : outputWhite;
+      } else {
+        colorValue = outputBlack + outputDelta * Math.pow((perc - inputBlack) / inputDelta, 1 / gamma);
+      }
+
+      table[pos] = colorValue;
+      pos += 1;
+      cnt += 256 / (segments - 1);
+    }
+
+    return table.join(' ');
+  };
+
+  SVGProLevelsFilter.prototype.renderFrame = function (forceRender) {
+    if (forceRender || this.filterManager._mdf) {
+      var val;
+      var effectElements = this.filterManager.effectElements;
+
+      if (this.feFuncRComposed && (forceRender || effectElements[3].p._mdf || effectElements[4].p._mdf || effectElements[5].p._mdf || effectElements[6].p._mdf || effectElements[7].p._mdf)) {
+        val = this.getTableValue(effectElements[3].p.v, effectElements[4].p.v, effectElements[5].p.v, effectElements[6].p.v, effectElements[7].p.v);
+        this.feFuncRComposed.setAttribute('tableValues', val);
+        this.feFuncGComposed.setAttribute('tableValues', val);
+        this.feFuncBComposed.setAttribute('tableValues', val);
+      }
+
+      if (this.feFuncR && (forceRender || effectElements[10].p._mdf || effectElements[11].p._mdf || effectElements[12].p._mdf || effectElements[13].p._mdf || effectElements[14].p._mdf)) {
+        val = this.getTableValue(effectElements[10].p.v, effectElements[11].p.v, effectElements[12].p.v, effectElements[13].p.v, effectElements[14].p.v);
+        this.feFuncR.setAttribute('tableValues', val);
+      }
+
+      if (this.feFuncG && (forceRender || effectElements[17].p._mdf || effectElements[18].p._mdf || effectElements[19].p._mdf || effectElements[20].p._mdf || effectElements[21].p._mdf)) {
+        val = this.getTableValue(effectElements[17].p.v, effectElements[18].p.v, effectElements[19].p.v, effectElements[20].p.v, effectElements[21].p.v);
+        this.feFuncG.setAttribute('tableValues', val);
+      }
+
+      if (this.feFuncB && (forceRender || effectElements[24].p._mdf || effectElements[25].p._mdf || effectElements[26].p._mdf || effectElements[27].p._mdf || effectElements[28].p._mdf)) {
+        val = this.getTableValue(effectElements[24].p.v, effectElements[25].p.v, effectElements[26].p.v, effectElements[27].p.v, effectElements[28].p.v);
+        this.feFuncB.setAttribute('tableValues', val);
+      }
+
+      if (this.feFuncA && (forceRender || effectElements[31].p._mdf || effectElements[32].p._mdf || effectElements[33].p._mdf || effectElements[34].p._mdf || effectElements[35].p._mdf)) {
+        val = this.getTableValue(effectElements[31].p.v, effectElements[32].p.v, effectElements[33].p.v, effectElements[34].p.v, effectElements[35].p.v);
+        this.feFuncA.setAttribute('tableValues', val);
+      }
+    }
+  };
+
+  function SVGDropShadowEffect(filter, filterManager, elem, id, source) {
+    var filterSize = filterManager.container.globalData.renderConfig.filterSize;
+    filter.setAttribute('x', filterSize.x);
+    filter.setAttribute('y', filterSize.y);
+    filter.setAttribute('width', filterSize.width);
+    filter.setAttribute('height', filterSize.height);
+    this.filterManager = filterManager;
+    var feGaussianBlur = createNS('feGaussianBlur');
+    feGaussianBlur.setAttribute('in', 'SourceAlpha');
+    feGaussianBlur.setAttribute('result', id + '_drop_shadow_1');
+    feGaussianBlur.setAttribute('stdDeviation', '0');
+    this.feGaussianBlur = feGaussianBlur;
+    filter.appendChild(feGaussianBlur);
+    var feOffset = createNS('feOffset');
+    feOffset.setAttribute('dx', '25');
+    feOffset.setAttribute('dy', '0');
+    feOffset.setAttribute('in', id + '_drop_shadow_1');
+    feOffset.setAttribute('result', id + '_drop_shadow_2');
+    this.feOffset = feOffset;
+    filter.appendChild(feOffset);
+    var feFlood = createNS('feFlood');
+    feFlood.setAttribute('flood-color', '#00ff00');
+    feFlood.setAttribute('flood-opacity', '1');
+    feFlood.setAttribute('result', id + '_drop_shadow_3');
+    this.feFlood = feFlood;
+    filter.appendChild(feFlood);
+    var feComposite = createNS('feComposite');
+    feComposite.setAttribute('in', id + '_drop_shadow_3');
+    feComposite.setAttribute('in2', id + '_drop_shadow_2');
+    feComposite.setAttribute('operator', 'in');
+    feComposite.setAttribute('result', id + '_drop_shadow_4');
+    filter.appendChild(feComposite);
+    var feMerge = this.createMergeNode(id, [id + '_drop_shadow_4', source]);
+    filter.appendChild(feMerge); //
+  }
+
+  extendPrototype([SVGComposableEffect], SVGDropShadowEffect);
+
+  SVGDropShadowEffect.prototype.renderFrame = function (forceRender) {
+    if (forceRender || this.filterManager._mdf) {
+      if (forceRender || this.filterManager.effectElements[4].p._mdf) {
+        this.feGaussianBlur.setAttribute('stdDeviation', this.filterManager.effectElements[4].p.v / 4);
+      }
+
+      if (forceRender || this.filterManager.effectElements[0].p._mdf) {
+        var col = this.filterManager.effectElements[0].p.v;
+        this.feFlood.setAttribute('flood-color', rgbToHex(Math.round(col[0] * 255), Math.round(col[1] * 255), Math.round(col[2] * 255)));
+      }
+
+      if (forceRender || this.filterManager.effectElements[1].p._mdf) {
+        this.feFlood.setAttribute('flood-opacity', this.filterManager.effectElements[1].p.v / 255);
+      }
+
+      if (forceRender || this.filterManager.effectElements[2].p._mdf || this.filterManager.effectElements[3].p._mdf) {
+        var distance = this.filterManager.effectElements[3].p.v;
+        var angle = (this.filterManager.effectElements[2].p.v - 90) * degToRads;
+        var x = distance * Math.cos(angle);
+        var y = distance * Math.sin(angle);
+        this.feOffset.setAttribute('dx', x);
+        this.feOffset.setAttribute('dy', y);
+      }
+    }
+  };
+
+  var _svgMatteSymbols = [];
+
+  function SVGMatte3Effect(filterElem, filterManager, elem) {
+    this.initialized = false;
+    this.filterManager = filterManager;
+    this.filterElem = filterElem;
+    this.elem = elem;
+    elem.matteElement = createNS('g');
+    elem.matteElement.appendChild(elem.layerElement);
+    elem.matteElement.appendChild(elem.transformedElement);
+    elem.baseElement = elem.matteElement;
+  }
+
+  SVGMatte3Effect.prototype.findSymbol = function (mask) {
+    var i = 0;
+    var len = _svgMatteSymbols.length;
+
+    while (i < len) {
+      if (_svgMatteSymbols[i] === mask) {
+        return _svgMatteSymbols[i];
+      }
+
+      i += 1;
+    }
+
+    return null;
+  };
+
+  SVGMatte3Effect.prototype.replaceInParent = function (mask, symbolId) {
+    var parentNode = mask.layerElement.parentNode;
+
+    if (!parentNode) {
+      return;
+    }
+
+    var children = parentNode.children;
+    var i = 0;
+    var len = children.length;
+
+    while (i < len) {
+      if (children[i] === mask.layerElement) {
+        break;
+      }
+
+      i += 1;
+    }
+
+    var nextChild;
+
+    if (i <= len - 2) {
+      nextChild = children[i + 1];
+    }
+
+    var useElem = createNS('use');
+    useElem.setAttribute('href', '#' + symbolId);
+
+    if (nextChild) {
+      parentNode.insertBefore(useElem, nextChild);
+    } else {
+      parentNode.appendChild(useElem);
+    }
+  };
+
+  SVGMatte3Effect.prototype.setElementAsMask = function (elem, mask) {
+    if (!this.findSymbol(mask)) {
+      var symbolId = createElementID();
+      var masker = createNS('mask');
+      masker.setAttribute('id', mask.layerId);
+      masker.setAttribute('mask-type', 'alpha');
+
+      _svgMatteSymbols.push(mask);
+
+      var defs = elem.globalData.defs;
+      defs.appendChild(masker);
+      var symbol = createNS('symbol');
+      symbol.setAttribute('id', symbolId);
+      this.replaceInParent(mask, symbolId);
+      symbol.appendChild(mask.layerElement);
+      defs.appendChild(symbol);
+      var useElem = createNS('use');
+      useElem.setAttribute('href', '#' + symbolId);
+      masker.appendChild(useElem);
+      mask.data.hd = false;
+      mask.show();
+    }
+
+    elem.setMatte(mask.layerId);
+  };
+
+  SVGMatte3Effect.prototype.initialize = function () {
+    var ind = this.filterManager.effectElements[0].p.v;
+    var elements = this.elem.comp.elements;
+    var i = 0;
+    var len = elements.length;
+
+    while (i < len) {
+      if (elements[i] && elements[i].data.ind === ind) {
+        this.setElementAsMask(this.elem, elements[i]);
+      }
+
+      i += 1;
+    }
+
+    this.initialized = true;
+  };
+
+  SVGMatte3Effect.prototype.renderFrame = function () {
+    if (!this.initialized) {
+      this.initialize();
+    }
+  };
+
+  function SVGGaussianBlurEffect(filter, filterManager, elem, id) {
+    // Outset the filter region by 100% on all sides to accommodate blur expansion.
+    filter.setAttribute('x', '-100%');
+    filter.setAttribute('y', '-100%');
+    filter.setAttribute('width', '300%');
+    filter.setAttribute('height', '300%');
+    this.filterManager = filterManager;
+    var feGaussianBlur = createNS('feGaussianBlur');
+    feGaussianBlur.setAttribute('result', id);
+    filter.appendChild(feGaussianBlur);
+    this.feGaussianBlur = feGaussianBlur;
+  }
+
+  SVGGaussianBlurEffect.prototype.renderFrame = function (forceRender) {
+    if (forceRender || this.filterManager._mdf) {
+      // Empirical value, matching AE's blur appearance.
+      var kBlurrinessToSigma = 0.3;
+      var sigma = this.filterManager.effectElements[0].p.v * kBlurrinessToSigma; // Dimensions mapping:
+      //
+      //   1 -> horizontal & vertical
+      //   2 -> horizontal only
+      //   3 -> vertical only
+      //
+
+      var dimensions = this.filterManager.effectElements[1].p.v;
+      var sigmaX = dimensions == 3 ? 0 : sigma; // eslint-disable-line eqeqeq
+
+      var sigmaY = dimensions == 2 ? 0 : sigma; // eslint-disable-line eqeqeq
+
+      this.feGaussianBlur.setAttribute('stdDeviation', sigmaX + ' ' + sigmaY); // Repeat edges mapping:
+      //
+      //   0 -> off -> duplicate
+      //   1 -> on  -> wrap
+
+      var edgeMode = this.filterManager.effectElements[2].p.v == 1 ? 'wrap' : 'duplicate'; // eslint-disable-line eqeqeq
+
+      this.feGaussianBlur.setAttribute('edgeMode', edgeMode);
+    }
+  };
 
   registerRenderer('canvas', CanvasRenderer);
   registerRenderer('html', HybridRenderer);
@@ -20563,7 +20696,7 @@ var render = function () {
           _c(
             "v-col",
             { staticClass: "col-12 pa-0 ma-0 rotate-180 container-bandwith" },
-            [_c("v-img", { attrs: { src: "/app/bandwith.PNG " } })],
+            [_c("v-img", { attrs: { src: "/app/bandwith.png " } })],
             1
           ),
         ],
@@ -20595,9 +20728,9 @@ var render = function () {
               _vm._v(" "),
               _c("span", { staticClass: "white--text as-footer_text px-4" }, [
                 _vm._v(
-                  "\n        Copyright ©" +
+                  "\n                Copyright ©" +
                     _vm._s(_vm.yearActual) +
-                    " by A&S Consulting Group.\n      "
+                    " by A&S Consulting Group.\n            "
                 ),
               ]),
             ]
@@ -20635,7 +20768,9 @@ var render = function () {
                       1
                     ),
                     _vm._v(
-                      "\n          " + _vm._s(_vm.phone_contact) + "\n        "
+                      "\n                    " +
+                        _vm._s(_vm.phone_contact) +
+                        "\n                "
                     ),
                   ],
                   1
@@ -20653,6 +20788,12 @@ var render = function () {
                       {
                         staticClass: "white--text",
                         attrs: { fab: "", text: "", small: "", link: "" },
+                        on: {
+                          click: function ($event) {
+                            $event.preventDefault()
+                            return _vm.openEmail()
+                          },
+                        },
                       },
                       [
                         _c("v-icon", { attrs: { color: "white" } }, [
@@ -20661,7 +20802,11 @@ var render = function () {
                       ],
                       1
                     ),
-                    _vm._v("\n          " + _vm._s(_vm.email) + "\n        "),
+                    _vm._v(
+                      "\n                    " +
+                        _vm._s(_vm.email) +
+                        "\n                "
+                    ),
                   ],
                   1
                 ),
@@ -20695,7 +20840,9 @@ var render = function () {
                       1
                     ),
                     _vm._v(
-                      "\n          " + _vm._s(_vm.phone_contact) + "\n        "
+                      "\n                    " +
+                        _vm._s(_vm.phone_contact) +
+                        "\n                "
                     ),
                   ],
                   1
@@ -20713,6 +20860,12 @@ var render = function () {
                       {
                         staticClass: "white--text",
                         attrs: { fab: "", text: "", small: "", link: "" },
+                        on: {
+                          click: function ($event) {
+                            $event.preventDefault()
+                            return _vm.goToLocation()
+                          },
+                        },
                       },
                       [
                         _c("v-icon", { attrs: { color: "white" } }, [
@@ -20721,7 +20874,11 @@ var render = function () {
                       ],
                       1
                     ),
-                    _vm._v("\n          " + _vm._s(_vm.address) + "\n        "),
+                    _vm._v(
+                      "\n                    " +
+                        _vm._s(_vm.address) +
+                        "\n                "
+                    ),
                   ],
                   1
                 ),
@@ -21186,7 +21343,7 @@ var render = function () {
           _c(
             "v-col",
             { staticClass: "col-12 pa-0 ma-0 container-bandwith" },
-            [_c("v-img", { attrs: { src: "/app/bandwith.PNG " } })],
+            [_c("v-img", { attrs: { src: "/app/bandwith.png " } })],
             1
           ),
         ],

@@ -17,6 +17,8 @@ class Visualizacione extends Model
     protected $fillable = [
         "post_id",
         "ip",
-        "country"
+        "country",
+        "city",
+        "zip"
     ];
 }

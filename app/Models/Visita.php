@@ -14,6 +14,8 @@ class Visita extends Model
         "link",
         "ip",
         "zip",
+        "country",
+        "city",
         "tiempo_inicial",
         "tiempo_salida",
     ];

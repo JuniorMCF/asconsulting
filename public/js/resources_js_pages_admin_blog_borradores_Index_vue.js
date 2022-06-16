@@ -1,6 +1,101 @@
 "use strict";
 (self["webpackChunk"] = self["webpackChunk"] || []).push([["resources_js_pages_admin_blog_borradores_Index_vue"],{
 
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/utils/ConfirmDialog.vue?vue&type=script&lang=js&":
+/*!**************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/utils/ConfirmDialog.vue?vue&type=script&lang=js& ***!
+  \**************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  name: 'confirm-dialog',
+  data: function data() {
+    return {
+      dialog: false,
+      resolve: null,
+      reject: null,
+      message: null,
+      title: null,
+      options: {
+        color: "sky",
+        width: 400,
+        zIndex: 200,
+        noconfirm: false
+      }
+    };
+  },
+  methods: {
+    open: function open(title, message, options) {
+      var _this = this;
+
+      this.dialog = true;
+      this.title = title;
+      this.message = message;
+      this.options = Object.assign(this.options, options);
+      return new Promise(function (resolve, reject) {
+        _this.resolve = resolve;
+        _this.reject = reject;
+      });
+    },
+    agree: function agree() {
+      this.resolve(true);
+      this.dialog = false;
+    },
+    cancel: function cancel() {
+      this.resolve(false);
+      this.dialog = false;
+    }
+  }
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/utils/DialogArticle.vue?vue&type=script&lang=js&":
 /*!**************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/utils/DialogArticle.vue?vue&type=script&lang=js& ***!
@@ -81,55 +176,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var _components_utils_DialogArticle_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../components/utils/DialogArticle.vue */ "./resources/js/components/utils/DialogArticle.vue");
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+/* harmony import */ var _components_utils_ConfirmDialog_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../components/utils/ConfirmDialog.vue */ "./resources/js/components/utils/ConfirmDialog.vue");
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm.js");
 //
 //
 //
@@ -218,10 +266,9 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_defineProperty({
-  components: {
-    DialogArticle: _components_utils_DialogArticle_vue__WEBPACK_IMPORTED_MODULE_0__["default"]
-  },
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
       loadingRestore: false,
@@ -276,7 +323,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         }
       }) //.post("/api/oauth/posts/pub", headers)
       .then(function (res) {
-        console.log(res);
+        //console.log(res);
         _this.posts = res.data;
       })["catch"](function (err) {
         console.log(err.response); //Vue.$toast.error("");
@@ -305,20 +352,29 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
           break;
 
         case "Mover a la papelera":
-          var data = new FormData();
-          data.append("post_id", item.id);
-          axios({
-            method: "post",
-            url: "/api/oauth/post/papelera",
-            data: data,
-            headers: {
-              Authorization: "Bearer " + this.$store.state.auth.token
-            }
-          }).then(function (res) {
-            _this2.getData();
-          })["catch"](function (err) {
-            console.log(err);
-          });
+          if (this.role.slug == 'propietario' || this.role.slug == 'escritor-blog') {
+            this.$refs.confirmDialog.open("Mover a papelera", "¿Quiere enviar este post a papelera?").then(function (res) {
+              if (res) {
+                var data = new FormData();
+                data.append("post_id", item.id);
+                axios({
+                  method: "post",
+                  url: "/api/oauth/post/papelera",
+                  data: data,
+                  headers: {
+                    Authorization: "Bearer " + _this2.$store.state.auth.token
+                  }
+                }).then(function (res) {
+                  _this2.getData();
+                })["catch"](function (err) {
+                  console.log(err);
+                });
+              }
+            })["catch"](function (err) {});
+          } else {
+            vue__WEBPACK_IMPORTED_MODULE_2__["default"].$toast.warning("No tiene los permisos para eliminar un post");
+          }
+
           break;
 
         default:
@@ -377,6 +433,9 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
   computed: {
     actualPage: function actualPage() {
       return this.$store.state.app.actual_page;
+    },
+    role: function role() {
+      return this.$store.getters["auth/getRole"];
     }
   },
   watch: {
@@ -387,10 +446,12 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         this.selected_items = "seleccionado";
       }
     }
+  },
+  components: {
+    DialogArticle: _components_utils_DialogArticle_vue__WEBPACK_IMPORTED_MODULE_0__["default"],
+    ConfirmDialog: _components_utils_ConfirmDialog_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
   }
-}, "components", {
-  DialogArticle: _components_utils_DialogArticle_vue__WEBPACK_IMPORTED_MODULE_0__["default"]
-}));
+});
 
 /***/ }),
 
@@ -515,6 +576,44 @@ var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js
 
 /***/ }),
 
+/***/ "./resources/js/components/utils/ConfirmDialog.vue":
+/*!*********************************************************!*\
+  !*** ./resources/js/components/utils/ConfirmDialog.vue ***!
+  \*********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _ConfirmDialog_vue_vue_type_template_id_270c5c2f___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ConfirmDialog.vue?vue&type=template&id=270c5c2f& */ "./resources/js/components/utils/ConfirmDialog.vue?vue&type=template&id=270c5c2f&");
+/* harmony import */ var _ConfirmDialog_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ConfirmDialog.vue?vue&type=script&lang=js& */ "./resources/js/components/utils/ConfirmDialog.vue?vue&type=script&lang=js&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! !../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+;
+var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _ConfirmDialog_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _ConfirmDialog_vue_vue_type_template_id_270c5c2f___WEBPACK_IMPORTED_MODULE_0__.render,
+  _ConfirmDialog_vue_vue_type_template_id_270c5c2f___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/utils/ConfirmDialog.vue"
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (component.exports);
+
+/***/ }),
+
 /***/ "./resources/js/components/utils/DialogArticle.vue":
 /*!*********************************************************!*\
   !*** ./resources/js/components/utils/DialogArticle.vue ***!
@@ -593,6 +692,21 @@ component.options.__file = "resources/js/pages/admin/blog/borradores/Index.vue"
 
 /***/ }),
 
+/***/ "./resources/js/components/utils/ConfirmDialog.vue?vue&type=script&lang=js&":
+/*!**********************************************************************************!*\
+  !*** ./resources/js/components/utils/ConfirmDialog.vue?vue&type=script&lang=js& ***!
+  \**********************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ConfirmDialog_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./ConfirmDialog.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/utils/ConfirmDialog.vue?vue&type=script&lang=js&");
+ /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ConfirmDialog_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
 /***/ "./resources/js/components/utils/DialogArticle.vue?vue&type=script&lang=js&":
 /*!**********************************************************************************!*\
   !*** ./resources/js/components/utils/DialogArticle.vue?vue&type=script&lang=js& ***!
@@ -635,6 +749,22 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/components/utils/ConfirmDialog.vue?vue&type=template&id=270c5c2f&":
+/*!****************************************************************************************!*\
+  !*** ./resources/js/components/utils/ConfirmDialog.vue?vue&type=template&id=270c5c2f& ***!
+  \****************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ConfirmDialog_vue_vue_type_template_id_270c5c2f___WEBPACK_IMPORTED_MODULE_0__.render),
+/* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ConfirmDialog_vue_vue_type_template_id_270c5c2f___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
+/* harmony export */ });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ConfirmDialog_vue_vue_type_template_id_270c5c2f___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./ConfirmDialog.vue?vue&type=template&id=270c5c2f& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/utils/ConfirmDialog.vue?vue&type=template&id=270c5c2f&");
+
+
+/***/ }),
+
 /***/ "./resources/js/components/utils/DialogArticle.vue?vue&type=template&id=36545f95&":
 /*!****************************************************************************************!*\
   !*** ./resources/js/components/utils/DialogArticle.vue?vue&type=template&id=36545f95& ***!
@@ -663,6 +793,128 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Index_vue_vue_type_template_id_af9cb450___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
 /* harmony export */ });
 /* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Index_vue_vue_type_template_id_af9cb450___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./Index.vue?vue&type=template&id=af9cb450& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/pages/admin/blog/borradores/Index.vue?vue&type=template&id=af9cb450&");
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/utils/ConfirmDialog.vue?vue&type=template&id=270c5c2f&":
+/*!*******************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/utils/ConfirmDialog.vue?vue&type=template&id=270c5c2f& ***!
+  \*******************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* binding */ render),
+/* harmony export */   "staticRenderFns": () => (/* binding */ staticRenderFns)
+/* harmony export */ });
+var render = function () {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "v-dialog",
+    {
+      style: { zIndex: _vm.options.zIndex },
+      attrs: { opacity: "0.3", "max-width": _vm.options.width, persistent: "" },
+      on: {
+        keydown: function ($event) {
+          if (
+            !$event.type.indexOf("key") &&
+            _vm._k($event.keyCode, "esc", 27, $event.key, ["Esc", "Escape"])
+          ) {
+            return null
+          }
+          return _vm.cancel.apply(null, arguments)
+        },
+      },
+      model: {
+        value: _vm.dialog,
+        callback: function ($$v) {
+          _vm.dialog = $$v
+        },
+        expression: "dialog",
+      },
+    },
+    [
+      _c(
+        "v-card",
+        [
+          _c(
+            "v-toolbar",
+            { attrs: { color: _vm.options.color, dense: "", flat: "" } },
+            [
+              _c(
+                "v-toolbar-title",
+                { staticClass: "text-body-2 font-weight-bold white--text" },
+                [_vm._v("\n        " + _vm._s(_vm.title) + "\n      ")]
+              ),
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c("v-card-text", {
+            directives: [
+              {
+                name: "show",
+                rawName: "v-show",
+                value: !!_vm.message,
+                expression: "!!message",
+              },
+            ],
+            staticClass: "pa-4 black--text text-justify",
+            domProps: { innerHTML: _vm._s(_vm.message) },
+          }),
+          _vm._v(" "),
+          _c(
+            "v-card-actions",
+            { staticClass: "pt-3" },
+            [
+              _c("v-spacer"),
+              _vm._v(" "),
+              _c(
+                "v-btn",
+                {
+                  staticClass: "body-2 font-weight-bold text-normal rounded-0",
+                  attrs: { color: _vm.options.color, outlined: "" },
+                  nativeOn: {
+                    click: function ($event) {
+                      return _vm.agree.apply(null, arguments)
+                    },
+                  },
+                },
+                [_vm._v("Aceptar")]
+              ),
+              _vm._v(" "),
+              !_vm.options.noconfirm
+                ? _c(
+                    "v-btn",
+                    {
+                      staticClass:
+                        "body-2 font-weight-bold text-normal rounded-0",
+                      attrs: { color: "grey", text: "" },
+                      nativeOn: {
+                        click: function ($event) {
+                          return _vm.cancel.apply(null, arguments)
+                        },
+                      },
+                    },
+                    [_vm._v("Cancelar")]
+                  )
+                : _vm._e(),
+            ],
+            1
+          ),
+        ],
+        1
+      ),
+    ],
+    1
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+
 
 
 /***/ }),
@@ -785,23 +1037,26 @@ var render = function () {
           _vm._v(" "),
           _c("v-spacer"),
           _vm._v(" "),
-          _c(
-            "v-btn",
-            {
-              staticClass: "sky white--text text-normal rounded-xl ekevation-1",
-              on: {
-                click: function ($event) {
-                  $event.preventDefault()
-                  return _vm.createNewPost()
+          _vm.role.slug == "propietario" || _vm.role.slug == "escritor-blog"
+            ? _c(
+                "v-btn",
+                {
+                  staticClass:
+                    "sky white--text text-normal rounded-xl ekevation-1",
+                  on: {
+                    click: function ($event) {
+                      $event.preventDefault()
+                      return _vm.createNewPost()
+                    },
+                  },
                 },
-              },
-            },
-            [
-              _c("v-icon", { attrs: { left: "" } }, [_vm._v("mdi-plus")]),
-              _vm._v("Crear nueva entrada\n        "),
-            ],
-            1
-          ),
+                [
+                  _c("v-icon", { attrs: { left: "" } }, [_vm._v("mdi-plus")]),
+                  _vm._v("Crear nueva entrada\n        "),
+                ],
+                1
+              )
+            : _vm._e(),
         ],
         1
       ),
@@ -937,7 +1192,9 @@ var render = function () {
                                       "col-12 col-md-3 text-center text-md-end",
                                   },
                                   [
-                                    _vm.selected.length > 0
+                                    _vm.selected.length > 0 &&
+                                    (_vm.role.slug == "propietario" ||
+                                      _vm.role.slug == "escritor-blog")
                                       ? _c(
                                           "v-btn",
                                           {
@@ -1003,20 +1260,24 @@ var render = function () {
                         fn: function (ref) {
                           var item = ref.item
                           return [
-                            _c(
-                              "v-btn",
-                              {
-                                staticClass:
-                                  "mr-2 rounded-xl text-normal white--text elevation-1",
-                                attrs: { color: "sky" },
-                                on: {
-                                  click: function ($event) {
-                                    return _vm.editItem(item)
+                            _vm.role.slug == "propietario" ||
+                            _vm.role.slug == "escritor-blog" ||
+                            _vm.role.slug == "editor-blog"
+                              ? _c(
+                                  "v-btn",
+                                  {
+                                    staticClass:
+                                      "mr-2 rounded-xl text-normal white--text elevation-1",
+                                    attrs: { color: "sky" },
+                                    on: {
+                                      click: function ($event) {
+                                        return _vm.editItem(item)
+                                      },
+                                    },
                                   },
-                                },
-                              },
-                              [_vm._v("editar")]
-                            ),
+                                  [_vm._v("editar")]
+                                )
+                              : _vm._e(),
                             _vm._v(" "),
                             _c(
                               "v-menu",
@@ -1155,6 +1416,8 @@ var render = function () {
       ),
       _vm._v(" "),
       _c("DialogArticle", { ref: "dialogArticle" }),
+      _vm._v(" "),
+      _c("ConfirmDialog", { ref: "confirmDialog" }),
     ],
     1
   )

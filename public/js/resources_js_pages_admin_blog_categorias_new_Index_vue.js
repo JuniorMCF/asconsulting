@@ -40,25 +40,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
@@ -116,6 +97,9 @@ __webpack_require__.r(__webpack_exports__);
   computed: {
     actualPage: function actualPage() {
       return this.$store.state.app.actual_page;
+    },
+    role: function role() {
+      return this.$store.getters["auth/getRole"];
     }
   }
 });
@@ -273,21 +257,27 @@ var render = function () {
                 "v-col",
                 { staticClass: "py-4 ma-0 col-6 col-md-3 pl-0" },
                 [
-                  _c(
-                    "v-btn",
-                    {
-                      staticClass:
-                        "text-normal elevation-0 white--text rounded-lg",
-                      attrs: { loading: _vm.loadSave, color: "sky", block: "" },
-                      on: {
-                        click: function ($event) {
-                          $event.preventDefault()
-                          return _vm.saveCategory()
+                  _vm.role.slug == "propietario"
+                    ? _c(
+                        "v-btn",
+                        {
+                          staticClass:
+                            "text-normal elevation-0 white--text rounded-lg",
+                          attrs: {
+                            loading: _vm.loadSave,
+                            color: "sky",
+                            block: "",
+                          },
+                          on: {
+                            click: function ($event) {
+                              $event.preventDefault()
+                              return _vm.saveCategory()
+                            },
+                          },
                         },
-                      },
-                    },
-                    [_vm._v("Crear")]
-                  ),
+                        [_vm._v("Crear")]
+                      )
+                    : _vm._e(),
                 ],
                 1
               ),

@@ -9,12 +9,12 @@
       <navbar-second v-else></navbar-second>
     </div>
     <v-main v-if="isAuth && notPublic" class="main-open v-main__admin" id="container-main">
-      <transition :name="nameTransition" :mode="modeTransition">
+      <transition :name="nameTransition" :mode="isHome == true ? '' : modeTransition">
         <router-view :key="$route.fullPath"> </router-view>
       </transition>
     </v-main>
     <v-main v-else>
-      <transition :name="nameTransition" :mode="modeTransition">
+      <transition :name="nameTransition" :mode="isHome == true ? '' : modeTransition">
         <router-view :key="$route.fullPath"> </router-view>
       </transition>
     </v-main>

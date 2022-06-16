@@ -54,6 +54,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  name: 'confirm-dialog',
   data: function data() {
     return {
       dialog: false,
@@ -108,39 +109,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _components_utils_ConfirmDialog_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../components/utils/ConfirmDialog.vue */ "./resources/js/components/utils/ConfirmDialog.vue");
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 //
 //
 //
@@ -339,6 +307,9 @@ __webpack_require__.r(__webpack_exports__);
       }
 
       return total;
+    },
+    role: function role() {
+      return this.$store.getters["auth/getRole"];
     }
   },
   components: {
@@ -633,23 +604,26 @@ var render = function () {
           _vm._v("\n        " + _vm._s(_vm.actualPage) + "\n        "),
           _c("v-spacer"),
           _vm._v(" "),
-          _c(
-            "v-btn",
-            {
-              staticClass: "sky white--text text-normal rounded-xl ekevation-1",
-              on: {
-                click: function ($event) {
-                  $event.preventDefault()
-                  return _vm.createNewCategory()
+          _vm.role.slug == "propietario" || _vm.role.slug == "escritor-blog"
+            ? _c(
+                "v-btn",
+                {
+                  staticClass:
+                    "sky white--text text-normal rounded-xl ekevation-1",
+                  on: {
+                    click: function ($event) {
+                      $event.preventDefault()
+                      return _vm.createNewCategory()
+                    },
+                  },
                 },
-              },
-            },
-            [
-              _c("v-icon", { attrs: { left: "" } }, [_vm._v("mdi-plus")]),
-              _vm._v("Crear nueva categoría\n        "),
-            ],
-            1
-          ),
+                [
+                  _c("v-icon", { attrs: { left: "" } }, [_vm._v("mdi-plus")]),
+                  _vm._v("Crear nueva categoría\n        "),
+                ],
+                1
+              )
+            : _vm._e(),
         ],
         1
       ),
@@ -796,7 +770,7 @@ var render = function () {
                                     _vm._v(" "),
                                     _c("p", { staticClass: "caption ma-0" }, [
                                       _vm._v(
-                                        "Edita las categorías para configurar la URL, SEO e imagen que compartirás en las redes sociales."
+                                        "Edita las categorías para configurar la URL, SEO e imagen\n                                    que compartirás en las redes sociales."
                                       ),
                                     ]),
                                   ]
@@ -820,20 +794,22 @@ var render = function () {
                         fn: function (ref) {
                           var item = ref.item
                           return [
-                            _c(
-                              "v-btn",
-                              {
-                                staticClass:
-                                  "mr-2 rounded-xl text-normal white--text elevation-1",
-                                attrs: { color: "sky" },
-                                on: {
-                                  click: function ($event) {
-                                    return _vm.editItem(item)
+                            _vm.role.slug == "propietario"
+                              ? _c(
+                                  "v-btn",
+                                  {
+                                    staticClass:
+                                      "mr-2 rounded-xl text-normal white--text elevation-1",
+                                    attrs: { color: "sky" },
+                                    on: {
+                                      click: function ($event) {
+                                        return _vm.editItem(item)
+                                      },
+                                    },
                                   },
-                                },
-                              },
-                              [_vm._v("editar")]
-                            ),
+                                  [_vm._v("editar")]
+                                )
+                              : _vm._e(),
                             _vm._v(" "),
                             _c(
                               "v-menu",
@@ -847,34 +823,36 @@ var render = function () {
                                         var on = ref.on
                                         var attrs = ref.attrs
                                         return [
-                                          _c(
-                                            "v-btn",
-                                            _vm._g(
-                                              _vm._b(
-                                                {
-                                                  staticClass:
-                                                    "elevation-0 sky--text",
-                                                  attrs: {
-                                                    dark: "",
-                                                    icon: "",
-                                                    text: "",
-                                                    fab: "",
-                                                    "x-small": "",
-                                                  },
-                                                },
+                                          _vm.role.slug == "propietario"
+                                            ? _c(
                                                 "v-btn",
-                                                attrs,
-                                                false
-                                              ),
-                                              on
-                                            ),
-                                            [
-                                              _c("v-icon", [
-                                                _vm._v("mdi-dots-vertical"),
-                                              ]),
-                                            ],
-                                            1
-                                          ),
+                                                _vm._g(
+                                                  _vm._b(
+                                                    {
+                                                      staticClass:
+                                                        "elevation-0 sky--text",
+                                                      attrs: {
+                                                        dark: "",
+                                                        icon: "",
+                                                        text: "",
+                                                        fab: "",
+                                                        "x-small": "",
+                                                      },
+                                                    },
+                                                    "v-btn",
+                                                    attrs,
+                                                    false
+                                                  ),
+                                                  on
+                                                ),
+                                                [
+                                                  _c("v-icon", [
+                                                    _vm._v("mdi-dots-vertical"),
+                                                  ]),
+                                                ],
+                                                1
+                                              )
+                                            : _vm._e(),
                                         ]
                                       },
                                     },

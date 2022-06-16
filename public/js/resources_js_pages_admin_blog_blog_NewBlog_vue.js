@@ -54,6 +54,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  name: 'confirm-dialog',
   data: function data() {
     return {
       dialog: false,
@@ -667,7 +668,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "[data-v-610f9f7e].bar {\n  display: flex;\n  align-items: stretch;\n  justify-content: flex-start;\n  flex-wrap: wrap;\n  color: var(--bar-font-color, rgba(0, 0, 0, 0.7));\n  font-family: var(--bar-font-family, Avenir, Helvetica, Arial, sans-serif);\n  font-size: var(--bar-font-size, 16px);\n  font-weight: var(--bar-font-weight, 500);\n  font-style: var(--bar-font-style);\n  letter-spacing: var(--bar-letter-spacing);\n  margin: var(--bar-margin);\n  padding: var(--bar-padding);\n  border: var(--bar-border);\n  border-radius: var(--bar-border-radius);\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-user-select: none;\n     -moz-user-select: none;\n      -ms-user-select: none;\n          user-select: none;\n  cursor: default;\n}\n[data-v-610f9f7e].bar ::-webkit-scrollbar {\n  width: 16px;\n  height: 16px;\n}\n[data-v-610f9f7e].bar ::-webkit-scrollbar-track,[data-v-610f9f7e].bar ::-webkit-scrollbar-corner {\n  display: none;\n}\n[data-v-610f9f7e].bar ::-webkit-scrollbar-thumb {\n  background-color: rgba(0, 0, 0, 0.5);\n  border: 5px solid transparent;\n  border-radius: 16px;\n  background-clip: content-box;\n}\n[data-v-610f9f7e].bar ::-webkit-scrollbar-thumb:hover {\n  background-color: rgba(0, 0, 0, 0.8);\n}\n[data-v-610f9f7e].bar .ellipsis {\n  width: 100%;\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n}\n[data-v-610f9f7e].bar .bar-button {\n  position: relative;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  padding: var(--bar-button-padding, 7px);\n  border-radius: var(--bar-button-radius, 3px);\n  white-space: nowrap;\n}\n[data-v-610f9f7e].bar .bar-button.active {\n  color: var(--bar-button-active-color, #41b883);\n  background: var(--bar-button-active-bkg, #eaf7f4);\n}\n[data-v-610f9f7e].bar .bar-button.open:hover {\n  color: var(--bar-button-open-color, #41b883);\n  background: var(--bar-button-open-bkg, #eaf7f4);\n}\n[data-v-610f9f7e].bar .bar-button.disabled {\n  color: var(--bar-button-disabled-color, rgba(0, 0, 0, 0.3));\n  background: var(--bar-button-disabled-bkg);\n}\n[data-v-610f9f7e].bar .bar-button:not(.active):not(.open):not(.disabled):hover {\n  color: var(--bar-button-hover-color);\n  background: var(--bar-button-hover-bkg, #f1f3f4);\n}\n[data-v-610f9f7e].bar .bar-button > .label {\n  display: flex;\n  align-items: center;\n  padding: var(--bar-button-label-padding, 0 3px);\n}\n[data-v-610f9f7e].bar .bar-button > .icon,[data-v-610f9f7e].bar .bar-button > .emoji {\n  font-display: block;\n  width: 1em;\n  font-size: var(--bar-button-icon-size, 24px);\n  margin: var(--bar-button-icon-margin);\n}\n[data-v-610f9f7e].bar .bar-button > .chevron {\n  font-display: block;\n  width: 1em;\n  margin: var(--bar-button-chevron-margin, 0 -5px 0 0);\n}\n[data-v-610f9f7e].bar .bar-button > .menu {\n  position: absolute;\n  left: 0;\n  top: 100%;\n  display: none;\n  z-index: 1000;\n}\n[data-v-610f9f7e].bar .bar-button > .menu.align-left {\n  left: 0;\n}\n[data-v-610f9f7e].bar .bar-button > .menu.align-center {\n  left: auto;\n}\n[data-v-610f9f7e].bar .bar-button > .menu.align-right {\n  left: auto;\n  right: 0;\n}\n[data-v-610f9f7e].bar .bar-button.open:hover > .menu {\n  display: block;\n}\n[data-v-610f9f7e].bar .bar-menu {\n  position: relative;\n  white-space: normal;\n}\n[data-v-610f9f7e].bar .bar-menu > .extended-hover-zone {\n  position: absolute;\n  top: 0;\n  left: -100px;\n  right: -100px;\n  bottom: -40px;\n}\n[data-v-610f9f7e].bar .bar-menu > .bar-menu-items {\n  position: relative;\n  min-width: var(--bar-menu-min-width, 160px);\n  color: var(--bar-menu-color, rgba(0, 0, 0, 0.7));\n  background: var(--bar-menu-bkg, white);\n  padding: var(--bar-menu-padding, 5px 0);\n  box-shadow: var(--bar-menu-shadow, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px);\n  border: var(--bar-menu-border);\n  border-radius: var(--bar-menu-border-radius);\n}\n@supports ((-webkit-backdrop-filter: var(--bar-menu-backdrop-filter)) or (backdrop-filter: var(--bar-menu-backdrop-filter))) {\n[data-v-610f9f7e].bar .bar-menu > .bar-menu-items {\n    -webkit-backdrop-filter: var(--bar-menu-backdrop-filter);\n            backdrop-filter: var(--bar-menu-backdrop-filter);\n    background: var(--bar-menu-backdrop-filter-bkg, var(--bar-menu-bkg, white));\n}\n}\n[data-v-610f9f7e].bar .bar-menu > .bar-menu-items > .bar-menu-item {\n  position: relative;\n  display: flex;\n  align-items: center;\n  justify-content: flex-start;\n  font-size: var(--bar-menu-item-font-size);\n  padding: var(--bar-menu-item-padding, 8px 15px);\n}\n[data-v-610f9f7e].bar .bar-menu > .bar-menu-items > .bar-menu-item.active {\n  color: var(--bar-menu-item-active-color);\n  background: var(--bar-menu-item-active-bkg, #e7e8e9);\n}\n[data-v-610f9f7e].bar .bar-menu > .bar-menu-items > .bar-menu-item.disabled {\n  color: var(--bar-menu-item-disabled-color, rgba(0, 0, 0, 0.3));\n}\n[data-v-610f9f7e].bar .bar-menu > .bar-menu-items > .bar-menu-item:not(.active):not(.disabled):hover {\n  color: var(--bar-menu-item-hover-color);\n  background: var(--bar-menu-item-hover-bkg, #f1f3f4);\n}\n[data-v-610f9f7e].bar .bar-menu > .bar-menu-items > .bar-menu-item > .label {\n  display: flex;\n  align-items: center;\n  flex-grow: 1;\n}\n[data-v-610f9f7e].bar .bar-menu > .bar-menu-items > .bar-menu-item > .icon,[data-v-610f9f7e].bar .bar-menu > .bar-menu-items > .bar-menu-item > .emoji {\n  font-display: block;\n  width: 1em;\n  font-size: var(--bar-menu-item-icon-size, 24px);\n  margin: var(--bar-menu-item-icon-margin, 0 10px 0 0);\n}\n[data-v-610f9f7e].bar .bar-menu > .bar-menu-items > .bar-menu-item > .chevron {\n  font-display: block;\n  width: 1em;\n  margin: var(--bar-menu-item-chevron-margin, 0 -6px 0 0);\n}\n[data-v-610f9f7e].bar .bar-menu > .bar-menu-items > .bar-menu-item > .menu {\n  position: absolute;\n  left: 100%;\n  top: 0;\n  display: none;\n  z-index: 1000;\n}\n[data-v-610f9f7e].bar .bar-menu > .bar-menu-items > .bar-menu-item:hover > .menu {\n  display: block;\n}\n[data-v-610f9f7e].bar .bar-menu > .bar-menu-items > .bar-menu-item > .bar-menu {\n  border-radius: var(--bar-sub-menu-border-radius);\n}\n[data-v-610f9f7e].bar .bar-menu > .bar-menu-items > .bar-menu-item > .bar-menu > .extended-hover-zone {\n  top: -100px;\n  left: 0;\n  bottom: -100px;\n}\n[data-v-610f9f7e].bar .bar-menu > .bar-menu-items > .bar-menu-separator {\n  height: var(--bar-menu-separator-height, 1px);\n  margin: var(--bar-menu-separator-margin, 5px 0);\n  background-color: var(--bar-menu-separator-color, rgba(0, 0, 0, 0.1));\n}\n[data-v-610f9f7e].bar .bar-separator {\n  width: var(--bar-separator-width, 2px);\n  margin: var(--bar-separator-margin, 5px);\n  background-color: var(--bar-separator-color, rgba(0, 0, 0, 0.1));\n}\n[data-v-610f9f7e].bar .bar-spacer {\n  flex-grow: 1;\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "[data-v-610f9f7e].bar {\n  display: flex;\n  align-items: stretch;\n  justify-content: flex-start;\n  flex-wrap: wrap;\n  color: var(--bar-font-color, rgba(0, 0, 0, 0.7));\n  font-family: var(--bar-font-family, Avenir, Helvetica, Arial, sans-serif);\n  font-size: var(--bar-font-size, 16px);\n  font-weight: var(--bar-font-weight, 500);\n  font-style: var(--bar-font-style);\n  letter-spacing: var(--bar-letter-spacing);\n  margin: var(--bar-margin);\n  padding: var(--bar-padding);\n  border: var(--bar-border);\n  border-radius: var(--bar-border-radius);\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-user-select: none;\n     -moz-user-select: none;\n      -ms-user-select: none;\n          user-select: none;\n  cursor: default;\n}\n[data-v-610f9f7e].bar ::-webkit-scrollbar {\n  width: 16px;\n  height: 16px;\n}\n[data-v-610f9f7e].bar ::-webkit-scrollbar-track,[data-v-610f9f7e].bar ::-webkit-scrollbar-corner {\n  display: none;\n}\n[data-v-610f9f7e].bar ::-webkit-scrollbar-thumb {\n  background-color: rgba(0, 0, 0, 0.5);\n  border: 5px solid transparent;\n  border-radius: 16px;\n  background-clip: content-box;\n}\n[data-v-610f9f7e].bar ::-webkit-scrollbar-thumb:hover {\n  background-color: rgba(0, 0, 0, 0.8);\n}\n[data-v-610f9f7e].bar .ellipsis {\n  width: 100%;\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n}\n[data-v-610f9f7e].bar .bar-button {\n  position: relative;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  padding: var(--bar-button-padding, 7px);\n  border-radius: var(--bar-button-radius, 3px);\n  white-space: nowrap;\n}\n[data-v-610f9f7e].bar .bar-button.active {\n  color: var(--bar-button-active-color, rgb(65, 184, 131));\n  background: var(--bar-button-active-bkg, rgb(234, 247, 244));\n}\n[data-v-610f9f7e].bar .bar-button.open:hover {\n  color: var(--bar-button-open-color, rgb(65, 184, 131));\n  background: var(--bar-button-open-bkg, rgb(234, 247, 244));\n}\n[data-v-610f9f7e].bar .bar-button.disabled {\n  color: var(--bar-button-disabled-color, rgba(0, 0, 0, 0.3));\n  background: var(--bar-button-disabled-bkg);\n}\n[data-v-610f9f7e].bar .bar-button:not(.active):not(.open):not(.disabled):hover {\n  color: var(--bar-button-hover-color);\n  background: var(--bar-button-hover-bkg, rgb(241, 243, 244));\n}\n[data-v-610f9f7e].bar .bar-button > .label {\n  display: flex;\n  align-items: center;\n  padding: var(--bar-button-label-padding, 0 3px);\n}\n[data-v-610f9f7e].bar .bar-button > .icon,[data-v-610f9f7e].bar .bar-button > .emoji {\n  font-display: block;\n  width: 1em;\n  font-size: var(--bar-button-icon-size, 24px);\n  margin: var(--bar-button-icon-margin);\n}\n[data-v-610f9f7e].bar .bar-button > .chevron {\n  font-display: block;\n  width: 1em;\n  margin: var(--bar-button-chevron-margin, 0 -5px 0 0);\n}\n[data-v-610f9f7e].bar .bar-button > .menu {\n  position: absolute;\n  left: 0;\n  top: 100%;\n  display: none;\n  z-index: 1000;\n}\n[data-v-610f9f7e].bar .bar-button > .menu.align-left {\n  left: 0;\n}\n[data-v-610f9f7e].bar .bar-button > .menu.align-center {\n  left: auto;\n}\n[data-v-610f9f7e].bar .bar-button > .menu.align-right {\n  left: auto;\n  right: 0;\n}\n[data-v-610f9f7e].bar .bar-button.open:hover > .menu {\n  display: block;\n}\n[data-v-610f9f7e].bar .bar-menu {\n  position: relative;\n  white-space: normal;\n}\n[data-v-610f9f7e].bar .bar-menu > .extended-hover-zone {\n  position: absolute;\n  top: 0;\n  left: -100px;\n  right: -100px;\n  bottom: -40px;\n}\n[data-v-610f9f7e].bar .bar-menu > .bar-menu-items {\n  position: relative;\n  min-width: var(--bar-menu-min-width, 160px);\n  color: var(--bar-menu-color, rgba(0, 0, 0, 0.7));\n  background: var(--bar-menu-bkg, white);\n  padding: var(--bar-menu-padding, 5px 0);\n  box-shadow: var(--bar-menu-shadow, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px);\n  border: var(--bar-menu-border);\n  border-radius: var(--bar-menu-border-radius);\n}\n@supports ((-webkit-backdrop-filter: var(--bar-menu-backdrop-filter)) or (backdrop-filter: var(--bar-menu-backdrop-filter))) {\n[data-v-610f9f7e].bar .bar-menu > .bar-menu-items {\n    -webkit-backdrop-filter: var(--bar-menu-backdrop-filter);\n            backdrop-filter: var(--bar-menu-backdrop-filter);\n    background: var(--bar-menu-backdrop-filter-bkg, var(--bar-menu-bkg, white));\n}\n}\n[data-v-610f9f7e].bar .bar-menu > .bar-menu-items > .bar-menu-item {\n  position: relative;\n  display: flex;\n  align-items: center;\n  justify-content: flex-start;\n  font-size: var(--bar-menu-item-font-size);\n  padding: var(--bar-menu-item-padding, 8px 15px);\n}\n[data-v-610f9f7e].bar .bar-menu > .bar-menu-items > .bar-menu-item.active {\n  color: var(--bar-menu-item-active-color);\n  background: var(--bar-menu-item-active-bkg, rgb(231, 232, 233));\n}\n[data-v-610f9f7e].bar .bar-menu > .bar-menu-items > .bar-menu-item.disabled {\n  color: var(--bar-menu-item-disabled-color, rgba(0, 0, 0, 0.3));\n}\n[data-v-610f9f7e].bar .bar-menu > .bar-menu-items > .bar-menu-item:not(.active):not(.disabled):hover {\n  color: var(--bar-menu-item-hover-color);\n  background: var(--bar-menu-item-hover-bkg, rgb(241, 243, 244));\n}\n[data-v-610f9f7e].bar .bar-menu > .bar-menu-items > .bar-menu-item > .label {\n  display: flex;\n  align-items: center;\n  flex-grow: 1;\n}\n[data-v-610f9f7e].bar .bar-menu > .bar-menu-items > .bar-menu-item > .icon,[data-v-610f9f7e].bar .bar-menu > .bar-menu-items > .bar-menu-item > .emoji {\n  font-display: block;\n  width: 1em;\n  font-size: var(--bar-menu-item-icon-size, 24px);\n  margin: var(--bar-menu-item-icon-margin, 0 10px 0 0);\n}\n[data-v-610f9f7e].bar .bar-menu > .bar-menu-items > .bar-menu-item > .chevron {\n  font-display: block;\n  width: 1em;\n  margin: var(--bar-menu-item-chevron-margin, 0 -6px 0 0);\n}\n[data-v-610f9f7e].bar .bar-menu > .bar-menu-items > .bar-menu-item > .menu {\n  position: absolute;\n  left: 100%;\n  top: 0;\n  display: none;\n  z-index: 1000;\n}\n[data-v-610f9f7e].bar .bar-menu > .bar-menu-items > .bar-menu-item:hover > .menu {\n  display: block;\n}\n[data-v-610f9f7e].bar .bar-menu > .bar-menu-items > .bar-menu-item > .bar-menu {\n  border-radius: var(--bar-sub-menu-border-radius);\n}\n[data-v-610f9f7e].bar .bar-menu > .bar-menu-items > .bar-menu-item > .bar-menu > .extended-hover-zone {\n  top: -100px;\n  left: 0;\n  bottom: -100px;\n}\n[data-v-610f9f7e].bar .bar-menu > .bar-menu-items > .bar-menu-separator {\n  height: var(--bar-menu-separator-height, 1px);\n  margin: var(--bar-menu-separator-margin, 5px 0);\n  background-color: var(--bar-menu-separator-color, rgba(0, 0, 0, 0.1));\n}\n[data-v-610f9f7e].bar .bar-separator {\n  width: var(--bar-separator-width, 2px);\n  margin: var(--bar-separator-margin, 5px);\n  background-color: var(--bar-separator-color, rgba(0, 0, 0, 0.1));\n}\n[data-v-610f9f7e].bar .bar-spacer {\n  flex-grow: 1;\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -690,25 +691,45 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../css-loader/dist/runtime/getUrl.js */ "./node_modules/css-loader/dist/runtime/getUrl.js");
 /* harmony import */ var _css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _MaterialIcons_Regular_eot__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./MaterialIcons-Regular.eot */ "./node_modules/material-icons/iconfont/MaterialIcons-Regular.eot");
+/* harmony import */ var _MaterialIcons_Regular_eot__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_MaterialIcons_Regular_eot__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _MaterialIcons_Regular_woff2__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./MaterialIcons-Regular.woff2 */ "./node_modules/material-icons/iconfont/MaterialIcons-Regular.woff2");
+/* harmony import */ var _MaterialIcons_Regular_woff2__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_MaterialIcons_Regular_woff2__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var _MaterialIcons_Regular_woff__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./MaterialIcons-Regular.woff */ "./node_modules/material-icons/iconfont/MaterialIcons-Regular.woff");
+/* harmony import */ var _MaterialIcons_Regular_woff__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_MaterialIcons_Regular_woff__WEBPACK_IMPORTED_MODULE_4__);
 /* harmony import */ var _MaterialIcons_Regular_ttf__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./MaterialIcons-Regular.ttf */ "./node_modules/material-icons/iconfont/MaterialIcons-Regular.ttf");
+/* harmony import */ var _MaterialIcons_Regular_ttf__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_MaterialIcons_Regular_ttf__WEBPACK_IMPORTED_MODULE_5__);
 /* harmony import */ var _MaterialIconsOutlined_Regular_eot__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./MaterialIconsOutlined-Regular.eot */ "./node_modules/material-icons/iconfont/MaterialIconsOutlined-Regular.eot");
+/* harmony import */ var _MaterialIconsOutlined_Regular_eot__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_MaterialIconsOutlined_Regular_eot__WEBPACK_IMPORTED_MODULE_6__);
 /* harmony import */ var _MaterialIconsOutlined_Regular_woff2__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./MaterialIconsOutlined-Regular.woff2 */ "./node_modules/material-icons/iconfont/MaterialIconsOutlined-Regular.woff2");
+/* harmony import */ var _MaterialIconsOutlined_Regular_woff2__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_MaterialIconsOutlined_Regular_woff2__WEBPACK_IMPORTED_MODULE_7__);
 /* harmony import */ var _MaterialIconsOutlined_Regular_woff__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./MaterialIconsOutlined-Regular.woff */ "./node_modules/material-icons/iconfont/MaterialIconsOutlined-Regular.woff");
+/* harmony import */ var _MaterialIconsOutlined_Regular_woff__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_MaterialIconsOutlined_Regular_woff__WEBPACK_IMPORTED_MODULE_8__);
 /* harmony import */ var _MaterialIconsOutlined_Regular_otf__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./MaterialIconsOutlined-Regular.otf */ "./node_modules/material-icons/iconfont/MaterialIconsOutlined-Regular.otf");
+/* harmony import */ var _MaterialIconsOutlined_Regular_otf__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(_MaterialIconsOutlined_Regular_otf__WEBPACK_IMPORTED_MODULE_9__);
 /* harmony import */ var _MaterialIconsRound_Regular_eot__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./MaterialIconsRound-Regular.eot */ "./node_modules/material-icons/iconfont/MaterialIconsRound-Regular.eot");
+/* harmony import */ var _MaterialIconsRound_Regular_eot__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(_MaterialIconsRound_Regular_eot__WEBPACK_IMPORTED_MODULE_10__);
 /* harmony import */ var _MaterialIconsRound_Regular_woff2__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./MaterialIconsRound-Regular.woff2 */ "./node_modules/material-icons/iconfont/MaterialIconsRound-Regular.woff2");
+/* harmony import */ var _MaterialIconsRound_Regular_woff2__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(_MaterialIconsRound_Regular_woff2__WEBPACK_IMPORTED_MODULE_11__);
 /* harmony import */ var _MaterialIconsRound_Regular_woff__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./MaterialIconsRound-Regular.woff */ "./node_modules/material-icons/iconfont/MaterialIconsRound-Regular.woff");
+/* harmony import */ var _MaterialIconsRound_Regular_woff__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(_MaterialIconsRound_Regular_woff__WEBPACK_IMPORTED_MODULE_12__);
 /* harmony import */ var _MaterialIconsRound_Regular_otf__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./MaterialIconsRound-Regular.otf */ "./node_modules/material-icons/iconfont/MaterialIconsRound-Regular.otf");
+/* harmony import */ var _MaterialIconsRound_Regular_otf__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(_MaterialIconsRound_Regular_otf__WEBPACK_IMPORTED_MODULE_13__);
 /* harmony import */ var _MaterialIconsSharp_Regular_eot__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./MaterialIconsSharp-Regular.eot */ "./node_modules/material-icons/iconfont/MaterialIconsSharp-Regular.eot");
+/* harmony import */ var _MaterialIconsSharp_Regular_eot__WEBPACK_IMPORTED_MODULE_14___default = /*#__PURE__*/__webpack_require__.n(_MaterialIconsSharp_Regular_eot__WEBPACK_IMPORTED_MODULE_14__);
 /* harmony import */ var _MaterialIconsSharp_Regular_woff2__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./MaterialIconsSharp-Regular.woff2 */ "./node_modules/material-icons/iconfont/MaterialIconsSharp-Regular.woff2");
+/* harmony import */ var _MaterialIconsSharp_Regular_woff2__WEBPACK_IMPORTED_MODULE_15___default = /*#__PURE__*/__webpack_require__.n(_MaterialIconsSharp_Regular_woff2__WEBPACK_IMPORTED_MODULE_15__);
 /* harmony import */ var _MaterialIconsSharp_Regular_woff__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./MaterialIconsSharp-Regular.woff */ "./node_modules/material-icons/iconfont/MaterialIconsSharp-Regular.woff");
+/* harmony import */ var _MaterialIconsSharp_Regular_woff__WEBPACK_IMPORTED_MODULE_16___default = /*#__PURE__*/__webpack_require__.n(_MaterialIconsSharp_Regular_woff__WEBPACK_IMPORTED_MODULE_16__);
 /* harmony import */ var _MaterialIconsSharp_Regular_otf__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./MaterialIconsSharp-Regular.otf */ "./node_modules/material-icons/iconfont/MaterialIconsSharp-Regular.otf");
+/* harmony import */ var _MaterialIconsSharp_Regular_otf__WEBPACK_IMPORTED_MODULE_17___default = /*#__PURE__*/__webpack_require__.n(_MaterialIconsSharp_Regular_otf__WEBPACK_IMPORTED_MODULE_17__);
 /* harmony import */ var _MaterialIconsTwoTone_Regular_eot__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./MaterialIconsTwoTone-Regular.eot */ "./node_modules/material-icons/iconfont/MaterialIconsTwoTone-Regular.eot");
+/* harmony import */ var _MaterialIconsTwoTone_Regular_eot__WEBPACK_IMPORTED_MODULE_18___default = /*#__PURE__*/__webpack_require__.n(_MaterialIconsTwoTone_Regular_eot__WEBPACK_IMPORTED_MODULE_18__);
 /* harmony import */ var _MaterialIconsTwoTone_Regular_woff2__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./MaterialIconsTwoTone-Regular.woff2 */ "./node_modules/material-icons/iconfont/MaterialIconsTwoTone-Regular.woff2");
+/* harmony import */ var _MaterialIconsTwoTone_Regular_woff2__WEBPACK_IMPORTED_MODULE_19___default = /*#__PURE__*/__webpack_require__.n(_MaterialIconsTwoTone_Regular_woff2__WEBPACK_IMPORTED_MODULE_19__);
 /* harmony import */ var _MaterialIconsTwoTone_Regular_woff__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./MaterialIconsTwoTone-Regular.woff */ "./node_modules/material-icons/iconfont/MaterialIconsTwoTone-Regular.woff");
+/* harmony import */ var _MaterialIconsTwoTone_Regular_woff__WEBPACK_IMPORTED_MODULE_20___default = /*#__PURE__*/__webpack_require__.n(_MaterialIconsTwoTone_Regular_woff__WEBPACK_IMPORTED_MODULE_20__);
 /* harmony import */ var _MaterialIconsTwoTone_Regular_otf__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./MaterialIconsTwoTone-Regular.otf */ "./node_modules/material-icons/iconfont/MaterialIconsTwoTone-Regular.otf");
+/* harmony import */ var _MaterialIconsTwoTone_Regular_otf__WEBPACK_IMPORTED_MODULE_21___default = /*#__PURE__*/__webpack_require__.n(_MaterialIconsTwoTone_Regular_otf__WEBPACK_IMPORTED_MODULE_21__);
 // Imports
 
 
@@ -733,26 +754,26 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var ___CSS_LOADER_EXPORT___ = _css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
-var ___CSS_LOADER_URL_REPLACEMENT_0___ = _css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_1___default()(_MaterialIcons_Regular_eot__WEBPACK_IMPORTED_MODULE_2__["default"]);
-var ___CSS_LOADER_URL_REPLACEMENT_1___ = _css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_1___default()(_MaterialIcons_Regular_woff2__WEBPACK_IMPORTED_MODULE_3__["default"]);
-var ___CSS_LOADER_URL_REPLACEMENT_2___ = _css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_1___default()(_MaterialIcons_Regular_woff__WEBPACK_IMPORTED_MODULE_4__["default"]);
-var ___CSS_LOADER_URL_REPLACEMENT_3___ = _css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_1___default()(_MaterialIcons_Regular_ttf__WEBPACK_IMPORTED_MODULE_5__["default"]);
-var ___CSS_LOADER_URL_REPLACEMENT_4___ = _css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_1___default()(_MaterialIconsOutlined_Regular_eot__WEBPACK_IMPORTED_MODULE_6__["default"]);
-var ___CSS_LOADER_URL_REPLACEMENT_5___ = _css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_1___default()(_MaterialIconsOutlined_Regular_woff2__WEBPACK_IMPORTED_MODULE_7__["default"]);
-var ___CSS_LOADER_URL_REPLACEMENT_6___ = _css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_1___default()(_MaterialIconsOutlined_Regular_woff__WEBPACK_IMPORTED_MODULE_8__["default"]);
-var ___CSS_LOADER_URL_REPLACEMENT_7___ = _css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_1___default()(_MaterialIconsOutlined_Regular_otf__WEBPACK_IMPORTED_MODULE_9__["default"]);
-var ___CSS_LOADER_URL_REPLACEMENT_8___ = _css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_1___default()(_MaterialIconsRound_Regular_eot__WEBPACK_IMPORTED_MODULE_10__["default"]);
-var ___CSS_LOADER_URL_REPLACEMENT_9___ = _css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_1___default()(_MaterialIconsRound_Regular_woff2__WEBPACK_IMPORTED_MODULE_11__["default"]);
-var ___CSS_LOADER_URL_REPLACEMENT_10___ = _css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_1___default()(_MaterialIconsRound_Regular_woff__WEBPACK_IMPORTED_MODULE_12__["default"]);
-var ___CSS_LOADER_URL_REPLACEMENT_11___ = _css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_1___default()(_MaterialIconsRound_Regular_otf__WEBPACK_IMPORTED_MODULE_13__["default"]);
-var ___CSS_LOADER_URL_REPLACEMENT_12___ = _css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_1___default()(_MaterialIconsSharp_Regular_eot__WEBPACK_IMPORTED_MODULE_14__["default"]);
-var ___CSS_LOADER_URL_REPLACEMENT_13___ = _css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_1___default()(_MaterialIconsSharp_Regular_woff2__WEBPACK_IMPORTED_MODULE_15__["default"]);
-var ___CSS_LOADER_URL_REPLACEMENT_14___ = _css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_1___default()(_MaterialIconsSharp_Regular_woff__WEBPACK_IMPORTED_MODULE_16__["default"]);
-var ___CSS_LOADER_URL_REPLACEMENT_15___ = _css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_1___default()(_MaterialIconsSharp_Regular_otf__WEBPACK_IMPORTED_MODULE_17__["default"]);
-var ___CSS_LOADER_URL_REPLACEMENT_16___ = _css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_1___default()(_MaterialIconsTwoTone_Regular_eot__WEBPACK_IMPORTED_MODULE_18__["default"]);
-var ___CSS_LOADER_URL_REPLACEMENT_17___ = _css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_1___default()(_MaterialIconsTwoTone_Regular_woff2__WEBPACK_IMPORTED_MODULE_19__["default"]);
-var ___CSS_LOADER_URL_REPLACEMENT_18___ = _css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_1___default()(_MaterialIconsTwoTone_Regular_woff__WEBPACK_IMPORTED_MODULE_20__["default"]);
-var ___CSS_LOADER_URL_REPLACEMENT_19___ = _css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_1___default()(_MaterialIconsTwoTone_Regular_otf__WEBPACK_IMPORTED_MODULE_21__["default"]);
+var ___CSS_LOADER_URL_REPLACEMENT_0___ = _css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_1___default()((_MaterialIcons_Regular_eot__WEBPACK_IMPORTED_MODULE_2___default()));
+var ___CSS_LOADER_URL_REPLACEMENT_1___ = _css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_1___default()((_MaterialIcons_Regular_woff2__WEBPACK_IMPORTED_MODULE_3___default()));
+var ___CSS_LOADER_URL_REPLACEMENT_2___ = _css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_1___default()((_MaterialIcons_Regular_woff__WEBPACK_IMPORTED_MODULE_4___default()));
+var ___CSS_LOADER_URL_REPLACEMENT_3___ = _css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_1___default()((_MaterialIcons_Regular_ttf__WEBPACK_IMPORTED_MODULE_5___default()));
+var ___CSS_LOADER_URL_REPLACEMENT_4___ = _css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_1___default()((_MaterialIconsOutlined_Regular_eot__WEBPACK_IMPORTED_MODULE_6___default()));
+var ___CSS_LOADER_URL_REPLACEMENT_5___ = _css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_1___default()((_MaterialIconsOutlined_Regular_woff2__WEBPACK_IMPORTED_MODULE_7___default()));
+var ___CSS_LOADER_URL_REPLACEMENT_6___ = _css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_1___default()((_MaterialIconsOutlined_Regular_woff__WEBPACK_IMPORTED_MODULE_8___default()));
+var ___CSS_LOADER_URL_REPLACEMENT_7___ = _css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_1___default()((_MaterialIconsOutlined_Regular_otf__WEBPACK_IMPORTED_MODULE_9___default()));
+var ___CSS_LOADER_URL_REPLACEMENT_8___ = _css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_1___default()((_MaterialIconsRound_Regular_eot__WEBPACK_IMPORTED_MODULE_10___default()));
+var ___CSS_LOADER_URL_REPLACEMENT_9___ = _css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_1___default()((_MaterialIconsRound_Regular_woff2__WEBPACK_IMPORTED_MODULE_11___default()));
+var ___CSS_LOADER_URL_REPLACEMENT_10___ = _css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_1___default()((_MaterialIconsRound_Regular_woff__WEBPACK_IMPORTED_MODULE_12___default()));
+var ___CSS_LOADER_URL_REPLACEMENT_11___ = _css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_1___default()((_MaterialIconsRound_Regular_otf__WEBPACK_IMPORTED_MODULE_13___default()));
+var ___CSS_LOADER_URL_REPLACEMENT_12___ = _css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_1___default()((_MaterialIconsSharp_Regular_eot__WEBPACK_IMPORTED_MODULE_14___default()));
+var ___CSS_LOADER_URL_REPLACEMENT_13___ = _css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_1___default()((_MaterialIconsSharp_Regular_woff2__WEBPACK_IMPORTED_MODULE_15___default()));
+var ___CSS_LOADER_URL_REPLACEMENT_14___ = _css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_1___default()((_MaterialIconsSharp_Regular_woff__WEBPACK_IMPORTED_MODULE_16___default()));
+var ___CSS_LOADER_URL_REPLACEMENT_15___ = _css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_1___default()((_MaterialIconsSharp_Regular_otf__WEBPACK_IMPORTED_MODULE_17___default()));
+var ___CSS_LOADER_URL_REPLACEMENT_16___ = _css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_1___default()((_MaterialIconsTwoTone_Regular_eot__WEBPACK_IMPORTED_MODULE_18___default()));
+var ___CSS_LOADER_URL_REPLACEMENT_17___ = _css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_1___default()((_MaterialIconsTwoTone_Regular_woff2__WEBPACK_IMPORTED_MODULE_19___default()));
+var ___CSS_LOADER_URL_REPLACEMENT_18___ = _css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_1___default()((_MaterialIconsTwoTone_Regular_woff__WEBPACK_IMPORTED_MODULE_20___default()));
+var ___CSS_LOADER_URL_REPLACEMENT_19___ = _css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_1___default()((_MaterialIconsTwoTone_Regular_otf__WEBPACK_IMPORTED_MODULE_21___default()));
 // Module
 ___CSS_LOADER_EXPORT___.push([module.id, "@font-face {\n  font-family: \"Material Icons\";\n  font-style: normal;\n  font-weight: 400;\n  src: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ");\n  /* For IE6-8 */\n  src: local(\"Material Icons\"), local(\"MaterialIcons-Regular\"), url(" + ___CSS_LOADER_URL_REPLACEMENT_1___ + ") format(\"woff2\"), url(" + ___CSS_LOADER_URL_REPLACEMENT_2___ + ") format(\"woff\"), url(" + ___CSS_LOADER_URL_REPLACEMENT_3___ + ") format(\"truetype\");\n}\n\n.material-icons, .material-icons-outlined, .material-icons-round, .material-icons-sharp, .material-icons-two-tone {\n  font-family: \"Material Icons\";\n  font-weight: normal;\n  font-style: normal;\n  font-size: 24px;\n  display: inline-block;\n  line-height: 1;\n  text-transform: none;\n  letter-spacing: normal;\n  word-wrap: normal;\n  white-space: nowrap;\n  direction: ltr;\n  /* Support for all WebKit browsers. */\n  -webkit-font-smoothing: antialiased;\n  /* Support for Safari and Chrome. */\n  text-rendering: optimizeLegibility;\n  /* Support for Firefox. */\n  -moz-osx-font-smoothing: grayscale;\n  /* Support for IE. */\n  font-feature-settings: 'liga';\n}\n\n@font-face {\n  font-family: \"Material Icons Outlined\";\n  font-style: normal;\n  font-weight: 400;\n  src: url(" + ___CSS_LOADER_URL_REPLACEMENT_4___ + ");\n  /* For IE6-8 */\n  src: local(\"Material Icons Outlined\"), local(\"MaterialIconsOutlined-Regular\"), url(" + ___CSS_LOADER_URL_REPLACEMENT_5___ + ") format(\"woff2\"), url(" + ___CSS_LOADER_URL_REPLACEMENT_6___ + ") format(\"woff\"), url(" + ___CSS_LOADER_URL_REPLACEMENT_7___ + ") format(\"opentype\");\n}\n\n.material-icons-outlined {\n  font-family: \"Material Icons Outlined\";\n}\n\n@font-face {\n  font-family: \"Material Icons Round\";\n  font-style: normal;\n  font-weight: 400;\n  src: url(" + ___CSS_LOADER_URL_REPLACEMENT_8___ + ");\n  /* For IE6-8 */\n  src: local(\"Material Icons Round\"), local(\"MaterialIconsRound-Regular\"), url(" + ___CSS_LOADER_URL_REPLACEMENT_9___ + ") format(\"woff2\"), url(" + ___CSS_LOADER_URL_REPLACEMENT_10___ + ") format(\"woff\"), url(" + ___CSS_LOADER_URL_REPLACEMENT_11___ + ") format(\"opentype\");\n}\n\n.material-icons-round {\n  font-family: \"Material Icons Round\";\n}\n\n@font-face {\n  font-family: \"Material Icons Sharp\";\n  font-style: normal;\n  font-weight: 400;\n  src: url(" + ___CSS_LOADER_URL_REPLACEMENT_12___ + ");\n  /* For IE6-8 */\n  src: local(\"Material Icons Sharp\"), local(\"MaterialIconsSharp-Regular\"), url(" + ___CSS_LOADER_URL_REPLACEMENT_13___ + ") format(\"woff2\"), url(" + ___CSS_LOADER_URL_REPLACEMENT_14___ + ") format(\"woff\"), url(" + ___CSS_LOADER_URL_REPLACEMENT_15___ + ") format(\"opentype\");\n}\n\n.material-icons-sharp {\n  font-family: \"Material Icons Sharp\";\n}\n\n@font-face {\n  font-family: \"Material Icons Two Tone\";\n  font-style: normal;\n  font-weight: 400;\n  src: url(" + ___CSS_LOADER_URL_REPLACEMENT_16___ + ");\n  /* For IE6-8 */\n  src: local(\"Material Icons Two Tone\"), local(\"MaterialIconsTwoTone-Regular\"), url(" + ___CSS_LOADER_URL_REPLACEMENT_17___ + ") format(\"woff2\"), url(" + ___CSS_LOADER_URL_REPLACEMENT_18___ + ") format(\"woff\"), url(" + ___CSS_LOADER_URL_REPLACEMENT_19___ + ") format(\"opentype\");\n}\n\n.material-icons-two-tone {\n  font-family: \"Material Icons Two Tone\";\n}\n", ""]);
 // Exports
@@ -975,14 +996,9 @@ if (true) {
 /*!************************************************************************!*\
   !*** ./node_modules/material-icons/iconfont/MaterialIcons-Regular.eot ***!
   \************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+/***/ ((module) => {
 
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("/fonts/vendor/material-icons/iconMaterialIcons-Regular.eot?a2f22f00b8a2638574460edb79d61d64");
+module.exports = "/fonts/vendor/material-icons/iconMaterialIcons-Regular.eot?a2f22f00b8a2638574460edb79d61d64";
 
 /***/ }),
 
@@ -990,14 +1006,9 @@ __webpack_require__.r(__webpack_exports__);
 /*!************************************************************************!*\
   !*** ./node_modules/material-icons/iconfont/MaterialIcons-Regular.ttf ***!
   \************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+/***/ ((module) => {
 
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("/fonts/vendor/material-icons/iconMaterialIcons-Regular.ttf?a5fc98f2bc7451d215bd001a267dc4f2");
+module.exports = "/fonts/vendor/material-icons/iconMaterialIcons-Regular.ttf?a5fc98f2bc7451d215bd001a267dc4f2";
 
 /***/ }),
 
@@ -1005,14 +1016,9 @@ __webpack_require__.r(__webpack_exports__);
 /*!*************************************************************************!*\
   !*** ./node_modules/material-icons/iconfont/MaterialIcons-Regular.woff ***!
   \*************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+/***/ ((module) => {
 
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("/fonts/vendor/material-icons/iconMaterialIcons-Regular.woff?69b4474b370cf6e8ae1f937b5367f4fb");
+module.exports = "/fonts/vendor/material-icons/iconMaterialIcons-Regular.woff?69b4474b370cf6e8ae1f937b5367f4fb";
 
 /***/ }),
 
@@ -1020,14 +1026,9 @@ __webpack_require__.r(__webpack_exports__);
 /*!**************************************************************************!*\
   !*** ./node_modules/material-icons/iconfont/MaterialIcons-Regular.woff2 ***!
   \**************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+/***/ ((module) => {
 
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("/fonts/vendor/material-icons/iconMaterialIcons-Regular.woff2?953eea38ed97f8a9e76c48bbe984a9c5");
+module.exports = "/fonts/vendor/material-icons/iconMaterialIcons-Regular.woff2?953eea38ed97f8a9e76c48bbe984a9c5";
 
 /***/ }),
 
@@ -1035,14 +1036,9 @@ __webpack_require__.r(__webpack_exports__);
 /*!********************************************************************************!*\
   !*** ./node_modules/material-icons/iconfont/MaterialIconsOutlined-Regular.eot ***!
   \********************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+/***/ ((module) => {
 
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("/fonts/vendor/material-icons/iconMaterialIconsOutlined-Regular.eot?02a9cd80636be0c2b2cc72ba0485fed8");
+module.exports = "/fonts/vendor/material-icons/iconMaterialIconsOutlined-Regular.eot?02a9cd80636be0c2b2cc72ba0485fed8";
 
 /***/ }),
 
@@ -1050,14 +1046,9 @@ __webpack_require__.r(__webpack_exports__);
 /*!********************************************************************************!*\
   !*** ./node_modules/material-icons/iconfont/MaterialIconsOutlined-Regular.otf ***!
   \********************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+/***/ ((module) => {
 
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("/fonts/vendor/material-icons/iconMaterialIconsOutlined-Regular.otf?d221f7c265fd7414a7c4ba76340e5dee");
+module.exports = "/fonts/vendor/material-icons/iconMaterialIconsOutlined-Regular.otf?d221f7c265fd7414a7c4ba76340e5dee";
 
 /***/ }),
 
@@ -1065,14 +1056,9 @@ __webpack_require__.r(__webpack_exports__);
 /*!*********************************************************************************!*\
   !*** ./node_modules/material-icons/iconfont/MaterialIconsOutlined-Regular.woff ***!
   \*********************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+/***/ ((module) => {
 
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("/fonts/vendor/material-icons/iconMaterialIconsOutlined-Regular.woff?8792b6db2e8384ad63dc9ee1f1061679");
+module.exports = "/fonts/vendor/material-icons/iconMaterialIconsOutlined-Regular.woff?8792b6db2e8384ad63dc9ee1f1061679";
 
 /***/ }),
 
@@ -1080,14 +1066,9 @@ __webpack_require__.r(__webpack_exports__);
 /*!**********************************************************************************!*\
   !*** ./node_modules/material-icons/iconfont/MaterialIconsOutlined-Regular.woff2 ***!
   \**********************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+/***/ ((module) => {
 
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("/fonts/vendor/material-icons/iconMaterialIconsOutlined-Regular.woff2?f11099243845db6ed279b1a26bba622b");
+module.exports = "/fonts/vendor/material-icons/iconMaterialIconsOutlined-Regular.woff2?f11099243845db6ed279b1a26bba622b";
 
 /***/ }),
 
@@ -1095,14 +1076,9 @@ __webpack_require__.r(__webpack_exports__);
 /*!*****************************************************************************!*\
   !*** ./node_modules/material-icons/iconfont/MaterialIconsRound-Regular.eot ***!
   \*****************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+/***/ ((module) => {
 
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("/fonts/vendor/material-icons/iconMaterialIconsRound-Regular.eot?ea0b3fd57b2eda6b30165e8ed272f0db");
+module.exports = "/fonts/vendor/material-icons/iconMaterialIconsRound-Regular.eot?ea0b3fd57b2eda6b30165e8ed272f0db";
 
 /***/ }),
 
@@ -1110,14 +1086,9 @@ __webpack_require__.r(__webpack_exports__);
 /*!*****************************************************************************!*\
   !*** ./node_modules/material-icons/iconfont/MaterialIconsRound-Regular.otf ***!
   \*****************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+/***/ ((module) => {
 
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("/fonts/vendor/material-icons/iconMaterialIconsRound-Regular.otf?15ffc761f03c943f10c1cc598e07bc77");
+module.exports = "/fonts/vendor/material-icons/iconMaterialIconsRound-Regular.otf?15ffc761f03c943f10c1cc598e07bc77";
 
 /***/ }),
 
@@ -1125,14 +1096,9 @@ __webpack_require__.r(__webpack_exports__);
 /*!******************************************************************************!*\
   !*** ./node_modules/material-icons/iconfont/MaterialIconsRound-Regular.woff ***!
   \******************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+/***/ ((module) => {
 
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("/fonts/vendor/material-icons/iconMaterialIconsRound-Regular.woff?e778c163a306618588b2a34587c3b1b7");
+module.exports = "/fonts/vendor/material-icons/iconMaterialIconsRound-Regular.woff?e778c163a306618588b2a34587c3b1b7";
 
 /***/ }),
 
@@ -1140,14 +1106,9 @@ __webpack_require__.r(__webpack_exports__);
 /*!*******************************************************************************!*\
   !*** ./node_modules/material-icons/iconfont/MaterialIconsRound-Regular.woff2 ***!
   \*******************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+/***/ ((module) => {
 
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("/fonts/vendor/material-icons/iconMaterialIconsRound-Regular.woff2?5466835172d64d71687ff9e8ae1c9f87");
+module.exports = "/fonts/vendor/material-icons/iconMaterialIconsRound-Regular.woff2?5466835172d64d71687ff9e8ae1c9f87";
 
 /***/ }),
 
@@ -1155,14 +1116,9 @@ __webpack_require__.r(__webpack_exports__);
 /*!*****************************************************************************!*\
   !*** ./node_modules/material-icons/iconfont/MaterialIconsSharp-Regular.eot ***!
   \*****************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+/***/ ((module) => {
 
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("/fonts/vendor/material-icons/iconMaterialIconsSharp-Regular.eot?b2f43c0b26247c560185dc90c8adf4e7");
+module.exports = "/fonts/vendor/material-icons/iconMaterialIconsSharp-Regular.eot?b2f43c0b26247c560185dc90c8adf4e7";
 
 /***/ }),
 
@@ -1170,14 +1126,9 @@ __webpack_require__.r(__webpack_exports__);
 /*!*****************************************************************************!*\
   !*** ./node_modules/material-icons/iconfont/MaterialIconsSharp-Regular.otf ***!
   \*****************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+/***/ ((module) => {
 
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("/fonts/vendor/material-icons/iconMaterialIconsSharp-Regular.otf?1284777b159fe703ce07961f273e4a4e");
+module.exports = "/fonts/vendor/material-icons/iconMaterialIconsSharp-Regular.otf?1284777b159fe703ce07961f273e4a4e";
 
 /***/ }),
 
@@ -1185,14 +1136,9 @@ __webpack_require__.r(__webpack_exports__);
 /*!******************************************************************************!*\
   !*** ./node_modules/material-icons/iconfont/MaterialIconsSharp-Regular.woff ***!
   \******************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+/***/ ((module) => {
 
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("/fonts/vendor/material-icons/iconMaterialIconsSharp-Regular.woff?51cafaef22203ccd3ab80da1c34722f0");
+module.exports = "/fonts/vendor/material-icons/iconMaterialIconsSharp-Regular.woff?51cafaef22203ccd3ab80da1c34722f0";
 
 /***/ }),
 
@@ -1200,14 +1146,9 @@ __webpack_require__.r(__webpack_exports__);
 /*!*******************************************************************************!*\
   !*** ./node_modules/material-icons/iconfont/MaterialIconsSharp-Regular.woff2 ***!
   \*******************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+/***/ ((module) => {
 
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("/fonts/vendor/material-icons/iconMaterialIconsSharp-Regular.woff2?06a48e176e00633a4c7db8b852e8ae49");
+module.exports = "/fonts/vendor/material-icons/iconMaterialIconsSharp-Regular.woff2?06a48e176e00633a4c7db8b852e8ae49";
 
 /***/ }),
 
@@ -1215,14 +1156,9 @@ __webpack_require__.r(__webpack_exports__);
 /*!*******************************************************************************!*\
   !*** ./node_modules/material-icons/iconfont/MaterialIconsTwoTone-Regular.eot ***!
   \*******************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+/***/ ((module) => {
 
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("/fonts/vendor/material-icons/iconMaterialIconsTwoTone-Regular.eot?493280db0e594f80826a4862ec963cf0");
+module.exports = "/fonts/vendor/material-icons/iconMaterialIconsTwoTone-Regular.eot?493280db0e594f80826a4862ec963cf0";
 
 /***/ }),
 
@@ -1230,14 +1166,9 @@ __webpack_require__.r(__webpack_exports__);
 /*!*******************************************************************************!*\
   !*** ./node_modules/material-icons/iconfont/MaterialIconsTwoTone-Regular.otf ***!
   \*******************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+/***/ ((module) => {
 
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("/fonts/vendor/material-icons/iconMaterialIconsTwoTone-Regular.otf?fd169782d98e19ce991b7ab85aad213f");
+module.exports = "/fonts/vendor/material-icons/iconMaterialIconsTwoTone-Regular.otf?fd169782d98e19ce991b7ab85aad213f";
 
 /***/ }),
 
@@ -1245,14 +1176,9 @@ __webpack_require__.r(__webpack_exports__);
 /*!********************************************************************************!*\
   !*** ./node_modules/material-icons/iconfont/MaterialIconsTwoTone-Regular.woff ***!
   \********************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+/***/ ((module) => {
 
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("/fonts/vendor/material-icons/iconMaterialIconsTwoTone-Regular.woff?763e95586c9de7fcca6b4012e4b308cb");
+module.exports = "/fonts/vendor/material-icons/iconMaterialIconsTwoTone-Regular.woff?763e95586c9de7fcca6b4012e4b308cb";
 
 /***/ }),
 
@@ -1260,14 +1186,9 @@ __webpack_require__.r(__webpack_exports__);
 /*!*********************************************************************************!*\
   !*** ./node_modules/material-icons/iconfont/MaterialIconsTwoTone-Regular.woff2 ***!
   \*********************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+/***/ ((module) => {
 
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("/fonts/vendor/material-icons/iconMaterialIconsTwoTone-Regular.woff2?66b1a820aed3cef44bfe90cec1436649");
+module.exports = "/fonts/vendor/material-icons/iconMaterialIconsTwoTone-Regular.woff2?66b1a820aed3cef44bfe90cec1436649";
 
 /***/ }),
 
@@ -1280,23 +1201,22 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */   "default": () => (/* binding */ hotkeys)
 /* harmony export */ });
-/*!
- * hotkeys-js v3.8.7
- * A simple micro-library for defining and dispatching keyboard shortcuts. It has no dependencies.
+/**! 
+ * hotkeys-js v3.9.4 
+ * A simple micro-library for defining and dispatching keyboard shortcuts. It has no dependencies. 
  * 
- * Copyright (c) 2021 kenny wong <wowohoo@qq.com>
- * http://jaywcjlove.github.io/hotkeys
- * 
- * Licensed under the MIT license.
+ * Copyright (c) 2022 kenny wong <wowohoo@qq.com> 
+ * http://jaywcjlove.github.io/hotkeys 
+ * Licensed under the MIT license 
  */
 
 var isff = typeof navigator !== 'undefined' ? navigator.userAgent.toLowerCase().indexOf('firefox') > 0 : false; // 绑定事件
 
-function addEvent(object, event, method) {
+function addEvent(object, event, method, useCapture) {
   if (object.addEventListener) {
-    object.addEventListener(event, method, false);
+    object.addEventListener(event, method, useCapture);
   } else if (object.attachEvent) {
     object.attachEvent("on".concat(event), function () {
       method(window.event);
@@ -1439,6 +1359,8 @@ for (var k = 1; k < 20; k++) {
 
 var _downKeys = []; // 记录摁下的绑定键
 
+var winListendFocus = false; // window是否已经监听了focus事件
+
 var _scope = 'all'; // 默认热键范围
 
 var elementHasBindEvent = []; // 已绑定事件的节点记录
@@ -1537,7 +1459,7 @@ function clearModifier(event) {
 
 function unbind(keysInfo) {
   // unbind(), unbind all keys
-  if (!keysInfo) {
+  if (typeof keysInfo === 'undefined') {
     Object.keys(_handlers).forEach(function (key) {
       return delete _handlers[key];
     });
@@ -1590,21 +1512,20 @@ var eachUnbind = function eachUnbind(_ref) {
 
     if (!scope) scope = getScope();
     var mods = len > 1 ? getMods(_modifier, unbindKeys) : [];
-    _handlers[keyCode] = _handlers[keyCode].map(function (record) {
+    _handlers[keyCode] = _handlers[keyCode].filter(function (record) {
       // 通过函数判断，是否解除绑定，函数相等直接返回
       var isMatchingMethod = method ? record.method === method : true;
-
-      if (isMatchingMethod && record.scope === scope && compareArray(record.mods, mods)) {
-        return {};
-      }
-
-      return record;
+      return !(isMatchingMethod && record.scope === scope && compareArray(record.mods, mods));
     });
   });
 }; // 对监听对应快捷键的回调函数进行处理
 
 
-function eventHandler(event, handler, scope) {
+function eventHandler(event, handler, scope, element) {
+  if (handler.element !== element) {
+    return;
+  }
+
   var modifiersMatch; // 看它是否在当前范围
 
   if (handler.scope === scope || handler.scope === 'all') {
@@ -1631,7 +1552,7 @@ function eventHandler(event, handler, scope) {
 } // 处理keydown事件
 
 
-function dispatch(event) {
+function dispatch(event, element) {
   var asterisk = _handlers['*'];
   var key = event.keyCode || event.which || event.charCode; // 表单控件过滤 默认表单控件不触发快捷键
 
@@ -1716,7 +1637,7 @@ function dispatch(event) {
   if (asterisk) {
     for (var i = 0; i < asterisk.length; i++) {
       if (asterisk[i].scope === scope && (event.type === 'keydown' && asterisk[i].keydown || event.type === 'keyup' && asterisk[i].keyup)) {
-        eventHandler(event, asterisk[i], scope);
+        eventHandler(event, asterisk[i], scope, element);
       }
     }
   } // key 不在 _handlers 中返回
@@ -1738,7 +1659,7 @@ function dispatch(event) {
 
         if (_downKeysCurrent.sort().join('') === _downKeys.sort().join('')) {
           // 找到处理内容
-          eventHandler(event, record, scope);
+          eventHandler(event, record, scope, element);
         }
       }
     }
@@ -1762,7 +1683,8 @@ function hotkeys(key, option, method) {
   var i = 0;
   var keyup = false;
   var keydown = true;
-  var splitKey = '+'; // 对为设定范围的判断
+  var splitKey = '+';
+  var capture = false; // 对为设定范围的判断
 
   if (method === undefined && typeof option === 'function') {
     method = option;
@@ -1776,6 +1698,8 @@ function hotkeys(key, option, method) {
     if (option.keyup) keyup = option.keyup; // eslint-disable-line
 
     if (option.keydown !== undefined) keydown = option.keydown; // eslint-disable-line
+
+    if (option.capture !== undefined) capture = option.capture; // eslint-disable-line
 
     if (typeof option.splitKey === 'string') splitKey = option.splitKey; // eslint-disable-line
   }
@@ -1803,7 +1727,8 @@ function hotkeys(key, option, method) {
       shortcut: keys[i],
       method: method,
       key: keys[i],
-      splitKey: splitKey
+      splitKey: splitKey,
+      element: element
     });
   } // 在全局document上设置快捷键
 
@@ -1811,16 +1736,34 @@ function hotkeys(key, option, method) {
   if (typeof element !== 'undefined' && !isElementBind(element) && window) {
     elementHasBindEvent.push(element);
     addEvent(element, 'keydown', function (e) {
-      dispatch(e);
-    });
-    addEvent(window, 'focus', function () {
-      _downKeys = [];
-    });
+      dispatch(e, element);
+    }, capture);
+
+    if (!winListendFocus) {
+      winListendFocus = true;
+      addEvent(window, 'focus', function () {
+        _downKeys = [];
+      }, capture);
+    }
+
     addEvent(element, 'keyup', function (e) {
-      dispatch(e);
+      dispatch(e, element);
       clearModifier(e);
-    });
+    }, capture);
   }
+}
+
+function trigger(shortcut) {
+  var scope = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 'all';
+  Object.keys(_handlers).forEach(function (key) {
+    var data = _handlers[key].find(function (item) {
+      return item.scope === scope && item.shortcut === shortcut;
+    });
+
+    if (data && data.method) {
+      data.method();
+    }
+  });
 }
 
 var _api = {
@@ -1830,7 +1773,11 @@ var _api = {
   getPressedKeyCodes: getPressedKeyCodes,
   isPressed: isPressed,
   filter: filter,
-  unbind: unbind
+  trigger: trigger,
+  unbind: unbind,
+  keyMap: _keyMap,
+  modifier: _modifier,
+  modifierMap: modifierMap
 };
 
 for (var a in _api) {
@@ -1853,7 +1800,7 @@ if (typeof window !== 'undefined') {
   window.hotkeys = hotkeys;
 }
 
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (hotkeys);
+
 
 
 /***/ }),

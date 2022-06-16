@@ -116,6 +116,9 @@ import VueSocialSharing from 'vue-social-sharing'
 
 Vue.use(VueSocialSharing);
 
+import VueGoogleCharts from 'vue-google-charts'
+
+Vue.use(VueGoogleCharts)
 
 const app = new Vue({
     el: "#app",

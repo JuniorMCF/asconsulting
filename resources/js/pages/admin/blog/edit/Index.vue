@@ -129,7 +129,7 @@
                 <v-col class="col-12 col-md-8">
                     <v-file-input label="PDF file" v-model="file" color="sky" outlined dense></v-file-input>
                 </v-col>
-                <div v-if="document.file">
+                <div v-if="document.file" style="position: relative;overflow: hidden;width: 100%;">
                     <embed :src="document.file" width="800px" height="400px" />
                 </div>
             </v-row>

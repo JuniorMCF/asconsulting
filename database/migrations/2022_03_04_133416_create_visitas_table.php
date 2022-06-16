@@ -19,6 +19,8 @@ class CreateVisitasTable extends Migration
             $table->string("link");
             $table->string("ip");
             $table->string("zip")->nullable();
+            $table->string("country")->nullable();
+            $table->string("city")->nullable();
             $table->decimal("tiempo_inicial")->nullable();
             $table->decimal("tiempo_salida")->nullable();
             $table->timestamps();

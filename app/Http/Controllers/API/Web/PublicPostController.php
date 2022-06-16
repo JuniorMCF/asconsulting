@@ -49,7 +49,9 @@ class PublicPostController extends Controller
             Visualizacione::create([
                 "post_id" => $post->id,
                 "ip" => $userIp,
-                "country" => $locationData->countryName
+                "country" => $locationData->countryName,
+                "zip"=>$locationData->countryCode,
+                "city"=>$locationData->city
             ]);
             //return response()->json(true, 200);
         } else {
@@ -57,7 +59,9 @@ class PublicPostController extends Controller
             Visualizacione::create([
                 "post_id" => $post->id,
                 "ip" => $userIp,
-                "country" => ""
+                "country" => "",
+                "zip"=>"",
+                "city"=>""
             ]);
         }
 

@@ -4,41 +4,22 @@
             {{ actualPage }}
             <span class="ml-2 grey--text text-h5">{{ posts.length }}</span>
             <v-spacer></v-spacer>
-            <v-btn
-                @click.prevent="createNewPost()"
-                class="sky white--text text-normal rounded-xl ekevation-1"
-            >
+            <v-btn v-if="role.slug == 'propietario' || role.slug == 'escritor-blog'" @click.prevent="createNewPost()"
+                class="sky white--text text-normal rounded-xl ekevation-1">
                 <v-icon left>mdi-plus</v-icon>Crear nueva entrada
             </v-btn>
         </v-card-title>
         <v-container fluid class="pa-0 ma-0 px-md-10 px-3">
             <v-row class="pa-0 ma-0">
                 <v-col class="col-12 pa-0 ma-0">
-                    <v-data-table
-                        v-model="selected"
-                        :headers="headers"
-                        :items="posts"
-                        show-select
-                        :search="search"
-                        sort-by="calories"
-                        class="elevation-0 px-0 rounded-0"
-                        hide-default-footer
-                        disable-pagination
-                    >
+                    <v-data-table v-model="selected" :headers="headers" :items="posts" show-select :search="search"
+                        sort-by="calories" class="elevation-0 px-0 rounded-0" hide-default-footer disable-pagination>
                         <template v-slot:item.foto="{ item }">
                             <div class="pa-2">
                                 <v-img v-if="item.foto" :src="item.foto" height="60" width="42"></v-img>
-                                <div
-                                    v-else
-                                    class="gray lighten-5 rounded-lg align-center justify-center d-flex"
-                                    style="width:60px;height:60px;"
-                                >
-                                    <v-btn
-                                        fab
-                                        color="white"
-                                        x-small
-                                        class="elevation-0 disable-events"
-                                    >
+                                <div v-else class="gray lighten-5 rounded-lg align-center justify-center d-flex"
+                                    style="width:60px;height:60px;">
+                                    <v-btn fab color="white" x-small class="elevation-0 disable-events">
                                         <v-icon color="sky">mdi-image-outline</v-icon>
                                     </v-btn>
                                 </div>
@@ -51,67 +32,38 @@
                         <template v-slot:top>
                             <v-card-text flat class="px-0 d-flex flex-wrap align-center">
                                 <div class="col-12 col-md-6 text-center text-md-start">
-                                    <p
-                                        class="ma-0"
-                                        v-if="selected.length > 0"
-                                    >{{ selected.length }} seleccionados</p>
+                                    <p class="ma-0" v-if="selected.length > 0">{{ selected.length }} seleccionados</p>
                                 </div>
 
                                 <div class="col-12 col-md-3 text-center text-md-end">
                                     <v-btn
-                                        v-if="selected.length > 0"
-                                        color="sky"
-                                        large
-                                        class="white--text text-normal caption mr-3 elevation-0"
-                                        rounded
-                                        @click.prevent="trashAll()"
-                                    >mover seleecionados a papelera</v-btn>
+                                        v-if="selected.length > 0 && (role.slug == 'propietario' || role.slug == 'escritor-blog')"
+                                        color="sky" large class="white--text text-normal caption mr-3 elevation-0"
+                                        rounded @click.prevent="trashAll()">mover seleecionados a papelera</v-btn>
                                 </div>
                                 <div class="col-12 col-md-3 text-end">
-                                    <v-text-field
-                                        v-model="search"
-                                        append-icon="mdi-magnify"
-                                        label="Buscar"
-                                        color="sky"
-                                        single-line
-                                        outlined
-                                        dense
-                                        rounded
-                                        hide-details
-                                    ></v-text-field>
+                                    <v-text-field v-model="search" append-icon="mdi-magnify" label="Buscar" color="sky"
+                                        single-line outlined dense rounded hide-details></v-text-field>
                                 </div>
                             </v-card-text>
                         </template>
                         <template v-slot:item.actions="{ item }">
                             <v-btn
-                                class="mr-2 rounded-xl text-normal white--text elevation-1"
-                                color="sky"
-                                @click="editItem(item)"
-                            >editar</v-btn>
+                                v-if="role.slug == 'propietario' || role.slug == 'escritor-blog' || role.slug == 'editor-blog'"
+                                class="mr-2 rounded-xl text-normal white--text elevation-1" color="sky"
+                                @click="editItem(item)">editar</v-btn>
 
                             <v-menu bottom left>
                                 <template v-slot:activator="{ on, attrs }">
-                                    <v-btn
-                                        dark
-                                        icon
-                                        v-bind="attrs"
-                                        v-on="on"
-                                        text
-                                        class="elevation-0 sky--text"
-                                        fab
-                                        x-small
-                                    >
+                                    <v-btn dark icon v-bind="attrs" v-on="on" text class="elevation-0 sky--text" fab
+                                        x-small>
                                         <v-icon>mdi-dots-vertical</v-icon>
                                     </v-btn>
                                 </template>
 
                                 <v-list>
-                                    <v-list-item
-                                        v-for="(option, i) in options"
-                                        :key="'options' + i"
-                                        link
-                                        @click.prevent="OnClickOption(option, item)"
-                                    >
+                                    <v-list-item v-for="(option, i) in options" :key="'options' + i" link
+                                        @click.prevent="OnClickOption(option, item)">
                                         <v-list-item-title class="caption">
                                             <v-icon small left>{{ option.icon }}</v-icon>
                                             {{ option.title }}
@@ -131,7 +83,7 @@
         <DialogArticle ref="dialogArticle"></DialogArticle>
 
         <SharedDialog ref="sharedDialog"></SharedDialog>
-            <ConfirmDialog ref="confirmDialog"></ConfirmDialog>
+        <ConfirmDialog ref="confirmDialog"></ConfirmDialog>
     </div>
 </template>
 
@@ -139,13 +91,8 @@
 import DialogArticle from "../../../../components/utils/DialogArticle.vue";
 import SharedDialog from "../../../../components/utils/SharedDialog.vue";
 import ConfirmDialog from "../../../../components/utils/ConfirmDialog.vue";
-
+import Vue from "vue";
 export default {
-    components: {
-        DialogArticle,
-        SharedDialog,
-        ConfirmDialog
-    },
     data: () => ({
         loadingRestore: false,
         search: "",
@@ -224,19 +171,31 @@ export default {
                 case "Ver informe":
                     break;
                 case "Mover a la papelera":
-                    let data = new FormData()
-                    data.append("post_id", item.id)
-                    axios({
-                        method: "post",
-                        url: "/api/oauth/post/papelera",
-                        data: data,
-                        headers: { Authorization: "Bearer " + this.$store.state.auth.token }
-                    }).then((res) => {
+                    if (this.role.slug == 'propietario' || this.role.slug == 'escritor-blog') {
+                        this.$refs.confirmDialog.open("Mover a papelera", "¿Quiere enviar este post a papelera?").then(res => {
+                            if (res) {
+                                let data = new FormData()
+                                data.append("post_id", item.id)
+                                axios({
+                                    method: "post",
+                                    url: "/api/oauth/post/papelera",
+                                    data: data,
+                                    headers: { Authorization: "Bearer " + this.$store.state.auth.token }
+                                }).then((res) => {
 
-                        this.getData()
-                    }).catch((err) => {
-                        console.log(err)
-                    })
+                                    this.getData()
+                                }).catch((err) => {
+                                    console.log(err)
+                                })
+                            }
+                        }).catch(err => {
+
+                        })
+                    } else {
+                        Vue.$toast.warning("No tiene los permisos para eliminar un post")
+                    }
+
+
 
 
                     break;
@@ -292,6 +251,10 @@ export default {
         actualPage() {
             return this.$store.state.app.actual_page;
         },
+        role() {
+
+            return this.$store.getters["auth/getRole"]
+        }
     },
     watch: {
         selected(newValue, oldValue) {

@@ -34,6 +34,9 @@ const getters = {
     getUserId(state) {
 
         return state.user.id
+    },
+    getRole(state){
+        return state.roles[0]
     }
 
 
@@ -52,6 +55,7 @@ const actions = {
             axios.post(`api/login`, form_data)
                 .then(res => {
                     //this.axiosInstance.defaults.headers['Authorization'] = 'Bearer ' + res.data.access_token
+
                     context.commit('auth', {
                         token: res.data.access_token,
                         token_type: res.data.token_type,

@@ -54,6 +54,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  name: 'confirm-dialog',
   data: function data() {
     return {
       dialog: false,
@@ -302,56 +303,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_utils_DialogArticle_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../components/utils/DialogArticle.vue */ "./resources/js/components/utils/DialogArticle.vue");
 /* harmony import */ var _components_utils_SharedDialog_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../components/utils/SharedDialog.vue */ "./resources/js/components/utils/SharedDialog.vue");
 /* harmony import */ var _components_utils_ConfirmDialog_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../components/utils/ConfirmDialog.vue */ "./resources/js/components/utils/ConfirmDialog.vue");
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm.js");
 //
 //
 //
@@ -444,12 +396,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_defineProperty({
-  components: {
-    DialogArticle: _components_utils_DialogArticle_vue__WEBPACK_IMPORTED_MODULE_0__["default"],
-    SharedDialog: _components_utils_SharedDialog_vue__WEBPACK_IMPORTED_MODULE_1__["default"],
-    ConfirmDialog: _components_utils_ConfirmDialog_vue__WEBPACK_IMPORTED_MODULE_2__["default"]
-  },
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
       loadingRestore: false,
@@ -549,20 +497,29 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
           break;
 
         case "Mover a la papelera":
-          var data = new FormData();
-          data.append("post_id", item.id);
-          axios({
-            method: "post",
-            url: "/api/oauth/post/papelera",
-            data: data,
-            headers: {
-              Authorization: "Bearer " + this.$store.state.auth.token
-            }
-          }).then(function (res) {
-            _this2.getData();
-          })["catch"](function (err) {
-            console.log(err);
-          });
+          if (this.role.slug == 'propietario' || this.role.slug == 'escritor-blog') {
+            this.$refs.confirmDialog.open("Mover a papelera", "¿Quiere enviar este post a papelera?").then(function (res) {
+              if (res) {
+                var data = new FormData();
+                data.append("post_id", item.id);
+                axios({
+                  method: "post",
+                  url: "/api/oauth/post/papelera",
+                  data: data,
+                  headers: {
+                    Authorization: "Bearer " + _this2.$store.state.auth.token
+                  }
+                }).then(function (res) {
+                  _this2.getData();
+                })["catch"](function (err) {
+                  console.log(err);
+                });
+              }
+            })["catch"](function (err) {});
+          } else {
+            vue__WEBPACK_IMPORTED_MODULE_3__["default"].$toast.warning("No tiene los permisos para eliminar un post");
+          }
+
           break;
 
         default:
@@ -625,6 +582,9 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
   computed: {
     actualPage: function actualPage() {
       return this.$store.state.app.actual_page;
+    },
+    role: function role() {
+      return this.$store.getters["auth/getRole"];
     }
   },
   watch: {
@@ -635,12 +595,13 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         this.selected_items = "seleccionado";
       }
     }
+  },
+  components: {
+    DialogArticle: _components_utils_DialogArticle_vue__WEBPACK_IMPORTED_MODULE_0__["default"],
+    SharedDialog: _components_utils_SharedDialog_vue__WEBPACK_IMPORTED_MODULE_1__["default"],
+    ConfirmDialog: _components_utils_ConfirmDialog_vue__WEBPACK_IMPORTED_MODULE_2__["default"]
   }
-}, "components", {
-  DialogArticle: _components_utils_DialogArticle_vue__WEBPACK_IMPORTED_MODULE_0__["default"],
-  SharedDialog: _components_utils_SharedDialog_vue__WEBPACK_IMPORTED_MODULE_1__["default"],
-  ConfirmDialog: _components_utils_ConfirmDialog_vue__WEBPACK_IMPORTED_MODULE_2__["default"]
-}));
+});
 
 /***/ }),
 
@@ -1612,23 +1573,26 @@ var render = function () {
           _vm._v(" "),
           _c("v-spacer"),
           _vm._v(" "),
-          _c(
-            "v-btn",
-            {
-              staticClass: "sky white--text text-normal rounded-xl ekevation-1",
-              on: {
-                click: function ($event) {
-                  $event.preventDefault()
-                  return _vm.createNewPost()
+          _vm.role.slug == "propietario" || _vm.role.slug == "escritor-blog"
+            ? _c(
+                "v-btn",
+                {
+                  staticClass:
+                    "sky white--text text-normal rounded-xl ekevation-1",
+                  on: {
+                    click: function ($event) {
+                      $event.preventDefault()
+                      return _vm.createNewPost()
+                    },
+                  },
                 },
-              },
-            },
-            [
-              _c("v-icon", { attrs: { left: "" } }, [_vm._v("mdi-plus")]),
-              _vm._v("Crear nueva entrada\n        "),
-            ],
-            1
-          ),
+                [
+                  _c("v-icon", { attrs: { left: "" } }, [_vm._v("mdi-plus")]),
+                  _vm._v("Crear nueva entrada\n        "),
+                ],
+                1
+              )
+            : _vm._e(),
         ],
         1
       ),
@@ -1764,7 +1728,9 @@ var render = function () {
                                       "col-12 col-md-3 text-center text-md-end",
                                   },
                                   [
-                                    _vm.selected.length > 0
+                                    _vm.selected.length > 0 &&
+                                    (_vm.role.slug == "propietario" ||
+                                      _vm.role.slug == "escritor-blog")
                                       ? _c(
                                           "v-btn",
                                           {
@@ -1830,20 +1796,24 @@ var render = function () {
                         fn: function (ref) {
                           var item = ref.item
                           return [
-                            _c(
-                              "v-btn",
-                              {
-                                staticClass:
-                                  "mr-2 rounded-xl text-normal white--text elevation-1",
-                                attrs: { color: "sky" },
-                                on: {
-                                  click: function ($event) {
-                                    return _vm.editItem(item)
+                            _vm.role.slug == "propietario" ||
+                            _vm.role.slug == "escritor-blog" ||
+                            _vm.role.slug == "editor-blog"
+                              ? _c(
+                                  "v-btn",
+                                  {
+                                    staticClass:
+                                      "mr-2 rounded-xl text-normal white--text elevation-1",
+                                    attrs: { color: "sky" },
+                                    on: {
+                                      click: function ($event) {
+                                        return _vm.editItem(item)
+                                      },
+                                    },
                                   },
-                                },
-                              },
-                              [_vm._v("editar")]
-                            ),
+                                  [_vm._v("editar")]
+                                )
+                              : _vm._e(),
                             _vm._v(" "),
                             _c(
                               "v-menu",

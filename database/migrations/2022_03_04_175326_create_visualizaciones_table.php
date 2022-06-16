@@ -16,10 +16,12 @@ class CreateVisualizacionesTable extends Migration
         Schema::create('visualizaciones', function (Blueprint $table) {
             $table->bigIncrements("id");
 
-     
+
             $table->timestamp("fecha_inicio")->nullable();
             $table->timestamp("fecha_fin")->nullable();
+            $table->string("zip")->nullable();
             $table->string("country")->nullable();
+            $table->string("city")->nullable();
             $table->string("ip")->nullable();
 
             $table->bigInteger("post_id")->unsigned()->nullable();

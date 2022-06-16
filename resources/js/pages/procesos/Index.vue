@@ -8,17 +8,17 @@
                 </video>
             </div>
             <div class="content-img content-wrap-2 text-center">
-                <v-img src="/app/skill.PNG" class="mx-auto size_img"></v-img>
+                <v-img src="/app/skill.png" class="mx-auto size_img"></v-img>
                 <p class="white--text font-weight-bold span_title">Procesos</p>
             </div>
         </v-row>
         <v-row class="pa-0 ma-0 content-wrap-2 mx-auto container-bandwith">
             <v-col class="col-12 pa-0 ma-0">
-                <v-img src="/app/bandwith.PNG"></v-img>
+                <v-img src="/app/bandwith.png"></v-img>
             </v-col>
         </v-row>
 
-        <v-row class="pa-0 ma-0 content-wrap-0 mx-auto">
+        <v-row class="pa-0 ma-0 justify-center content-wrap-0 mx-auto">
             <v-col class="col-12 col-md-4 pa-1" v-for="(tec, i) in procesos" :key="'tec' + i">
                 <v-card class="container-card elevation-0 pa-10" height="350">
                     <v-card-text class="pa-0" style="height: 200px">

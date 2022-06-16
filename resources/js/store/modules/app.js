@@ -71,7 +71,7 @@ const actions = {
         let data = new FormData()
         data.append("visita_id",payload.visita_id)
         axios.post('/api/close-page',data).then(res=>{
-            console.log("pagina visitada")
+            //console.log("pagina visitada")
         }).catch(err => {
 
         })

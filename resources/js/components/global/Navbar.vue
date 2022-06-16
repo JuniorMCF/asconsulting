@@ -12,7 +12,7 @@
                     <v-toolbar-title class="d-flex align-center">
                         <router-link to="/">
                             <div class="img-logo_navbar">
-                                <v-img src="/app/logo_home.PNG"></v-img>
+                                <v-img src="/app/logo_home.png"></v-img>
                             </div>
 
                             <p class="text-center ma-0">

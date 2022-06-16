@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\API\Auth\AuthController;
+use App\Http\Controllers\API\Web\AdminStatisticsController;
 use App\Http\Controllers\Api\Web\AsesoriaController;
 use App\Http\Controllers\Api\Web\CategoryController;
 use App\Http\Controllers\API\Web\ContactoController;
@@ -94,5 +95,11 @@ Route::group([
         Route::get('writers',[WritersController::class,"all"]);
 
         Route::get('contactos/all',[ContactosController::class,"all"]);
+
+
+        Route::get('statistics/all',[AdminStatisticsController::class,"all"]);
+
+        Route::get('roles',[AdminStatisticsController::class,'roles']);
+        Route::post('rol/update',[AdminStatisticsController::class,'updateRoleUser']);
     });
 });

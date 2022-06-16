@@ -54,6 +54,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  name: 'confirm-dialog',
   data: function data() {
     return {
       dialog: false,
@@ -176,6 +177,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _components_utils_DialogArticle_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../components/utils/DialogArticle.vue */ "./resources/js/components/utils/DialogArticle.vue");
 /* harmony import */ var _components_utils_ConfirmDialog_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../components/utils/ConfirmDialog.vue */ "./resources/js/components/utils/ConfirmDialog.vue");
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm.js");
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 //
@@ -264,55 +266,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_defineProperty({
@@ -414,26 +368,31 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
           break;
 
         case "Eliminar":
-          this.$refs.confirmDialog.open("Eliminar post", "¿Está seguro que quiere eliminar este post?").then(function (res) {
-            if (res) {
-              var _data = new FormData();
+          if (this.role.slug == 'propietario' || this.role.slug == 'escritor-blog') {
+            this.$refs.confirmDialog.open("Eliminar post", "¿Está seguro que quiere eliminar este post?").then(function (res) {
+              if (res) {
+                var _data = new FormData();
 
-              _data.append("post_id", item.id);
+                _data.append("post_id", item.id);
 
-              axios({
-                method: "post",
-                url: "/api/oauth/post/delete",
-                data: _data,
-                headers: {
-                  Authorization: "Bearer " + _this2.$store.state.auth.token
-                }
-              }).then(function (res) {
-                _this2.getData();
-              })["catch"](function (err) {
-                console.log(err);
-              });
-            }
-          })["catch"](function (err) {});
+                axios({
+                  method: "post",
+                  url: "/api/oauth/post/delete",
+                  data: _data,
+                  headers: {
+                    Authorization: "Bearer " + _this2.$store.state.auth.token
+                  }
+                }).then(function (res) {
+                  _this2.getData();
+                })["catch"](function (err) {
+                  console.log(err);
+                });
+              }
+            })["catch"](function (err) {});
+          } else {
+            vue__WEBPACK_IMPORTED_MODULE_2__["default"].$toast.warning("No tiene los permisos para eliminar un post");
+          }
+
           break;
 
         default:
@@ -496,6 +455,9 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
   computed: {
     actualPage: function actualPage() {
       return this.$store.state.app.actual_page;
+    },
+    role: function role() {
+      return this.$store.getters["auth/getRole"];
     }
   },
   watch: {
@@ -1096,23 +1058,26 @@ var render = function () {
           _vm._v(" "),
           _c("v-spacer"),
           _vm._v(" "),
-          _c(
-            "v-btn",
-            {
-              staticClass: "sky white--text text-normal rounded-xl ekevation-1",
-              on: {
-                click: function ($event) {
-                  $event.preventDefault()
-                  return _vm.createNewPost()
+          _vm.role.slug == "propietario" || _vm.role.slug == "escritor-blog"
+            ? _c(
+                "v-btn",
+                {
+                  staticClass:
+                    "sky white--text text-normal rounded-xl ekevation-1",
+                  on: {
+                    click: function ($event) {
+                      $event.preventDefault()
+                      return _vm.createNewPost()
+                    },
+                  },
                 },
-              },
-            },
-            [
-              _c("v-icon", { attrs: { left: "" } }, [_vm._v("mdi-plus")]),
-              _vm._v("Crear nueva entrada\n        "),
-            ],
-            1
-          ),
+                [
+                  _c("v-icon", { attrs: { left: "" } }, [_vm._v("mdi-plus")]),
+                  _vm._v("Crear nueva entrada\n        "),
+                ],
+                1
+              )
+            : _vm._e(),
         ],
         1
       ),
@@ -1246,7 +1211,9 @@ var render = function () {
                                       "col-12 col-md-3 text-center text-md-end",
                                   },
                                   [
-                                    _vm.selected.length > 0
+                                    _vm.selected.length > 0 &&
+                                    (_vm.role.slug == "propietario" ||
+                                      _vm.role.slug == "escritor-blog")
                                       ? _c(
                                           "v-btn",
                                           {

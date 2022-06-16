@@ -9,37 +9,18 @@
 
             <v-row class="pa-0 ma-0 justify-center">
                 <v-col class="pa-0 ma-0 col-12 col-md-6">
-                    <v-text-field
-                        hide-details="auto"
-                        color="sky"
-                        v-model="categoria.nombre"
-                        :value="categoria.nombre"
-                        outlined
-                        placeholder="Nombre de la categpría"
-                        dense
-                    ></v-text-field>
+                    <v-text-field hide-details="auto" color="sky" v-model="categoria.nombre" :value="categoria.nombre"
+                        outlined placeholder="Nombre de la categpría" dense></v-text-field>
                 </v-col>
             </v-row>
             <v-row class="pa-0 ma-0 justify-center">
                 <v-col class="py-4 ma-0 col-6 col-md-3 pl-0">
-                    <v-btn
-                          :loading="loadSave"
-                        class="text-normal elevation-0 white--text rounded-lg"
-                        color="sky"
-                        block
-                        @click.prevent="saveCategory()"
-                    >Crear</v-btn>
+                    <v-btn :loading="loadSave" class="text-normal elevation-0 white--text rounded-lg" color="sky" block
+                        @click.prevent="saveCategory()" v-if="role.slug == 'propietario'">Crear</v-btn>
                 </v-col>
                 <v-col class="py-4 ma-0 col-6 col-md-3 pr-0">
-                    <v-btn
-
-                        block
-                        text
-                        class="text-normal elevation-0 rounded-lg"
-                        outlined
-                        color="sky"
-                        @click.prevent="goToCategorys()"
-                    >Cancelar</v-btn>
+                    <v-btn block text class="text-normal elevation-0 rounded-lg" outlined color="sky"
+                        @click.prevent="goToCategorys()">Cancelar</v-btn>
                 </v-col>
             </v-row>
         </v-container>
@@ -99,6 +80,10 @@ export default {
         actualPage() {
             return this.$store.state.app.actual_page;
         },
+        role() {
+
+            return this.$store.getters["auth/getRole"]
+        }
     }
 }
 </script>
