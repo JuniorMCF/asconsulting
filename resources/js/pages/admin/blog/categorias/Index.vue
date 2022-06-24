@@ -17,7 +17,7 @@
                     </v-card-text>
                 </v-col>
                 <v-col>TODAS</v-col>
-                <v-col>{{ totaEntradas }} entradas</v-col>
+                <v-col>{{ totalEntradas }} entradas</v-col>
             </v-row>
 
             <v-divider horizontal></v-divider>
@@ -159,7 +159,7 @@ export default {
                 url: "/api/oauth/categorys/all",
                 headers: { Authorization: "Bearer " + this.$store.state.auth.token },
             }).then(res => {
-                //console.log(res);
+                console.log(res);
                 this.categorias = res.data;
             }).catch(err => {
                 console.log(err);
@@ -170,10 +170,10 @@ export default {
         actualPage() {
             return this.$store.state.app.actual_page;
         },
-        totaEntradas() {
+        totalEntradas() {
             let total = 0;
             for (let i in this.categorias) {
-                total += this.categorias[i].entrys.length;
+                total += this.categorias[i].entrys.length == undefined ? 0 :  this.categorias[i].entrys.length;
             }
             return total;
         },
