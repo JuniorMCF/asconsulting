@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\API\Web;
+namespace App\Http\Controllers\Api\Web;
 
 use App\Http\Controllers\Controller;
 use App\Models\Categoria;
@@ -19,7 +19,7 @@ use Stevebauman\Location\Facades\Location;
 class PublicPostController extends Controller
 {
     //
-    public function show(Request $request)
+    public function showDocuments(Request $request)
     {
 
 
@@ -108,7 +108,7 @@ class PublicPostController extends Controller
         ], 200);
     }
 
-    public function all(Request $request)
+    public function allPosts(Request $request)
     {
         $posts = Post::join("users", "users.id", "=", "posts.user_id")
 
@@ -208,7 +208,7 @@ class PublicPostController extends Controller
             "ip" => $request->ip()
         ], 200);
     }
-    public function filter($search)
+    public function filterPosts($search)
     {
         $posts = Post::join("users", "users.id", "=", "posts.user_id")
             ->where("posts.titulo", 'like', '%' . $search . '%')
@@ -223,7 +223,7 @@ class PublicPostController extends Controller
         return response()->json($posts, 200);
     }
 
-    public function comment(Request $request)
+    public function commentPost(Request $request)
     {
         if (!$request->autor_id) {
             $user = User::find($request->autor_id);

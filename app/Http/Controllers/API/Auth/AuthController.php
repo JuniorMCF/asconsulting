@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\API\Auth;
+namespace App\Http\Controllers\Api\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Models\Role;
@@ -33,7 +33,7 @@ class AuthController extends Controller
     /**
      * Inicio de sesión y creación de token
      */
-    public function login(Request $request)
+    public function signIn(Request $request)
     {
         $request->validate([
             'email' => 'required|string|email',
@@ -78,7 +78,7 @@ class AuthController extends Controller
         ], 200);
     }
 
-    public function logout()
+    public function logoutUser()
     {
         auth()->user()->tokens->each(function ($token, $key) {
             $token->delete();

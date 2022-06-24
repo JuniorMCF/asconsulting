@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 class AsesoriaController extends Controller
 {
     //
-    public function create(Request $request)
+    public function createAdvisory(Request $request)
     {
 
         $exist = Solicitude::where("ip", $request->ip())->get()->first();

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\API\Web;
+namespace App\Http\Controllers\Api\Web;
 
 use App\Http\Controllers\Controller;
 use App\Models\Role;
@@ -14,7 +14,7 @@ class AdminStatisticsController extends Controller
 {
     //
 
-    public function all()
+    public function allStatistics()
     {
         $visitas = Visita::groupBy('page')->select('page', DB::raw('count(*) as total'))->get();
 
@@ -33,7 +33,7 @@ class AdminStatisticsController extends Controller
     }
 
     //about roles users
-    public function roles()
+    public function rolesUser()
     {
         $roles = Role::where("slug", "!=", "propietario")->get();
 

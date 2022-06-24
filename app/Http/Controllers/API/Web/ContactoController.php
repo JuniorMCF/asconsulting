@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\API\Web;
+namespace App\Http\Controllers\Api\Web;
 
 use App\Http\Controllers\Controller;
 use App\Models\Contacto;
@@ -11,7 +11,7 @@ use Illuminate\Http\Request;
 class ContactoController extends Controller
 {
     //
-    public function create(Request $request)
+    public function createContact(Request $request)
     {
 
         $request->validate([

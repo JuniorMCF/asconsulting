@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 class WritersController extends Controller
 {
     //
-    public function all(){
+    public function allWriters(){
         $users = User::with("roles")->with("entradas")->get();
 
 

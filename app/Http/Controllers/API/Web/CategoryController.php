@@ -9,17 +9,17 @@ use Illuminate\Http\Request;
 class CategoryController extends Controller
 {
     //
-    public function categorias(){
+    public function allCategorys(){
         $categorias  = Categoria::where("estado",1)->with("entrys")->get();
 
         return response()->json($categorias,200);
     }
-    public function show(Request $request){
+    public function showCategory(Request $request){
         $category = Categoria::find($request->categoria_id);
 
         return response()->json($category,200);
     }
-    public function save(Request $request){
+    public function saveCategory(Request $request){
         Categoria::find($request->categoria_id)->update([
             "nombre"=>$request->nombre
         ]);

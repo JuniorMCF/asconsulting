@@ -156,7 +156,7 @@ export default {
         getData() {
             axios({
                 method: "get",
-                url: "/api/oauth/all-categorys",
+                url: "/api/oauth/categorys/all",
                 headers: { Authorization: "Bearer " + this.$store.state.auth.token },
             }).then(res => {
                 //console.log(res);

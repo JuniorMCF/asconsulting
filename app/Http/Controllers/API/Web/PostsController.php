@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\API\Web;
+namespace App\Http\Controllers\Api\Web;
 
 use App\Http\Controllers\Controller;
 use App\Models\Categoria;
@@ -29,7 +29,7 @@ class PostsController extends Controller
 
         return response()->json($posts, 200);
     }
-    public function all()
+    public function allPosts()
     {
         $posts = Post::where("estado", "publicado")->with("visualizaciones")
             ->with("comments")
@@ -58,7 +58,7 @@ class PostsController extends Controller
         return response()->json($posts, 200);
     }
 
-    public function show($id)
+    public function showPost($id)
     {
         $post = Post::find($id);
         $post_categorias = PostCategoria::join("categorias", "post_categorias.categoria_id", "=", "categorias.id")
@@ -236,7 +236,7 @@ class PostsController extends Controller
         return response()->json(true, 200);
     }
 
-    public function categorias()
+    public function categoriasPost()
     {
         $categorias = Categoria::all();
 

@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Storage;
 class TrabajadorController extends Controller
 {
     //
-    public function create(Request $request)
+    public function createWorker(Request $request)
     {
 
         $trabajador = Trabajadore::where("email", $request->email)->get()->first();

@@ -14,7 +14,7 @@
       </transition>
     </v-main>
     <v-main v-else>
-      <transition :name="nameTransition" :mode="isHome == true ? '' : modeTransition">
+      <transition :name="isHome == true ? '' :nameTransition" :mode="isHome == true ? '' : modeTransition">
         <router-view :key="$route.fullPath"> </router-view>
       </transition>
     </v-main>

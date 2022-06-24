@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\API\Web;
+namespace App\Http\Controllers\Api\Web;
 
 use App\Http\Controllers\Controller;
 use App\Models\Visita;
@@ -11,7 +11,7 @@ use Stevebauman\Location\Facades\Location;
 class StatisticsController extends Controller
 {
     //
-    public function open(Request $request)
+    public function openPage(Request $request)
     {
         $locationData = Location::get( $request->ip());
 
@@ -34,7 +34,7 @@ class StatisticsController extends Controller
 
         return response()->json($visita, 200);
     }
-    public function close(Request $request)
+    public function closePage(Request $request)
     {
         //\Log::debug($request);
         Visita::find($request->visita_id)->update([
