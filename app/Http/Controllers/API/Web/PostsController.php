@@ -11,7 +11,7 @@ use App\Models\User;
 use App\Services\PostServices;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\File;
 use Intervention\Image\Facades\Image;
 use PDF;
 
@@ -108,7 +108,7 @@ class PostsController extends Controller
 
             ini_set('memory_limit', '256M');
 
-            \File::delete($post->foto);
+            File::delete($post->foto);
 
             $image_resize = Image::make($request->file_upload->getRealPath());
             $image_resize->resize(800, null, function ($constraint) {
@@ -139,7 +139,7 @@ class PostsController extends Controller
 
             ini_set('memory_limit', -1);
 
-            \File::delete($post->file);
+            File::delete($post->file);
 
             $file = $request->file("file");
 

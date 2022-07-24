@@ -283,12 +283,12 @@ __webpack_require__.r(__webpack_exports__);
 
       axios__WEBPACK_IMPORTED_MODULE_0___default()({
         method: "get",
-        url: "/api/oauth/all-categorys",
+        url: "/api/oauth/categorys/all",
         headers: {
           Authorization: "Bearer " + this.$store.state.auth.token
         }
       }).then(function (res) {
-        //console.log(res);
+        console.log(res);
         _this2.categorias = res.data;
       })["catch"](function (err) {
         console.log(err);
@@ -299,11 +299,11 @@ __webpack_require__.r(__webpack_exports__);
     actualPage: function actualPage() {
       return this.$store.state.app.actual_page;
     },
-    totaEntradas: function totaEntradas() {
+    totalEntradas: function totalEntradas() {
       var total = 0;
 
       for (var i in this.categorias) {
-        total += this.categorias[i].entrys.length;
+        total += this.categorias[i].entrys.length == undefined ? 0 : this.categorias[i].entrys.length;
       }
 
       return total;
@@ -659,7 +659,7 @@ var render = function () {
               _vm._v(" "),
               _c("v-col", [_vm._v("TODAS")]),
               _vm._v(" "),
-              _c("v-col", [_vm._v(_vm._s(_vm.totaEntradas) + " entradas")]),
+              _c("v-col", [_vm._v(_vm._s(_vm.totalEntradas) + " entradas")]),
             ],
             1
           ),
