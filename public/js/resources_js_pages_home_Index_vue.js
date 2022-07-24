@@ -539,6 +539,94 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -558,14 +646,14 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       form: {
-        nombres: '',
-        email: '',
-        telefono: '',
-        servicio: '',
-        comentario: ''
+        nombres: "",
+        email: "",
+        telefono: "",
+        servicio: "",
+        comentario: ""
       },
       servicio: {
-        nombre: ''
+        nombre: ""
       },
       loadAsesoria: false,
       vfOptions: {
@@ -690,20 +778,20 @@ __webpack_require__.r(__webpack_exports__);
       this.form.servicio = this.servicio.nombre;
       this.loadAsesoria = true;
 
-      if (this.form.nombres != '' && this.form.email != '' && this.form.telefono != '' && this.form.servicio != '' && this.form.comentario != '') {
+      if (this.form.nombres != "" && this.form.email != "" && this.form.telefono != "" && this.form.servicio != "" && this.form.comentario != "") {
         //let data = new FormData(this.form)
         axios.post("/api/asesoria", this.form).then(function (res) {
           Vue.$toast.success("Su solicitud de asesoría ha sido enviada, nos comunicaremos con ud");
           _this.loadAsesoria = false;
           _this.form = {
-            nombres: '',
-            email: '',
-            telefono: '',
-            servicio: '',
-            comentario: ''
+            nombres: "",
+            email: "",
+            telefono: "",
+            servicio: "",
+            comentario: ""
           };
           _this.servicio = {
-            nombre: ''
+            nombre: ""
           };
           _this.loadAsesoria = false;
         })["catch"](function (err) {
@@ -1984,7 +2072,7 @@ var render = function () {
                               ),
                               _c("strong", [_vm._v("cumplir los objetivos")]),
                               _vm._v(
-                                " de nuestros\n                            clientes,\n                            "
+                                " de\n                            nuestros clientes,\n                            "
                               ),
                               _c("strong", [
                                 _vm._v("promoviendo su crecimiento"),
@@ -2084,19 +2172,27 @@ var render = function () {
                   ]),
                   _vm._v(" "),
                   _c("li", { staticClass: "as-li_normal primary--text" }, [
-                    _vm._v("Visión estratégica."),
+                    _vm._v(
+                      "\n                        Visión estratégica.\n                    "
+                    ),
                   ]),
                   _vm._v(" "),
                   _c("li", { staticClass: "as-li_normal primary--text" }, [
-                    _vm._v("Metodología ágil y colaborativa."),
+                    _vm._v(
+                      "\n                        Metodología ágil y colaborativa.\n                    "
+                    ),
                   ]),
                   _vm._v(" "),
                   _c("li", { staticClass: "as-li_normal primary--text" }, [
-                    _vm._v("Conocimiento del mercado."),
+                    _vm._v(
+                      "\n                        Conocimiento del mercado.\n                    "
+                    ),
                   ]),
                   _vm._v(" "),
                   _c("li", { staticClass: "as-li_normal primary--text" }, [
-                    _vm._v("Enfoque digital y de experiencia al usuario (UX)."),
+                    _vm._v(
+                      "\n                        Enfoque digital y de experiencia al usuario (UX).\n                    "
+                    ),
                   ]),
                 ]),
               ]),
@@ -2159,150 +2255,171 @@ var render = function () {
             "v-row",
             { staticClass: "pa-0 ma-0 content-wrap-2 mx-auto" },
             [
-              _c(
-                "v-col",
-                { staticClass: "col-12 pa-0 ma-0" },
-                [
-                  _c("div", { staticClass: "flux-overlap-servicios" }),
-                  _vm._v(" "),
-                  _c("vue-flux", {
-                    ref: "slider_services",
-                    staticClass: "flux-servicios",
-                    attrs: {
-                      options: _vm.vfOptions_services,
-                      images: _vm.vfImages_services,
-                      transitions: _vm.vfTransitions_services,
-                      captions: _vm.vfCaptions_services,
-                    },
-                    scopedSlots: _vm._u([
-                      {
-                        key: "controls",
-                        fn: function () {
-                          return [_c("flux-controls")]
-                        },
-                        proxy: true,
+              _c("v-col", { staticClass: "col-12 pa-0 ma-0" }, [
+                _c("div", { staticClass: "flux-overlap-servicios" }),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  { staticClass: "flux-servicios" },
+                  [
+                    _c("vue-flux", {
+                      ref: "slider_services",
+                      staticClass: "flux-servicios",
+                      attrs: {
+                        options: _vm.vfOptions_services,
+                        images: _vm.vfImages_services,
+                        transitions: _vm.vfTransitions_services,
+                        captions: _vm.vfCaptions_services,
                       },
-                      {
-                        key: "caption",
-                        fn: function () {
-                          return [
-                            _c("flux-caption", {
-                              staticStyle: { position: "absolute", top: "10%" },
-                              scopedSlots: _vm._u([
-                                {
-                                  key: "default",
-                                  fn: function (captionProps) {
-                                    return [
-                                      _c(
-                                        "p",
-                                        {
-                                          staticClass:
-                                            "white--text as-text_extraLarge mb-0 font-weight-bold mx-auto",
-                                          staticStyle: {
-                                            width: "350px",
-                                            "line-height": "1",
+                      scopedSlots: _vm._u([
+                        {
+                          key: "controls",
+                          fn: function () {
+                            return [_c("flux-controls")]
+                          },
+                          proxy: true,
+                        },
+                        {
+                          key: "caption",
+                          fn: function () {
+                            return [
+                              _c("flux-caption", {
+                                staticStyle: {
+                                  position: "absolute",
+                                  top: "10%",
+                                },
+                                scopedSlots: _vm._u([
+                                  {
+                                    key: "default",
+                                    fn: function (captionProps) {
+                                      return [
+                                        _c(
+                                          "p",
+                                          {
+                                            staticClass:
+                                              "white--text as-text_extraLarge mb-0 font-weight-bold mx-auto",
+                                            staticStyle: {
+                                              width: "350px",
+                                              "line-height": "1",
+                                            },
                                           },
-                                        },
-                                        [
-                                          _vm._v(
-                                            _vm._s(captionProps.text.title)
-                                          ),
-                                        ]
-                                      ),
-                                      _vm._v(" "),
-                                      _c(
-                                        "p",
-                                        {
-                                          staticClass:
-                                            "white--text as-text_normal my-4",
-                                        },
-                                        [
-                                          _vm._v(
-                                            _vm._s(captionProps.text.subtitle)
-                                          ),
-                                        ]
-                                      ),
-                                      _vm._v(" "),
-                                      _c(
-                                        "ul",
-                                        {
-                                          staticClass:
-                                            "white--text text-start mx-auto",
-                                          staticStyle: { "max-width": "350px" },
-                                        },
-                                        _vm._l(
-                                          captionProps.text.detalles,
-                                          function (element, i) {
-                                            return _c(
-                                              "li",
-                                              {
-                                                key: "data" + i,
-                                                staticClass:
-                                                  "white--text text-subtitle-1",
-                                              },
-                                              [_vm._v(_vm._s(element))]
-                                            )
-                                          }
-                                        ),
-                                        0
-                                      ),
-                                      _vm._v(" "),
-                                      _c("v-hover", {
-                                        scopedSlots: _vm._u(
                                           [
-                                            {
-                                              key: "default",
-                                              fn: function (ref) {
-                                                var hover = ref.hover
-                                                return [
-                                                  _c(
-                                                    "v-btn",
-                                                    {
-                                                      staticClass:
-                                                        "white--text font-weight-bold text-normal my-10 px-10",
-                                                      class: {
-                                                        "primary--text white":
-                                                          hover,
-                                                      },
-                                                      attrs: {
-                                                        to: captionProps.text
-                                                          .link,
-                                                        outlined: "",
-                                                        rounded: "",
-                                                        color: "white",
-                                                      },
-                                                    },
-                                                    [_vm._v("Ver más")]
+                                            _vm._v(
+                                              "\n                                    " +
+                                                _vm._s(
+                                                  captionProps.text.title
+                                                ) +
+                                                "\n                                "
+                                            ),
+                                          ]
+                                        ),
+                                        _vm._v(" "),
+                                        _c(
+                                          "p",
+                                          {
+                                            staticClass:
+                                              "white--text as-text_normal my-4",
+                                          },
+                                          [
+                                            _vm._v(
+                                              "\n                                    " +
+                                                _vm._s(
+                                                  captionProps.text.subtitle
+                                                ) +
+                                                "\n                                "
+                                            ),
+                                          ]
+                                        ),
+                                        _vm._v(" "),
+                                        _c(
+                                          "ul",
+                                          {
+                                            staticClass:
+                                              "white--text text-start mx-auto",
+                                            staticStyle: {
+                                              "max-width": "350px",
+                                            },
+                                          },
+                                          _vm._l(
+                                            captionProps.text.detalles,
+                                            function (element, i) {
+                                              return _c(
+                                                "li",
+                                                {
+                                                  key: "data" + i,
+                                                  staticClass:
+                                                    "white--text text-subtitle-1",
+                                                },
+                                                [
+                                                  _vm._v(
+                                                    "\n                                        " +
+                                                      _vm._s(element) +
+                                                      "\n                                    "
                                                   ),
                                                 ]
-                                              },
-                                            },
-                                          ],
-                                          null,
-                                          true
+                                              )
+                                            }
+                                          ),
+                                          0
                                         ),
-                                      }),
-                                    ]
+                                        _vm._v(" "),
+                                        _c("v-hover", {
+                                          scopedSlots: _vm._u(
+                                            [
+                                              {
+                                                key: "default",
+                                                fn: function (ref) {
+                                                  var hover = ref.hover
+                                                  return [
+                                                    _c(
+                                                      "v-btn",
+                                                      {
+                                                        staticClass:
+                                                          "white--text font-weight-bold text-normal my-10 px-10",
+                                                        class: {
+                                                          "primary--text white":
+                                                            hover,
+                                                        },
+                                                        attrs: {
+                                                          to: captionProps.text
+                                                            .link,
+                                                          outlined: "",
+                                                          rounded: "",
+                                                          color: "white",
+                                                        },
+                                                      },
+                                                      [_vm._v("Ver más")]
+                                                    ),
+                                                  ]
+                                                },
+                                              },
+                                            ],
+                                            null,
+                                            true
+                                          ),
+                                        }),
+                                      ]
+                                    },
                                   },
-                                },
-                              ]),
-                            }),
-                          ]
+                                ]),
+                              }),
+                            ]
+                          },
+                          proxy: true,
                         },
-                        proxy: true,
-                      },
-                      {
-                        key: "pagination",
-                        fn: function () {
-                          return [_c("flux-pagination")]
+                        {
+                          key: "pagination",
+                          fn: function () {
+                            return [_c("flux-pagination")]
+                          },
+                          proxy: true,
                         },
-                        proxy: true,
-                      },
-                    ]),
-                  }),
-                ],
-                1
-              ),
+                      ]),
+                    }),
+                  ],
+                  1
+                ),
+              ]),
             ],
             1
           ),
