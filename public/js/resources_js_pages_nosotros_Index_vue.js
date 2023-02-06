@@ -98,6 +98,95 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
@@ -107,7 +196,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       phone_send: "tel:+51926302115",
       wame: "https://wa.me/51926302115",
       email: "reactivatunegocio@asconsulting.pe",
-      address: "Av. Alfredo Benavides 3695. Surco."
+      address: "Av. Alfredo Benavides 3695. Santiago de Surco. Lima, Perú."
     };
   },
   methods: {
@@ -121,8 +210,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
             switch (_context.prev = _context.next) {
               case 0:
                 shareData = {
-                  title: 'A&S Consulting Group',
-                  text: 'Solicita tu asesoría',
+                  title: "A&S Consulting Group",
+                  text: "Solicita tu asesoría",
                   url: _this.email
                 };
                 _context.prev = 1;
@@ -149,7 +238,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     },
     goToLocation: function goToLocation() {
       this.$router.push({
-        name: 'contacto'
+        name: "contacto"
       });
     }
   },
@@ -175,6 +264,36 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _components_global_ChatComponent_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../components/global/ChatComponent.vue */ "./resources/js/components/global/ChatComponent.vue");
 /* harmony import */ var _components_global_FooterGlobal_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../components/global/FooterGlobal.vue */ "./resources/js/components/global/FooterGlobal.vue");
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -348,7 +467,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.card-grey {\n    background-color: #d4d4d4 !important;\n    width: 100%;\n    height: 418px;\n}\n.card-gray {\n    background-color: #ededed !important;\n    width: 100%;\n    height: 418px;\n}\n.container-mision_visionLogo {\n    height: 100px;\n    width: 100px;\n}\n.title-letter_space1 {\n    letter-spacing: 3px;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.card-grey {\n    background-color: #d4d4d4 !important;\n    width: 100%;\n    height: 418px;\n}\n.card-gray {\n    background-color: #e3e2e2 !important;\n    width: 100%;\n    height: 418px;\n}\n.container-mision_visionLogo {\n    height: 100px;\n    width: 100px;\n}\n.title-letter_space1 {\n    letter-spacing: 3px;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -720,27 +839,16 @@ var render = function () {
     [
       _c(
         "v-row",
-        { staticClass: "pa-0 ma-0 content-wrap-2 mx-auto footer-container" },
-        [
-          _c(
-            "v-col",
-            { staticClass: "col-12 pa-0 ma-0 rotate-180 container-bandwith" },
-            [_c("v-img", { attrs: { src: "/app/bandwith.png " } })],
-            1
-          ),
-        ],
-        1
-      ),
-      _vm._v(" "),
-      _c(
-        "v-row",
-        { staticClass: "primary pa-0 ma-0 content-wrap-2 mx-auto" },
+        {
+          staticClass:
+            "grey darken-4 pa-0 ma-0 mx-auto justify-center align-start py-10",
+        },
         [
           _c(
             "v-col",
             {
               staticClass:
-                "col-12 col-md-6 d-flex flex-wrap justify-center align-center",
+                "col-12 col-md-2 col-xl-2 d-flex flex-wrap justify-center align-center",
             },
             [
               _c(
@@ -754,166 +862,205 @@ var render = function () {
                 ],
                 1
               ),
+            ]
+          ),
+          _vm._v(" "),
+          _c(
+            "v-col",
+            {
+              staticClass:
+                "col-12 col-md-3 col-xl-3 d-flex flex-column justify-center align-start",
+            },
+            [
+              _c("p", { staticClass: "white--text font-weight-bold px-4" }, [
+                _vm._v("CONTACTO"),
+              ]),
               _vm._v(" "),
-              _c("span", { staticClass: "white--text as-footer_text px-4" }, [
-                _vm._v(
-                  "\n                Copyright ©" +
-                    _vm._s(_vm.yearActual) +
-                    " by A&S Consulting Group.\n            "
-                ),
+              _c(
+                "a",
+                {
+                  staticClass: "white--text px-4",
+                  on: {
+                    click: function ($event) {
+                      $event.preventDefault()
+                      return _vm.goToLocation()
+                    },
+                  },
+                },
+                [
+                  _c(
+                    "v-icon",
+                    { attrs: { small: "", color: "white", left: "" } },
+                    [_vm._v("mdi-map-marker")]
+                  ),
+                  _vm._v(" " + _vm._s(_vm.address) + "\n            "),
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "a",
+                {
+                  staticClass: "white--text px-4",
+                  attrs: { href: _vm.phone_send },
+                },
+                [
+                  _c(
+                    "v-icon",
+                    { attrs: { small: "", color: "white", left: "" } },
+                    [_vm._v("mdi-phone")]
+                  ),
+                  _vm._v(" " + _vm._s(_vm.phone_contact) + "\n            "),
+                ],
+                1
+              ),
+            ]
+          ),
+          _vm._v(" "),
+          _c(
+            "v-col",
+            {
+              staticClass:
+                "col-12 col-md-3 col-xl-3 d-flex flex-column justify-center align-start",
+            },
+            [
+              _c("p", { staticClass: "white--text font-weight-bold px-4" }, [
+                _vm._v("LEGAL"),
+              ]),
+              _vm._v(" "),
+              _c("a", { staticClass: "white--text px-4" }, [
+                _vm._v(" Términos y condiciones "),
+              ]),
+              _vm._v(" "),
+              _c("a", { staticClass: "white--text px-4" }, [
+                _vm._v(" Privacidad "),
               ]),
             ]
           ),
           _vm._v(" "),
           _c(
             "v-col",
-            { staticClass: "col-12 col-md-6 text-center text-md-left " },
+            {
+              staticClass:
+                "col-12 col-md-3 col-xl-3 d-flex flex-column justify-center align-start",
+            },
             [
-              _c("v-col", [
-                _c(
-                  "span",
-                  {
-                    staticClass:
-                      "white--text d-block d-md-inline-flex align-center justify-center",
-                  },
-                  [
-                    _c(
-                      "v-btn",
-                      {
-                        staticClass: "white--text",
-                        attrs: {
-                          fab: "",
-                          text: "",
-                          small: "",
-                          link: "",
-                          href: _vm.phone_send,
-                        },
-                      },
-                      [
-                        _c("v-icon", { attrs: { color: "white" } }, [
-                          _vm._v("mdi-phone-message"),
-                        ]),
-                      ],
-                      1
-                    ),
-                    _vm._v(
-                      "\n                    " +
-                        _vm._s(_vm.phone_contact) +
-                        "\n                "
-                    ),
-                  ],
-                  1
-                ),
-                _vm._v(" "),
-                _c(
-                  "span",
-                  {
-                    staticClass:
-                      "white--text d-block d-md-inline-flex align-center justify-center",
-                  },
-                  [
-                    _c(
-                      "v-btn",
-                      {
-                        staticClass: "white--text",
-                        attrs: { fab: "", text: "", small: "", link: "" },
-                        on: {
-                          click: function ($event) {
-                            $event.preventDefault()
-                            return _vm.openEmail()
-                          },
-                        },
-                      },
-                      [
-                        _c("v-icon", { attrs: { color: "white" } }, [
-                          _vm._v("mdi-email-open"),
-                        ]),
-                      ],
-                      1
-                    ),
-                    _vm._v(
-                      "\n                    " +
-                        _vm._s(_vm.email) +
-                        "\n                "
-                    ),
-                  ],
-                  1
-                ),
+              _c("p", { staticClass: "white--text font-weight-bold px-4" }, [
+                _vm._v("SÍGUENOS"),
               ]),
               _vm._v(" "),
-              _c("v-col", [
-                _c(
-                  "span",
-                  {
-                    staticClass:
-                      "white--text d-block d-md-inline-flex align-center justify-center",
-                  },
-                  [
-                    _c(
-                      "v-btn",
-                      {
-                        staticClass: "white--text",
-                        attrs: {
-                          fab: "",
-                          text: "",
-                          small: "",
-                          href: _vm.wame,
-                          target: "_blank",
-                        },
+              _c(
+                "div",
+                { staticClass: "d-flex flex-wrap px-4" },
+                [
+                  _c(
+                    "v-btn",
+                    {
+                      staticClass: "elevation-0",
+                      attrs: {
+                        fab: "",
+                        small: "",
+                        text: "",
+                        color: "primary",
+                        href: "https://www.facebook.com/AS-Consulting-Group-141818089928155",
+                        target: "_blank",
                       },
-                      [
-                        _c("v-icon", { attrs: { color: "white" } }, [
-                          _vm._v("mdi-whatsapp"),
-                        ]),
-                      ],
-                      1
-                    ),
-                    _vm._v(
-                      "\n                    " +
-                        _vm._s(_vm.phone_contact) +
-                        "\n                "
-                    ),
-                  ],
-                  1
-                ),
-                _vm._v(" "),
-                _c(
-                  "span",
-                  {
-                    staticClass:
-                      "white--text d-block d-md-inline-flex align-center justify-center",
-                  },
-                  [
-                    _c(
-                      "v-btn",
-                      {
-                        staticClass: "white--text",
-                        attrs: { fab: "", text: "", small: "", link: "" },
-                        on: {
-                          click: function ($event) {
-                            $event.preventDefault()
-                            return _vm.goToLocation()
-                          },
-                        },
+                    },
+                    [
+                      _c("v-icon", { attrs: { color: "white" } }, [
+                        _vm._v("mdi-facebook"),
+                      ]),
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "v-btn",
+                    {
+                      staticClass: "elevation-0",
+                      attrs: {
+                        fab: "",
+                        small: "",
+                        text: "",
+                        color: "primary",
+                        href: "https://www.instagram.com/asconsultinggroup/",
+                        target: "_blank",
                       },
-                      [
-                        _c("v-icon", { attrs: { color: "white" } }, [
-                          _vm._v("mdi-map-marker"),
-                        ]),
-                      ],
-                      1
-                    ),
-                    _vm._v(
-                      "\n                    " +
-                        _vm._s(_vm.address) +
-                        "\n                "
-                    ),
-                  ],
-                  1
-                ),
-              ]),
-            ],
-            1
+                    },
+                    [
+                      _c("v-icon", { attrs: { color: "white" } }, [
+                        _vm._v("mdi-instagram"),
+                      ]),
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "v-btn",
+                    {
+                      staticClass: "elevation-0",
+                      attrs: {
+                        fab: "",
+                        small: "",
+                        text: "",
+                        color: "primary",
+                        href: "https://www.linkedin.com/company/as.consulting/",
+                        target: "_blank",
+                      },
+                    },
+                    [
+                      _c("v-icon", { attrs: { color: "white" } }, [
+                        _vm._v("mdi-linkedin"),
+                      ]),
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "v-btn",
+                    {
+                      staticClass: "elevation-0",
+                      attrs: {
+                        fab: "",
+                        small: "",
+                        text: "",
+                        color: "primary",
+                        href: "https://www.youtube.com/channel/UCLGe4u_VDbkoJWE2LkMni9w/featured?view_as=subscriber",
+                        target: "_blank",
+                      },
+                    },
+                    [
+                      _c("v-icon", { attrs: { color: "white" } }, [
+                        _vm._v("mdi-youtube"),
+                      ]),
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "v-btn",
+                    {
+                      staticClass: "elevation-0",
+                      attrs: {
+                        fab: "",
+                        small: "",
+                        text: "",
+                        color: "primary",
+                        href: "https://twitter.com/pymedigitalAS",
+                        target: "_blank",
+                      },
+                    },
+                    [
+                      _c("v-icon", { attrs: { color: "white" } }, [
+                        _vm._v("mdi-twitter"),
+                      ]),
+                    ],
+                    1
+                  ),
+                ],
+                1
+              ),
+            ]
           ),
         ],
         1
@@ -945,238 +1092,252 @@ var render = function () {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c(
-    "v-container",
-    { staticClass: "content-wrap-2 pa-0 mx-auto" },
+    "div",
     [
       _c(
-        "v-row",
-        { staticClass: "pa-0 ma-0 content-wrap-2 mx-auto" },
-        [
-          _c(
-            "v-col",
-            { staticClass: "col-12 pa-0 ma-0 container-bandwith" },
-            [_c("v-img", { attrs: { src: "/app/bandwith.png " } })],
-            1
-          ),
-        ],
-        1
-      ),
-      _vm._v(" "),
-      _c(
-        "v-row",
-        { staticClass: "pa-0 ma-0 content-wrap-0 mx-auto align-center mb-10" },
-        [
-          _c(
-            "v-col",
-            { staticClass: "col-12 col-md-6 text-center text-md-left my-4" },
-            [
-              _c(
-                "span",
-                {
-                  staticClass:
-                    "primary--text text-uppercase as-text_extralarge line-height_1",
-                },
-                [_vm._v("Acerca de")]
-              ),
-              _vm._v(" "),
-              _c("br"),
-              _vm._v(" "),
-              _c(
-                "span",
-                {
-                  staticClass:
-                    "pl-6 primary--text font-weight-bold text-uppercase as-text_extralarge line-height_1 after-right_block",
-                },
-                [_vm._v("nosotros")]
-              ),
-            ]
-          ),
-          _vm._v(" "),
-          _c(
-            "v-col",
-            { staticClass: "col-12 col-md-6 text-center text-md-left my-4" },
-            [
-              _c(
-                "p",
-                { staticClass: "primary--text text-justify as-p_normal ma-0" },
-                [
-                  _vm._v(
-                    "\n                Somos una empresa de origen peruano que brinda servicios de\n                consultoría especializada en los diversos sectores empresariales,\n                contribuyendo con nuestros socios estratégicos en su crecimiento\n                económico, rentabilidad y gestión del riesgo. ​\n            "
-                  ),
-                ]
-              ),
-              _vm._v(" "),
-              _c(
-                "p",
-                { staticClass: "primary--text text-justify as-p_normal ma-0" },
-                [
-                  _vm._v(
-                    "\n                A través de nuestras tres líneas de servicio integradas - tecnología,\n                finanzas y procesos – y\n                "
-                  ),
-                  _c("strong", [_vm._v("nuestra experiencia en el sector")]),
-                  _vm._v(
-                    ", ofrecemos\n                servicios personalizados y ágiles acordes con los cambios del mercado\n                y las nuevas preferencias de los consumidores.\n            "
-                  ),
-                ]
-              ),
-            ]
-          ),
-        ],
-        1
-      ),
-      _vm._v(" "),
-      _c(
-        "v-row",
-        { staticClass: "pa-0 ma-0 content-wrap-0 mx-auto align-center" },
-        [
-          _c("v-card", {
-            staticClass: "col-12 primary pa-2 rounded-0 elevation-1",
-          }),
-        ],
-        1
-      ),
-      _vm._v(" "),
-      _c(
-        "v-row",
-        { staticClass: "pa-0 ma-0 content-wrap-0 mx-auto align-center" },
-        [
-          _c(
-            "v-col",
-            { staticClass: "col-12 col-md-6 pa-0" },
-            [
-              _c(
-                "v-card",
-                { staticClass: "card-grey elevation-0 rounded-0" },
-                [
-                  _c("v-card-text", { staticClass: "pa-15 card-grey" }, [
-                    _c("div", { staticClass: "mx-auto" }, [
-                      _c(
-                        "div",
-                        { staticClass: "mx-auto container-mision_visionLogo" },
-                        [
-                          _c("v-img", {
-                            attrs: { src: "/app/mision_logo.png" },
-                          }),
-                        ],
-                        1
-                      ),
-                    ]),
-                    _vm._v(" "),
-                    _c(
-                      "div",
-                      {
-                        staticClass:
-                          "mx-auto primary--text text-center py-3 my-2",
-                      },
-                      [
-                        _c(
-                          "span",
-                          {
-                            staticClass:
-                              "title-letter_space1 as-text_medium font-weight-bold",
-                          },
-                          [_vm._v("MISIÓN")]
-                        ),
-                      ]
-                    ),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "mx-auto text-center" }, [
-                      _c(
-                        "span",
-                        {
-                          staticClass:
-                            "as-p_normal line-height_2 primary--text",
-                        },
-                        [
-                          _vm._v(
-                            "\n                            Ayudamos a cumplir los objetivos de nuestros clientes como sus\n                            socios estratégicos.\n                        "
-                          ),
-                        ]
-                      ),
-                    ]),
-                  ]),
-                ],
-                1
-              ),
-            ],
-            1
-          ),
-          _vm._v(" "),
-          _c(
-            "v-col",
-            { staticClass: "col-12 col-md-6 pa-0" },
-            [
-              _c(
-                "v-card",
-                { staticClass: "card-gray elevation-0 rounded-0" },
-                [
-                  _c("v-card-text", { staticClass: "pa-15 card-gray" }, [
-                    _c("div", { staticClass: "mx-auto" }, [
-                      _c(
-                        "div",
-                        { staticClass: "mx-auto container-mision_visionLogo" },
-                        [
-                          _c("v-img", {
-                            attrs: { src: "/app/vision_logo.png" },
-                          }),
-                        ],
-                        1
-                      ),
-                    ]),
-                    _vm._v(" "),
-                    _c(
-                      "div",
-                      {
-                        staticClass:
-                          "mx-auto primary--text text-center py-3 my-2",
-                      },
-                      [
-                        _c(
-                          "span",
-                          {
-                            staticClass:
-                              "title-letter_space1 as-text_medium font-weight-bold",
-                          },
-                          [_vm._v("VISIÓN")]
-                        ),
-                      ]
-                    ),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "mx-auto text-center" }, [
-                      _c(
-                        "span",
-                        {
-                          staticClass:
-                            "as-p_normal line-height_2 primary--text",
-                        },
-                        [
-                          _vm._v(
-                            "\n                            Ser la empresa consultora más reconocida de Latinoamérica, por\n                            el éxito empresarial de sus clientes, el profesionalismo de sus\n                            colaboradores y el enfoque innovador y eficiente de sus\n                            servicios.\n                        "
-                          ),
-                        ]
-                      ),
-                    ]),
-                  ]),
-                ],
-                1
-              ),
-            ],
-            1
-          ),
-        ],
-        1
-      ),
-      _vm._v(" "),
-      _c(
-        "v-row",
+        "v-container",
         {
-          staticClass:
-            "pa-0 ma-0 content-wrap-0 mx-auto align-center mb-10 pb-16",
+          staticClass: "content-wrap pa-0 mx-auto py-16",
+          attrs: { fluid: "" },
         },
         [
-          _c("v-card", {
-            staticClass: "col-12 primary pa-2 rounded-0 elevation-1",
-          }),
+          _c(
+            "v-row",
+            {
+              staticClass:
+                "pa-0 ma-0 content-wrap-0 mx-auto align-center my-16",
+            },
+            [
+              _c(
+                "v-col",
+                {
+                  staticClass: "col-12 col-md-6 text-center text-md-left my-4",
+                },
+                [
+                  _c(
+                    "span",
+                    {
+                      staticClass:
+                        "primary--text text-uppercase as-text_extralarge line-height_1",
+                    },
+                    [_vm._v("Acerca de")]
+                  ),
+                  _vm._v(" "),
+                  _c("br"),
+                  _vm._v(" "),
+                  _c(
+                    "span",
+                    {
+                      staticClass:
+                        "pl-6 primary--text font-weight-bold text-uppercase as-text_extralarge line-height_1 after-right_block",
+                    },
+                    [_vm._v("nosotros")]
+                  ),
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "v-col",
+                {
+                  staticClass: "col-12 col-md-6 text-center text-md-left my-4",
+                },
+                [
+                  _c(
+                    "p",
+                    {
+                      staticClass: "black--text text-justify as-p_normal ma-0",
+                    },
+                    [
+                      _vm._v(
+                        "\n                    Somos una empresa de origen peruano que brinda servicios\n                    de consultoría especializada en los diversos sectores\n                    empresariales, contribuyendo con nuestros socios\n                    estratégicos en su crecimiento económico, rentabilidad y\n                    gestión del riesgo. ​\n                "
+                      ),
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "p",
+                    {
+                      staticClass: "black--text text-justify as-p_normal ma-0",
+                    },
+                    [
+                      _vm._v(
+                        "\n                    A través de nuestras tres líneas de servicio integradas\n                    - tecnología, finanzas y procesos – y\n                    "
+                      ),
+                      _c("strong", [
+                        _vm._v("nuestra experiencia en el sector"),
+                      ]),
+                      _vm._v(
+                        ",\n                    ofrecemos servicios personalizados y ágiles acordes con\n                    los cambios del mercado y las nuevas preferencias de los\n                    consumidores.\n                "
+                      ),
+                    ]
+                  ),
+                ]
+              ),
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "v-row",
+            { staticClass: "pa-0 ma-0 content-wrap-0 mx-auto align-center" },
+            [
+              _c("v-card", {
+                staticClass: "col-12 primary pa-2 rounded-0 elevation-1",
+              }),
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "v-row",
+            { staticClass: "pa-0 ma-0 content-wrap-0 mx-auto align-center" },
+            [
+              _c(
+                "v-col",
+                { staticClass: "col-12 col-md-6 pa-0" },
+                [
+                  _c(
+                    "v-card",
+                    { staticClass: "card-grey elevation-0 rounded-0" },
+                    [
+                      _c("v-card-text", { staticClass: "pa-15 card-grey" }, [
+                        _c("div", { staticClass: "mx-auto" }, [
+                          _c(
+                            "div",
+                            {
+                              staticClass:
+                                "mx-auto container-mision_visionLogo",
+                            },
+                            [
+                              _c("v-img", {
+                                attrs: { src: "/app/mision_logo.png" },
+                              }),
+                            ],
+                            1
+                          ),
+                        ]),
+                        _vm._v(" "),
+                        _c(
+                          "div",
+                          {
+                            staticClass:
+                              "mx-auto primary--text text-center py-3 my-2",
+                          },
+                          [
+                            _c(
+                              "span",
+                              {
+                                staticClass:
+                                  "title-letter_space1 as-text_medium font-weight-bold",
+                              },
+                              [_vm._v("MISIÓN")]
+                            ),
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "mx-auto text-center" }, [
+                          _c(
+                            "span",
+                            {
+                              staticClass:
+                                "as-p_normal line-height_2 primary--text",
+                            },
+                            [
+                              _vm._v(
+                                "\n                                Ayudamos a cumplir los objetivos de nuestros\n                                clientes como sus socios estratégicos.\n                            "
+                              ),
+                            ]
+                          ),
+                        ]),
+                      ]),
+                    ],
+                    1
+                  ),
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "v-col",
+                { staticClass: "col-12 col-md-6 pa-0" },
+                [
+                  _c(
+                    "v-card",
+                    { staticClass: "card-gray elevation-0 rounded-0" },
+                    [
+                      _c("v-card-text", { staticClass: "pa-15 card-gray" }, [
+                        _c("div", { staticClass: "mx-auto" }, [
+                          _c(
+                            "div",
+                            {
+                              staticClass:
+                                "mx-auto container-mision_visionLogo",
+                            },
+                            [
+                              _c("v-img", {
+                                attrs: { src: "/app/vision_logo.png" },
+                              }),
+                            ],
+                            1
+                          ),
+                        ]),
+                        _vm._v(" "),
+                        _c(
+                          "div",
+                          {
+                            staticClass:
+                              "mx-auto primary--text text-center py-3 my-2",
+                          },
+                          [
+                            _c(
+                              "span",
+                              {
+                                staticClass:
+                                  "title-letter_space1 as-text_medium font-weight-bold",
+                              },
+                              [_vm._v("VISIÓN")]
+                            ),
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "mx-auto text-center" }, [
+                          _c(
+                            "span",
+                            {
+                              staticClass:
+                                "as-p_normal line-height_2 primary--text",
+                            },
+                            [
+                              _vm._v(
+                                "\n                                Ser la empresa consultora más reconocida de\n                                Latinoamérica, por el éxito empresarial de\n                                sus clientes, el profesionalismo de sus\n                                colaboradores y el enfoque innovador y\n                                eficiente de sus servicios.\n                            "
+                              ),
+                            ]
+                          ),
+                        ]),
+                      ]),
+                    ],
+                    1
+                  ),
+                ],
+                1
+              ),
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "v-row",
+            {
+              staticClass:
+                "pa-0 ma-0 content-wrap-0 mx-auto align-center mb-10 pb-16",
+            },
+            [
+              _c("v-card", {
+                staticClass: "col-12 primary pa-2 rounded-0 elevation-1",
+              }),
+            ],
+            1
+          ),
         ],
         1
       ),

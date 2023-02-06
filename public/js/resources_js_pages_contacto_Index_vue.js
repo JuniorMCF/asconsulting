@@ -99,6 +99,95 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
@@ -108,7 +197,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       phone_send: "tel:+51926302115",
       wame: "https://wa.me/51926302115",
       email: "reactivatunegocio@asconsulting.pe",
-      address: "Av. Alfredo Benavides 3695. Surco."
+      address: "Av. Alfredo Benavides 3695. Santiago de Surco. Lima, Perú."
     };
   },
   methods: {
@@ -122,8 +211,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
             switch (_context.prev = _context.next) {
               case 0:
                 shareData = {
-                  title: 'A&S Consulting Group',
-                  text: 'Solicita tu asesoría',
+                  title: "A&S Consulting Group",
+                  text: "Solicita tu asesoría",
                   url: _this.email
                 };
                 _context.prev = 1;
@@ -150,7 +239,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     },
     goToLocation: function goToLocation() {
       this.$router.push({
-        name: 'contacto'
+        name: "contacto"
       });
     }
   },
@@ -180,6 +269,24 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _map_style__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../map_style */ "./resources/js/map_style.js");
 /* harmony import */ var _map_style__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_map_style__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var x5_gmaps__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! x5-gmaps */ "./node_modules/x5-gmaps/dist/x5-gmaps.esm.js");
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -1020,27 +1127,16 @@ var render = function () {
     [
       _c(
         "v-row",
-        { staticClass: "pa-0 ma-0 content-wrap-2 mx-auto footer-container" },
-        [
-          _c(
-            "v-col",
-            { staticClass: "col-12 pa-0 ma-0 rotate-180 container-bandwith" },
-            [_c("v-img", { attrs: { src: "/app/bandwith.png " } })],
-            1
-          ),
-        ],
-        1
-      ),
-      _vm._v(" "),
-      _c(
-        "v-row",
-        { staticClass: "primary pa-0 ma-0 content-wrap-2 mx-auto" },
+        {
+          staticClass:
+            "grey darken-4 pa-0 ma-0 mx-auto justify-center align-start py-10",
+        },
         [
           _c(
             "v-col",
             {
               staticClass:
-                "col-12 col-md-6 d-flex flex-wrap justify-center align-center",
+                "col-12 col-md-2 col-xl-2 d-flex flex-wrap justify-center align-center",
             },
             [
               _c(
@@ -1054,166 +1150,205 @@ var render = function () {
                 ],
                 1
               ),
+            ]
+          ),
+          _vm._v(" "),
+          _c(
+            "v-col",
+            {
+              staticClass:
+                "col-12 col-md-3 col-xl-3 d-flex flex-column justify-center align-start",
+            },
+            [
+              _c("p", { staticClass: "white--text font-weight-bold px-4" }, [
+                _vm._v("CONTACTO"),
+              ]),
               _vm._v(" "),
-              _c("span", { staticClass: "white--text as-footer_text px-4" }, [
-                _vm._v(
-                  "\n                Copyright ©" +
-                    _vm._s(_vm.yearActual) +
-                    " by A&S Consulting Group.\n            "
-                ),
+              _c(
+                "a",
+                {
+                  staticClass: "white--text px-4",
+                  on: {
+                    click: function ($event) {
+                      $event.preventDefault()
+                      return _vm.goToLocation()
+                    },
+                  },
+                },
+                [
+                  _c(
+                    "v-icon",
+                    { attrs: { small: "", color: "white", left: "" } },
+                    [_vm._v("mdi-map-marker")]
+                  ),
+                  _vm._v(" " + _vm._s(_vm.address) + "\n            "),
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "a",
+                {
+                  staticClass: "white--text px-4",
+                  attrs: { href: _vm.phone_send },
+                },
+                [
+                  _c(
+                    "v-icon",
+                    { attrs: { small: "", color: "white", left: "" } },
+                    [_vm._v("mdi-phone")]
+                  ),
+                  _vm._v(" " + _vm._s(_vm.phone_contact) + "\n            "),
+                ],
+                1
+              ),
+            ]
+          ),
+          _vm._v(" "),
+          _c(
+            "v-col",
+            {
+              staticClass:
+                "col-12 col-md-3 col-xl-3 d-flex flex-column justify-center align-start",
+            },
+            [
+              _c("p", { staticClass: "white--text font-weight-bold px-4" }, [
+                _vm._v("LEGAL"),
+              ]),
+              _vm._v(" "),
+              _c("a", { staticClass: "white--text px-4" }, [
+                _vm._v(" Términos y condiciones "),
+              ]),
+              _vm._v(" "),
+              _c("a", { staticClass: "white--text px-4" }, [
+                _vm._v(" Privacidad "),
               ]),
             ]
           ),
           _vm._v(" "),
           _c(
             "v-col",
-            { staticClass: "col-12 col-md-6 text-center text-md-left " },
+            {
+              staticClass:
+                "col-12 col-md-3 col-xl-3 d-flex flex-column justify-center align-start",
+            },
             [
-              _c("v-col", [
-                _c(
-                  "span",
-                  {
-                    staticClass:
-                      "white--text d-block d-md-inline-flex align-center justify-center",
-                  },
-                  [
-                    _c(
-                      "v-btn",
-                      {
-                        staticClass: "white--text",
-                        attrs: {
-                          fab: "",
-                          text: "",
-                          small: "",
-                          link: "",
-                          href: _vm.phone_send,
-                        },
-                      },
-                      [
-                        _c("v-icon", { attrs: { color: "white" } }, [
-                          _vm._v("mdi-phone-message"),
-                        ]),
-                      ],
-                      1
-                    ),
-                    _vm._v(
-                      "\n                    " +
-                        _vm._s(_vm.phone_contact) +
-                        "\n                "
-                    ),
-                  ],
-                  1
-                ),
-                _vm._v(" "),
-                _c(
-                  "span",
-                  {
-                    staticClass:
-                      "white--text d-block d-md-inline-flex align-center justify-center",
-                  },
-                  [
-                    _c(
-                      "v-btn",
-                      {
-                        staticClass: "white--text",
-                        attrs: { fab: "", text: "", small: "", link: "" },
-                        on: {
-                          click: function ($event) {
-                            $event.preventDefault()
-                            return _vm.openEmail()
-                          },
-                        },
-                      },
-                      [
-                        _c("v-icon", { attrs: { color: "white" } }, [
-                          _vm._v("mdi-email-open"),
-                        ]),
-                      ],
-                      1
-                    ),
-                    _vm._v(
-                      "\n                    " +
-                        _vm._s(_vm.email) +
-                        "\n                "
-                    ),
-                  ],
-                  1
-                ),
+              _c("p", { staticClass: "white--text font-weight-bold px-4" }, [
+                _vm._v("SÍGUENOS"),
               ]),
               _vm._v(" "),
-              _c("v-col", [
-                _c(
-                  "span",
-                  {
-                    staticClass:
-                      "white--text d-block d-md-inline-flex align-center justify-center",
-                  },
-                  [
-                    _c(
-                      "v-btn",
-                      {
-                        staticClass: "white--text",
-                        attrs: {
-                          fab: "",
-                          text: "",
-                          small: "",
-                          href: _vm.wame,
-                          target: "_blank",
-                        },
+              _c(
+                "div",
+                { staticClass: "d-flex flex-wrap px-4" },
+                [
+                  _c(
+                    "v-btn",
+                    {
+                      staticClass: "elevation-0",
+                      attrs: {
+                        fab: "",
+                        small: "",
+                        text: "",
+                        color: "primary",
+                        href: "https://www.facebook.com/AS-Consulting-Group-141818089928155",
+                        target: "_blank",
                       },
-                      [
-                        _c("v-icon", { attrs: { color: "white" } }, [
-                          _vm._v("mdi-whatsapp"),
-                        ]),
-                      ],
-                      1
-                    ),
-                    _vm._v(
-                      "\n                    " +
-                        _vm._s(_vm.phone_contact) +
-                        "\n                "
-                    ),
-                  ],
-                  1
-                ),
-                _vm._v(" "),
-                _c(
-                  "span",
-                  {
-                    staticClass:
-                      "white--text d-block d-md-inline-flex align-center justify-center",
-                  },
-                  [
-                    _c(
-                      "v-btn",
-                      {
-                        staticClass: "white--text",
-                        attrs: { fab: "", text: "", small: "", link: "" },
-                        on: {
-                          click: function ($event) {
-                            $event.preventDefault()
-                            return _vm.goToLocation()
-                          },
-                        },
+                    },
+                    [
+                      _c("v-icon", { attrs: { color: "white" } }, [
+                        _vm._v("mdi-facebook"),
+                      ]),
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "v-btn",
+                    {
+                      staticClass: "elevation-0",
+                      attrs: {
+                        fab: "",
+                        small: "",
+                        text: "",
+                        color: "primary",
+                        href: "https://www.instagram.com/asconsultinggroup/",
+                        target: "_blank",
                       },
-                      [
-                        _c("v-icon", { attrs: { color: "white" } }, [
-                          _vm._v("mdi-map-marker"),
-                        ]),
-                      ],
-                      1
-                    ),
-                    _vm._v(
-                      "\n                    " +
-                        _vm._s(_vm.address) +
-                        "\n                "
-                    ),
-                  ],
-                  1
-                ),
-              ]),
-            ],
-            1
+                    },
+                    [
+                      _c("v-icon", { attrs: { color: "white" } }, [
+                        _vm._v("mdi-instagram"),
+                      ]),
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "v-btn",
+                    {
+                      staticClass: "elevation-0",
+                      attrs: {
+                        fab: "",
+                        small: "",
+                        text: "",
+                        color: "primary",
+                        href: "https://www.linkedin.com/company/as.consulting/",
+                        target: "_blank",
+                      },
+                    },
+                    [
+                      _c("v-icon", { attrs: { color: "white" } }, [
+                        _vm._v("mdi-linkedin"),
+                      ]),
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "v-btn",
+                    {
+                      staticClass: "elevation-0",
+                      attrs: {
+                        fab: "",
+                        small: "",
+                        text: "",
+                        color: "primary",
+                        href: "https://www.youtube.com/channel/UCLGe4u_VDbkoJWE2LkMni9w/featured?view_as=subscriber",
+                        target: "_blank",
+                      },
+                    },
+                    [
+                      _c("v-icon", { attrs: { color: "white" } }, [
+                        _vm._v("mdi-youtube"),
+                      ]),
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "v-btn",
+                    {
+                      staticClass: "elevation-0",
+                      attrs: {
+                        fab: "",
+                        small: "",
+                        text: "",
+                        color: "primary",
+                        href: "https://twitter.com/pymedigitalAS",
+                        target: "_blank",
+                      },
+                    },
+                    [
+                      _c("v-icon", { attrs: { color: "white" } }, [
+                        _vm._v("mdi-twitter"),
+                      ]),
+                    ],
+                    1
+                  ),
+                ],
+                1
+              ),
+            ]
           ),
         ],
         1
@@ -1246,194 +1381,191 @@ var render = function () {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c(
-    "v-container",
-    { staticClass: "content-wrap-2 pa-0 mx-auto" },
+    "div",
     [
       _c(
-        "v-row",
-        { staticClass: "pa-0 ma-0 content-wrap-2 mx-auto" },
+        "v-container",
+        { staticClass: "pa-0 mx-auto py-16", attrs: { fluid: "" } },
         [
           _c(
-            "v-col",
-            { staticClass: "col-12 pa-0 ma-0 container-bandwith" },
-            [_c("v-img", { attrs: { src: "/app/bandwith.png " } })],
-            1
-          ),
-        ],
-        1
-      ),
-      _vm._v(" "),
-      _c(
-        "v-row",
-        { staticClass: "pa-0 ma-0 content-wrap-0 mx-auto align-center mb-10" },
-        [
-          _c(
-            "v-col",
-            { staticClass: "col-12 col-md-6 text-center text-md-left my-4" },
+            "v-row",
+            {
+              staticClass:
+                "pa-0 ma-0 content-wrap-0 mx-auto align-center my-md-15",
+            },
             [
               _c(
-                "span",
+                "v-col",
                 {
-                  staticClass:
-                    "primary--text text-uppercase as-text_extralarge line-height_1",
+                  staticClass: "col-12 col-md-6 text-center text-md-left my-4",
                 },
-                [_vm._v("Ponte en")]
-              ),
-              _vm._v(" "),
-              _c("br"),
-              _vm._v(" "),
-              _c(
-                "span",
-                {
-                  staticClass:
-                    "pl-6 primary--text font-weight-bold text-uppercase as-text_extralarge line-height_1 after-right_block",
-                },
-                [_vm._v("contacto")]
-              ),
-            ]
-          ),
-        ],
-        1
-      ),
-      _vm._v(" "),
-      _c(
-        "v-row",
-        {
-          staticClass:
-            "pa-0 ma-0 content-wrap-0 mx-auto align-center justify-center mb-10",
-        },
-        [
-          _c(
-            "v-col",
-            { staticClass: "col-12 col-md-5 pa-0" },
-            [
-              _c(
-                "v-container",
-                { staticClass: "pa-0 ma-0" },
                 [
                   _c(
-                    "v-row",
+                    "span",
+                    {
+                      staticClass:
+                        "primary--text text-uppercase as-text_extralarge line-height_1",
+                    },
+                    [_vm._v("Ponte en")]
+                  ),
+                  _vm._v(" "),
+                  _c("br"),
+                  _vm._v(" "),
+                  _c(
+                    "span",
+                    {
+                      staticClass:
+                        "pl-6 primary--text font-weight-bold text-uppercase as-text_extralarge line-height_1 after-right_block",
+                    },
+                    [_vm._v("contacto")]
+                  ),
+                ]
+              ),
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "v-row",
+            {
+              staticClass:
+                "pa-0 ma-0 content-wrap-0 mx-auto align-center justify-center mb-10",
+            },
+            [
+              _c(
+                "v-col",
+                { staticClass: "col-12 col-md-5 pa-0" },
+                [
+                  _c(
+                    "v-container",
                     { staticClass: "pa-0 ma-0" },
                     [
                       _c(
-                        "v-col",
-                        { staticClass: "col-12" },
-                        [
-                          _c("v-text-field", {
-                            staticClass: "rounded-0",
-                            attrs: {
-                              color: "primary",
-                              label: "Nombres completos",
-                              outlined: "",
-                              "hide-details": "auto",
-                            },
-                            model: {
-                              value: _vm.contacto.nombres,
-                              callback: function ($$v) {
-                                _vm.$set(_vm.contacto, "nombres", $$v)
-                              },
-                              expression: "contacto.nombres",
-                            },
-                          }),
-                        ],
-                        1
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "v-col",
-                        { staticClass: "col-12" },
-                        [
-                          _c("v-text-field", {
-                            staticClass: "rounded-0",
-                            attrs: {
-                              color: "primary",
-                              label: "Email",
-                              error: _vm.error_email,
-                              outlined: "",
-                              "hide-details": "auto",
-                            },
-                            model: {
-                              value: _vm.contacto.email,
-                              callback: function ($$v) {
-                                _vm.$set(_vm.contacto, "email", $$v)
-                              },
-                              expression: "contacto.email",
-                            },
-                          }),
-                        ],
-                        1
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "v-col",
-                        { staticClass: "col-12" },
-                        [
-                          _c("v-text-field", {
-                            staticClass: "rounded-0",
-                            attrs: {
-                              color: "primary",
-                              label: "Teléfono",
-                              outlined: "",
-                              "hide-details": "auto",
-                            },
-                            model: {
-                              value: _vm.contacto.telefono,
-                              callback: function ($$v) {
-                                _vm.$set(_vm.contacto, "telefono", $$v)
-                              },
-                              expression: "contacto.telefono",
-                            },
-                          }),
-                        ],
-                        1
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "v-col",
-                        { staticClass: "col-12" },
-                        [
-                          _c("v-textarea", {
-                            staticClass: "rounded-0",
-                            attrs: {
-                              outlined: "",
-                              height: "100",
-                              label: "Agrega un mensaje",
-                              "hide-details": "auto",
-                            },
-                            model: {
-                              value: _vm.contacto.mensaje,
-                              callback: function ($$v) {
-                                _vm.$set(_vm.contacto, "mensaje", $$v)
-                              },
-                              expression: "contacto.mensaje",
-                            },
-                          }),
-                        ],
-                        1
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "v-col",
-                        { staticClass: "col-12" },
+                        "v-row",
+                        { staticClass: "pa-0 ma-0" },
                         [
                           _c(
-                            "v-btn",
-                            {
-                              staticClass: "rounded-0 text-normal",
-                              attrs: {
-                                block: "",
-                                color: "primary",
-                                "x-large": "",
-                                loading: _vm.loading,
-                              },
-                              on: {
-                                click: function ($event) {
-                                  $event.preventDefault()
-                                  return _vm.OnSubmitContacto()
+                            "v-col",
+                            { staticClass: "col-12" },
+                            [
+                              _c("v-text-field", {
+                                staticClass: "rounded-0",
+                                attrs: {
+                                  color: "primary",
+                                  label: "Nombres completos",
+                                  outlined: "",
+                                  "hide-details": "auto",
                                 },
-                              },
-                            },
-                            [_vm._v("Enviar")]
+                                model: {
+                                  value: _vm.contacto.nombres,
+                                  callback: function ($$v) {
+                                    _vm.$set(_vm.contacto, "nombres", $$v)
+                                  },
+                                  expression: "contacto.nombres",
+                                },
+                              }),
+                            ],
+                            1
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "v-col",
+                            { staticClass: "col-12" },
+                            [
+                              _c("v-text-field", {
+                                staticClass: "rounded-0",
+                                attrs: {
+                                  color: "primary",
+                                  label: "Email",
+                                  error: _vm.error_email,
+                                  outlined: "",
+                                  "hide-details": "auto",
+                                },
+                                model: {
+                                  value: _vm.contacto.email,
+                                  callback: function ($$v) {
+                                    _vm.$set(_vm.contacto, "email", $$v)
+                                  },
+                                  expression: "contacto.email",
+                                },
+                              }),
+                            ],
+                            1
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "v-col",
+                            { staticClass: "col-12" },
+                            [
+                              _c("v-text-field", {
+                                staticClass: "rounded-0",
+                                attrs: {
+                                  color: "primary",
+                                  label: "Teléfono",
+                                  outlined: "",
+                                  "hide-details": "auto",
+                                },
+                                model: {
+                                  value: _vm.contacto.telefono,
+                                  callback: function ($$v) {
+                                    _vm.$set(_vm.contacto, "telefono", $$v)
+                                  },
+                                  expression: "contacto.telefono",
+                                },
+                              }),
+                            ],
+                            1
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "v-col",
+                            { staticClass: "col-12" },
+                            [
+                              _c("v-textarea", {
+                                staticClass: "rounded-0",
+                                attrs: {
+                                  outlined: "",
+                                  height: "100",
+                                  label: "Agrega un mensaje",
+                                  "hide-details": "auto",
+                                },
+                                model: {
+                                  value: _vm.contacto.mensaje,
+                                  callback: function ($$v) {
+                                    _vm.$set(_vm.contacto, "mensaje", $$v)
+                                  },
+                                  expression: "contacto.mensaje",
+                                },
+                              }),
+                            ],
+                            1
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "v-col",
+                            { staticClass: "col-12" },
+                            [
+                              _c(
+                                "v-btn",
+                                {
+                                  staticClass: "rounded-0 text-normal",
+                                  attrs: {
+                                    block: "",
+                                    color: "primary",
+                                    "x-large": "",
+                                    loading: _vm.loading,
+                                  },
+                                  on: {
+                                    click: function ($event) {
+                                      $event.preventDefault()
+                                      return _vm.OnSubmitContacto()
+                                    },
+                                  },
+                                },
+                                [_vm._v("Enviar")]
+                              ),
+                            ],
+                            1
                           ),
                         ],
                         1
@@ -1444,79 +1576,85 @@ var render = function () {
                 ],
                 1
               ),
-            ],
-            1
-          ),
-          _vm._v(" "),
-          _c(
-            "v-col",
-            { staticClass: "col-12 col-md-7" },
-            [
+              _vm._v(" "),
               _c(
-                "v-container",
-                { staticClass: "pa-0 ma-0" },
+                "v-col",
+                { staticClass: "col-12 col-md-7" },
                 [
                   _c(
-                    "v-row",
-                    { staticClass: "pa-0 ma-0 align-center justify-center" },
+                    "v-container",
+                    { staticClass: "pa-0 ma-0" },
                     [
-                      _c("v-col", { staticClass: "col-5 col-md-4" }, [
-                        _c(
-                          "h2",
-                          { staticClass: "font-weight-bold primary--text" },
-                          [_vm._v("¡VISÍTANOS!")]
-                        ),
-                      ]),
-                      _vm._v(" "),
                       _c(
-                        "v-col",
-                        { staticClass: "col-7 col-md-8 text-justify" },
+                        "v-row",
+                        {
+                          staticClass: "pa-0 ma-0 align-center justify-center",
+                        },
                         [
+                          _c("v-col", { staticClass: "col-5 col-md-4" }, [
+                            _c(
+                              "h2",
+                              { staticClass: "font-weight-bold black--text" },
+                              [
+                                _vm._v(
+                                  "\n                                ¡VISÍTANOS!\n                            "
+                                ),
+                              ]
+                            ),
+                          ]),
+                          _vm._v(" "),
                           _c(
-                            "span",
-                            { staticClass: "as-p_normal primary--text" },
+                            "v-col",
+                            { staticClass: "col-7 col-md-8 text-justify" },
                             [
                               _c(
-                                "v-icon",
-                                { attrs: { color: "primary", left: "" } },
-                                [_vm._v("mdi-map-marker")]
+                                "span",
+                                { staticClass: "as-p_normal black--text" },
+                                [
+                                  _c(
+                                    "v-icon",
+                                    { attrs: { color: "black", left: "" } },
+                                    [_vm._v("mdi-map-marker")]
+                                  ),
+                                  _vm._v(
+                                    "\n                                " +
+                                      _vm._s(_vm.address) +
+                                      "\n                            "
+                                  ),
+                                ],
+                                1
                               ),
-                              _vm._v(
-                                "\n                            " +
-                                  _vm._s(_vm.address) +
-                                  "\n                        "
-                              ),
-                            ],
-                            1
+                            ]
                           ),
-                        ]
-                      ),
-                      _vm._v(" "),
-                      _c("v-col", { staticClass: "col-12" }, [
-                        _c(
-                          "div",
-                          { staticClass: "container-map" },
-                          [
+                          _vm._v(" "),
+                          _c("v-col", { staticClass: "col-12" }, [
                             _c(
-                              "gmaps-map",
-                              { attrs: { options: _vm.mapOptions } },
+                              "div",
+                              { staticClass: "container-map" },
                               [
-                                _c("gmaps-marker", {
-                                  attrs: {
-                                    options: _vm.markerOptions,
-                                    position: {
-                                      lat: _vm.lat_as,
-                                      lng: _vm.lng_as,
-                                    },
-                                  },
-                                }),
+                                _c(
+                                  "gmaps-map",
+                                  { attrs: { options: _vm.mapOptions } },
+                                  [
+                                    _c("gmaps-marker", {
+                                      attrs: {
+                                        options: _vm.markerOptions,
+                                        position: {
+                                          lat: _vm.lat_as,
+                                          lng: _vm.lng_as,
+                                        },
+                                      },
+                                    }),
+                                  ],
+                                  1
+                                ),
                               ],
                               1
                             ),
-                          ],
-                          1
-                        ),
-                      ]),
+                          ]),
+                        ],
+                        1
+                      ),
                     ],
                     1
                   ),

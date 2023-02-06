@@ -34,6 +34,7 @@ Route::post('login', [AuthController::class, 'signIn']);
 
 Route::post("post/document",[PublicPostController::class,"showDocuments"]);
 Route::get("posts/all",[PublicPostController::class,"allPosts"]);
+Route::get('posts/bests',[PublicPostController::class,'bestPosts']);
 Route::get("posts/categoria/{categoria}",[PublicPostController::class,"filterCategory"]);
 Route::get("posts/tag/{tag}",[PublicPostController::class,"filterTag"]);
 Route::post("newsletter",[PublicPostController::class,"newsletter"]);

@@ -2,7 +2,7 @@
 
 const state = () => ({
     pageTransition: {
-        name: "route",
+        name: "fade",
         mode: "out-in",
         duration:{ enter: 800, leave: 800 }
     },

@@ -12,6 +12,7 @@ use App\Models\Tag;
 use App\Models\User;
 use App\Models\Visualizacione;
 use Carbon\Carbon;
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Stevebauman\Location\Facades\Location;
@@ -129,6 +130,48 @@ class PublicPostController extends Controller
             "ip" => $request->ip()
         ], 200);
     }
+
+    public function bestPosts(Request $request){
+
+        // $posts = Post::join("users", "users.id", "=", "posts.user_id")
+        //         ->where("posts.estado","=","publicado")
+        //         ->select("posts.*", "users.name", "users.last_name", "users.foto as user_foto")
+        //         ->orderBy("visualizaciones.visualizaciones", "desc")
+        //         ->take(3)
+        //         ->get();
+
+        $visualizaciones = Visualizacione::join('posts','posts.id','=','visualizaciones.post_id')
+                                ->select( DB::raw('count(*) as vizualizaciones'),'post_id')
+                                ->groupBy('post_id')
+                                ->orderBy('vizualizaciones','desc')
+                                ->take(3)
+                                ->get();
+
+        $posts =  new Collection();
+
+        foreach($visualizaciones as $v){
+            $post = Post::where("posts.id",$v->post_id)
+                        ->join("users", "users.id", "=", "posts.user_id")
+                        ->with("visualizaciones")
+                        ->with("comments")
+                        ->with("favoritos")
+                        ->select("posts.*", "users.name", "users.last_name", "users.foto as user_foto")
+                        ->get()
+                        ->first();
+            $posts->push($post);
+        }
+
+        $categorias = Categoria::where("estado", 1)->get();
+
+
+
+        return response()->json([
+            "posts" => $posts,
+            "categorias" => $categorias,
+            "ip" => $request->ip()
+        ], 200);
+    }
+
     public function filterCategory(Request $request, $name)
     {
         $posts = Post::join("users", "users.id", "=", "posts.user_id")

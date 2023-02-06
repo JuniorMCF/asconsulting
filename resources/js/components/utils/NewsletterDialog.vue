@@ -1,5 +1,5 @@
 <template>
-    <v-dialog opacity="0.3" v-model="dialog" full-width height="280" :style="{ zIndex: options.zIndex }"
+    <v-dialog opacity="0.3" v-model="dialog" width="100%" height="280" :style="{ zIndex: options.zIndex }"
         @keydown.esc="cancel" persistent content-class="custom-dialog">
         <v-card class="bg-newsletter pa-4">
             <v-toolbar class="bg-newsletter" dense flat>
@@ -7,14 +7,14 @@
                 <v-fab-transition>
                     <v-btn @click.prevent="dialog = !dialog" fab right absolute small
                         class="elevation-0 pa-0 bg-newsletter">
-                        <v-icon x-large class="bg-newsletter pa-0" color="primary">mdi-close-circle-outline</v-icon>
+                        <v-icon x-large class="bg-newsletter pa-0" color="black">mdi-close-circle-outline</v-icon>
                     </v-btn>
                 </v-fab-transition>
             </v-toolbar>
             <v-card-text class="text-center">
-                <span class="text-h4">Suscribete a nuestro</span>
-                <strong class="text-h4 font-weight-bold">newsletter</strong><br>
-                <span class="subtitle-2 primary--text">Suscribete para recibir contenido exclusivo</span>
+                <span class="text-h4 black--text">Suscribete a nuestro</span>
+                <strong class="text-h4 font-weight-bold  black--text">newsletter</strong><br>
+                <span class="subtitle-2 black--text">Suscribete para recibir contenido exclusivo</span>
                 <div class="d-flex flex-wrap justify-center align-center my-4">
                     <v-text-field dense class="rounded-0 white" v-model="correo" placeholder="Ingresa tu email"
                         style="max-width:400px;" outlined hide-details="auto"></v-text-field>
@@ -77,6 +77,6 @@ export default {
 }
 
 .bg-newsletter {
-    background-color: rgb(204, 204, 204) !important;
+    /* background-color: rgb(204, 204, 204) !important; */
 }
 </style>

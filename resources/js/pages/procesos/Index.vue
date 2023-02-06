@@ -1,52 +1,77 @@
 <template>
-    <v-container class="content-wrap-2 pa-0 mx-auto">
-        <v-row class="pa-0 ma-0 content-wrap-2">
-            <div class="overlap-video content-wrap-2"></div>
-            <div class="col-12 pa-0 container-video">
-                <video autoplay muted loop id="myVideo">
-                    <source src="/app/procesos.mp4" type="video/mp4" />
-                </video>
-            </div>
-            <div class="content-img content-wrap-2 text-center">
-                <v-img src="/app/skill.png" class="mx-auto size_img"></v-img>
-                <p class="white--text font-weight-bold span_title">Procesos</p>
-            </div>
-        </v-row>
-        <v-row class="pa-0 ma-0 content-wrap-2 mx-auto container-bandwith">
+    <div>
+        <v-container fluid class="pa-0 mx-auto pt-5 py-16">
+            <v-row class="pa-0 ma-0">
+                <div class="overlap-video"></div>
+                <div class="col-12 pa-0 container-video">
+                    <video autoplay muted loop id="myVideo">
+                        <source src="/app/procesos.mp4" type="video/mp4" />
+                    </video>
+                </div>
+                <div class="content-img text-center">
+                    <v-img
+                        src="/app/skill.png"
+                        class="mx-auto size_img"
+                    ></v-img>
+                    <p class="white--text font-weight-bold span_title">
+                        Procesos
+                    </p>
+                </div>
+            </v-row>
+            <!-- <v-row class="pa-0 ma-0 content-wrap-2 mx-auto container-bandwith">
             <v-col class="col-12 pa-0 ma-0">
                 <v-img src="/app/bandwith.png"></v-img>
             </v-col>
-        </v-row>
+        </v-row> -->
 
-        <v-row class="pa-0 ma-0 justify-center content-wrap-0 mx-auto">
-            <v-col class="col-12 col-md-4 pa-1" v-for="(tec, i) in procesos" :key="'tec' + i">
-                <v-card class="container-card elevation-0 pa-10" height="350">
-                    <v-card-text class="pa-0" style="height: 200px">
-                        <v-img :src="tec.icon" :height="height" :width="width" class="mx-auto"></v-img>
-                        <h5
-                            class="line-height_1 text-h6 font-weight-bold text-uppercase text-center primary--text py-3"
-                        >{{ tec.titulo }}</h5>
-                        <p class="ma-0 text-center alternative--text">{{ tec.subtitulo }}</p>
-                    </v-card-text>
-                    <v-card-actions class="text-center">
-                        <v-spacer></v-spacer>
-                        <v-btn
-                            @click.prevent="showDetails(tec)"
-                            class="rounded-xl white--text font-weight-bold px-10"
-                            large
-                            color="primary"
-                        >ver más</v-btn>
-                        <v-spacer></v-spacer>
-                    </v-card-actions>
-                </v-card>
-            </v-col>
-        </v-row>
-
+            <v-row
+                class="pa-0 ma-0 justify-center content-wrap-0 mx-auto py-16"
+            >
+                <v-col
+                    class="col-12 col-md-4 pa-1"
+                    v-for="(tec, i) in procesos"
+                    :key="'tec' + i"
+                >
+                    <v-card
+                        class="container-card elevation-0 pa-10"
+                        height="350"
+                    >
+                        <v-card-text class="pa-0" style="height: 200px">
+                            <v-img
+                                :src="tec.icon"
+                                :height="height"
+                                :width="width"
+                                class="mx-auto"
+                            ></v-img>
+                            <h5
+                                class="line-height_1 text-h6 font-weight-bold text-uppercase text-center primary--text py-3"
+                            >
+                                {{ tec.titulo }}
+                            </h5>
+                            <p class="ma-0 text-center alternative--text">
+                                {{ tec.subtitulo }}
+                            </p>
+                        </v-card-text>
+                        <v-card-actions class="text-center">
+                            <v-spacer></v-spacer>
+                            <v-btn
+                                @click.prevent="showDetails(tec)"
+                                class="rounded-xl white--text font-weight-bold px-10"
+                                large
+                                color="primary"
+                                >ver más</v-btn
+                            >
+                            <v-spacer></v-spacer>
+                        </v-card-actions>
+                    </v-card>
+                </v-col>
+            </v-row>
+        </v-container>
         <!--include footer-->
         <FooterGlobal></FooterGlobal>
         <ShowDetailsDialog ref="showDetailsDialog"></ShowDetailsDialog>
         <ChatComponent></ChatComponent>
-    </v-container>
+    </div>
 </template>
 
 <script>
@@ -85,8 +110,7 @@ export default {
                         descripcion: "de los actuales procesos de la empresa",
                     },
                     {
-                        titulo:
-                            "Proponemos planes de optimización del control financiero, ",
+                        titulo: "Proponemos planes de optimización del control financiero, ",
                         descripcion:
                             "diseñando y adaptándolos de manera flexible para el control de los directivos de la empresa.",
                     },
@@ -96,13 +120,11 @@ export default {
                             "y procedimientos de las cuentas por cobrar que permitan actuar de manera eficiente y anticipada ante los documentos vencidos",
                     },
                     {
-                        titulo:
-                            "Diseñamos procedimientos para mejorar los controles de los activos fijos y existencias",
+                        titulo: "Diseñamos procedimientos para mejorar los controles de los activos fijos y existencias",
                         descripcion: "de su empresa.",
                     },
                     {
-                        titulo:
-                            "Diseñamos procedimientos para la optimización de la atención a proveedores",
+                        titulo: "Diseñamos procedimientos para la optimización de la atención a proveedores",
                         descripcion: "y sus cumplimientos contractuales.",
                     },
                     {
@@ -162,8 +184,8 @@ export default {
                     },
                     {
                         type: "normal",
-                        text: "La reingeniería organizacional se basa en la planificación operativa, que involucra a todas las áreas de la empresa, colaborando con la alta dirección a liderar los esfuerzos de su planeamiento, para ello se necesita actualizar los procesos e implementar nuevos que añadan valor a la organización del consumidor, rompiendo con la estructura y cultura de trabajo que se tenía hasta el momento."
-                    }
+                        text: "La reingeniería organizacional se basa en la planificación operativa, que involucra a todas las áreas de la empresa, colaborando con la alta dirección a liderar los esfuerzos de su planeamiento, para ello se necesita actualizar los procesos e implementar nuevos que añadan valor a la organización del consumidor, rompiendo con la estructura y cultura de trabajo que se tenía hasta el momento.",
+                    },
                 ],
 
                 beneficios: [
@@ -174,11 +196,13 @@ export default {
                     },
                     {
                         titulo: "Generar líderes, con la capacidad de enseñar a su empleados",
-                        descripcion: "para que puedan medir sus resultados en función a los objetivos de la empresa.",
+                        descripcion:
+                            "para que puedan medir sus resultados en función a los objetivos de la empresa.",
                     },
                     {
                         titulo: "Capacitar e incentivar a los colaboradores",
-                        descripcion: "para que sean proactivos y sean capaces de realizar múltiples labores.",
+                        descripcion:
+                            "para que sean proactivos y sean capaces de realizar múltiples labores.",
                     },
                     {
                         titulo: "Mejorar las actividades de los colaboradores,",
@@ -192,8 +216,7 @@ export default {
                     },
                     {
                         titulo: "Contar con informes sobre los potenciales impactos ambientales.",
-                        descripcion:
-                            "",
+                        descripcion: "",
                     },
                 ],
             },
@@ -222,11 +245,13 @@ export default {
                     },
                     {
                         titulo: "Generar líderes, con la capacidad de enseñar a su empleados",
-                        descripcion: "para que puedan medir sus resultados en función a los objetivos de la empresa.",
+                        descripcion:
+                            "para que puedan medir sus resultados en función a los objetivos de la empresa.",
                     },
                     {
                         titulo: "Capacitar e incentivar a los colaboradores",
-                        descripcion: "para que sean proactivos y sean capaces de realizar múltiples labores.",
+                        descripcion:
+                            "para que sean proactivos y sean capaces de realizar múltiples labores.",
                     },
                     {
                         titulo: "Mejorar las actividades de los colaboradores,",
@@ -240,8 +265,7 @@ export default {
                     },
                     {
                         titulo: "Contar con informes sobre los potenciales impactos ambientales.",
-                        descripcion:
-                            "",
+                        descripcion: "",
                     },
                 ],
             },
@@ -261,11 +285,13 @@ export default {
                 beneficios: [
                     {
                         titulo: "Proporcionamos un diagnóstico profesional",
-                        descripcion: "que nos permita prevenir las posibles amenazas y eliminar las causas que se originan en cada área.",
+                        descripcion:
+                            "que nos permita prevenir las posibles amenazas y eliminar las causas que se originan en cada área.",
                     },
                     {
                         titulo: "Recomendación de controles",
-                        descripcion: " que aseguren el cumplimiento oportuno de cada una de las actividades que realicen cada área dentro de la organización.",
+                        descripcion:
+                            " que aseguren el cumplimiento oportuno de cada una de las actividades que realicen cada área dentro de la organización.",
                     },
                     {
                         titulo: "Elaboración de cronograma de actividades ",
@@ -274,7 +300,8 @@ export default {
                     },
                     {
                         titulo: "Evaluación de riesgos internos y externos impredecibles",
-                        descripcion: " que afecten el desarrollo de la economía de la empresa.",
+                        descripcion:
+                            " que afecten el desarrollo de la economía de la empresa.",
                     },
                     {
                         titulo: "Evaluación de riesgos técnicos como tecnología y diseño",
@@ -287,22 +314,18 @@ export default {
 
     mounted() {
         this.getPath();
-         this.$store.dispatch(
-            "app/changeTitlePage",
-            "Procesos A&S"
-        );
+        this.$store.dispatch("app/changeTitlePage", "Procesos A&S");
         document.title = this.$store.state.app.title_page;
         /**for visite */
         this.$store.dispatch("app/openPage", {
-              page: window.location.pathname,
-            link: window.location.host + window.location.pathname
-        })
-
+            page: window.location.pathname,
+            link: window.location.host + window.location.pathname,
+        });
     },
     destroyed() {
         this.$store.dispatch("app/closePage", {
-            visita_id: this.$store.state.app.visita_id
-        })
+            visita_id: this.$store.state.app.visita_id,
+        });
     },
     methods: {
         getPath() {
@@ -334,10 +357,10 @@ export default {
     background-color: rgba(0, 0, 102, 0.38) !important;
 }
 .container-card {
-    background-color: #ededed !important;
+    background-color: #e3e2e2 !important;
 }
 .container-video {
-    max-height: 326px;
+    max-height: 326px !important;
     overflow: hidden;
 }
 #myVideo {
@@ -370,7 +393,7 @@ export default {
         background-color: rgba(0, 0, 102, 0.38) !important;
     }
     .container-video {
-        max-height: 135px;
+        max-height: 135px !important;
         overflow: hidden;
     }
     #myVideo {

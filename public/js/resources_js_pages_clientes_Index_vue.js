@@ -99,6 +99,95 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
@@ -108,7 +197,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       phone_send: "tel:+51926302115",
       wame: "https://wa.me/51926302115",
       email: "reactivatunegocio@asconsulting.pe",
-      address: "Av. Alfredo Benavides 3695. Surco."
+      address: "Av. Alfredo Benavides 3695. Santiago de Surco. Lima, Perú."
     };
   },
   methods: {
@@ -122,8 +211,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
             switch (_context.prev = _context.next) {
               case 0:
                 shareData = {
-                  title: 'A&S Consulting Group',
-                  text: 'Solicita tu asesoría',
+                  title: "A&S Consulting Group",
+                  text: "Solicita tu asesoría",
                   url: _this.email
                 };
                 _context.prev = 1;
@@ -150,7 +239,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     },
     goToLocation: function goToLocation() {
       this.$router.push({
-        name: 'contacto'
+        name: "contacto"
       });
     }
   },
@@ -179,6 +268,207 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_global_FooterGlobal_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../components/global/FooterGlobal.vue */ "./resources/js/components/global/FooterGlobal.vue");
 /* harmony import */ var vue_carousel_3d__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! vue-carousel-3d */ "./node_modules/vue-carousel-3d/dist/carousel-3d.common.js");
 /* harmony import */ var vue_carousel_3d__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(vue_carousel_3d__WEBPACK_IMPORTED_MODULE_2__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -407,9 +697,9 @@ __webpack_require__.r(__webpack_exports__);
       testimonios: [{
         foto: "/app/javier_zapata_2.png",
         nombre: "Javier Zapata",
-        cargo: "(Director de Decor Inox)",
+        cargo: "Director de Decor Inox",
         comentario: "Excelente trabajo de la empresa consultora A&S Consulting Group, el proyecto termino con éxito, ahora nos brindan asesoría en temas contables y tributarios",
-        fecha: "(diciembre 2019)",
+        fecha: "01.12.19",
         proyect: [{
           text: "Rediseño de procesos administrativos y contables,  toma de inventario de productos y activos fijos.",
           type: "normal"
@@ -424,9 +714,9 @@ __webpack_require__.r(__webpack_exports__);
       }, {
         foto: "/app/sergio_banuet_2.jpg",
         nombre: "Sergio Banuet",
-        cargo: "(Director de ISG)",
+        cargo: "Director de ISG",
         comentario: "La calidad, experiencia y compromiso de A&S Consulting Group fue determinante para el éxito del proyecto. Consideramos sin duda continuar contratándolos para proyectos adicionales en la Región",
-        fecha: "(febrero 2020)",
+        fecha: "10.02.20",
         proyect: [{
           text: "Transición de los servicios de telecomunicaciones y mudanza del Datacenter de ",
           type: "normal"
@@ -444,9 +734,9 @@ __webpack_require__.r(__webpack_exports__);
       }, {
         foto: "/app/alejandro_camones_2.png",
         nombre: "Alejandro Camones",
-        cargo: "(Gerente General Cam Motors)",
+        cargo: "Gerente General Cam Motors",
         comentario: "La consultoría  ha sido tremendamente provechosa, la misma nos ha permitido definir una hoja de ruta precisa y medir los avances de las labores en forma efectiva.",
-        fecha: "(octubre 2019)",
+        fecha: "11.10.19",
         proyect: [{
           text: "Análisis financiero, saneamiento contable así como la reestructuración empresarial.",
           type: "normal"
@@ -541,7 +831,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n#myVideo {\n    position: absolute;\n    z-index: 0;\n    max-width: 1480px;\n    height: auto;\n}\n.container-testimonios {\n    width: 1480px;\n    height: 723px;\n}\n.content-testimonios {\n    position: absolute;\n    z-index: 2 !important;\n    width: 1480px;\n    height: 900px;\n}\n.border-card {\n    background: transparent;\n    border: 1rem solid transparent;\n}\n.circle-img {\n    border-radius: 50% !important;\n}\n.carousel-3d-container .carousel-3d-slide {\n    padding: 20px;\n}\n.content-card {\n    max-width: 400px;\n}\n.flux-overlap-video {\n    position: absolute;\n    z-index: 1;\n    height: 850px !important;\n    width: 100%;\n    background-color: rgba(0, 0, 102, 0.38) !important;\n}\n.carousel-3d-slider{\n    max-height: 700px !important;\n}\n.carousel-3d-container{\nmax-height: 700px !important;\n}\n.carousel-3d-slide ,.v-card ,.border-card  {\n    max-height: 700px !important;\n}\n@media screen and (max-width: 1480px) {\n.container-testimonios {\n        background-image: url(\"/app/bg_video.jpg\");\n        background-repeat: no-repeat;\n        background-size: 100% 100%;\n        width: 100%;\n        height: 700px;\n}\n.content-testimonios {\n        position: absolute;\n        z-index: 2 !important;\n        width: 100%;\n        height: 700px;\n}\n#myVideo {\n        display: none;\n}\n.flux-overlap-video {\n        position: absolute;\n        z-index: 1;\n        height: 700px !important;\n        width: 100%;\n        background-color: rgba(0, 0, 102, 0.38) !important;\n}\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n#myVideo {\n    position: absolute;\n    z-index: 0;\n    width: 100%;\n    max-height: 850px;\n}\n.container-testimonios {\n    width: 70%;\n    height: auto;\n}\n.content-testimonios {\n    position: absolute;\n    z-index: 2 !important;\n    width: 1480px;\n    height: 900px;\n}\n.border-card {\n    background: transparent;\n    border: 1rem solid transparent;\n}\n.circle-img {\n    border-radius: 50% !important;\n}\n.carousel-3d-container .carousel-3d-slide {\n    padding: 20px;\n}\n.content-card {\n    max-width: 400px;\n}\n.flux-overlap-video {\n    position: absolute;\n    z-index: 1;\n    height: 850px !important;\n    width: 100%;\n    background-color: rgba(0, 0, 102, 0.38) !important;\n}\n.carousel-3d-slider {\n    max-height: 700px !important;\n}\n.carousel-3d-container {\n    max-height: 700px !important;\n}\n.carousel-3d-slide,\n.v-card,\n.border-card {\n    max-height: 700px !important;\n}\n.sheet_testimonio {\n    max-width: 600px;\n}\n.sheet_shadow{\n    box-shadow: 0 0 5px 5px rgba(0, 0, 102, 0.38) !important;\n}\n@media screen and (max-width: 1480px) {\n.container-testimonios {\n        width: 100%;\n}\n.content-testimonios {\n        position: absolute;\n        z-index: 2 !important;\n        width: 100%;\n        height: 700px;\n}\n#myVideo {\n        display: none;\n}\n.flux-overlap-video {\n        position: absolute;\n        z-index: 1;\n        height: 700px !important;\n        width: 100%;\n        background-color: rgba(0, 0, 102, 0.38) !important;\n}\n.sheet_testimonio {\n        width: 90%;\n}\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -4724,27 +5014,16 @@ var render = function () {
     [
       _c(
         "v-row",
-        { staticClass: "pa-0 ma-0 content-wrap-2 mx-auto footer-container" },
-        [
-          _c(
-            "v-col",
-            { staticClass: "col-12 pa-0 ma-0 rotate-180 container-bandwith" },
-            [_c("v-img", { attrs: { src: "/app/bandwith.png " } })],
-            1
-          ),
-        ],
-        1
-      ),
-      _vm._v(" "),
-      _c(
-        "v-row",
-        { staticClass: "primary pa-0 ma-0 content-wrap-2 mx-auto" },
+        {
+          staticClass:
+            "grey darken-4 pa-0 ma-0 mx-auto justify-center align-start py-10",
+        },
         [
           _c(
             "v-col",
             {
               staticClass:
-                "col-12 col-md-6 d-flex flex-wrap justify-center align-center",
+                "col-12 col-md-2 col-xl-2 d-flex flex-wrap justify-center align-center",
             },
             [
               _c(
@@ -4758,166 +5037,205 @@ var render = function () {
                 ],
                 1
               ),
+            ]
+          ),
+          _vm._v(" "),
+          _c(
+            "v-col",
+            {
+              staticClass:
+                "col-12 col-md-3 col-xl-3 d-flex flex-column justify-center align-start",
+            },
+            [
+              _c("p", { staticClass: "white--text font-weight-bold px-4" }, [
+                _vm._v("CONTACTO"),
+              ]),
               _vm._v(" "),
-              _c("span", { staticClass: "white--text as-footer_text px-4" }, [
-                _vm._v(
-                  "\n                Copyright ©" +
-                    _vm._s(_vm.yearActual) +
-                    " by A&S Consulting Group.\n            "
-                ),
+              _c(
+                "a",
+                {
+                  staticClass: "white--text px-4",
+                  on: {
+                    click: function ($event) {
+                      $event.preventDefault()
+                      return _vm.goToLocation()
+                    },
+                  },
+                },
+                [
+                  _c(
+                    "v-icon",
+                    { attrs: { small: "", color: "white", left: "" } },
+                    [_vm._v("mdi-map-marker")]
+                  ),
+                  _vm._v(" " + _vm._s(_vm.address) + "\n            "),
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "a",
+                {
+                  staticClass: "white--text px-4",
+                  attrs: { href: _vm.phone_send },
+                },
+                [
+                  _c(
+                    "v-icon",
+                    { attrs: { small: "", color: "white", left: "" } },
+                    [_vm._v("mdi-phone")]
+                  ),
+                  _vm._v(" " + _vm._s(_vm.phone_contact) + "\n            "),
+                ],
+                1
+              ),
+            ]
+          ),
+          _vm._v(" "),
+          _c(
+            "v-col",
+            {
+              staticClass:
+                "col-12 col-md-3 col-xl-3 d-flex flex-column justify-center align-start",
+            },
+            [
+              _c("p", { staticClass: "white--text font-weight-bold px-4" }, [
+                _vm._v("LEGAL"),
+              ]),
+              _vm._v(" "),
+              _c("a", { staticClass: "white--text px-4" }, [
+                _vm._v(" Términos y condiciones "),
+              ]),
+              _vm._v(" "),
+              _c("a", { staticClass: "white--text px-4" }, [
+                _vm._v(" Privacidad "),
               ]),
             ]
           ),
           _vm._v(" "),
           _c(
             "v-col",
-            { staticClass: "col-12 col-md-6 text-center text-md-left " },
+            {
+              staticClass:
+                "col-12 col-md-3 col-xl-3 d-flex flex-column justify-center align-start",
+            },
             [
-              _c("v-col", [
-                _c(
-                  "span",
-                  {
-                    staticClass:
-                      "white--text d-block d-md-inline-flex align-center justify-center",
-                  },
-                  [
-                    _c(
-                      "v-btn",
-                      {
-                        staticClass: "white--text",
-                        attrs: {
-                          fab: "",
-                          text: "",
-                          small: "",
-                          link: "",
-                          href: _vm.phone_send,
-                        },
-                      },
-                      [
-                        _c("v-icon", { attrs: { color: "white" } }, [
-                          _vm._v("mdi-phone-message"),
-                        ]),
-                      ],
-                      1
-                    ),
-                    _vm._v(
-                      "\n                    " +
-                        _vm._s(_vm.phone_contact) +
-                        "\n                "
-                    ),
-                  ],
-                  1
-                ),
-                _vm._v(" "),
-                _c(
-                  "span",
-                  {
-                    staticClass:
-                      "white--text d-block d-md-inline-flex align-center justify-center",
-                  },
-                  [
-                    _c(
-                      "v-btn",
-                      {
-                        staticClass: "white--text",
-                        attrs: { fab: "", text: "", small: "", link: "" },
-                        on: {
-                          click: function ($event) {
-                            $event.preventDefault()
-                            return _vm.openEmail()
-                          },
-                        },
-                      },
-                      [
-                        _c("v-icon", { attrs: { color: "white" } }, [
-                          _vm._v("mdi-email-open"),
-                        ]),
-                      ],
-                      1
-                    ),
-                    _vm._v(
-                      "\n                    " +
-                        _vm._s(_vm.email) +
-                        "\n                "
-                    ),
-                  ],
-                  1
-                ),
+              _c("p", { staticClass: "white--text font-weight-bold px-4" }, [
+                _vm._v("SÍGUENOS"),
               ]),
               _vm._v(" "),
-              _c("v-col", [
-                _c(
-                  "span",
-                  {
-                    staticClass:
-                      "white--text d-block d-md-inline-flex align-center justify-center",
-                  },
-                  [
-                    _c(
-                      "v-btn",
-                      {
-                        staticClass: "white--text",
-                        attrs: {
-                          fab: "",
-                          text: "",
-                          small: "",
-                          href: _vm.wame,
-                          target: "_blank",
-                        },
+              _c(
+                "div",
+                { staticClass: "d-flex flex-wrap px-4" },
+                [
+                  _c(
+                    "v-btn",
+                    {
+                      staticClass: "elevation-0",
+                      attrs: {
+                        fab: "",
+                        small: "",
+                        text: "",
+                        color: "primary",
+                        href: "https://www.facebook.com/AS-Consulting-Group-141818089928155",
+                        target: "_blank",
                       },
-                      [
-                        _c("v-icon", { attrs: { color: "white" } }, [
-                          _vm._v("mdi-whatsapp"),
-                        ]),
-                      ],
-                      1
-                    ),
-                    _vm._v(
-                      "\n                    " +
-                        _vm._s(_vm.phone_contact) +
-                        "\n                "
-                    ),
-                  ],
-                  1
-                ),
-                _vm._v(" "),
-                _c(
-                  "span",
-                  {
-                    staticClass:
-                      "white--text d-block d-md-inline-flex align-center justify-center",
-                  },
-                  [
-                    _c(
-                      "v-btn",
-                      {
-                        staticClass: "white--text",
-                        attrs: { fab: "", text: "", small: "", link: "" },
-                        on: {
-                          click: function ($event) {
-                            $event.preventDefault()
-                            return _vm.goToLocation()
-                          },
-                        },
+                    },
+                    [
+                      _c("v-icon", { attrs: { color: "white" } }, [
+                        _vm._v("mdi-facebook"),
+                      ]),
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "v-btn",
+                    {
+                      staticClass: "elevation-0",
+                      attrs: {
+                        fab: "",
+                        small: "",
+                        text: "",
+                        color: "primary",
+                        href: "https://www.instagram.com/asconsultinggroup/",
+                        target: "_blank",
                       },
-                      [
-                        _c("v-icon", { attrs: { color: "white" } }, [
-                          _vm._v("mdi-map-marker"),
-                        ]),
-                      ],
-                      1
-                    ),
-                    _vm._v(
-                      "\n                    " +
-                        _vm._s(_vm.address) +
-                        "\n                "
-                    ),
-                  ],
-                  1
-                ),
-              ]),
-            ],
-            1
+                    },
+                    [
+                      _c("v-icon", { attrs: { color: "white" } }, [
+                        _vm._v("mdi-instagram"),
+                      ]),
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "v-btn",
+                    {
+                      staticClass: "elevation-0",
+                      attrs: {
+                        fab: "",
+                        small: "",
+                        text: "",
+                        color: "primary",
+                        href: "https://www.linkedin.com/company/as.consulting/",
+                        target: "_blank",
+                      },
+                    },
+                    [
+                      _c("v-icon", { attrs: { color: "white" } }, [
+                        _vm._v("mdi-linkedin"),
+                      ]),
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "v-btn",
+                    {
+                      staticClass: "elevation-0",
+                      attrs: {
+                        fab: "",
+                        small: "",
+                        text: "",
+                        color: "primary",
+                        href: "https://www.youtube.com/channel/UCLGe4u_VDbkoJWE2LkMni9w/featured?view_as=subscriber",
+                        target: "_blank",
+                      },
+                    },
+                    [
+                      _c("v-icon", { attrs: { color: "white" } }, [
+                        _vm._v("mdi-youtube"),
+                      ]),
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "v-btn",
+                    {
+                      staticClass: "elevation-0",
+                      attrs: {
+                        fab: "",
+                        small: "",
+                        text: "",
+                        color: "primary",
+                        href: "https://twitter.com/pymedigitalAS",
+                        target: "_blank",
+                      },
+                    },
+                    [
+                      _c("v-icon", { attrs: { color: "white" } }, [
+                        _vm._v("mdi-twitter"),
+                      ]),
+                    ],
+                    1
+                  ),
+                ],
+                1
+              ),
+            ]
           ),
         ],
         1
@@ -4950,331 +5268,505 @@ var render = function () {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c(
-    "v-container",
-    { staticClass: "content-wrap-2 pa-0 mx-auto" },
+    "div",
     [
       _c(
-        "v-row",
-        { staticClass: "pa-0 ma-0 content-wrap-2 mx-auto" },
+        "v-container",
+        { staticClass: "pa-0 mx-auto py-16", attrs: { fluid: "" } },
         [
           _c(
-            "v-col",
-            { staticClass: "col-12 pa-0 ma-0 container-bandwith" },
-            [_c("v-img", { attrs: { src: "/app/bandwith.png " } })],
-            1
-          ),
-        ],
-        1
-      ),
-      _vm._v(" "),
-      _c(
-        "v-row",
-        { staticClass: "pa-0 ma-0 content-wrap-0 mx-auto align-center mb-10" },
-        [
-          _c(
-            "v-col",
-            { staticClass: "col-12 col-md-6 text-center text-md-left my-4" },
+            "v-row",
+            {
+              staticClass:
+                "pa-0 ma-0 content-wrap-0 mx-auto align-center my-16",
+            },
             [
               _c(
-                "span",
+                "v-col",
                 {
-                  staticClass:
-                    "primary--text text-uppercase as-text_extralarge line-height_1",
+                  staticClass: "col-12 col-md-6 text-center text-md-left my-4",
                 },
-                [_vm._v("Nuestros")]
-              ),
-              _vm._v(" "),
-              _c("br"),
-              _vm._v(" "),
-              _c(
-                "span",
-                {
-                  staticClass:
-                    "pl-6 primary--text font-weight-bold text-uppercase as-text_extralarge line-height_1 after-right_block",
-                },
-                [_vm._v("clientes")]
-              ),
-            ]
-          ),
-          _vm._v(" "),
-          _c(
-            "v-col",
-            { staticClass: "col-12 col-md-6 text-center text-md-left my-4" },
-            [
-              _c(
-                "p",
-                { staticClass: "primary--text text-justify as-p_normal ma-0" },
                 [
-                  _vm._v(
-                    "Ellos confian en nosotros para conseguir sus objetivos."
+                  _c(
+                    "span",
+                    {
+                      staticClass:
+                        "primary--text text-uppercase as-text_extralarge line-height_1",
+                    },
+                    [_vm._v("Nuestros")]
+                  ),
+                  _vm._v(" "),
+                  _c("br"),
+                  _vm._v(" "),
+                  _c(
+                    "span",
+                    {
+                      staticClass:
+                        "pl-6 primary--text font-weight-bold text-uppercase as-text_extralarge line-height_1 after-right_block",
+                    },
+                    [_vm._v("clientes")]
                   ),
                 ]
               ),
-            ]
-          ),
-        ],
-        1
-      ),
-      _vm._v(" "),
-      _c(
-        "v-row",
-        {
-          staticClass:
-            "pa-0 ma-0 content-wrap-0 mx-auto align-center mb-10 justify-content-center",
-        },
-        [
-          _c("v-card-text", { staticClass: "pa-3 my-5" }, [
-            _c(
-              "span",
-              {
-                staticClass:
-                  "primary--text as-text_underline-init font-weight-bold text-uppercase",
-              },
-              [_vm._v("Empresas internacionales")]
-            ),
-          ]),
-          _vm._v(" "),
-          _vm._l(_vm.empresas_inter, function (empresa) {
-            return _c(
-              "v-col",
-              { key: "inter" + empresa.id, staticClass: "col-12 col-md-6" },
-              [
-                _c("v-img", {
-                  attrs: { src: empresa.src, height: "145", contain: "" },
-                }),
-              ],
-              1
-            )
-          }),
-          _vm._v(" "),
-          _c("v-card-text", { staticClass: "pa-3 my-5" }, [
-            _c(
-              "span",
-              {
-                staticClass:
-                  "primary--text as-text_underline-init font-weight-bold text-uppercase",
-              },
-              [_vm._v("Empresas nacionales")]
-            ),
-          ]),
-          _vm._v(" "),
-          _vm._l(_vm.empresas_nac, function (empresa) {
-            return _c(
-              "v-col",
-              { key: "nac" + empresa.id, staticClass: "col-6 col-md-4" },
-              [
-                _c("v-img", {
-                  attrs: { src: empresa.src, height: "150", contain: "" },
-                }),
-              ],
-              1
-            )
-          }),
-        ],
-        2
-      ),
-      _vm._v(" "),
-      _c(
-        "v-row",
-        {
-          staticClass:
-            "pa-0 ma-0 content-wrap-2 mx-auto align-center mb-10 justify-content-center",
-        },
-        [
-          _c(
-            "v-col",
-            { staticClass: "col-12 my-4" },
-            [
-              _c("v-card-text", { staticClass: "pa-3 text-center" }, [
-                _c(
-                  "span",
-                  { staticClass: "as-text_underline_app primary--text" },
-                  [_vm._v("TESTIMONIOS")]
-                ),
-              ]),
-            ],
-            1
-          ),
-        ],
-        1
-      ),
-      _vm._v(" "),
-      _c(
-        "v-row",
-        { staticClass: "pa-0 ma-0 content-wrap-2 container-testimonios" },
-        [
-          _c("div", { staticClass: "flux-overlap-video content-wrap-2" }),
-          _vm._v(" "),
-          _c(
-            "carousel-3d",
-            {
-              staticClass: "content-testimonios",
-              attrs: {
-                autoplay: true,
-                "autoplay-timeout": 3000,
-                width: _vm.width_carousel,
-                height: _vm.height_carousel,
-              },
-            },
-            _vm._l(_vm.testimonios, function (testimonio, i) {
-              return _c(
-                "slide",
+              _vm._v(" "),
+              _c(
+                "v-col",
                 {
-                  key: "test" + i,
-                  staticClass: "v-card border-card pa-0",
-                  attrs: { index: i },
+                  staticClass: "col-12 col-md-6 text-center text-md-left my-4",
                 },
                 [
                   _c(
-                    "v-card-text",
-                    { staticClass: "text-center pb-0" },
+                    "p",
+                    {
+                      staticClass:
+                        "black--text text-md-justify text-center as-p_normal ma-0",
+                    },
                     [
-                      _c(
-                        "v-avatar",
-                        {
-                          staticClass: "mx-auto white",
-                          attrs: { height: "200", width: "200" },
-                        },
-                        [
-                          _c("v-img", {
-                            staticClass: "mx-auto",
-                            attrs: { src: testimonio.foto, contain: "" },
-                          }),
-                        ],
-                        1
-                      ),
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "v-card-text",
-                    { staticClass: "text-center content-card mx-auto" },
-                    [
-                      _c(
-                        "h1",
-                        {
-                          staticClass: "secondary--text font-weight-bold my-2",
-                        },
-                        [_vm._v(_vm._s(testimonio.nombre))]
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "h1",
-                        { staticClass: "white--text font-weight-bold my-2" },
-                        [_vm._v(_vm._s(testimonio.cargo))]
-                      ),
-                      _vm._v(" "),
-                      _c("p", { staticClass: "white--text my-2 mt-4" }, [
-                        _vm._v('"' + _vm._s(testimonio.comentario) + '"'),
-                      ]),
-                      _vm._v(" "),
-                      _c(
-                        "p",
-                        { staticClass: "white--text font-weight-bold my-2" },
-                        [_vm._v(_vm._s(testimonio.fecha))]
+                      _vm._v(
+                        "\n                    Ellos confian en nosotros para conseguir sus objetivos.\n                "
                       ),
                     ]
                   ),
-                  _vm._v(" "),
-                  _c(
-                    "v-card-text",
-                    { staticClass: "pt-0 text-justify content-card mx-auto" },
-                    [
-                      _c(
-                        "p",
-                        [
-                          _c("span", { staticClass: "secondary--text" }, [
-                            _vm._v("Proyecto:"),
-                          ]),
-                          _vm._v(" "),
-                          _vm._l(testimonio.proyect, function (element, index) {
-                            return _c("span", { key: "proy" + index }, [
-                              element.type == "normal"
-                                ? _c("span", { staticClass: "white--text" }, [
-                                    _vm._v(
-                                      "\n                                " +
-                                        _vm._s(element.text) +
-                                        "\n                            "
-                                    ),
-                                  ])
-                                : _c(
-                                    "span",
-                                    {
-                                      staticClass:
-                                        "white--text font-weight-bold",
-                                    },
-                                    [
-                                      _vm._v(
-                                        "\n                                " +
-                                          _vm._s(element.text) +
-                                          "\n                            "
-                                      ),
-                                    ]
-                                  ),
-                            ])
-                          }),
-                        ],
-                        2
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "p",
-                        [
-                          _c("span", { staticClass: "secondary--text" }, [
-                            _vm._v("Cliente:"),
-                          ]),
-                          _vm._v(" "),
-                          _vm._l(testimonio.cliente, function (element, index) {
-                            return _c("span", { key: "cli" + index }, [
-                              element.type == "normal"
-                                ? _c("span", { staticClass: "white--text" }, [
-                                    _vm._v(
-                                      "\n                                " +
-                                        _vm._s(element.text) +
-                                        "\n                            "
-                                    ),
-                                  ])
-                                : _c(
-                                    "span",
-                                    {
-                                      staticClass:
-                                        "white--text font-weight-bold",
-                                    },
-                                    [
-                                      _vm._v(
-                                        "\n                                " +
-                                          _vm._s(element.text) +
-                                          "\n                            "
-                                      ),
-                                    ]
-                                  ),
-                            ])
-                          }),
-                        ],
-                        2
-                      ),
-                    ]
-                  ),
-                ],
-                1
-              )
-            }),
+                ]
+              ),
+            ],
             1
           ),
           _vm._v(" "),
           _c(
-            "video",
+            "v-row",
             {
-              staticClass: "col-12 pa-0",
-              attrs: { autoplay: "", muted: "", loop: "", id: "myVideo" },
-              domProps: { muted: true },
+              staticClass:
+                "pa-0 ma-0 content-wrap-0 mx-auto align-center mb-10 justify-content-center",
             },
             [
-              _c("source", {
-                attrs: { src: "/app/testimonios.mp4", type: "video/mp4" },
+              _c("v-card-text", { staticClass: "pa-3 my-5 my-md-15" }, [
+                _c(
+                  "span",
+                  {
+                    staticClass:
+                      "primary--text as-text_underline-init font-weight-bold text-normal",
+                  },
+                  [_vm._v("Empresas Internacionales")]
+                ),
+              ]),
+              _vm._v(" "),
+              _vm._l(_vm.empresas_inter, function (empresa) {
+                return _c(
+                  "v-col",
+                  { key: "inter" + empresa.id, staticClass: "col-12 col-md-6" },
+                  [
+                    _c("v-img", {
+                      attrs: { src: empresa.src, height: "145", contain: "" },
+                    }),
+                  ],
+                  1
+                )
               }),
-            ]
+              _vm._v(" "),
+              _c("v-card-text", { staticClass: "pa-3 my-5 my-md-15" }, [
+                _c(
+                  "span",
+                  {
+                    staticClass:
+                      "primary--text as-text_underline-init font-weight-bold text-normal",
+                  },
+                  [_vm._v("Empresas Nacionales")]
+                ),
+              ]),
+              _vm._v(" "),
+              _vm._l(_vm.empresas_nac, function (empresa) {
+                return _c(
+                  "v-col",
+                  { key: "nac" + empresa.id, staticClass: "col-6 col-md-4" },
+                  [
+                    _c("v-img", {
+                      attrs: { src: empresa.src, height: "150", contain: "" },
+                    }),
+                  ],
+                  1
+                )
+              }),
+            ],
+            2
+          ),
+          _vm._v(" "),
+          _c(
+            "v-row",
+            {
+              staticClass:
+                "pa-0 ma-0 content-wrap-2 mx-auto align-center my-10 justify-content-center",
+            },
+            [
+              _c(
+                "v-col",
+                { staticClass: "col-12 my-4" },
+                [
+                  _c("v-card-text", { staticClass: "pa-3 text-center" }, [
+                    _c(
+                      "span",
+                      { staticClass: "as-text_underline_app primary--text" },
+                      [_vm._v("TESTIMONIOS")]
+                    ),
+                  ]),
+                ],
+                1
+              ),
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "v-row",
+            {
+              staticClass:
+                "pa-0 ma-0 my-16 mx-auto container-testimonios align-center justify-center",
+            },
+            [
+              _c(
+                "v-carousel",
+                {
+                  attrs: {
+                    cycle: "",
+                    "hide-delimiter-background": "",
+                    "show-arrows-on-hover": "",
+                    height: "600",
+                    light: !_vm.$vuetify.theme.dark,
+                    color: "primary",
+                  },
+                  scopedSlots: _vm._u([
+                    {
+                      key: "prev",
+                      fn: function (ref) {
+                        var on = ref.on
+                        var attrs = ref.attrs
+                        return [
+                          _c(
+                            "v-btn",
+                            _vm._g(
+                              _vm._b(
+                                {
+                                  staticClass: "rounded-0",
+                                  attrs: {
+                                    fab: "",
+                                    small: "",
+                                    color: "primary",
+                                  },
+                                },
+                                "v-btn",
+                                attrs,
+                                false
+                              ),
+                              on
+                            ),
+                            [_c("v-icon", [_vm._v("mdi-arrow-left")])],
+                            1
+                          ),
+                        ]
+                      },
+                    },
+                    {
+                      key: "next",
+                      fn: function (ref) {
+                        var on = ref.on
+                        var attrs = ref.attrs
+                        return [
+                          _c(
+                            "v-btn",
+                            _vm._g(
+                              _vm._b(
+                                {
+                                  staticClass: "rounded-0",
+                                  attrs: {
+                                    fab: "",
+                                    small: "",
+                                    color: "primary",
+                                  },
+                                },
+                                "v-btn",
+                                attrs,
+                                false
+                              ),
+                              on
+                            ),
+                            [_c("v-icon", [_vm._v("mdi-arrow-right")])],
+                            1
+                          ),
+                        ]
+                      },
+                    },
+                  ]),
+                },
+                [
+                  _vm._v(" "),
+                  _vm._v(" "),
+                  _vm._l(_vm.testimonios, function (testimonio, i) {
+                    return _c(
+                      "v-carousel-item",
+                      {
+                        key: "testimonios-" + i,
+                        attrs: {
+                          "reverse-transition": "fade-transition",
+                          transition: "fade-transition",
+                        },
+                      },
+                      [
+                        _c(
+                          "v-sheet",
+                          {
+                            staticClass: "mx-auto sheet_shadow",
+                            staticStyle: { position: "relative", top: "40px" },
+                            attrs: { width: "80", rounded: "circle" },
+                          },
+                          [
+                            _c(
+                              "v-avatar",
+                              {
+                                staticClass: "mx-auto white",
+                                attrs: { height: "80", width: "80" },
+                              },
+                              [
+                                _c(
+                                  "v-img",
+                                  {
+                                    staticClass: "mx-auto",
+                                    attrs: {
+                                      src: testimonio.foto,
+                                      contain: "",
+                                    },
+                                  },
+                                  [
+                                    _c("div", {
+                                      staticClass:
+                                        "fill-height bottom-gradient",
+                                    }),
+                                  ]
+                                ),
+                              ],
+                              1
+                            ),
+                          ],
+                          1
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "v-sheet",
+                          {
+                            staticClass:
+                              "mx-auto pa-5 py-12 pa-sm-10 py-sm-16 pa-md-10 py-md-16 pa-lg-16 pa-xl-16 sheet_testimonio sheet_shadow",
+                            attrs: {
+                              color: "white",
+                              shaped: "",
+                              height: "77%",
+                            },
+                          },
+                          [
+                            _c(
+                              "v-card-text",
+                              { staticClass: "text-center py-0" },
+                              [
+                                _c(
+                                  "h1",
+                                  {
+                                    staticClass:
+                                      "text-h6 black--text font-weight-bold",
+                                  },
+                                  [
+                                    _vm._v(
+                                      "\n                                " +
+                                        _vm._s(testimonio.nombre) +
+                                        "\n                            "
+                                    ),
+                                  ]
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "h1",
+                                  {
+                                    staticClass:
+                                      "text-subtitle-1 black--text font-weight-bold",
+                                  },
+                                  [
+                                    _vm._v(
+                                      "\n                                " +
+                                        _vm._s(testimonio.cargo) +
+                                        "\n                            "
+                                    ),
+                                  ]
+                                ),
+                              ]
+                            ),
+                            _vm._v(" "),
+                            _c(
+                              "v-card-text",
+                              {
+                                staticClass:
+                                  "text-center mx-auto pa-0 ma-0 py-4",
+                              },
+                              [
+                                _c(
+                                  "p",
+                                  {
+                                    staticClass:
+                                      "black--text text-subtitle-1 ma-0 line-height_1_3",
+                                  },
+                                  [
+                                    _vm._v(
+                                      "\n                                " +
+                                        _vm._s(testimonio.comentario) +
+                                        "\n                            "
+                                    ),
+                                  ]
+                                ),
+                              ]
+                            ),
+                            _vm._v(" "),
+                            _c(
+                              "v-card-text",
+                              { staticClass: "text-justify mx-auto pa-0 ma-0" },
+                              [
+                                _c(
+                                  "p",
+                                  { staticClass: "ma-0 text-center py-2" },
+                                  [
+                                    _c(
+                                      "span",
+                                      {
+                                        staticClass:
+                                          "black--text font-weight-bold text-subtitle-1 line-height_1",
+                                      },
+                                      [_vm._v("Proyecto:")]
+                                    ),
+                                    _vm._v(" "),
+                                    _vm._l(
+                                      testimonio.proyect,
+                                      function (element, index) {
+                                        return _c(
+                                          "span",
+                                          { key: "proy" + index },
+                                          [
+                                            element.type == "normal"
+                                              ? _c(
+                                                  "span",
+                                                  {
+                                                    staticClass:
+                                                      "black--text text-subtitle-1 line-height_1",
+                                                  },
+                                                  [
+                                                    _vm._v(
+                                                      "\n                                        " +
+                                                        _vm._s(element.text) +
+                                                        "\n                                    "
+                                                    ),
+                                                  ]
+                                                )
+                                              : _c(
+                                                  "span",
+                                                  {
+                                                    staticClass:
+                                                      "primary--text font-weight-bold text-subtitle-1 line-height_1",
+                                                  },
+                                                  [
+                                                    _vm._v(
+                                                      "\n                                        " +
+                                                        _vm._s(element.text) +
+                                                        "\n                                    "
+                                                    ),
+                                                  ]
+                                                ),
+                                          ]
+                                        )
+                                      }
+                                    ),
+                                  ],
+                                  2
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "p",
+                                  { staticClass: "ma-0 text-center py-2" },
+                                  [
+                                    _c(
+                                      "span",
+                                      {
+                                        staticClass:
+                                          "black--text font-weight-bold text-subtitle-1 line-height_1",
+                                      },
+                                      [_vm._v("Cliente:")]
+                                    ),
+                                    _vm._v(" "),
+                                    _vm._l(
+                                      testimonio.cliente,
+                                      function (element, index) {
+                                        return _c(
+                                          "span",
+                                          { key: "cli" + index },
+                                          [
+                                            element.type == "normal"
+                                              ? _c(
+                                                  "span",
+                                                  {
+                                                    staticClass:
+                                                      "black--text text-subtitle-1 line-height_1",
+                                                  },
+                                                  [
+                                                    _vm._v(
+                                                      "\n                                        " +
+                                                        _vm._s(element.text) +
+                                                        "\n                                    "
+                                                    ),
+                                                  ]
+                                                )
+                                              : _c(
+                                                  "span",
+                                                  {
+                                                    staticClass:
+                                                      "primary--text font-weight-bold text-subtitle-1 line-height_1",
+                                                  },
+                                                  [
+                                                    _vm._v(
+                                                      "\n                                        " +
+                                                        _vm._s(element.text) +
+                                                        "\n                                    "
+                                                    ),
+                                                  ]
+                                                ),
+                                          ]
+                                        )
+                                      }
+                                    ),
+                                  ],
+                                  2
+                                ),
+                              ]
+                            ),
+                            _vm._v(" "),
+                            _c(
+                              "p",
+                              {
+                                staticClass:
+                                  "black--text text-caption ma-0 text-end pt-sm-8 pt-md-8",
+                              },
+                              [
+                                _vm._v(
+                                  "\n                            " +
+                                    _vm._s(testimonio.fecha) +
+                                    "\n                        "
+                                ),
+                              ]
+                            ),
+                          ],
+                          1
+                        ),
+                      ],
+                      1
+                    )
+                  }),
+                ],
+                2
+              ),
+            ],
+            1
           ),
         ],
         1

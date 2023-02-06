@@ -1,63 +1,87 @@
 <template>
-    <v-container class="content-wrap-2 pa-0 mx-auto">
-        <v-row class="pa-0 ma-0 content-wrap-2">
-            <div class="overlap-video content-wrap-2"></div>
-            <div class="col-12 pa-0 container-video">
-                <video autoplay muted loop id="myVideo">
-                    <source src="/app/tecnologia.mp4" type="video/mp4" />
-                </video>
-            </div>
-            <div class="content-img content-wrap-2 text-center">
-                <v-img src="/app/computer.png" class="mx-auto size_img"></v-img>
-                <p class="white--text font-weight-bold span_title">Tecnología</p>
-            </div>
-        </v-row>
-        <v-row class="pa-0 ma-0 content-wrap-2 mx-auto container-bandwith">
-            <v-col class="col-12 pa-0 ma-0">
-                <v-img src="/app/bandwith.png"></v-img>
-            </v-col>
-        </v-row>
+    <div>
+        <v-container fluid class="pa-0 mx-auto pt-5 py-16">
+            <v-row class="pa-0 ma-0">
+                <div class="overlap-video"></div>
+                <div class="col-12 pa-0 container-video">
+                    <video autoplay muted loop id="myVideo">
+                        <source src="/app/tecnologia.mp4" type="video/mp4" />
+                    </video>
+                </div>
+                <div class="content-img text-center">
+                    <v-img
+                        src="/app/computer.png"
+                        class="mx-auto size_img"
+                    ></v-img>
+                    <p class="white--text font-weight-bold span_title">
+                        Tecnología
+                    </p>
+                </div>
+            </v-row>
+            <!-- <v-row class="pa-0 ma-0 content-wrap-2 mx-auto container-bandwith">
+                <v-col class="col-12 pa-0 ma-0">
+                    <v-img src="/app/bandwith.png"></v-img>
+                </v-col>
+            </v-row> -->
 
-        <v-row class="pa-0 ma-0 justify-center content-wrap-0 mx-auto">
-            <v-col class="col-12 col-md-4 pa-1" v-for="(tec, i) in tecnologias" :key="'tec' + i">
-                <v-card class="container-card elevation-0 pa-10" height="350">
-                    <v-card-text class="pa-0" style="height:200px;">
-                        <v-img :src="tec.icon" :height="height" :width="width" class="mx-auto"></v-img>
-                        <h5
-                            class="line-height_1 text-h6 font-weight-bold text-uppercase text-center primary--text py-3"
-                        >{{ tec.titulo }}</h5>
-                        <p class="ma-0 text-center alternative--text">{{ tec.subtitulo }}</p>
-                    </v-card-text>
-                    <v-card-actions class="text-center">
-                        <v-spacer></v-spacer>
-                        <v-btn
-                            @click.prevent="showDetails(tec)"
-                            class="rounded-xl white--text font-weight-bold px-10"
-                            large
-                            color="primary"
-                        >ver más</v-btn>
-                        <v-spacer></v-spacer>
-                    </v-card-actions>
-                </v-card>
-            </v-col>
-        </v-row>
+            <v-row class="pa-0 ma-0 justify-center content-wrap-0 mx-auto py-16">
+                <v-col
+                    class="col-12 col-md-4 pa-1"
+                    v-for="(tec, i) in tecnologias"
+                    :key="'tec' + i"
+                >
+                    <v-card
+                        class="container-card elevation-0 pa-10"
+                        height="350"
+                    >
+                        <v-card-text class="pa-0" style="height: 200px">
+                            <v-img
+                                :src="tec.icon"
+                                :height="height"
+                                :width="width"
+                                class="mx-auto"
+                            ></v-img>
+                            <h5
+                                class="line-height_1 text-h6 font-weight-bold text-uppercase text-center primary--text py-3"
+                            >
+                                {{ tec.titulo }}
+                            </h5>
+                            <p class="ma-0 text-center alternative--text">
+                                {{ tec.subtitulo }}
+                            </p>
+                        </v-card-text>
+                        <v-card-actions class="text-center">
+                            <v-spacer></v-spacer>
+                            <v-btn
+                                @click.prevent="showDetails(tec)"
+                                class="rounded-xl white--text font-weight-bold px-10"
+                                large
+                                color="primary"
+                                >ver más</v-btn
+                            >
+                            <v-spacer></v-spacer>
+                        </v-card-actions>
+                    </v-card>
+                </v-col>
+            </v-row>
+        </v-container>
 
         <!--include footer-->
         <FooterGlobal></FooterGlobal>
         <ShowDetailsDialog ref="showDetailsDialog"></ShowDetailsDialog>
         <ChatComponent></ChatComponent>
-    </v-container>
+    </div>
 </template>
 
 <script>
 import ChatComponent from "../../components/global/ChatComponent.vue";
 import FooterGlobal from "../../components/global/FooterGlobal.vue";
-import ShowDetailsDialog from "../../components/utils/ShowDetailsDialog.vue"
+import ShowDetailsDialog from "../../components/utils/ShowDetailsDialog.vue";
 export default {
     components: {
         ChatComponent,
         FooterGlobal,
-        ShowDetailsDialog
+        ShowDetailsDialog,
     },
     data: () => ({
         height: 89,
@@ -156,7 +180,8 @@ export default {
                     },
                     {
                         titulo: "Aumento de la capacidad",
-                        descripcion: "instalada para el desarrollo de proyectos de TI.",
+                        descripcion:
+                            "instalada para el desarrollo de proyectos de TI.",
                     },
                     {
                         titulo: "Reportes de estado en línea",
@@ -186,7 +211,8 @@ export default {
                     },
                     {
                         titulo: "Toma de decisiones empresariales",
-                        descripcion: "con base en la información en línea presentada.",
+                        descripcion:
+                            "con base en la información en línea presentada.",
                     },
                     {
                         titulo: "Optimizar, transformar y combinar datos ",
@@ -266,11 +292,13 @@ export default {
                     },
                     {
                         titulo: "Monitorear el uso ",
-                        descripcion: "de la tecnología, para la toma de decisiones.",
+                        descripcion:
+                            "de la tecnología, para la toma de decisiones.",
                     },
                     {
                         titulo: "Gestionar el crecimiento",
-                        descripcion: "y la renovación tecnológica de manera eficiente.",
+                        descripcion:
+                            "y la renovación tecnológica de manera eficiente.",
                     },
                     {
                         titulo: "Calcular el costo de TI",
@@ -312,7 +340,8 @@ export default {
                 beneficios: [
                     {
                         titulo: "Aumentar la flexibilidad",
-                        descripcion: "de la organización y disminuir sus costos fijos.",
+                        descripcion:
+                            "de la organización y disminuir sus costos fijos.",
                     },
                     {
                         titulo: "Dedicar las inversiones y los recursos",
@@ -335,42 +364,37 @@ export default {
 
     mounted() {
         this.getPath();
-         this.$store.dispatch(
-            "app/changeTitlePage",
-            "Tecnología A&S"
-        );
+        this.$store.dispatch("app/changeTitlePage", "Tecnología A&S");
         document.title = this.$store.state.app.title_page;
-
 
         /**for visite */
         this.$store.dispatch("app/openPage", {
             page: window.location.pathname,
-            link: window.location.host + window.location.pathname
-        })
-
+            link: window.location.host + window.location.pathname,
+        });
     },
     destroyed() {
         this.$store.dispatch("app/closePage", {
-            visita_id: this.$store.state.app.visita_id
-        })
+            visita_id: this.$store.state.app.visita_id,
+        });
     },
     methods: {
         getPath() {
             let path = window.location.pathname + window.location.search;
 
             this.$store.dispatch("app/setPath", path);
-
         },
         showDetails(obj) {
-            this.$refs.showDetailsDialog.open(obj, "TECNOLOGÍA", {
-                color: "primary",
-                width: 750,
-            }).then(res => {
-                if (res) {
-
-                }
-            })
-        }
+            this.$refs.showDetailsDialog
+                .open(obj, "TECNOLOGÍA", {
+                    color: "primary",
+                    width: 750,
+                })
+                .then((res) => {
+                    if (res) {
+                    }
+                });
+        },
     },
 };
 </script>
@@ -384,7 +408,7 @@ export default {
     background-color: rgba(0, 0, 102, 0.38) !important;
 }
 .container-card {
-    background-color: #ededed !important;
+    background-color: #e3e2e2 !important;
 }
 .container-video {
     max-height: 326px;

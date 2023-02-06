@@ -1,56 +1,81 @@
 <template>
-    <v-container class="content-wrap-2 pa-0 mx-auto">
-        <v-row class="pa-0 ma-0 content-wrap-2">
-            <div class="overlap-video content-wrap-2"></div>
-            <div class="col-12 pa-0 container-video">
-                <video autoplay muted loop id="myVideo">
-                    <source src="/app/finanzas.mp4" type="video/mp4" />
-                </video>
-            </div>
-            <div class="content-img content-wrap-2 text-center">
-                <v-img src="/app/statistics.png" class="mx-auto size_img"></v-img>
-                <p class="white--text font-weight-bold span_title line-height_1">
-                    Finanzas y
-                    <br />Contabilidad
-                </p>
-            </div>
-        </v-row>
-        <v-row class="pa-0 ma-0 content-wrap-2 mx-auto container-bandwith">
+    <div>
+        <v-container fluid class="pa-0 mx-auto pt-5 py-16">
+            <v-row class="pa-0 ma-0">
+                <div class="overlap-video"></div>
+                <div class="col-12 pa-0 container-video">
+                    <video autoplay muted loop id="myVideo">
+                        <source src="/app/finanzas.mp4" type="video/mp4" />
+                    </video>
+                </div>
+                <div class="content-img text-center">
+                    <v-img
+                        src="/app/statistics.png"
+                        class="mx-auto size_img"
+                    ></v-img>
+                    <p
+                        class="white--text font-weight-bold span_title line-height_1"
+                    >
+                        Finanzas y
+                        <br />Contabilidad
+                    </p>
+                </div>
+            </v-row>
+            <!-- <v-row class="pa-0 ma-0 content-wrap-2 mx-auto container-bandwith">
             <v-col class="col-12 pa-0 ma-0">
                 <v-img src="/app/bandwith.png"></v-img>
             </v-col>
-        </v-row>
+        </v-row> -->
 
-        <v-row class="pa-0 ma-0 justify-center content-wrap-0 mx-auto">
-            <v-col class="col-12 col-md-4 pa-1" v-for="(tec, i) in tecnologias" :key="'tec' + i">
-                <v-card class="container-card elevation-0 pa-10" height="350">
-                    <v-card-text class="pa-0" style="height: 200px">
-                        <v-img :src="tec.icon" :height="height" :width="width" class="mx-auto"></v-img>
-                        <h5
-                            class="line-height_1 text-h6 font-weight-bold text-uppercase text-center primary--text py-3"
-                        >{{ tec.titulo }}</h5>
-                        <p class="ma-0 text-center alternative--text">{{ tec.subtitulo }}</p>
-                    </v-card-text>
-                    <v-card-actions class="text-center">
-                        <v-spacer></v-spacer>
-                        <v-btn
-                            @click.prevent="showDetails(tec)"
-                            class="rounded-xl white--text font-weight-bold px-10"
-                            large
-                            color="primary"
-                        >ver más</v-btn>
-                        <v-spacer></v-spacer>
-                    </v-card-actions>
-                </v-card>
-            </v-col>
-        </v-row>
-
+            <v-row
+                class="pa-0 ma-0 justify-center content-wrap-0 mx-auto py-16"
+            >
+                <v-col
+                    class="col-12 col-md-4 pa-1"
+                    v-for="(tec, i) in tecnologias"
+                    :key="'tec' + i"
+                >
+                    <v-card
+                        class="container-card elevation-0 pa-10"
+                        height="350"
+                    >
+                        <v-card-text class="pa-0" style="height: 200px">
+                            <v-img
+                                :src="tec.icon"
+                                :height="height"
+                                :width="width"
+                                class="mx-auto"
+                            ></v-img>
+                            <h5
+                                class="line-height_1 text-h6 font-weight-bold text-uppercase text-center primary--text py-3"
+                            >
+                                {{ tec.titulo }}
+                            </h5>
+                            <p class="ma-0 text-center alternative--text">
+                                {{ tec.subtitulo }}
+                            </p>
+                        </v-card-text>
+                        <v-card-actions class="text-center">
+                            <v-spacer></v-spacer>
+                            <v-btn
+                                @click.prevent="showDetails(tec)"
+                                class="rounded-xl white--text font-weight-bold px-10"
+                                large
+                                color="primary"
+                                >ver más</v-btn
+                            >
+                            <v-spacer></v-spacer>
+                        </v-card-actions>
+                    </v-card>
+                </v-col>
+            </v-row>
+        </v-container>
         <!--include footer-->
         <FooterGlobal></FooterGlobal>
         <ShowDetailsDialog2 ref="showDetailsDialog2"></ShowDetailsDialog2>
         <ShowDetailsDialog ref="showDetailsDialog"></ShowDetailsDialog>
         <ChatComponent></ChatComponent>
-    </v-container>
+    </div>
 </template>
 
 <script>
@@ -191,7 +216,8 @@ export default {
                     },
                     {
                         titulo: "Aumento de la capacidad",
-                        descripcion: "instalada para el desarrollo de proyectos de TI.",
+                        descripcion:
+                            "instalada para el desarrollo de proyectos de TI.",
                     },
                     {
                         titulo: "Reportes de estado en línea",
@@ -222,7 +248,8 @@ export default {
                     },
                     {
                         titulo: "Toma de decisiones empresariales",
-                        descripcion: "con base en la información en línea presentada.",
+                        descripcion:
+                            "con base en la información en línea presentada.",
                     },
                     {
                         titulo: "Optimizar, transformar y combinar datos ",
@@ -284,22 +311,21 @@ export default {
 
     mounted() {
         this.getPath();
- this.$store.dispatch(
+        this.$store.dispatch(
             "app/changeTitlePage",
             "Finanzas y Contabilidad A&S"
         );
         document.title = this.$store.state.app.title_page;
 
         this.$store.dispatch("app/openPage", {
-             page: window.location.pathname,
-            link: window.location.host + window.location.pathname
-        })
-
+            page: window.location.pathname,
+            link: window.location.host + window.location.pathname,
+        });
     },
     destroyed() {
         this.$store.dispatch("app/closePage", {
-            visita_id: this.$store.state.app.visita_id
-        })
+            visita_id: this.$store.state.app.visita_id,
+        });
     },
     methods: {
         getPath() {
@@ -319,7 +345,7 @@ export default {
                         }
                     });
 
-                return
+                return;
             }
             this.$refs.showDetailsDialog
                 .open(obj, "FINANZAS Y CONTABILIDAD", {
@@ -330,7 +356,6 @@ export default {
                     if (res) {
                     }
                 });
-
         },
     },
 };
@@ -345,7 +370,7 @@ export default {
     background-color: rgba(0, 0, 102, 0.38) !important;
 }
 .container-card {
-    background-color: #ededed !important;
+    background-color: #e3e2e2 !important;
 }
 .container-video {
     max-height: 326px;

@@ -98,6 +98,95 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
@@ -107,7 +196,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       phone_send: "tel:+51926302115",
       wame: "https://wa.me/51926302115",
       email: "reactivatunegocio@asconsulting.pe",
-      address: "Av. Alfredo Benavides 3695. Surco."
+      address: "Av. Alfredo Benavides 3695. Santiago de Surco. Lima, Perú."
     };
   },
   methods: {
@@ -121,8 +210,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
             switch (_context.prev = _context.next) {
               case 0:
                 shareData = {
-                  title: 'A&S Consulting Group',
-                  text: 'Solicita tu asesoría',
+                  title: "A&S Consulting Group",
+                  text: "Solicita tu asesoría",
                   url: _this.email
                 };
                 _context.prev = 1;
@@ -149,7 +238,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     },
     goToLocation: function goToLocation() {
       this.$router.push({
-        name: 'contacto'
+        name: "contacto"
       });
     }
   },
@@ -175,6 +264,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _components_global_ChatComponent_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../components/global/ChatComponent.vue */ "./resources/js/components/global/ChatComponent.vue");
 /* harmony import */ var _components_global_FooterGlobal_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../components/global/FooterGlobal.vue */ "./resources/js/components/global/FooterGlobal.vue");
+//
+//
+//
+//
 //
 //
 //
@@ -410,7 +503,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.container-map[data-v-842aedf0] {\n    height: 350px;\n}\n.steps-container[data-v-842aedf0] {\n    background-color: #ededed !important;\n}\n.theme--light.v-timeline[data-v-842aedf0]:before {\n    background: #000068;\n    padding-top: 10px;\n}\n.card-title-fases[data-v-842aedf0] {\n    position: relative;\n    top: 10px;\n    left: 10px;\n}\n\n/*fases*/\n.fase-1[data-v-842aedf0] {\n    position: absolute;\n    top: 200px;\n    left: 35px;\n}\n.fase-1 h5[data-v-842aedf0] {\n    text-align: center;\n    width: 140px;\n}\n.fase-1 p[data-v-842aedf0] {\n    max-width: 140px;\n    line-height: 1;\n    text-align: center;\n}\n.fase-2[data-v-842aedf0] {\n    position: absolute;\n    top: 315px;\n    left: 285px;\n}\n.fase-2 h5[data-v-842aedf0] {\n    text-align: center;\n    width: 140px;\n}\n.fase-2 p[data-v-842aedf0] {\n    max-width: 140px;\n    line-height: 1;\n    text-align: center;\n}\n.fase-3[data-v-842aedf0] {\n    position: absolute;\n    top: 100px;\n    left: 430px;\n}\n.fase-3 h5[data-v-842aedf0] {\n    text-align: center;\n    width: 140px;\n}\n.fase-3 p[data-v-842aedf0] {\n    max-width: 140px;\n    line-height: 1;\n    text-align: center;\n}\n.fase-4[data-v-842aedf0] {\n    position: absolute;\n    top: 315px;\n    right: 265px;\n}\n.fase-4 h5[data-v-842aedf0] {\n    text-align: center;\n    width: 140px;\n}\n.fase-4 p[data-v-842aedf0] {\n    max-width: 140px;\n    line-height: 1;\n    text-align: center;\n}\n.fase-5[data-v-842aedf0] {\n    position: absolute;\n    top: 200px;\n    right: 20px;\n}\n.fase-5 h5[data-v-842aedf0] {\n    text-align: center;\n    width: 140px;\n}\n.fase-5 p[data-v-842aedf0] {\n    max-width: 140px;\n    line-height: 1;\n    text-align: center;\n}\n.fases[data-v-842aedf0] {\n    display: none;\n}\n@media screen and (max-width: 992px) {\n.fase-1[data-v-842aedf0] {\n        position: absolute;\n        top: 28%;\n        left: 2%;\n        width: 15%;\n}\n.fase-1 h5[data-v-842aedf0] {\n        text-align: center;\n        font-size: 50% !important;\n        width: 100%;\n}\n.fase-1 p[data-v-842aedf0] {\n        display: none;\n}\n.fase-2[data-v-842aedf0] {\n        position: absolute;\n        top: 51%;\n        left: 28%;\n        width: 15%;\n}\n.fase-2 h5[data-v-842aedf0] {\n        text-align: center;\n        font-size: 50% !important;\n        width: 100%;\n}\n.fase-2 p[data-v-842aedf0] {\n        display: none;\n}\n.fase-3[data-v-842aedf0] {\n        position: absolute;\n        top: 20%;\n        left: 44%;\n        width: 15%;\n}\n.fase-3 h5[data-v-842aedf0] {\n        text-align: center;\n        width: 100%;\n        font-size: 50% !important;\n}\n.fase-3 p[data-v-842aedf0] {\n        display: none;\n}\n.fase-4[data-v-842aedf0] {\n        position: absolute;\n        top: 51%;\n        right: 26%;\n        width: 15%;\n}\n.fase-4 h5[data-v-842aedf0] {\n        text-align: center;\n        width: 100%;\n        font-size: 50% !important;\n}\n.fase-4 p[data-v-842aedf0] {\n        display: none;\n}\n.fase-5[data-v-842aedf0] {\n        position: absolute;\n        top: 28%;\n        right: 1%;\n        width: 15%;\n}\n.fase-5 h5[data-v-842aedf0] {\n        max-width: 100%;\n        text-align: center;\n        font-size: 50% !important;\n}\n.fase-5 p[data-v-842aedf0] {\n        display: none;\n}\n.fases[data-v-842aedf0] {\n        display: block;\n}\n.fase-title[data-v-842aedf0] {\n        font-size: 50% !important;\n        line-height: 1;\n}\n.fase-subtitle[data-v-842aedf0] {\n        font-size: 50% !important;\n        line-height: 0.7;\n}\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.container-map[data-v-842aedf0] {\n    height: 350px;\n}\n.steps-container[data-v-842aedf0] {\n    background-color: #e3e2e2 !important;\n}\n.theme--light.v-timeline[data-v-842aedf0]:before {\n    background: #000068;\n    padding-top: 10px;\n}\n.card-title-fases[data-v-842aedf0] {\n    position: relative;\n    top: 10px;\n    left: 10px;\n}\n\n/*fases*/\n.fase-1[data-v-842aedf0] {\n    position: absolute;\n    top: 200px;\n    left: 35px;\n}\n.fase-1 h5[data-v-842aedf0] {\n    text-align: center;\n    width: 140px;\n}\n.fase-1 p[data-v-842aedf0] {\n    max-width: 140px;\n    line-height: 1;\n    text-align: center;\n}\n.fase-2[data-v-842aedf0] {\n    position: absolute;\n    top: 315px;\n    left: 285px;\n}\n.fase-2 h5[data-v-842aedf0] {\n    text-align: center;\n    width: 140px;\n}\n.fase-2 p[data-v-842aedf0] {\n    max-width: 140px;\n    line-height: 1;\n    text-align: center;\n}\n.fase-3[data-v-842aedf0] {\n    position: absolute;\n    top: 100px;\n    left: 430px;\n}\n.fase-3 h5[data-v-842aedf0] {\n    text-align: center;\n    width: 140px;\n}\n.fase-3 p[data-v-842aedf0] {\n    max-width: 140px;\n    line-height: 1;\n    text-align: center;\n}\n.fase-4[data-v-842aedf0] {\n    position: absolute;\n    top: 315px;\n    right: 265px;\n}\n.fase-4 h5[data-v-842aedf0] {\n    text-align: center;\n    width: 140px;\n}\n.fase-4 p[data-v-842aedf0] {\n    max-width: 140px;\n    line-height: 1;\n    text-align: center;\n}\n.fase-5[data-v-842aedf0] {\n    position: absolute;\n    top: 200px;\n    right: 20px;\n}\n.fase-5 h5[data-v-842aedf0] {\n    text-align: center;\n    width: 140px;\n}\n.fase-5 p[data-v-842aedf0] {\n    max-width: 140px;\n    line-height: 1;\n    text-align: center;\n}\n.fases[data-v-842aedf0] {\n    display: none;\n}\n@media screen and (max-width: 992px) {\n.fase-1[data-v-842aedf0] {\n        position: absolute;\n        top: 28%;\n        left: 2%;\n        width: 15%;\n}\n.fase-1 h5[data-v-842aedf0] {\n        text-align: center;\n        font-size: 50% !important;\n        width: 100%;\n}\n.fase-1 p[data-v-842aedf0] {\n        display: none;\n}\n.fase-2[data-v-842aedf0] {\n        position: absolute;\n        top: 51%;\n        left: 28%;\n        width: 15%;\n}\n.fase-2 h5[data-v-842aedf0] {\n        text-align: center;\n        font-size: 50% !important;\n        width: 100%;\n}\n.fase-2 p[data-v-842aedf0] {\n        display: none;\n}\n.fase-3[data-v-842aedf0] {\n        position: absolute;\n        top: 20%;\n        left: 44%;\n        width: 15%;\n}\n.fase-3 h5[data-v-842aedf0] {\n        text-align: center;\n        width: 100%;\n        font-size: 50% !important;\n}\n.fase-3 p[data-v-842aedf0] {\n        display: none;\n}\n.fase-4[data-v-842aedf0] {\n        position: absolute;\n        top: 51%;\n        right: 26%;\n        width: 15%;\n}\n.fase-4 h5[data-v-842aedf0] {\n        text-align: center;\n        width: 100%;\n        font-size: 50% !important;\n}\n.fase-4 p[data-v-842aedf0] {\n        display: none;\n}\n.fase-5[data-v-842aedf0] {\n        position: absolute;\n        top: 28%;\n        right: 1%;\n        width: 15%;\n}\n.fase-5 h5[data-v-842aedf0] {\n        max-width: 100%;\n        text-align: center;\n        font-size: 50% !important;\n}\n.fase-5 p[data-v-842aedf0] {\n        display: none;\n}\n.fases[data-v-842aedf0] {\n        display: block;\n}\n.fase-title[data-v-842aedf0] {\n        font-size: 50% !important;\n        line-height: 1;\n}\n.fase-subtitle[data-v-842aedf0] {\n        font-size: 50% !important;\n        line-height: 0.7;\n}\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -782,27 +875,16 @@ var render = function () {
     [
       _c(
         "v-row",
-        { staticClass: "pa-0 ma-0 content-wrap-2 mx-auto footer-container" },
-        [
-          _c(
-            "v-col",
-            { staticClass: "col-12 pa-0 ma-0 rotate-180 container-bandwith" },
-            [_c("v-img", { attrs: { src: "/app/bandwith.png " } })],
-            1
-          ),
-        ],
-        1
-      ),
-      _vm._v(" "),
-      _c(
-        "v-row",
-        { staticClass: "primary pa-0 ma-0 content-wrap-2 mx-auto" },
+        {
+          staticClass:
+            "grey darken-4 pa-0 ma-0 mx-auto justify-center align-start py-10",
+        },
         [
           _c(
             "v-col",
             {
               staticClass:
-                "col-12 col-md-6 d-flex flex-wrap justify-center align-center",
+                "col-12 col-md-2 col-xl-2 d-flex flex-wrap justify-center align-center",
             },
             [
               _c(
@@ -816,166 +898,205 @@ var render = function () {
                 ],
                 1
               ),
+            ]
+          ),
+          _vm._v(" "),
+          _c(
+            "v-col",
+            {
+              staticClass:
+                "col-12 col-md-3 col-xl-3 d-flex flex-column justify-center align-start",
+            },
+            [
+              _c("p", { staticClass: "white--text font-weight-bold px-4" }, [
+                _vm._v("CONTACTO"),
+              ]),
               _vm._v(" "),
-              _c("span", { staticClass: "white--text as-footer_text px-4" }, [
-                _vm._v(
-                  "\n                Copyright ©" +
-                    _vm._s(_vm.yearActual) +
-                    " by A&S Consulting Group.\n            "
-                ),
+              _c(
+                "a",
+                {
+                  staticClass: "white--text px-4",
+                  on: {
+                    click: function ($event) {
+                      $event.preventDefault()
+                      return _vm.goToLocation()
+                    },
+                  },
+                },
+                [
+                  _c(
+                    "v-icon",
+                    { attrs: { small: "", color: "white", left: "" } },
+                    [_vm._v("mdi-map-marker")]
+                  ),
+                  _vm._v(" " + _vm._s(_vm.address) + "\n            "),
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "a",
+                {
+                  staticClass: "white--text px-4",
+                  attrs: { href: _vm.phone_send },
+                },
+                [
+                  _c(
+                    "v-icon",
+                    { attrs: { small: "", color: "white", left: "" } },
+                    [_vm._v("mdi-phone")]
+                  ),
+                  _vm._v(" " + _vm._s(_vm.phone_contact) + "\n            "),
+                ],
+                1
+              ),
+            ]
+          ),
+          _vm._v(" "),
+          _c(
+            "v-col",
+            {
+              staticClass:
+                "col-12 col-md-3 col-xl-3 d-flex flex-column justify-center align-start",
+            },
+            [
+              _c("p", { staticClass: "white--text font-weight-bold px-4" }, [
+                _vm._v("LEGAL"),
+              ]),
+              _vm._v(" "),
+              _c("a", { staticClass: "white--text px-4" }, [
+                _vm._v(" Términos y condiciones "),
+              ]),
+              _vm._v(" "),
+              _c("a", { staticClass: "white--text px-4" }, [
+                _vm._v(" Privacidad "),
               ]),
             ]
           ),
           _vm._v(" "),
           _c(
             "v-col",
-            { staticClass: "col-12 col-md-6 text-center text-md-left " },
+            {
+              staticClass:
+                "col-12 col-md-3 col-xl-3 d-flex flex-column justify-center align-start",
+            },
             [
-              _c("v-col", [
-                _c(
-                  "span",
-                  {
-                    staticClass:
-                      "white--text d-block d-md-inline-flex align-center justify-center",
-                  },
-                  [
-                    _c(
-                      "v-btn",
-                      {
-                        staticClass: "white--text",
-                        attrs: {
-                          fab: "",
-                          text: "",
-                          small: "",
-                          link: "",
-                          href: _vm.phone_send,
-                        },
-                      },
-                      [
-                        _c("v-icon", { attrs: { color: "white" } }, [
-                          _vm._v("mdi-phone-message"),
-                        ]),
-                      ],
-                      1
-                    ),
-                    _vm._v(
-                      "\n                    " +
-                        _vm._s(_vm.phone_contact) +
-                        "\n                "
-                    ),
-                  ],
-                  1
-                ),
-                _vm._v(" "),
-                _c(
-                  "span",
-                  {
-                    staticClass:
-                      "white--text d-block d-md-inline-flex align-center justify-center",
-                  },
-                  [
-                    _c(
-                      "v-btn",
-                      {
-                        staticClass: "white--text",
-                        attrs: { fab: "", text: "", small: "", link: "" },
-                        on: {
-                          click: function ($event) {
-                            $event.preventDefault()
-                            return _vm.openEmail()
-                          },
-                        },
-                      },
-                      [
-                        _c("v-icon", { attrs: { color: "white" } }, [
-                          _vm._v("mdi-email-open"),
-                        ]),
-                      ],
-                      1
-                    ),
-                    _vm._v(
-                      "\n                    " +
-                        _vm._s(_vm.email) +
-                        "\n                "
-                    ),
-                  ],
-                  1
-                ),
+              _c("p", { staticClass: "white--text font-weight-bold px-4" }, [
+                _vm._v("SÍGUENOS"),
               ]),
               _vm._v(" "),
-              _c("v-col", [
-                _c(
-                  "span",
-                  {
-                    staticClass:
-                      "white--text d-block d-md-inline-flex align-center justify-center",
-                  },
-                  [
-                    _c(
-                      "v-btn",
-                      {
-                        staticClass: "white--text",
-                        attrs: {
-                          fab: "",
-                          text: "",
-                          small: "",
-                          href: _vm.wame,
-                          target: "_blank",
-                        },
+              _c(
+                "div",
+                { staticClass: "d-flex flex-wrap px-4" },
+                [
+                  _c(
+                    "v-btn",
+                    {
+                      staticClass: "elevation-0",
+                      attrs: {
+                        fab: "",
+                        small: "",
+                        text: "",
+                        color: "primary",
+                        href: "https://www.facebook.com/AS-Consulting-Group-141818089928155",
+                        target: "_blank",
                       },
-                      [
-                        _c("v-icon", { attrs: { color: "white" } }, [
-                          _vm._v("mdi-whatsapp"),
-                        ]),
-                      ],
-                      1
-                    ),
-                    _vm._v(
-                      "\n                    " +
-                        _vm._s(_vm.phone_contact) +
-                        "\n                "
-                    ),
-                  ],
-                  1
-                ),
-                _vm._v(" "),
-                _c(
-                  "span",
-                  {
-                    staticClass:
-                      "white--text d-block d-md-inline-flex align-center justify-center",
-                  },
-                  [
-                    _c(
-                      "v-btn",
-                      {
-                        staticClass: "white--text",
-                        attrs: { fab: "", text: "", small: "", link: "" },
-                        on: {
-                          click: function ($event) {
-                            $event.preventDefault()
-                            return _vm.goToLocation()
-                          },
-                        },
+                    },
+                    [
+                      _c("v-icon", { attrs: { color: "white" } }, [
+                        _vm._v("mdi-facebook"),
+                      ]),
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "v-btn",
+                    {
+                      staticClass: "elevation-0",
+                      attrs: {
+                        fab: "",
+                        small: "",
+                        text: "",
+                        color: "primary",
+                        href: "https://www.instagram.com/asconsultinggroup/",
+                        target: "_blank",
                       },
-                      [
-                        _c("v-icon", { attrs: { color: "white" } }, [
-                          _vm._v("mdi-map-marker"),
-                        ]),
-                      ],
-                      1
-                    ),
-                    _vm._v(
-                      "\n                    " +
-                        _vm._s(_vm.address) +
-                        "\n                "
-                    ),
-                  ],
-                  1
-                ),
-              ]),
-            ],
-            1
+                    },
+                    [
+                      _c("v-icon", { attrs: { color: "white" } }, [
+                        _vm._v("mdi-instagram"),
+                      ]),
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "v-btn",
+                    {
+                      staticClass: "elevation-0",
+                      attrs: {
+                        fab: "",
+                        small: "",
+                        text: "",
+                        color: "primary",
+                        href: "https://www.linkedin.com/company/as.consulting/",
+                        target: "_blank",
+                      },
+                    },
+                    [
+                      _c("v-icon", { attrs: { color: "white" } }, [
+                        _vm._v("mdi-linkedin"),
+                      ]),
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "v-btn",
+                    {
+                      staticClass: "elevation-0",
+                      attrs: {
+                        fab: "",
+                        small: "",
+                        text: "",
+                        color: "primary",
+                        href: "https://www.youtube.com/channel/UCLGe4u_VDbkoJWE2LkMni9w/featured?view_as=subscriber",
+                        target: "_blank",
+                      },
+                    },
+                    [
+                      _c("v-icon", { attrs: { color: "white" } }, [
+                        _vm._v("mdi-youtube"),
+                      ]),
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "v-btn",
+                    {
+                      staticClass: "elevation-0",
+                      attrs: {
+                        fab: "",
+                        small: "",
+                        text: "",
+                        color: "primary",
+                        href: "https://twitter.com/pymedigitalAS",
+                        target: "_blank",
+                      },
+                    },
+                    [
+                      _c("v-icon", { attrs: { color: "white" } }, [
+                        _vm._v("mdi-twitter"),
+                      ]),
+                    ],
+                    1
+                  ),
+                ],
+                1
+              ),
+            ]
           ),
         ],
         1
@@ -1007,305 +1128,303 @@ var render = function () {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c(
-    "v-container",
-    { staticClass: "content-wrap-2 pa-0 mx-auto" },
+    "div",
     [
       _c(
-        "v-row",
-        { staticClass: "pa-0 ma-0 content-wrap-2 mx-auto" },
+        "v-container",
+        { staticClass: "content-wrap-2 pa-0 mx-auto py-16" },
         [
           _c(
-            "v-col",
-            { staticClass: "col-12 pa-0 ma-0" },
+            "v-row",
+            {
+              staticClass:
+                "pa-0 ma-0 content-wrap-0 mx-auto align-center my-16",
+            },
             [
-              _c("v-card", {
-                staticClass: "elevation-2 rounded-0",
-                attrs: { color: "primary", height: "25" },
-              }),
+              _c(
+                "v-col",
+                { staticClass: "col-12 col-md-6 text-center my-4 mx-auto" },
+                [
+                  _c(
+                    "span",
+                    {
+                      staticClass:
+                        "primary--text text-uppercase as-text_extralarge line-height_1",
+                    },
+                    [_vm._v("Nuestra")]
+                  ),
+                  _vm._v(" "),
+                  _c("br"),
+                  _vm._v(" "),
+                  _c(
+                    "span",
+                    {
+                      staticClass:
+                        "pl-6 primary--text font-weight-bold text-uppercase as-text_extralarge line-height_1 after-center_block",
+                    },
+                    [_vm._v("Metodología")]
+                  ),
+                ]
+              ),
             ],
             1
           ),
-        ],
-        1
-      ),
-      _vm._v(" "),
-      _c(
-        "v-row",
-        { staticClass: "pa-0 ma-0 content-wrap-0 mx-auto align-center mt-8" },
-        [
+          _vm._v(" "),
           _c(
-            "v-col",
-            { staticClass: "col-12 col-md-6 text-center my-4 mx-auto" },
+            "v-row",
+            {
+              staticClass: "pa-0 ma-0 content-wrap-0 mx-auto align-center my-0",
+            },
             [
               _c(
-                "span",
+                "v-col",
                 {
-                  staticClass:
-                    "primary--text text-uppercase as-text_extralarge line-height_1",
-                },
-                [_vm._v("Nuestra")]
-              ),
-              _vm._v(" "),
-              _c("br"),
-              _vm._v(" "),
-              _c(
-                "span",
-                {
-                  staticClass:
-                    "pl-6 primary--text font-weight-bold text-uppercase as-text_extralarge line-height_1 after-center_block",
-                },
-                [_vm._v("Metodología")]
-              ),
-            ]
-          ),
-        ],
-        1
-      ),
-      _vm._v(" "),
-      _c(
-        "v-row",
-        { staticClass: "pa-0 ma-0 content-wrap-0 mx-auto align-center my-0" },
-        [
-          _c(
-            "v-col",
-            { staticClass: "col-12 col-md-6 text-center my-4 mx-auto px-10" },
-            [
-              _c(
-                "p",
-                {
-                  staticClass:
-                    "alternative--text text-justify as-p_normal ma-0",
-                },
-                [
-                  _vm._v(
-                    "\n                Promovemos el trabajo colaborativo, que considera las necesidades\n                cambiantes de nuestros clientes y del mercado.​\n            "
-                  ),
-                ]
-              ),
-              _vm._v(" "),
-              _c("br"),
-              _vm._v(" "),
-              _c(
-                "p",
-                {
-                  staticClass:
-                    "alternative--text text-justify as-p_normal ma-0",
-                },
-                [
-                  _vm._v(
-                    "\n                Nuestras tres líneas de servicio integradas - tecnología, finanzas y\n                procesos - utilizan la siguiente metodología:\n            "
-                  ),
-                ]
-              ),
-            ]
-          ),
-        ],
-        1
-      ),
-      _vm._v(" "),
-      _c(
-        "v-row",
-        { staticClass: "pa-0 ma-0 content-wrap-0 mx-auto align-center my-0" },
-        [
-          _c(
-            "v-col",
-            { staticClass: "col-12" },
-            [
-              _c(
-                "v-card",
-                {
-                  staticClass:
-                    "steps-container elevation-10 rounded-lg pa-4 pa-md-10",
+                  staticClass: "col-12 col-md-6 text-center my-4 mx-auto px-10",
                 },
                 [
                   _c(
                     "p",
                     {
                       staticClass:
-                        "as-text_underline-init-large line-height_1 primary--text my-0 card-title-fases",
+                        "alternative--text text-justify as-p_normal ma-0",
                     },
-                    [_vm._v("FASES")]
+                    [
+                      _vm._v(
+                        "\n                    Promovemos el trabajo colaborativo, que considera las necesidades\n                    cambiantes de nuestros clientes y del mercado.​\n                "
+                      ),
+                    ]
                   ),
                   _vm._v(" "),
-                  _c("v-img", { attrs: { src: "/app/steps.png" } }),
+                  _c("br"),
                   _vm._v(" "),
-                  _c("div", { staticClass: "fase-1" }, [
-                    _c(
-                      "h5",
-                      { staticClass: "primary--text font-weight-bold" },
-                      [_vm._v("ESTABLECER")]
-                    ),
-                    _vm._v(" "),
-                    _c("p", { staticClass: "caption alternative--text" }, [
-                      _vm._v("Alcance, estructura y objetivos del servicio."),
-                    ]),
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "fase-2" }, [
-                    _c(
-                      "h5",
-                      { staticClass: "primary--text font-weight-bold" },
-                      [_vm._v("RECOPILAR")]
-                    ),
-                    _vm._v(" "),
-                    _c("p", { staticClass: "caption alternative--text" }, [
+                  _c(
+                    "p",
+                    {
+                      staticClass:
+                        "alternative--text text-justify as-p_normal ma-0",
+                    },
+                    [
                       _vm._v(
-                        "\n                        La información actual y relevante de la empresa para el desarrollo\n                        del servicio (financiera, procesos y tecnología).\n                    "
+                        "\n                    Nuestras tres líneas de servicio integradas - tecnología, finanzas y\n                    procesos - utilizan la siguiente metodología:\n                "
                       ),
-                    ]),
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "fase-3" }, [
-                    _c(
-                      "h5",
-                      { staticClass: "primary--text font-weight-bold" },
-                      [_vm._v("EVALUAR")]
-                    ),
-                    _vm._v(" "),
-                    _c("p", { staticClass: "caption alternative--text" }, [
-                      _vm._v(
-                        "\n                        El estado actual de la empresa comparándola con las mejores\n                        prácticas y nuestros modelos\n                    "
-                      ),
-                    ]),
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "fase-4" }, [
-                    _c(
-                      "h5",
-                      { staticClass: "primary--text font-weight-bold" },
-                      [_vm._v("PROPONER")]
-                    ),
-                    _vm._v(" "),
-                    _c("p", { staticClass: "caption alternative--text" }, [
-                      _vm._v("La propuesta de valor integral."),
-                    ]),
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "fase-5" }, [
-                    _c(
-                      "h5",
-                      { staticClass: "primary--text font-weight-bold" },
-                      [_vm._v("IMPLEMENTAR")]
-                    ),
-                    _vm._v(" "),
-                    _c("p", { staticClass: "caption alternative--text" }, [
-                      _vm._v("Propuesta de valor integral."),
-                    ]),
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "fases text-center" }, [
-                    _c("div", [
+                    ]
+                  ),
+                ]
+              ),
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "v-row",
+            {
+              staticClass: "pa-0 ma-0 content-wrap-0 mx-auto align-center my-0",
+            },
+            [
+              _c(
+                "v-col",
+                { staticClass: "col-12" },
+                [
+                  _c(
+                    "v-card",
+                    {
+                      staticClass:
+                        "steps-container elevation-10 rounded-lg pa-4 pa-md-10",
+                    },
+                    [
                       _c(
-                        "span",
+                        "p",
                         {
                           staticClass:
-                            "primary--text font-weight-bold fase-title",
+                            "as-text_underline-init-large line-height_1 primary--text my-0 card-title-fases",
                         },
-                        [_vm._v("01.-")]
+                        [_vm._v("FASES")]
                       ),
                       _vm._v(" "),
-                      _c(
-                        "span",
-                        {
-                          staticClass:
-                            "caption alternative--text fase-subtitle",
-                        },
-                        [
+                      _c("v-img", { attrs: { src: "/app/steps.png" } }),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "fase-1" }, [
+                        _c(
+                          "h5",
+                          { staticClass: "primary--text font-weight-bold" },
+                          [_vm._v("ESTABLECER")]
+                        ),
+                        _vm._v(" "),
+                        _c("p", { staticClass: "caption alternative--text" }, [
                           _vm._v(
                             "Alcance, estructura y objetivos del servicio."
                           ),
-                        ]
-                      ),
-                    ]),
-                    _vm._v(" "),
-                    _c("div", [
-                      _c(
-                        "span",
-                        {
-                          staticClass:
-                            "primary--text font-weight-bold fase-title",
-                        },
-                        [_vm._v("02.-")]
-                      ),
+                        ]),
+                      ]),
                       _vm._v(" "),
-                      _c(
-                        "span",
-                        {
-                          staticClass:
-                            "caption alternative--text fase-subtitle",
-                        },
-                        [
+                      _c("div", { staticClass: "fase-2" }, [
+                        _c(
+                          "h5",
+                          { staticClass: "primary--text font-weight-bold" },
+                          [_vm._v("RECOPILAR")]
+                        ),
+                        _vm._v(" "),
+                        _c("p", { staticClass: "caption alternative--text" }, [
                           _vm._v(
-                            "\n                            La información actual y relevante de la empresa para el\n                            desarrollo del servicio (financiera, procesos y tecnología).\n                        "
+                            "\n                            La información actual y relevante de la empresa para el desarrollo\n                            del servicio (financiera, procesos y tecnología).\n                        "
                           ),
-                        ]
-                      ),
-                    ]),
-                    _vm._v(" "),
-                    _c("div", [
-                      _c(
-                        "span",
-                        {
-                          staticClass:
-                            "primary--text font-weight-bold fase-title",
-                        },
-                        [_vm._v("03.-")]
-                      ),
+                        ]),
+                      ]),
                       _vm._v(" "),
-                      _c(
-                        "span",
-                        {
-                          staticClass:
-                            "caption alternative--text fase-subtitle",
-                        },
-                        [
+                      _c("div", { staticClass: "fase-3" }, [
+                        _c(
+                          "h5",
+                          { staticClass: "primary--text font-weight-bold" },
+                          [_vm._v("EVALUAR")]
+                        ),
+                        _vm._v(" "),
+                        _c("p", { staticClass: "caption alternative--text" }, [
                           _vm._v(
                             "\n                            El estado actual de la empresa comparándola con las mejores\n                            prácticas y nuestros modelos\n                        "
                           ),
-                        ]
-                      ),
-                    ]),
-                    _vm._v(" "),
-                    _c("div", [
-                      _c(
-                        "span",
-                        {
-                          staticClass:
-                            "primary--text font-weight-bold fase-title",
-                        },
-                        [_vm._v("04.-")]
-                      ),
+                        ]),
+                      ]),
                       _vm._v(" "),
-                      _c(
-                        "span",
-                        {
-                          staticClass:
-                            "caption alternative--text fase-subtitle",
-                        },
-                        [_vm._v("La propuesta de valor integral.")]
-                      ),
-                    ]),
-                    _vm._v(" "),
-                    _c("div", [
-                      _c(
-                        "span",
-                        {
-                          staticClass:
-                            "primary--text font-weight-bold fase-title",
-                        },
-                        [_vm._v("05.-")]
-                      ),
+                      _c("div", { staticClass: "fase-4" }, [
+                        _c(
+                          "h5",
+                          { staticClass: "primary--text font-weight-bold" },
+                          [_vm._v("PROPONER")]
+                        ),
+                        _vm._v(" "),
+                        _c("p", { staticClass: "caption alternative--text" }, [
+                          _vm._v("La propuesta de valor integral."),
+                        ]),
+                      ]),
                       _vm._v(" "),
-                      _c(
-                        "span",
-                        {
-                          staticClass:
-                            "caption alternative--text fase-subtitle",
-                        },
-                        [_vm._v("Propuesta de valor integral.")]
-                      ),
-                    ]),
-                  ]),
+                      _c("div", { staticClass: "fase-5" }, [
+                        _c(
+                          "h5",
+                          { staticClass: "primary--text font-weight-bold" },
+                          [_vm._v("IMPLEMENTAR")]
+                        ),
+                        _vm._v(" "),
+                        _c("p", { staticClass: "caption alternative--text" }, [
+                          _vm._v("Propuesta de valor integral."),
+                        ]),
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "fases text-center" }, [
+                        _c("div", [
+                          _c(
+                            "span",
+                            {
+                              staticClass:
+                                "primary--text font-weight-bold fase-title",
+                            },
+                            [_vm._v("01.-")]
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "span",
+                            {
+                              staticClass:
+                                "caption alternative--text fase-subtitle",
+                            },
+                            [
+                              _vm._v(
+                                "Alcance, estructura y objetivos del servicio."
+                              ),
+                            ]
+                          ),
+                        ]),
+                        _vm._v(" "),
+                        _c("div", [
+                          _c(
+                            "span",
+                            {
+                              staticClass:
+                                "primary--text font-weight-bold fase-title",
+                            },
+                            [_vm._v("02.-")]
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "span",
+                            {
+                              staticClass:
+                                "caption alternative--text fase-subtitle",
+                            },
+                            [
+                              _vm._v(
+                                "\n                                La información actual y relevante de la empresa para el\n                                desarrollo del servicio (financiera, procesos y tecnología).\n                            "
+                              ),
+                            ]
+                          ),
+                        ]),
+                        _vm._v(" "),
+                        _c("div", [
+                          _c(
+                            "span",
+                            {
+                              staticClass:
+                                "primary--text font-weight-bold fase-title",
+                            },
+                            [_vm._v("03.-")]
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "span",
+                            {
+                              staticClass:
+                                "caption alternative--text fase-subtitle",
+                            },
+                            [
+                              _vm._v(
+                                "\n                                El estado actual de la empresa comparándola con las mejores\n                                prácticas y nuestros modelos\n                            "
+                              ),
+                            ]
+                          ),
+                        ]),
+                        _vm._v(" "),
+                        _c("div", [
+                          _c(
+                            "span",
+                            {
+                              staticClass:
+                                "primary--text font-weight-bold fase-title",
+                            },
+                            [_vm._v("04.-")]
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "span",
+                            {
+                              staticClass:
+                                "caption alternative--text fase-subtitle",
+                            },
+                            [_vm._v("La propuesta de valor integral.")]
+                          ),
+                        ]),
+                        _vm._v(" "),
+                        _c("div", [
+                          _c(
+                            "span",
+                            {
+                              staticClass:
+                                "primary--text font-weight-bold fase-title",
+                            },
+                            [_vm._v("05.-")]
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "span",
+                            {
+                              staticClass:
+                                "caption alternative--text fase-subtitle",
+                            },
+                            [_vm._v("Propuesta de valor integral.")]
+                          ),
+                        ]),
+                      ]),
+                    ],
+                    1
+                  ),
                 ],
                 1
               ),

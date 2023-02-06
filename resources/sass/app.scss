@@ -9,23 +9,24 @@
 
 @import url('https://cdn.jsdelivr.net/npm/@mdi/font@4.x/css/materialdesignicons.min.css');
 
+@import url('https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Condensed:ital,wght@0,300;0,400;1,400&display=swap');
+/**ROBOTO CONDENSED FONTS**/
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,400;1,400&display=swap');
 
-/**QUILL FONTS**/
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@200&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@200;400&display=swap');
-
-$font-family: 'Raleway';
+$font-family: 'Roboto Condensed';
 
 .v-application {
     [class*='text-'] {
         color: #000068;
         font-family: $font-family, sans-serif !important;
-        $title-font: 'Raleway';
+        $title-font: 'Roboto Condensed';
     }
 
     font-family: $font-family,
     sans-serif !important;
-    $title-font: 'Raleway';
+    $title-font: 'Roboto Condensed';
 }
 
 .v-application title {
@@ -33,27 +34,25 @@ $font-family: 'Raleway';
 }
 
 
-.ql-picker.ql-font .ql-picker-label[data-value="Raleway"]::before,
-.ql-picker.ql-font .ql-picker-item[data-value="Raleway"]::before
-{
-    font-family: "Raleway", cursive;
-    content: "Raleway";
+.ql-picker.ql-font .ql-picker-label[data-value="Roboto Condensed"]::before,
+.ql-picker.ql-font .ql-picker-item[data-value="Roboto Condensed"]::before {
+    font-family: "Roboto Condensed", cursive;
+    content: "Roboto Condensed";
 }
 
 .ql-picker.ql-font .ql-picker-label[data-value="Roboto"]::before,
-.ql-picker.ql-font .ql-picker-item[data-value="Roboto"]::before
-{
+.ql-picker.ql-font .ql-picker-item[data-value="Roboto"]::before {
     font-family: "Roboto", cursive;
     content: "Roboto";
 }
 
 /* Set content font-families */
 .ql-font-Raleway {
-    font-family: "Raleway";
+    font-family: "Roboto";
 }
 
 .ql-font-Roboto {
-    font-family: "Roboto";
+    font-family: "Roboto Condensed";
 }
 
 /* We do not set Aref Ruqaa since it is the default font */
@@ -88,12 +87,12 @@ html {
 
 /**css**/
 .content-wrap {
-    max-width: 1380px;
+    max-width: 90%;
     background-color: transparent;
 }
 
 .content-wrap-2 {
-    max-width: 1480px;
+    max-width: 90%;
     background-color: transparent;
 }
 
@@ -105,6 +104,27 @@ html {
 .content-wrap-article {
     max-width: 940px;
     background-color: transparent;
+}
+
+@media screen and (max-width:960px) {
+
+    /**css**/
+    .content-wrap {
+        max-width: 100%;
+
+    }
+
+    .content-wrap-2 {
+        max-width: 100%;
+    }
+
+    .content-wrap-0 {
+        max-width: 1000px;
+    }
+
+    .content-wrap-article {
+        max-width: 940px;
+    }
 }
 
 
@@ -233,6 +253,7 @@ header {
 
 .as-li_normal {
     font-size: 1.4rem;
+    list-style: none;
 }
 
 .line-height_1 {
@@ -302,7 +323,7 @@ header {
 }
 
 .as-text_underline-init {
-    font-size: 1.2rem;
+    font-size: 2.0rem;
     font-weight: bold;
 }
 
@@ -413,6 +434,10 @@ header {
     .as-p_normal {
         font-size: 0.9rem;
     }
+    .as-text_underline-init {
+        font-size: 1.4rem;
+        font-weight: bold;
+    }
 
     .as-text_underline-init-large {
         font-size: 1.7rem;
@@ -437,4 +462,73 @@ header {
 
 .c-pointer {
     cursor: pointer;
+}
+
+#no-background-hover::before {
+    background-color: transparent !important;
+}
+
+/**transitions**/
+.slide-fade-enter-active {
+    transition: all .5s ease;
+}
+
+.slide-fade-leave-active {
+    transition: all .05s cubic-bezier(0.5, 0.5, 0.5, 0.5);
+}
+
+.slide-fade-enter,
+.slide-fade-leave-to
+
+/* .slide-fade-leave-active below version 2.1.8 */
+    {
+    transform: translateX(-10px);
+    opacity: 0;
+}
+
+.fade-enter-active {
+    transition: opacity 1.0s ease;
+}
+.fade-leave-active {
+    transition: opacity 0.1s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+    opacity: 0;
+}
+/**for carousel vuetify**/
+// .v-carousel__controls__item.v-btn.v-btn--icon {
+//     background-color: #ebece9; /* Background color of non-active ones */
+//     height: 2px; /* Height you want */
+//     width: 40px; /* Width you want */
+//     border-radius: 0; /* Remove default border radius */
+// }
+
+.v-carousel__controls__item.v-btn.v-btn--icon.v-btn--active {
+    color: #000068; /* Colour for active one */
+}
+
+// .v-carousel__controls__item.v-btn.v-btn--icon:hover {
+//     background-color: #ebece9; /* You might also want to customise the hover effect */
+// }
+
+// .v-btn__content .v-icon {
+//     display: none; /* Removes the default icon */
+// }
+.fade-in {
+    opacity: 1;
+    animation-name: fadeInOpacity;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in;
+    animation-duration: 2s;
+}
+
+@keyframes fadeInOpacity {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }

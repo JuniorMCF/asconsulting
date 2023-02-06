@@ -98,6 +98,95 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
@@ -107,7 +196,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       phone_send: "tel:+51926302115",
       wame: "https://wa.me/51926302115",
       email: "reactivatunegocio@asconsulting.pe",
-      address: "Av. Alfredo Benavides 3695. Surco."
+      address: "Av. Alfredo Benavides 3695. Santiago de Surco. Lima, Perú."
     };
   },
   methods: {
@@ -121,8 +210,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
             switch (_context.prev = _context.next) {
               case 0:
                 shareData = {
-                  title: 'A&S Consulting Group',
-                  text: 'Solicita tu asesoría',
+                  title: "A&S Consulting Group",
+                  text: "Solicita tu asesoría",
                   url: _this.email
                 };
                 _context.prev = 1;
@@ -149,7 +238,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     },
     goToLocation: function goToLocation() {
       this.$router.push({
-        name: 'contacto'
+        name: "contacto"
       });
     }
   },
@@ -336,6 +425,21 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -358,16 +462,16 @@ __webpack_require__.r(__webpack_exports__);
       menu: false,
       date: null,
       form: {
-        nombres: '',
-        apellidos: '',
-        email: '',
-        telefono: '',
-        profesion: '',
-        fecha_inicio: '',
+        nombres: "",
+        apellidos: "",
+        email: "",
+        telefono: "",
+        profesion: "",
+        fecha_inicio: "",
         file: null
       },
       profesion: {
-        profesion: ''
+        profesion: ""
       },
       loadingApply: false,
       file_error: false
@@ -408,7 +512,7 @@ __webpack_require__.r(__webpack_exports__);
         return;
       }
 
-      if (this.form.nombres != '' && this.form.apellidos != '' && this.form.email != '' && this.form.telefono && this.form.fecha_inicio != '' && this.form.profesion != '') {
+      if (this.form.nombres != "" && this.form.apellidos != "" && this.form.email != "" && this.form.telefono && this.form.fecha_inicio != "" && this.form.profesion != "") {
         var data = new FormData();
         data.append("nombres", this.form.nombres);
         data.append("apellidos", this.form.apellidos);
@@ -419,12 +523,12 @@ __webpack_require__.r(__webpack_exports__);
         data.append("file", this.form.file);
         var config = {
           headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'multipart/form-data'
+            Accept: "application/json",
+            "Content-Type": "multipart/form-data"
           }
         };
         axios({
-          method: 'post',
+          method: "post",
           url: "/api/trabajador",
           data: data,
           headers: config
@@ -434,16 +538,16 @@ __webpack_require__.r(__webpack_exports__);
           if (res.status == 200) {
             Vue.$toast.success("Registro exitoso!, le enviaremos un correo de confirmación");
             _this.form = {
-              nombres: '',
-              apellidos: '',
-              email: '',
-              telefono: '',
-              profesion: '',
-              fecha_inicio: '',
+              nombres: "",
+              apellidos: "",
+              email: "",
+              telefono: "",
+              profesion: "",
+              fecha_inicio: "",
               file: null
             };
             _this.profesion = {
-              profesion: ''
+              profesion: ""
             };
             _this.date = null;
           } else if (res.status == 201) {
@@ -809,27 +913,16 @@ var render = function () {
     [
       _c(
         "v-row",
-        { staticClass: "pa-0 ma-0 content-wrap-2 mx-auto footer-container" },
-        [
-          _c(
-            "v-col",
-            { staticClass: "col-12 pa-0 ma-0 rotate-180 container-bandwith" },
-            [_c("v-img", { attrs: { src: "/app/bandwith.png " } })],
-            1
-          ),
-        ],
-        1
-      ),
-      _vm._v(" "),
-      _c(
-        "v-row",
-        { staticClass: "primary pa-0 ma-0 content-wrap-2 mx-auto" },
+        {
+          staticClass:
+            "grey darken-4 pa-0 ma-0 mx-auto justify-center align-start py-10",
+        },
         [
           _c(
             "v-col",
             {
               staticClass:
-                "col-12 col-md-6 d-flex flex-wrap justify-center align-center",
+                "col-12 col-md-2 col-xl-2 d-flex flex-wrap justify-center align-center",
             },
             [
               _c(
@@ -843,166 +936,205 @@ var render = function () {
                 ],
                 1
               ),
+            ]
+          ),
+          _vm._v(" "),
+          _c(
+            "v-col",
+            {
+              staticClass:
+                "col-12 col-md-3 col-xl-3 d-flex flex-column justify-center align-start",
+            },
+            [
+              _c("p", { staticClass: "white--text font-weight-bold px-4" }, [
+                _vm._v("CONTACTO"),
+              ]),
               _vm._v(" "),
-              _c("span", { staticClass: "white--text as-footer_text px-4" }, [
-                _vm._v(
-                  "\n                Copyright ©" +
-                    _vm._s(_vm.yearActual) +
-                    " by A&S Consulting Group.\n            "
-                ),
+              _c(
+                "a",
+                {
+                  staticClass: "white--text px-4",
+                  on: {
+                    click: function ($event) {
+                      $event.preventDefault()
+                      return _vm.goToLocation()
+                    },
+                  },
+                },
+                [
+                  _c(
+                    "v-icon",
+                    { attrs: { small: "", color: "white", left: "" } },
+                    [_vm._v("mdi-map-marker")]
+                  ),
+                  _vm._v(" " + _vm._s(_vm.address) + "\n            "),
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "a",
+                {
+                  staticClass: "white--text px-4",
+                  attrs: { href: _vm.phone_send },
+                },
+                [
+                  _c(
+                    "v-icon",
+                    { attrs: { small: "", color: "white", left: "" } },
+                    [_vm._v("mdi-phone")]
+                  ),
+                  _vm._v(" " + _vm._s(_vm.phone_contact) + "\n            "),
+                ],
+                1
+              ),
+            ]
+          ),
+          _vm._v(" "),
+          _c(
+            "v-col",
+            {
+              staticClass:
+                "col-12 col-md-3 col-xl-3 d-flex flex-column justify-center align-start",
+            },
+            [
+              _c("p", { staticClass: "white--text font-weight-bold px-4" }, [
+                _vm._v("LEGAL"),
+              ]),
+              _vm._v(" "),
+              _c("a", { staticClass: "white--text px-4" }, [
+                _vm._v(" Términos y condiciones "),
+              ]),
+              _vm._v(" "),
+              _c("a", { staticClass: "white--text px-4" }, [
+                _vm._v(" Privacidad "),
               ]),
             ]
           ),
           _vm._v(" "),
           _c(
             "v-col",
-            { staticClass: "col-12 col-md-6 text-center text-md-left " },
+            {
+              staticClass:
+                "col-12 col-md-3 col-xl-3 d-flex flex-column justify-center align-start",
+            },
             [
-              _c("v-col", [
-                _c(
-                  "span",
-                  {
-                    staticClass:
-                      "white--text d-block d-md-inline-flex align-center justify-center",
-                  },
-                  [
-                    _c(
-                      "v-btn",
-                      {
-                        staticClass: "white--text",
-                        attrs: {
-                          fab: "",
-                          text: "",
-                          small: "",
-                          link: "",
-                          href: _vm.phone_send,
-                        },
-                      },
-                      [
-                        _c("v-icon", { attrs: { color: "white" } }, [
-                          _vm._v("mdi-phone-message"),
-                        ]),
-                      ],
-                      1
-                    ),
-                    _vm._v(
-                      "\n                    " +
-                        _vm._s(_vm.phone_contact) +
-                        "\n                "
-                    ),
-                  ],
-                  1
-                ),
-                _vm._v(" "),
-                _c(
-                  "span",
-                  {
-                    staticClass:
-                      "white--text d-block d-md-inline-flex align-center justify-center",
-                  },
-                  [
-                    _c(
-                      "v-btn",
-                      {
-                        staticClass: "white--text",
-                        attrs: { fab: "", text: "", small: "", link: "" },
-                        on: {
-                          click: function ($event) {
-                            $event.preventDefault()
-                            return _vm.openEmail()
-                          },
-                        },
-                      },
-                      [
-                        _c("v-icon", { attrs: { color: "white" } }, [
-                          _vm._v("mdi-email-open"),
-                        ]),
-                      ],
-                      1
-                    ),
-                    _vm._v(
-                      "\n                    " +
-                        _vm._s(_vm.email) +
-                        "\n                "
-                    ),
-                  ],
-                  1
-                ),
+              _c("p", { staticClass: "white--text font-weight-bold px-4" }, [
+                _vm._v("SÍGUENOS"),
               ]),
               _vm._v(" "),
-              _c("v-col", [
-                _c(
-                  "span",
-                  {
-                    staticClass:
-                      "white--text d-block d-md-inline-flex align-center justify-center",
-                  },
-                  [
-                    _c(
-                      "v-btn",
-                      {
-                        staticClass: "white--text",
-                        attrs: {
-                          fab: "",
-                          text: "",
-                          small: "",
-                          href: _vm.wame,
-                          target: "_blank",
-                        },
+              _c(
+                "div",
+                { staticClass: "d-flex flex-wrap px-4" },
+                [
+                  _c(
+                    "v-btn",
+                    {
+                      staticClass: "elevation-0",
+                      attrs: {
+                        fab: "",
+                        small: "",
+                        text: "",
+                        color: "primary",
+                        href: "https://www.facebook.com/AS-Consulting-Group-141818089928155",
+                        target: "_blank",
                       },
-                      [
-                        _c("v-icon", { attrs: { color: "white" } }, [
-                          _vm._v("mdi-whatsapp"),
-                        ]),
-                      ],
-                      1
-                    ),
-                    _vm._v(
-                      "\n                    " +
-                        _vm._s(_vm.phone_contact) +
-                        "\n                "
-                    ),
-                  ],
-                  1
-                ),
-                _vm._v(" "),
-                _c(
-                  "span",
-                  {
-                    staticClass:
-                      "white--text d-block d-md-inline-flex align-center justify-center",
-                  },
-                  [
-                    _c(
-                      "v-btn",
-                      {
-                        staticClass: "white--text",
-                        attrs: { fab: "", text: "", small: "", link: "" },
-                        on: {
-                          click: function ($event) {
-                            $event.preventDefault()
-                            return _vm.goToLocation()
-                          },
-                        },
+                    },
+                    [
+                      _c("v-icon", { attrs: { color: "white" } }, [
+                        _vm._v("mdi-facebook"),
+                      ]),
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "v-btn",
+                    {
+                      staticClass: "elevation-0",
+                      attrs: {
+                        fab: "",
+                        small: "",
+                        text: "",
+                        color: "primary",
+                        href: "https://www.instagram.com/asconsultinggroup/",
+                        target: "_blank",
                       },
-                      [
-                        _c("v-icon", { attrs: { color: "white" } }, [
-                          _vm._v("mdi-map-marker"),
-                        ]),
-                      ],
-                      1
-                    ),
-                    _vm._v(
-                      "\n                    " +
-                        _vm._s(_vm.address) +
-                        "\n                "
-                    ),
-                  ],
-                  1
-                ),
-              ]),
-            ],
-            1
+                    },
+                    [
+                      _c("v-icon", { attrs: { color: "white" } }, [
+                        _vm._v("mdi-instagram"),
+                      ]),
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "v-btn",
+                    {
+                      staticClass: "elevation-0",
+                      attrs: {
+                        fab: "",
+                        small: "",
+                        text: "",
+                        color: "primary",
+                        href: "https://www.linkedin.com/company/as.consulting/",
+                        target: "_blank",
+                      },
+                    },
+                    [
+                      _c("v-icon", { attrs: { color: "white" } }, [
+                        _vm._v("mdi-linkedin"),
+                      ]),
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "v-btn",
+                    {
+                      staticClass: "elevation-0",
+                      attrs: {
+                        fab: "",
+                        small: "",
+                        text: "",
+                        color: "primary",
+                        href: "https://www.youtube.com/channel/UCLGe4u_VDbkoJWE2LkMni9w/featured?view_as=subscriber",
+                        target: "_blank",
+                      },
+                    },
+                    [
+                      _c("v-icon", { attrs: { color: "white" } }, [
+                        _vm._v("mdi-youtube"),
+                      ]),
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "v-btn",
+                    {
+                      staticClass: "elevation-0",
+                      attrs: {
+                        fab: "",
+                        small: "",
+                        text: "",
+                        color: "primary",
+                        href: "https://twitter.com/pymedigitalAS",
+                        target: "_blank",
+                      },
+                    },
+                    [
+                      _c("v-icon", { attrs: { color: "white" } }, [
+                        _vm._v("mdi-twitter"),
+                      ]),
+                    ],
+                    1
+                  ),
+                ],
+                1
+              ),
+            ]
           ),
         ],
         1
@@ -1034,332 +1166,332 @@ var render = function () {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c(
-    "v-container",
-    { staticClass: "content-wrap-2 pa-0 mx-auto" },
+    "div",
     [
       _c(
-        "v-row",
-        { staticClass: "pa-0 ma-0 content-wrap-2 mx-auto" },
+        "v-container",
+        { staticClass: "pa-0 mx-auto py-16", attrs: { fluid: "" } },
         [
           _c(
-            "v-col",
-            { staticClass: "col-12 pa-0 ma-0 container-bandwith" },
-            [_c("v-img", { attrs: { src: "/app/bandwith.png " } })],
-            1
-          ),
-        ],
-        1
-      ),
-      _vm._v(" "),
-      _c(
-        "v-row",
-        { staticClass: "pa-0 ma-0 content-wrap-0 mx-auto align-center mb-10" },
-        [
-          _c(
-            "v-col",
-            { staticClass: "col-12 col-md-6 text-center text-md-left my-4" },
-            [
-              _c(
-                "span",
-                {
-                  staticClass:
-                    "primary--text text-uppercase as-text_extralarge line-height_1",
-                },
-                [_vm._v("Trabaja con")]
-              ),
-              _vm._v(" "),
-              _c("br"),
-              _vm._v(" "),
-              _c(
-                "span",
-                {
-                  staticClass:
-                    "pl-6 primary--text font-weight-bold text-uppercase as-text_extralarge line-height_1 after-right_block",
-                },
-                [_vm._v("nosotros")]
-              ),
-            ]
-          ),
-        ],
-        1
-      ),
-      _vm._v(" "),
-      _c(
-        "v-row",
-        {
-          staticClass:
-            "pa-0 ma-0 content-wrap-0 mx-auto align-center justify-center mb-10",
-        },
-        [
-          _c(
-            "v-col",
+            "v-row",
             {
               staticClass:
-                "col-12 col-md-10 d-flex align-center justify-md-start justify-center",
+                "pa-0 ma-0 content-wrap-0 mx-auto align-center my-md-15",
             },
             [
-              _c("div", { staticClass: "text-md-start text-center" }, [
-                _c("span", { staticClass: "as-p_normal primary--text" }, [
-                  _vm._v(
-                    "\n                    Únete a la\n                    "
+              _c(
+                "v-col",
+                {
+                  staticClass: "col-12 col-md-6 text-center text-md-left my-4",
+                },
+                [
+                  _c(
+                    "span",
+                    {
+                      staticClass:
+                        "primary--text text-uppercase as-text_extralarge line-height_1",
+                    },
+                    [_vm._v("Trabaja con")]
                   ),
-                  _c("strong", [_vm._v("firma más especializada")]),
-                  _vm._v(" del país\n                "),
-                ]),
-              ]),
-            ]
+                  _vm._v(" "),
+                  _c("br"),
+                  _vm._v(" "),
+                  _c(
+                    "span",
+                    {
+                      staticClass:
+                        "pl-6 primary--text font-weight-bold text-uppercase as-text_extralarge line-height_1 after-right_block",
+                    },
+                    [_vm._v("nosotros")]
+                  ),
+                ]
+              ),
+            ],
+            1
           ),
           _vm._v(" "),
           _c(
-            "v-col",
-            { staticClass: "col-12 col-md-10 pa-0" },
+            "v-row",
+            {
+              staticClass:
+                "pa-0 ma-0 content-wrap-0 mx-auto align-center justify-center mb-10",
+            },
             [
               _c(
-                "v-container",
-                { staticClass: "pa-0 ma-0" },
+                "v-col",
+                {
+                  staticClass:
+                    "col-12 col-md-10 d-flex align-center justify-md-start justify-center pb-10",
+                },
+                [
+                  _c("div", { staticClass: "text-md-start text-center" }, [
+                    _c("span", { staticClass: "as-p_normal black--text" }, [
+                      _vm._v(
+                        "\n                        Únete a la\n                        "
+                      ),
+                      _c("strong", [_vm._v("firma más especializada")]),
+                      _vm._v(" del país\n                    "),
+                    ]),
+                  ]),
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "v-col",
+                { staticClass: "col-12 col-md-10 pa-0" },
                 [
                   _c(
-                    "v-row",
+                    "v-container",
                     { staticClass: "pa-0 ma-0" },
                     [
                       _c(
-                        "v-col",
-                        { staticClass: "col-12 col-md-6" },
-                        [
-                          _c("v-text-field", {
-                            staticClass: "rounded-0",
-                            attrs: {
-                              color: "primary",
-                              label: "Nombres",
-                              outlined: "",
-                              "hide-details": "auto",
-                            },
-                            model: {
-                              value: _vm.form.nombres,
-                              callback: function ($$v) {
-                                _vm.$set(_vm.form, "nombres", $$v)
-                              },
-                              expression: "form.nombres",
-                            },
-                          }),
-                        ],
-                        1
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "v-col",
-                        { staticClass: "col-12 col-md-6" },
-                        [
-                          _c("v-text-field", {
-                            staticClass: "rounded-0",
-                            attrs: {
-                              color: "primary",
-                              label: "Apellidos",
-                              outlined: "",
-                              "hide-details": "auto",
-                            },
-                            model: {
-                              value: _vm.form.apellidos,
-                              callback: function ($$v) {
-                                _vm.$set(_vm.form, "apellidos", $$v)
-                              },
-                              expression: "form.apellidos",
-                            },
-                          }),
-                        ],
-                        1
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "v-col",
-                        { staticClass: "col-12 col-md-4" },
-                        [
-                          _c("v-text-field", {
-                            staticClass: "rounded-0",
-                            attrs: {
-                              color: "primary",
-                              label: "Email",
-                              outlined: "",
-                              "hide-details": "auto",
-                            },
-                            model: {
-                              value: _vm.form.email,
-                              callback: function ($$v) {
-                                _vm.$set(_vm.form, "email", $$v)
-                              },
-                              expression: "form.email",
-                            },
-                          }),
-                        ],
-                        1
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "v-col",
-                        { staticClass: "col-12 col-md-4" },
-                        [
-                          _c("v-text-field", {
-                            staticClass: "rounded-0",
-                            attrs: {
-                              color: "primary",
-                              label: "Teléfono",
-                              outlined: "",
-                              "hide-details": "auto",
-                            },
-                            model: {
-                              value: _vm.form.telefono,
-                              callback: function ($$v) {
-                                _vm.$set(_vm.form, "telefono", $$v)
-                              },
-                              expression: "form.telefono",
-                            },
-                          }),
-                        ],
-                        1
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "v-col",
-                        { staticClass: "col-12 col-md-4" },
-                        [
-                          _c("v-select", {
-                            staticClass: "rounded-0",
-                            attrs: {
-                              items: _vm.profesiones,
-                              label: "Elije una opción",
-                              "item-text": "profesion",
-                              outlined: "",
-                              "return-object": "",
-                              "hide-details": "auto",
-                            },
-                            model: {
-                              value: _vm.profesion,
-                              callback: function ($$v) {
-                                _vm.profesion = $$v
-                              },
-                              expression: "profesion",
-                            },
-                          }),
-                        ],
-                        1
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "v-col",
-                        { staticClass: "col-12 col-md-4" },
+                        "v-row",
+                        { staticClass: "pa-0 ma-0" },
                         [
                           _c(
-                            "v-menu",
-                            {
-                              ref: "menu",
-                              attrs: {
-                                "close-on-content-click": false,
-                                "return-value": _vm.date,
-                                transition: "scale-transition",
-                                "offset-y": "",
-                                "min-width": "auto",
-                              },
-                              on: {
-                                "update:returnValue": function ($event) {
-                                  _vm.date = $event
-                                },
-                                "update:return-value": function ($event) {
-                                  _vm.date = $event
-                                },
-                              },
-                              scopedSlots: _vm._u([
-                                {
-                                  key: "activator",
-                                  fn: function (ref) {
-                                    var on = ref.on
-                                    var attrs = ref.attrs
-                                    return [
-                                      _c(
-                                        "v-text-field",
-                                        _vm._g(
-                                          _vm._b(
-                                            {
-                                              attrs: {
-                                                label: "Fecha de inicio",
-                                                "append-icon": "mdi-calendar",
-                                                readonly: "",
-                                                outlined: "",
-                                                "hide-details": "auto",
-                                              },
-                                              model: {
-                                                value: _vm.date,
-                                                callback: function ($$v) {
-                                                  _vm.date = $$v
-                                                },
-                                                expression: "date",
-                                              },
-                                            },
-                                            "v-text-field",
-                                            attrs,
-                                            false
-                                          ),
-                                          on
-                                        )
-                                      ),
-                                    ]
-                                  },
-                                },
-                              ]),
-                              model: {
-                                value: _vm.menu,
-                                callback: function ($$v) {
-                                  _vm.menu = $$v
-                                },
-                                expression: "menu",
-                              },
-                            },
+                            "v-col",
+                            { staticClass: "col-12 col-md-6" },
                             [
-                              _vm._v(" "),
-                              _c(
-                                "v-date-picker",
-                                {
-                                  attrs: {
-                                    "no-title": "",
-                                    scrollable: "",
-                                    color: "primary",
+                              _c("v-text-field", {
+                                staticClass: "rounded-0",
+                                attrs: {
+                                  color: "primary",
+                                  label: "Nombres",
+                                  outlined: "",
+                                  "hide-details": "auto",
+                                },
+                                model: {
+                                  value: _vm.form.nombres,
+                                  callback: function ($$v) {
+                                    _vm.$set(_vm.form, "nombres", $$v)
                                   },
-                                  model: {
-                                    value: _vm.date,
-                                    callback: function ($$v) {
-                                      _vm.date = $$v
+                                  expression: "form.nombres",
+                                },
+                              }),
+                            ],
+                            1
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "v-col",
+                            { staticClass: "col-12 col-md-6" },
+                            [
+                              _c("v-text-field", {
+                                staticClass: "rounded-0",
+                                attrs: {
+                                  color: "primary",
+                                  label: "Apellidos",
+                                  outlined: "",
+                                  "hide-details": "auto",
+                                },
+                                model: {
+                                  value: _vm.form.apellidos,
+                                  callback: function ($$v) {
+                                    _vm.$set(_vm.form, "apellidos", $$v)
+                                  },
+                                  expression: "form.apellidos",
+                                },
+                              }),
+                            ],
+                            1
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "v-col",
+                            { staticClass: "col-12 col-md-4" },
+                            [
+                              _c("v-text-field", {
+                                staticClass: "rounded-0",
+                                attrs: {
+                                  color: "primary",
+                                  label: "Email",
+                                  outlined: "",
+                                  "hide-details": "auto",
+                                },
+                                model: {
+                                  value: _vm.form.email,
+                                  callback: function ($$v) {
+                                    _vm.$set(_vm.form, "email", $$v)
+                                  },
+                                  expression: "form.email",
+                                },
+                              }),
+                            ],
+                            1
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "v-col",
+                            { staticClass: "col-12 col-md-4" },
+                            [
+                              _c("v-text-field", {
+                                staticClass: "rounded-0",
+                                attrs: {
+                                  color: "primary",
+                                  label: "Teléfono",
+                                  outlined: "",
+                                  "hide-details": "auto",
+                                },
+                                model: {
+                                  value: _vm.form.telefono,
+                                  callback: function ($$v) {
+                                    _vm.$set(_vm.form, "telefono", $$v)
+                                  },
+                                  expression: "form.telefono",
+                                },
+                              }),
+                            ],
+                            1
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "v-col",
+                            { staticClass: "col-12 col-md-4" },
+                            [
+                              _c("v-select", {
+                                staticClass: "rounded-0",
+                                attrs: {
+                                  items: _vm.profesiones,
+                                  label: "Elije una opción",
+                                  "item-text": "profesion",
+                                  outlined: "",
+                                  "return-object": "",
+                                  "hide-details": "auto",
+                                },
+                                model: {
+                                  value: _vm.profesion,
+                                  callback: function ($$v) {
+                                    _vm.profesion = $$v
+                                  },
+                                  expression: "profesion",
+                                },
+                              }),
+                            ],
+                            1
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "v-col",
+                            { staticClass: "col-12 col-md-4" },
+                            [
+                              _c(
+                                "v-menu",
+                                {
+                                  ref: "menu",
+                                  attrs: {
+                                    "close-on-content-click": false,
+                                    "return-value": _vm.date,
+                                    transition: "scale-transition",
+                                    "offset-y": "",
+                                    "min-width": "auto",
+                                  },
+                                  on: {
+                                    "update:returnValue": function ($event) {
+                                      _vm.date = $event
                                     },
-                                    expression: "date",
+                                    "update:return-value": function ($event) {
+                                      _vm.date = $event
+                                    },
+                                  },
+                                  scopedSlots: _vm._u([
+                                    {
+                                      key: "activator",
+                                      fn: function (ref) {
+                                        var on = ref.on
+                                        var attrs = ref.attrs
+                                        return [
+                                          _c(
+                                            "v-text-field",
+                                            _vm._g(
+                                              _vm._b(
+                                                {
+                                                  attrs: {
+                                                    label: "Fecha de inicio",
+                                                    "append-icon":
+                                                      "mdi-calendar",
+                                                    readonly: "",
+                                                    outlined: "",
+                                                    "hide-details": "auto",
+                                                  },
+                                                  model: {
+                                                    value: _vm.date,
+                                                    callback: function ($$v) {
+                                                      _vm.date = $$v
+                                                    },
+                                                    expression: "date",
+                                                  },
+                                                },
+                                                "v-text-field",
+                                                attrs,
+                                                false
+                                              ),
+                                              on
+                                            )
+                                          ),
+                                        ]
+                                      },
+                                    },
+                                  ]),
+                                  model: {
+                                    value: _vm.menu,
+                                    callback: function ($$v) {
+                                      _vm.menu = $$v
+                                    },
+                                    expression: "menu",
                                   },
                                 },
                                 [
-                                  _c("v-spacer"),
                                   _vm._v(" "),
                                   _c(
-                                    "v-btn",
+                                    "v-date-picker",
                                     {
-                                      staticClass: "text-normal rounded-0",
-                                      attrs: { text: "", color: "primary" },
-                                      on: {
-                                        click: function ($event) {
-                                          _vm.menu = false
+                                      attrs: {
+                                        "no-title": "",
+                                        scrollable: "",
+                                        color: "primary",
+                                      },
+                                      model: {
+                                        value: _vm.date,
+                                        callback: function ($$v) {
+                                          _vm.date = $$v
                                         },
+                                        expression: "date",
                                       },
                                     },
-                                    [_vm._v("Cancelar")]
-                                  ),
-                                  _vm._v(" "),
-                                  _c(
-                                    "v-btn",
-                                    {
-                                      staticClass: "text-normal rounded-0",
-                                      attrs: { text: "", color: "primary" },
-                                      on: {
-                                        click: function ($event) {
-                                          return _vm.$refs.menu.save(_vm.date)
+                                    [
+                                      _c("v-spacer"),
+                                      _vm._v(" "),
+                                      _c(
+                                        "v-btn",
+                                        {
+                                          staticClass: "text-normal rounded-0",
+                                          attrs: { text: "", color: "primary" },
+                                          on: {
+                                            click: function ($event) {
+                                              _vm.menu = false
+                                            },
+                                          },
                                         },
-                                      },
-                                    },
-                                    [_vm._v("Aceptar")]
+                                        [_vm._v("Cancelar")]
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "v-btn",
+                                        {
+                                          staticClass: "text-normal rounded-0",
+                                          attrs: { text: "", color: "primary" },
+                                          on: {
+                                            click: function ($event) {
+                                              return _vm.$refs.menu.save(
+                                                _vm.date
+                                              )
+                                            },
+                                          },
+                                        },
+                                        [_vm._v("Aceptar")]
+                                      ),
+                                    ],
+                                    1
                                   ),
                                 ],
                                 1
@@ -1367,58 +1499,58 @@ var render = function () {
                             ],
                             1
                           ),
-                        ],
-                        1
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "v-col",
-                        { staticClass: "col-12 col-md-8" },
-                        [
-                          _c("v-file-input", {
-                            attrs: {
-                              "persistent-hint": "",
-                              label: "Seleccione un archivo",
-                              outlined: "",
-                              "prepend-icon": "mdi-paperclip",
-                              "show-size": "",
-                              error: _vm.file_error,
-                              hint: "Máximo 15MB",
-                            },
-                            model: {
-                              value: _vm.form.file,
-                              callback: function ($$v) {
-                                _vm.$set(_vm.form, "file", $$v)
-                              },
-                              expression: "form.file",
-                            },
-                          }),
-                        ],
-                        1
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "v-col",
-                        { staticClass: "col-12" },
-                        [
+                          _vm._v(" "),
                           _c(
-                            "v-btn",
-                            {
-                              staticClass: "rounded-0 text-normal",
-                              attrs: {
-                                block: "",
-                                color: "primary",
-                                "x-large": "",
-                                loading: _vm.loadingApply,
-                              },
-                              on: {
-                                click: function ($event) {
-                                  $event.preventDefault()
-                                  return _vm.applyNow()
+                            "v-col",
+                            { staticClass: "col-12 col-md-8" },
+                            [
+                              _c("v-file-input", {
+                                attrs: {
+                                  "persistent-hint": "",
+                                  label: "Seleccione un archivo",
+                                  outlined: "",
+                                  "prepend-icon": "mdi-paperclip",
+                                  "show-size": "",
+                                  error: _vm.file_error,
+                                  hint: "Máximo 15MB",
                                 },
-                              },
-                            },
-                            [_vm._v("Aplicar ahora")]
+                                model: {
+                                  value: _vm.form.file,
+                                  callback: function ($$v) {
+                                    _vm.$set(_vm.form, "file", $$v)
+                                  },
+                                  expression: "form.file",
+                                },
+                              }),
+                            ],
+                            1
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "v-col",
+                            { staticClass: "col-12" },
+                            [
+                              _c(
+                                "v-btn",
+                                {
+                                  staticClass: "rounded-0",
+                                  attrs: {
+                                    block: "",
+                                    color: "primary",
+                                    "x-large": "",
+                                    loading: _vm.loadingApply,
+                                  },
+                                  on: {
+                                    click: function ($event) {
+                                      $event.preventDefault()
+                                      return _vm.applyNow()
+                                    },
+                                  },
+                                },
+                                [_vm._v("Aplicar ahora")]
+                              ),
+                            ],
+                            1
                           ),
                         ],
                         1

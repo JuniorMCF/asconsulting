@@ -14,9 +14,9 @@
       </transition>
     </v-main>
     <v-main v-else>
-      <transition :name="isHome == true ? '' :nameTransition" :mode="isHome == true ? '' : modeTransition">
-        <router-view :key="$route.fullPath"> </router-view>
-      </transition>
+
+        <router-view :key="$route.fullPath" class="fade-in"> </router-view>
+
     </v-main>
   </div>
 </template>

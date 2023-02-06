@@ -98,6 +98,95 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
@@ -107,7 +196,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       phone_send: "tel:+51926302115",
       wame: "https://wa.me/51926302115",
       email: "reactivatunegocio@asconsulting.pe",
-      address: "Av. Alfredo Benavides 3695. Surco."
+      address: "Av. Alfredo Benavides 3695. Santiago de Surco. Lima, Perú."
     };
   },
   methods: {
@@ -121,8 +210,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
             switch (_context.prev = _context.next) {
               case 0:
                 shareData = {
-                  title: 'A&S Consulting Group',
-                  text: 'Solicita tu asesoría',
+                  title: "A&S Consulting Group",
+                  text: "Solicita tu asesoría",
                   url: _this.email
                 };
                 _context.prev = 1;
@@ -149,7 +238,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     },
     goToLocation: function goToLocation() {
       this.$router.push({
-        name: 'contacto'
+        name: "contacto"
       });
     }
   },
@@ -352,6 +441,30 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_global_ChatComponent_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../components/global/ChatComponent.vue */ "./resources/js/components/global/ChatComponent.vue");
 /* harmony import */ var _components_global_FooterGlobal_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../components/global/FooterGlobal.vue */ "./resources/js/components/global/FooterGlobal.vue");
 /* harmony import */ var _components_utils_ShowDetailsDialog_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../components/utils/ShowDetailsDialog.vue */ "./resources/js/components/utils/ShowDetailsDialog.vue");
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -666,7 +779,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.overlap-video[data-v-ef265716] {\n    position: absolute;\n    z-index: 1;\n    height: 326px;\n    width: 100%;\n    background-color: rgba(0, 0, 102, 0.38) !important;\n}\n.container-card[data-v-ef265716] {\n    background-color: #ededed !important;\n}\n.container-video[data-v-ef265716] {\n    max-height: 326px;\n    overflow: hidden;\n}\n#myVideo[data-v-ef265716] {\n    position: relative;\n    width: 100%;\n    transform: translateY(-25%);\n}\n.size_img[data-v-ef265716] {\n    height: 89px;\n    z-index: 2;\n    width: 89px;\n}\n.content-img[data-v-ef265716] {\n    position: absolute;\n    width: 100%;\n    z-index: 2;\n    top: 2.8rem;\n}\n.span_title[data-v-ef265716] {\n    padding: 10px 0px 0px 0px;\n    margin: 0px !important;\n    font-size: 3rem;\n}\n@media screen and (max-width: 960px) {\n.overlap-video[data-v-ef265716] {\n        position: absolute;\n        z-index: 1;\n        height: 135px;\n        width: 100%;\n        background-color: rgba(0, 0, 102, 0.38) !important;\n}\n.container-video[data-v-ef265716] {\n        max-height: 135px;\n        overflow: hidden;\n}\n#myVideo[data-v-ef265716] {\n        position: relative;\n        width: 100%;\n        transform: translateY(-20%);\n}\n.size_img[data-v-ef265716] {\n        height: 60px;\n        z-index: 2;\n        width: 60px;\n}\n.content-img[data-v-ef265716] {\n        position: absolute;\n        width: 100%;\n        z-index: 2;\n        top: 1.2rem !important;\n}\n.span_title[data-v-ef265716] {\n        font-size: 1.4rem;\n        padding: 5px 0px 0px 0px;\n        margin: 0px !important;\n}\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.overlap-video[data-v-ef265716] {\n    position: absolute;\n    z-index: 1;\n    height: 326px;\n    width: 100%;\n    background-color: rgba(0, 0, 102, 0.38) !important;\n}\n.container-card[data-v-ef265716] {\n    background-color: #e3e2e2 !important;\n}\n.container-video[data-v-ef265716] {\n    max-height: 326px;\n    overflow: hidden;\n}\n#myVideo[data-v-ef265716] {\n    position: relative;\n    width: 100%;\n    transform: translateY(-25%);\n}\n.size_img[data-v-ef265716] {\n    height: 89px;\n    z-index: 2;\n    width: 89px;\n}\n.content-img[data-v-ef265716] {\n    position: absolute;\n    width: 100%;\n    z-index: 2;\n    top: 2.8rem;\n}\n.span_title[data-v-ef265716] {\n    padding: 10px 0px 0px 0px;\n    margin: 0px !important;\n    font-size: 3rem;\n}\n@media screen and (max-width: 960px) {\n.overlap-video[data-v-ef265716] {\n        position: absolute;\n        z-index: 1;\n        height: 135px;\n        width: 100%;\n        background-color: rgba(0, 0, 102, 0.38) !important;\n}\n.container-video[data-v-ef265716] {\n        max-height: 135px;\n        overflow: hidden;\n}\n#myVideo[data-v-ef265716] {\n        position: relative;\n        width: 100%;\n        transform: translateY(-20%);\n}\n.size_img[data-v-ef265716] {\n        height: 60px;\n        z-index: 2;\n        width: 60px;\n}\n.content-img[data-v-ef265716] {\n        position: absolute;\n        width: 100%;\n        z-index: 2;\n        top: 1.2rem !important;\n}\n.span_title[data-v-ef265716] {\n        font-size: 1.4rem;\n        padding: 5px 0px 0px 0px;\n        margin: 0px !important;\n}\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -1107,27 +1220,16 @@ var render = function () {
     [
       _c(
         "v-row",
-        { staticClass: "pa-0 ma-0 content-wrap-2 mx-auto footer-container" },
-        [
-          _c(
-            "v-col",
-            { staticClass: "col-12 pa-0 ma-0 rotate-180 container-bandwith" },
-            [_c("v-img", { attrs: { src: "/app/bandwith.png " } })],
-            1
-          ),
-        ],
-        1
-      ),
-      _vm._v(" "),
-      _c(
-        "v-row",
-        { staticClass: "primary pa-0 ma-0 content-wrap-2 mx-auto" },
+        {
+          staticClass:
+            "grey darken-4 pa-0 ma-0 mx-auto justify-center align-start py-10",
+        },
         [
           _c(
             "v-col",
             {
               staticClass:
-                "col-12 col-md-6 d-flex flex-wrap justify-center align-center",
+                "col-12 col-md-2 col-xl-2 d-flex flex-wrap justify-center align-center",
             },
             [
               _c(
@@ -1141,166 +1243,205 @@ var render = function () {
                 ],
                 1
               ),
+            ]
+          ),
+          _vm._v(" "),
+          _c(
+            "v-col",
+            {
+              staticClass:
+                "col-12 col-md-3 col-xl-3 d-flex flex-column justify-center align-start",
+            },
+            [
+              _c("p", { staticClass: "white--text font-weight-bold px-4" }, [
+                _vm._v("CONTACTO"),
+              ]),
               _vm._v(" "),
-              _c("span", { staticClass: "white--text as-footer_text px-4" }, [
-                _vm._v(
-                  "\n                Copyright ©" +
-                    _vm._s(_vm.yearActual) +
-                    " by A&S Consulting Group.\n            "
-                ),
+              _c(
+                "a",
+                {
+                  staticClass: "white--text px-4",
+                  on: {
+                    click: function ($event) {
+                      $event.preventDefault()
+                      return _vm.goToLocation()
+                    },
+                  },
+                },
+                [
+                  _c(
+                    "v-icon",
+                    { attrs: { small: "", color: "white", left: "" } },
+                    [_vm._v("mdi-map-marker")]
+                  ),
+                  _vm._v(" " + _vm._s(_vm.address) + "\n            "),
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "a",
+                {
+                  staticClass: "white--text px-4",
+                  attrs: { href: _vm.phone_send },
+                },
+                [
+                  _c(
+                    "v-icon",
+                    { attrs: { small: "", color: "white", left: "" } },
+                    [_vm._v("mdi-phone")]
+                  ),
+                  _vm._v(" " + _vm._s(_vm.phone_contact) + "\n            "),
+                ],
+                1
+              ),
+            ]
+          ),
+          _vm._v(" "),
+          _c(
+            "v-col",
+            {
+              staticClass:
+                "col-12 col-md-3 col-xl-3 d-flex flex-column justify-center align-start",
+            },
+            [
+              _c("p", { staticClass: "white--text font-weight-bold px-4" }, [
+                _vm._v("LEGAL"),
+              ]),
+              _vm._v(" "),
+              _c("a", { staticClass: "white--text px-4" }, [
+                _vm._v(" Términos y condiciones "),
+              ]),
+              _vm._v(" "),
+              _c("a", { staticClass: "white--text px-4" }, [
+                _vm._v(" Privacidad "),
               ]),
             ]
           ),
           _vm._v(" "),
           _c(
             "v-col",
-            { staticClass: "col-12 col-md-6 text-center text-md-left " },
+            {
+              staticClass:
+                "col-12 col-md-3 col-xl-3 d-flex flex-column justify-center align-start",
+            },
             [
-              _c("v-col", [
-                _c(
-                  "span",
-                  {
-                    staticClass:
-                      "white--text d-block d-md-inline-flex align-center justify-center",
-                  },
-                  [
-                    _c(
-                      "v-btn",
-                      {
-                        staticClass: "white--text",
-                        attrs: {
-                          fab: "",
-                          text: "",
-                          small: "",
-                          link: "",
-                          href: _vm.phone_send,
-                        },
-                      },
-                      [
-                        _c("v-icon", { attrs: { color: "white" } }, [
-                          _vm._v("mdi-phone-message"),
-                        ]),
-                      ],
-                      1
-                    ),
-                    _vm._v(
-                      "\n                    " +
-                        _vm._s(_vm.phone_contact) +
-                        "\n                "
-                    ),
-                  ],
-                  1
-                ),
-                _vm._v(" "),
-                _c(
-                  "span",
-                  {
-                    staticClass:
-                      "white--text d-block d-md-inline-flex align-center justify-center",
-                  },
-                  [
-                    _c(
-                      "v-btn",
-                      {
-                        staticClass: "white--text",
-                        attrs: { fab: "", text: "", small: "", link: "" },
-                        on: {
-                          click: function ($event) {
-                            $event.preventDefault()
-                            return _vm.openEmail()
-                          },
-                        },
-                      },
-                      [
-                        _c("v-icon", { attrs: { color: "white" } }, [
-                          _vm._v("mdi-email-open"),
-                        ]),
-                      ],
-                      1
-                    ),
-                    _vm._v(
-                      "\n                    " +
-                        _vm._s(_vm.email) +
-                        "\n                "
-                    ),
-                  ],
-                  1
-                ),
+              _c("p", { staticClass: "white--text font-weight-bold px-4" }, [
+                _vm._v("SÍGUENOS"),
               ]),
               _vm._v(" "),
-              _c("v-col", [
-                _c(
-                  "span",
-                  {
-                    staticClass:
-                      "white--text d-block d-md-inline-flex align-center justify-center",
-                  },
-                  [
-                    _c(
-                      "v-btn",
-                      {
-                        staticClass: "white--text",
-                        attrs: {
-                          fab: "",
-                          text: "",
-                          small: "",
-                          href: _vm.wame,
-                          target: "_blank",
-                        },
+              _c(
+                "div",
+                { staticClass: "d-flex flex-wrap px-4" },
+                [
+                  _c(
+                    "v-btn",
+                    {
+                      staticClass: "elevation-0",
+                      attrs: {
+                        fab: "",
+                        small: "",
+                        text: "",
+                        color: "primary",
+                        href: "https://www.facebook.com/AS-Consulting-Group-141818089928155",
+                        target: "_blank",
                       },
-                      [
-                        _c("v-icon", { attrs: { color: "white" } }, [
-                          _vm._v("mdi-whatsapp"),
-                        ]),
-                      ],
-                      1
-                    ),
-                    _vm._v(
-                      "\n                    " +
-                        _vm._s(_vm.phone_contact) +
-                        "\n                "
-                    ),
-                  ],
-                  1
-                ),
-                _vm._v(" "),
-                _c(
-                  "span",
-                  {
-                    staticClass:
-                      "white--text d-block d-md-inline-flex align-center justify-center",
-                  },
-                  [
-                    _c(
-                      "v-btn",
-                      {
-                        staticClass: "white--text",
-                        attrs: { fab: "", text: "", small: "", link: "" },
-                        on: {
-                          click: function ($event) {
-                            $event.preventDefault()
-                            return _vm.goToLocation()
-                          },
-                        },
+                    },
+                    [
+                      _c("v-icon", { attrs: { color: "white" } }, [
+                        _vm._v("mdi-facebook"),
+                      ]),
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "v-btn",
+                    {
+                      staticClass: "elevation-0",
+                      attrs: {
+                        fab: "",
+                        small: "",
+                        text: "",
+                        color: "primary",
+                        href: "https://www.instagram.com/asconsultinggroup/",
+                        target: "_blank",
                       },
-                      [
-                        _c("v-icon", { attrs: { color: "white" } }, [
-                          _vm._v("mdi-map-marker"),
-                        ]),
-                      ],
-                      1
-                    ),
-                    _vm._v(
-                      "\n                    " +
-                        _vm._s(_vm.address) +
-                        "\n                "
-                    ),
-                  ],
-                  1
-                ),
-              ]),
-            ],
-            1
+                    },
+                    [
+                      _c("v-icon", { attrs: { color: "white" } }, [
+                        _vm._v("mdi-instagram"),
+                      ]),
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "v-btn",
+                    {
+                      staticClass: "elevation-0",
+                      attrs: {
+                        fab: "",
+                        small: "",
+                        text: "",
+                        color: "primary",
+                        href: "https://www.linkedin.com/company/as.consulting/",
+                        target: "_blank",
+                      },
+                    },
+                    [
+                      _c("v-icon", { attrs: { color: "white" } }, [
+                        _vm._v("mdi-linkedin"),
+                      ]),
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "v-btn",
+                    {
+                      staticClass: "elevation-0",
+                      attrs: {
+                        fab: "",
+                        small: "",
+                        text: "",
+                        color: "primary",
+                        href: "https://www.youtube.com/channel/UCLGe4u_VDbkoJWE2LkMni9w/featured?view_as=subscriber",
+                        target: "_blank",
+                      },
+                    },
+                    [
+                      _c("v-icon", { attrs: { color: "white" } }, [
+                        _vm._v("mdi-youtube"),
+                      ]),
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "v-btn",
+                    {
+                      staticClass: "elevation-0",
+                      attrs: {
+                        fab: "",
+                        small: "",
+                        text: "",
+                        color: "primary",
+                        href: "https://twitter.com/pymedigitalAS",
+                        target: "_blank",
+                      },
+                    },
+                    [
+                      _c("v-icon", { attrs: { color: "white" } }, [
+                        _vm._v("mdi-twitter"),
+                      ]),
+                    ],
+                    1
+                  ),
+                ],
+                1
+              ),
+            ]
           ),
         ],
         1
@@ -1605,139 +1746,151 @@ var render = function () {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c(
-    "v-container",
-    { staticClass: "content-wrap-2 pa-0 mx-auto" },
+    "div",
     [
-      _c("v-row", { staticClass: "pa-0 ma-0 content-wrap-2" }, [
-        _c("div", { staticClass: "overlap-video content-wrap-2" }),
-        _vm._v(" "),
-        _c("div", { staticClass: "col-12 pa-0 container-video" }, [
-          _c(
-            "video",
-            {
-              attrs: { autoplay: "", muted: "", loop: "", id: "myVideo" },
-              domProps: { muted: true },
-            },
-            [
-              _c("source", {
-                attrs: { src: "/app/tecnologia.mp4", type: "video/mp4" },
-              }),
-            ]
-          ),
-        ]),
-        _vm._v(" "),
-        _c(
-          "div",
-          { staticClass: "content-img content-wrap-2 text-center" },
-          [
-            _c("v-img", {
-              staticClass: "mx-auto size_img",
-              attrs: { src: "/app/computer.png" },
-            }),
-            _vm._v(" "),
-            _c(
-              "p",
-              { staticClass: "white--text font-weight-bold span_title" },
-              [_vm._v("Tecnología")]
-            ),
-          ],
-          1
-        ),
-      ]),
-      _vm._v(" "),
       _c(
-        "v-row",
-        { staticClass: "pa-0 ma-0 content-wrap-2 mx-auto container-bandwith" },
+        "v-container",
+        { staticClass: "pa-0 mx-auto pt-5 py-16", attrs: { fluid: "" } },
         [
-          _c(
-            "v-col",
-            { staticClass: "col-12 pa-0 ma-0" },
-            [_c("v-img", { attrs: { src: "/app/bandwith.png" } })],
-            1
-          ),
-        ],
-        1
-      ),
-      _vm._v(" "),
-      _c(
-        "v-row",
-        { staticClass: "pa-0 ma-0 justify-center content-wrap-0 mx-auto" },
-        _vm._l(_vm.tecnologias, function (tec, i) {
-          return _c(
-            "v-col",
-            { key: "tec" + i, staticClass: "col-12 col-md-4 pa-1" },
-            [
+          _c("v-row", { staticClass: "pa-0 ma-0" }, [
+            _c("div", { staticClass: "overlap-video" }),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-12 pa-0 container-video" }, [
               _c(
-                "v-card",
+                "video",
                 {
-                  staticClass: "container-card elevation-0 pa-10",
-                  attrs: { height: "350" },
+                  attrs: { autoplay: "", muted: "", loop: "", id: "myVideo" },
+                  domProps: { muted: true },
                 },
                 [
+                  _c("source", {
+                    attrs: { src: "/app/tecnologia.mp4", type: "video/mp4" },
+                  }),
+                ]
+              ),
+            ]),
+            _vm._v(" "),
+            _c(
+              "div",
+              { staticClass: "content-img text-center" },
+              [
+                _c("v-img", {
+                  staticClass: "mx-auto size_img",
+                  attrs: { src: "/app/computer.png" },
+                }),
+                _vm._v(" "),
+                _c(
+                  "p",
+                  { staticClass: "white--text font-weight-bold span_title" },
+                  [_vm._v("\n                    Tecnología\n                ")]
+                ),
+              ],
+              1
+            ),
+          ]),
+          _vm._v(" "),
+          _c(
+            "v-row",
+            {
+              staticClass:
+                "pa-0 ma-0 justify-center content-wrap-0 mx-auto py-16",
+            },
+            _vm._l(_vm.tecnologias, function (tec, i) {
+              return _c(
+                "v-col",
+                { key: "tec" + i, staticClass: "col-12 col-md-4 pa-1" },
+                [
                   _c(
-                    "v-card-text",
-                    { staticClass: "pa-0", staticStyle: { height: "200px" } },
+                    "v-card",
+                    {
+                      staticClass: "container-card elevation-0 pa-10",
+                      attrs: { height: "350" },
+                    },
                     [
-                      _c("v-img", {
-                        staticClass: "mx-auto",
-                        attrs: {
-                          src: tec.icon,
-                          height: _vm.height,
-                          width: _vm.width,
-                        },
-                      }),
-                      _vm._v(" "),
                       _c(
-                        "h5",
+                        "v-card-text",
                         {
-                          staticClass:
-                            "line-height_1 text-h6 font-weight-bold text-uppercase text-center primary--text py-3",
+                          staticClass: "pa-0",
+                          staticStyle: { height: "200px" },
                         },
-                        [_vm._v(_vm._s(tec.titulo))]
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "p",
-                        { staticClass: "ma-0 text-center alternative--text" },
-                        [_vm._v(_vm._s(tec.subtitulo))]
-                      ),
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "v-card-actions",
-                    { staticClass: "text-center" },
-                    [
-                      _c("v-spacer"),
-                      _vm._v(" "),
-                      _c(
-                        "v-btn",
-                        {
-                          staticClass:
-                            "rounded-xl white--text font-weight-bold px-10",
-                          attrs: { large: "", color: "primary" },
-                          on: {
-                            click: function ($event) {
-                              $event.preventDefault()
-                              return _vm.showDetails(tec)
+                        [
+                          _c("v-img", {
+                            staticClass: "mx-auto",
+                            attrs: {
+                              src: tec.icon,
+                              height: _vm.height,
+                              width: _vm.width,
                             },
-                          },
-                        },
-                        [_vm._v("ver más")]
+                          }),
+                          _vm._v(" "),
+                          _c(
+                            "h5",
+                            {
+                              staticClass:
+                                "line-height_1 text-h6 font-weight-bold text-uppercase text-center primary--text py-3",
+                            },
+                            [
+                              _vm._v(
+                                "\n                            " +
+                                  _vm._s(tec.titulo) +
+                                  "\n                        "
+                              ),
+                            ]
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "p",
+                            {
+                              staticClass: "ma-0 text-center alternative--text",
+                            },
+                            [
+                              _vm._v(
+                                "\n                            " +
+                                  _vm._s(tec.subtitulo) +
+                                  "\n                        "
+                              ),
+                            ]
+                          ),
+                        ],
+                        1
                       ),
                       _vm._v(" "),
-                      _c("v-spacer"),
+                      _c(
+                        "v-card-actions",
+                        { staticClass: "text-center" },
+                        [
+                          _c("v-spacer"),
+                          _vm._v(" "),
+                          _c(
+                            "v-btn",
+                            {
+                              staticClass:
+                                "rounded-xl white--text font-weight-bold px-10",
+                              attrs: { large: "", color: "primary" },
+                              on: {
+                                click: function ($event) {
+                                  $event.preventDefault()
+                                  return _vm.showDetails(tec)
+                                },
+                              },
+                            },
+                            [_vm._v("ver más")]
+                          ),
+                          _vm._v(" "),
+                          _c("v-spacer"),
+                        ],
+                        1
+                      ),
                     ],
                     1
                   ),
                 ],
                 1
-              ),
-            ],
+              )
+            }),
             1
-          )
-        }),
+          ),
+        ],
         1
       ),
       _vm._v(" "),

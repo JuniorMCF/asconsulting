@@ -1,79 +1,101 @@
 <template>
-    <v-container class="content-wrap-2 pa-0 mx-auto">
-        <v-row class="pa-0 ma-0 content-wrap-2 mx-auto">
+    <div>
+        <v-container class="content-wrap-2 pa-0 mx-auto py-16">
+            <!-- <v-row class="pa-0 ma-0 content-wrap-2 mx-auto">
             <v-col class="col-12 pa-0 ma-0 container-bandwith">
                 <v-img src="/app/bandwith.png "></v-img>
             </v-col>
-        </v-row>
+        </v-row> -->
 
-        <v-row class="pa-0 ma-0 content-wrap-0 mx-auto align-center mb-10">
-            <v-col class="col-12 col-md-6 text-center text-md-left my-4">
-                <span class="primary--text text-uppercase as-text_extralarge line-height_1">Nuestros</span>
-                <br />
+            <v-row class="pa-0 ma-0 content-wrap-0 mx-auto align-center my-16">
+                <v-col class="col-12 col-md-6 text-center text-md-left my-4">
+                    <span
+                        class="primary--text text-uppercase as-text_extralarge line-height_1"
+                        >Nuestros</span
+                    >
+                    <br />
 
-                <span
-                    class="pl-6 primary--text font-weight-bold text-uppercase as-text_extralarge line-height_1 after-right_block"
-                >servicios</span>
-            </v-col>
+                    <span
+                        class="pl-6 primary--text font-weight-bold text-uppercase as-text_extralarge line-height_1 after-right_block"
+                        >servicios</span
+                    >
+                </v-col>
 
-            <v-col class="col-12 col-md-6 text-center text-md-left my-4">
-                <p
-                    class="primary--text text-justify as-p_normal ma-0"
-                >Conoce los diferentes servicios que tenemos para ti y tu empresa.</p>
-            </v-col>
-        </v-row>
+                <v-col class="col-12 col-md-6 text-center text-md-left my-4">
+                    <p class="black--text text-justify as-p_normal ma-0">
+                        Conoce los diferentes servicios que tenemos para ti y tu
+                        empresa.
+                    </p>
+                </v-col>
+            </v-row>
 
-        <v-row class="pa-0 ma-0  content-wrap-0 mx-auto align-center mb-10">
-            <v-col class="col-12 col-md-6 px-2" v-for="(servicio, index) in servicios" :key="index">
-                <v-card class="elevation-0 rounded-0 container-servicio">
-                    <v-card-text class="pa-10 text-center content-servicio">
-                        <v-card-text class="px-8 pt-8 py-0 pb-5">
-                            <h3
-                                class="white--text font-weight-bold as-text_extralarge"
-                            >{{ servicio.title }}</h3>
-                            <h5
-                                class="white--text font-weight-bold as-p_normal text-left px-md-6 px-0"
-                            >{{ servicio.subtitle }}</h5>
-                        </v-card-text>
+            <v-row class="pa-0 ma-0 content-wrap-0 mx-auto align-center mb-10">
+                <v-col
+                    class="col-12 col-md-6 px-2"
+                    v-for="(servicio, index) in servicios"
+                    :key="index"
+                >
+                    <v-card class="elevation-0 rounded-0 container-servicio">
+                        <v-card-text class="pa-10 text-center content-servicio">
+                            <v-card-text class="px-8 pt-8 py-0 pb-5">
+                                <h3
+                                    class="white--text font-weight-bold as-text_extralarge"
+                                >
+                                    {{ servicio.title }}
+                                </h3>
+                                <h5
+                                    class="white--text font-weight-bold as-p_normal text-left px-md-6 px-0"
+                                >
+                                    {{ servicio.subtitle }}
+                                </h5>
+                            </v-card-text>
 
-                        <v-card-text class="px-6 pl-md-13 pr-10 py-0">
-                            <ul class="as-p_normal">
-                                <li
-                                    class="white--text text-left as-p_normal li-circle py-1"
-                                    v-for="(element, index) in servicio.details"
+                            <v-card-text class="px-6 pl-md-13 pr-10 py-0">
+                                <ul class="as-p_normal">
+                                    <li
+                                        class="white--text text-left as-p_normal li-circle py-1"
+                                        v-for="(
+                                            element, index
+                                        ) in servicio.details"
+                                        :key="index"
+                                    >
+                                        {{ element.text }}
+                                    </li>
+                                </ul>
+                            </v-card-text>
+
+                            <v-card-actions class="pa-0 bottom_button">
+                                <v-spacer></v-spacer>
+                                <v-btn
+                                    outlined
+                                    rounded
+                                    large
+                                    link
+                                    :to="action.src"
+                                    class="elevation-0 white--text px-10"
+                                    v-for="(action, index) in servicio.actions"
                                     :key="index"
-                                >{{ element.text }}</li>
-                            </ul>
+                                    >{{ action.title }}</v-btn
+                                >
+                                <v-spacer></v-spacer>
+                            </v-card-actions>
                         </v-card-text>
-
-                        <v-card-actions class="pa-0 bottom_button">
-                            <v-spacer></v-spacer>
-                            <v-btn
-                                outlined
-                                rounded
-                                large
-                                link
-                                :to="action.src"
-                                class="elevation-0 white--text px-10"
-                                v-for="(action, index) in servicio.actions"
-                                :key="index"
-                            >{{ action.title }}</v-btn>
-                            <v-spacer></v-spacer>
-                        </v-card-actions>
-                    </v-card-text>
-                    <div class="overlap-servicios"></div>
-                    <div class="img-overlap">
-                        <v-img :src="servicio.src" class="img-overlap"></v-img>
-                    </div>
-                </v-card>
-            </v-col>
-        </v-row>
-
-        <!--include footer-->
+                        <div class="overlap-servicios"></div>
+                        <div class="img-overlap">
+                            <v-img
+                                :src="servicio.src"
+                                class="img-overlap"
+                            ></v-img>
+                        </div>
+                    </v-card>
+                </v-col>
+            </v-row>
+        </v-container>
+         <!--include footer-->
         <FooterGlobal></FooterGlobal>
 
         <ChatComponent></ChatComponent>
-    </v-container>
+    </div>
 </template>
 
 <script>
@@ -125,7 +147,12 @@ export default {
                 subtitle: "Nuestros principales servicios:",
                 details: [
                     { text: "Mapeo y optimización de procesos." },
-                    { text: "Inventario de activos " + "\n" + "(metodología ágil)." },
+                    {
+                        text:
+                            "Inventario de activos " +
+                            "\n" +
+                            "(metodología ágil).",
+                    },
                     { text: "Programa de reducción de costos." },
                     { text: "Evaluación de carga de trabajo." },
                     { text: "​Reingeniería organizacional." },
@@ -162,15 +189,14 @@ export default {
 
         /**for visite */
         this.$store.dispatch("app/openPage", {
-             page: window.location.pathname,
-            link: window.location.host + window.location.pathname
-        })
-
+            page: window.location.pathname,
+            link: window.location.host + window.location.pathname,
+        });
     },
     destroyed() {
         this.$store.dispatch("app/closePage", {
-            visita_id: this.$store.state.app.visita_id
-        })
+            visita_id: this.$store.state.app.visita_id,
+        });
     },
     methods: {
         getPath() {
@@ -189,7 +215,8 @@ export default {
     z-index: 1;
     height: 481px;
     width: 100%;
-    background-color: rgba(0, 0, 102, 0.44) !important;
+    background-color: rgba(0, 0, 102, 0.3) !important;
+    transition: all 0.5s;
 }
 .img-overlap {
     position: absolute;
@@ -197,7 +224,7 @@ export default {
     top: 0px;
     height: 481px;
     width: 100%;
-    background-color: rgba(0, 0, 102, 0.44) !important;
+    background-color:transparent !important;
 }
 .content-servicio {
     position: absolute;

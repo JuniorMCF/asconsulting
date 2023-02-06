@@ -98,6 +98,95 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
@@ -107,7 +196,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       phone_send: "tel:+51926302115",
       wame: "https://wa.me/51926302115",
       email: "reactivatunegocio@asconsulting.pe",
-      address: "Av. Alfredo Benavides 3695. Surco."
+      address: "Av. Alfredo Benavides 3695. Santiago de Surco. Lima, Perú."
     };
   },
   methods: {
@@ -121,8 +210,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
             switch (_context.prev = _context.next) {
               case 0:
                 shareData = {
-                  title: 'A&S Consulting Group',
-                  text: 'Solicita tu asesoría',
+                  title: "A&S Consulting Group",
+                  text: "Solicita tu asesoría",
                   url: _this.email
                 };
                 _context.prev = 1;
@@ -149,7 +238,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     },
     goToLocation: function goToLocation() {
       this.$router.push({
-        name: 'contacto'
+        name: "contacto"
       });
     }
   },
@@ -175,6 +264,57 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _components_global_ChatComponent_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../components/global/ChatComponent.vue */ "./resources/js/components/global/ChatComponent.vue");
 /* harmony import */ var _components_global_FooterGlobal_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../components/global/FooterGlobal.vue */ "./resources/js/components/global/FooterGlobal.vue");
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -840,27 +980,16 @@ var render = function () {
     [
       _c(
         "v-row",
-        { staticClass: "pa-0 ma-0 content-wrap-2 mx-auto footer-container" },
-        [
-          _c(
-            "v-col",
-            { staticClass: "col-12 pa-0 ma-0 rotate-180 container-bandwith" },
-            [_c("v-img", { attrs: { src: "/app/bandwith.png " } })],
-            1
-          ),
-        ],
-        1
-      ),
-      _vm._v(" "),
-      _c(
-        "v-row",
-        { staticClass: "primary pa-0 ma-0 content-wrap-2 mx-auto" },
+        {
+          staticClass:
+            "grey darken-4 pa-0 ma-0 mx-auto justify-center align-start py-10",
+        },
         [
           _c(
             "v-col",
             {
               staticClass:
-                "col-12 col-md-6 d-flex flex-wrap justify-center align-center",
+                "col-12 col-md-2 col-xl-2 d-flex flex-wrap justify-center align-center",
             },
             [
               _c(
@@ -874,166 +1003,205 @@ var render = function () {
                 ],
                 1
               ),
+            ]
+          ),
+          _vm._v(" "),
+          _c(
+            "v-col",
+            {
+              staticClass:
+                "col-12 col-md-3 col-xl-3 d-flex flex-column justify-center align-start",
+            },
+            [
+              _c("p", { staticClass: "white--text font-weight-bold px-4" }, [
+                _vm._v("CONTACTO"),
+              ]),
               _vm._v(" "),
-              _c("span", { staticClass: "white--text as-footer_text px-4" }, [
-                _vm._v(
-                  "\n                Copyright ©" +
-                    _vm._s(_vm.yearActual) +
-                    " by A&S Consulting Group.\n            "
-                ),
+              _c(
+                "a",
+                {
+                  staticClass: "white--text px-4",
+                  on: {
+                    click: function ($event) {
+                      $event.preventDefault()
+                      return _vm.goToLocation()
+                    },
+                  },
+                },
+                [
+                  _c(
+                    "v-icon",
+                    { attrs: { small: "", color: "white", left: "" } },
+                    [_vm._v("mdi-map-marker")]
+                  ),
+                  _vm._v(" " + _vm._s(_vm.address) + "\n            "),
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "a",
+                {
+                  staticClass: "white--text px-4",
+                  attrs: { href: _vm.phone_send },
+                },
+                [
+                  _c(
+                    "v-icon",
+                    { attrs: { small: "", color: "white", left: "" } },
+                    [_vm._v("mdi-phone")]
+                  ),
+                  _vm._v(" " + _vm._s(_vm.phone_contact) + "\n            "),
+                ],
+                1
+              ),
+            ]
+          ),
+          _vm._v(" "),
+          _c(
+            "v-col",
+            {
+              staticClass:
+                "col-12 col-md-3 col-xl-3 d-flex flex-column justify-center align-start",
+            },
+            [
+              _c("p", { staticClass: "white--text font-weight-bold px-4" }, [
+                _vm._v("LEGAL"),
+              ]),
+              _vm._v(" "),
+              _c("a", { staticClass: "white--text px-4" }, [
+                _vm._v(" Términos y condiciones "),
+              ]),
+              _vm._v(" "),
+              _c("a", { staticClass: "white--text px-4" }, [
+                _vm._v(" Privacidad "),
               ]),
             ]
           ),
           _vm._v(" "),
           _c(
             "v-col",
-            { staticClass: "col-12 col-md-6 text-center text-md-left " },
+            {
+              staticClass:
+                "col-12 col-md-3 col-xl-3 d-flex flex-column justify-center align-start",
+            },
             [
-              _c("v-col", [
-                _c(
-                  "span",
-                  {
-                    staticClass:
-                      "white--text d-block d-md-inline-flex align-center justify-center",
-                  },
-                  [
-                    _c(
-                      "v-btn",
-                      {
-                        staticClass: "white--text",
-                        attrs: {
-                          fab: "",
-                          text: "",
-                          small: "",
-                          link: "",
-                          href: _vm.phone_send,
-                        },
-                      },
-                      [
-                        _c("v-icon", { attrs: { color: "white" } }, [
-                          _vm._v("mdi-phone-message"),
-                        ]),
-                      ],
-                      1
-                    ),
-                    _vm._v(
-                      "\n                    " +
-                        _vm._s(_vm.phone_contact) +
-                        "\n                "
-                    ),
-                  ],
-                  1
-                ),
-                _vm._v(" "),
-                _c(
-                  "span",
-                  {
-                    staticClass:
-                      "white--text d-block d-md-inline-flex align-center justify-center",
-                  },
-                  [
-                    _c(
-                      "v-btn",
-                      {
-                        staticClass: "white--text",
-                        attrs: { fab: "", text: "", small: "", link: "" },
-                        on: {
-                          click: function ($event) {
-                            $event.preventDefault()
-                            return _vm.openEmail()
-                          },
-                        },
-                      },
-                      [
-                        _c("v-icon", { attrs: { color: "white" } }, [
-                          _vm._v("mdi-email-open"),
-                        ]),
-                      ],
-                      1
-                    ),
-                    _vm._v(
-                      "\n                    " +
-                        _vm._s(_vm.email) +
-                        "\n                "
-                    ),
-                  ],
-                  1
-                ),
+              _c("p", { staticClass: "white--text font-weight-bold px-4" }, [
+                _vm._v("SÍGUENOS"),
               ]),
               _vm._v(" "),
-              _c("v-col", [
-                _c(
-                  "span",
-                  {
-                    staticClass:
-                      "white--text d-block d-md-inline-flex align-center justify-center",
-                  },
-                  [
-                    _c(
-                      "v-btn",
-                      {
-                        staticClass: "white--text",
-                        attrs: {
-                          fab: "",
-                          text: "",
-                          small: "",
-                          href: _vm.wame,
-                          target: "_blank",
-                        },
+              _c(
+                "div",
+                { staticClass: "d-flex flex-wrap px-4" },
+                [
+                  _c(
+                    "v-btn",
+                    {
+                      staticClass: "elevation-0",
+                      attrs: {
+                        fab: "",
+                        small: "",
+                        text: "",
+                        color: "primary",
+                        href: "https://www.facebook.com/AS-Consulting-Group-141818089928155",
+                        target: "_blank",
                       },
-                      [
-                        _c("v-icon", { attrs: { color: "white" } }, [
-                          _vm._v("mdi-whatsapp"),
-                        ]),
-                      ],
-                      1
-                    ),
-                    _vm._v(
-                      "\n                    " +
-                        _vm._s(_vm.phone_contact) +
-                        "\n                "
-                    ),
-                  ],
-                  1
-                ),
-                _vm._v(" "),
-                _c(
-                  "span",
-                  {
-                    staticClass:
-                      "white--text d-block d-md-inline-flex align-center justify-center",
-                  },
-                  [
-                    _c(
-                      "v-btn",
-                      {
-                        staticClass: "white--text",
-                        attrs: { fab: "", text: "", small: "", link: "" },
-                        on: {
-                          click: function ($event) {
-                            $event.preventDefault()
-                            return _vm.goToLocation()
-                          },
-                        },
+                    },
+                    [
+                      _c("v-icon", { attrs: { color: "white" } }, [
+                        _vm._v("mdi-facebook"),
+                      ]),
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "v-btn",
+                    {
+                      staticClass: "elevation-0",
+                      attrs: {
+                        fab: "",
+                        small: "",
+                        text: "",
+                        color: "primary",
+                        href: "https://www.instagram.com/asconsultinggroup/",
+                        target: "_blank",
                       },
-                      [
-                        _c("v-icon", { attrs: { color: "white" } }, [
-                          _vm._v("mdi-map-marker"),
-                        ]),
-                      ],
-                      1
-                    ),
-                    _vm._v(
-                      "\n                    " +
-                        _vm._s(_vm.address) +
-                        "\n                "
-                    ),
-                  ],
-                  1
-                ),
-              ]),
-            ],
-            1
+                    },
+                    [
+                      _c("v-icon", { attrs: { color: "white" } }, [
+                        _vm._v("mdi-instagram"),
+                      ]),
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "v-btn",
+                    {
+                      staticClass: "elevation-0",
+                      attrs: {
+                        fab: "",
+                        small: "",
+                        text: "",
+                        color: "primary",
+                        href: "https://www.linkedin.com/company/as.consulting/",
+                        target: "_blank",
+                      },
+                    },
+                    [
+                      _c("v-icon", { attrs: { color: "white" } }, [
+                        _vm._v("mdi-linkedin"),
+                      ]),
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "v-btn",
+                    {
+                      staticClass: "elevation-0",
+                      attrs: {
+                        fab: "",
+                        small: "",
+                        text: "",
+                        color: "primary",
+                        href: "https://www.youtube.com/channel/UCLGe4u_VDbkoJWE2LkMni9w/featured?view_as=subscriber",
+                        target: "_blank",
+                      },
+                    },
+                    [
+                      _c("v-icon", { attrs: { color: "white" } }, [
+                        _vm._v("mdi-youtube"),
+                      ]),
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "v-btn",
+                    {
+                      staticClass: "elevation-0",
+                      attrs: {
+                        fab: "",
+                        small: "",
+                        text: "",
+                        color: "primary",
+                        href: "https://twitter.com/pymedigitalAS",
+                        target: "_blank",
+                      },
+                    },
+                    [
+                      _c("v-icon", { attrs: { color: "white" } }, [
+                        _vm._v("mdi-twitter"),
+                      ]),
+                    ],
+                    1
+                  ),
+                ],
+                1
+              ),
+            ]
           ),
         ],
         1
@@ -1065,183 +1233,185 @@ var render = function () {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c(
-    "v-container",
-    { staticClass: "content-wrap-2 pa-0 mx-auto", attrs: { fluid: "" } },
+    "div",
     [
       _c(
-        "v-row",
-        { staticClass: "pa-0 ma-0 content-wrap-2 mx-auto" },
+        "v-container",
+        {
+          staticClass: "content-wrap pa-0 mx-auto py-16",
+          attrs: { fluid: "" },
+        },
         [
           _c(
-            "v-col",
-            { staticClass: "col-12 pa-0 ma-0" },
+            "v-row",
+            {
+              staticClass:
+                "pa-0 ma-0 content-wrap-0 mx-auto align-center my-16",
+            },
             [
-              _c("v-card", {
-                staticClass: "elevation-2 rounded-0",
-                attrs: { color: "primary", height: "25" },
-              }),
+              _c(
+                "v-col",
+                { staticClass: "col-12 col-md-6 text-center my-4 mx-auto" },
+                [
+                  _c(
+                    "span",
+                    {
+                      staticClass:
+                        "primary--text text-uppercase as-text_extralarge line-height_1",
+                    },
+                    [_vm._v("Nuestro")]
+                  ),
+                  _vm._v(" "),
+                  _c("br"),
+                  _vm._v(" "),
+                  _c(
+                    "span",
+                    {
+                      staticClass:
+                        "pl-6 primary--text font-weight-bold text-uppercase as-text_extralarge line-height_1 after-center_block",
+                    },
+                    [_vm._v("equipo")]
+                  ),
+                ]
+              ),
             ],
             1
           ),
-        ],
-        1
-      ),
-      _vm._v(" "),
-      _c(
-        "v-row",
-        { staticClass: "pa-0 ma-0 content-wrap-0 mx-auto align-center my-8" },
-        [
+          _vm._v(" "),
           _c(
-            "v-col",
-            { staticClass: "col-12 col-md-6 text-center my-4 mx-auto" },
+            "v-container",
+            {
+              staticClass: "content-wrap-0 pa-0 mx-auto",
+              attrs: { fluid: "" },
+            },
             [
               _c(
-                "span",
-                {
-                  staticClass:
-                    "primary--text text-uppercase as-text_extralarge line-height_1",
-                },
-                [_vm._v("Nuestro")]
-              ),
-              _vm._v(" "),
-              _c("br"),
-              _vm._v(" "),
-              _c(
-                "span",
-                {
-                  staticClass:
-                    "pl-6 primary--text font-weight-bold text-uppercase as-text_extralarge line-height_1 after-center_block",
-                },
-                [_vm._v("equipo")]
-              ),
-            ]
-          ),
-        ],
-        1
-      ),
-      _vm._v(" "),
-      _c(
-        "v-container",
-        { staticClass: "content-wrap-0 pa-0 mx-auto", attrs: { fluid: "" } },
-        [
-          _c(
-            "div",
-            { staticClass: "parallax" },
-            [
-              _c(
-                "v-row",
-                {
-                  staticClass:
-                    "pa-0 ma-0 content-wrap-0 mx-auto my-8 d-flex flex-wrap flex-md-row flex-column",
-                  staticStyle: { "min-height": "740px" },
-                },
+                "div",
+                { staticClass: "parallax" },
                 [
                   _c(
-                    "v-col",
+                    "v-row",
+                    {
+                      staticClass:
+                        "pa-0 ma-0 content-wrap-0 mx-auto my-8 d-flex flex-wrap flex-md-row flex-column",
+                      staticStyle: { "min-height": "740px" },
+                    },
                     [
                       _c(
-                        "v-card",
-                        {
-                          staticClass:
-                            "elevation-0 mx-auto pt-8 d-flex flex-wrap space-between card-equipo-container",
-                          attrs: { color: "transparent" },
-                        },
+                        "v-col",
                         [
                           _c(
-                            "div",
-                            { staticClass: "mx-auto" },
+                            "v-card",
+                            {
+                              staticClass:
+                                "elevation-0 mx-auto pt-8 d-flex flex-wrap space-between card-equipo-container",
+                              attrs: { color: "transparent" },
+                            },
                             [
-                              _c("v-img", {
-                                staticClass: "rounded-circle",
-                                attrs: {
-                                  src: "/app/gerardo_alvarez.jpg",
-                                  height: _vm.height,
-                                  width: _vm.width,
-                                },
-                              }),
-                            ],
-                            1
-                          ),
-                          _vm._v(" "),
-                          _c(
-                            "v-card-text",
-                            { staticClass: "text-center card-equipo" },
-                            [
-                              _c("div", { staticClass: "d-block mx-auto" }, [
-                                _c(
-                                  "span",
-                                  {
-                                    staticClass:
-                                      "as-text_normal_2 font-weight-bold white--text",
-                                  },
-                                  [_vm._v("Gerardo")]
-                                ),
-                                _vm._v(" "),
-                                _c("br"),
-                                _vm._v(" "),
-                                _c(
-                                  "span",
-                                  {
-                                    staticClass:
-                                      "as-text_normal_2 pl-7 font-weight-bold white--text",
-                                  },
-                                  [_vm._v("Álvarez")]
-                                ),
-                              ]),
-                              _vm._v(" "),
                               _c(
                                 "div",
-                                {
-                                  staticClass:
-                                    "text-justify white--text text-16 py-4",
-                                },
+                                { staticClass: "mx-auto" },
                                 [
-                                  _c("span", [
-                                    _vm._v(
-                                      "\n                                    Ejecutivo y consultor de tecnología con\n                                    "
-                                    ),
-                                    _c("strong", [
-                                      _vm._v("18 años de experiencia"),
-                                    ]),
-                                    _vm._v(
-                                      " en el sector\n                                    financiero. Ingeniero de Sistemas titulado, Magister en\n                                    administración de empresas con mención en gestión avanzada\n                                    de proyectos.\n                                    "
-                                    ),
-                                    _c("strong", [
-                                      _vm._v(
-                                        "\n                                        Líder de equipos ágiles con enfoque a resultados y\n                                        satisfacción del cliente.\n                                    "
-                                      ),
-                                    ]),
-                                  ]),
-                                ]
+                                  _c("v-img", {
+                                    staticClass: "rounded-circle",
+                                    attrs: {
+                                      src: "/app/gerardo_alvarez.jpg",
+                                      height: _vm.height,
+                                      width: _vm.width,
+                                    },
+                                  }),
+                                ],
+                                1
                               ),
-                            ]
-                          ),
-                          _vm._v(" "),
-                          _c(
-                            "v-card-actions",
-                            { staticClass: "align-end" },
-                            [
+                              _vm._v(" "),
                               _c(
-                                "v-btn",
-                                {
-                                  staticClass:
-                                    "elevation-0 px-2 position-linkedin",
-                                  staticStyle: {
-                                    "min-width": "auto !important",
-                                  },
-                                  attrs: {
-                                    large: "",
-                                    color: "#0073b2",
-                                    link: "",
-                                    href: "https://www.linkedin.com/in/gerardo-alvarez/",
-                                    target: "_blank",
-                                  },
-                                },
+                                "v-card-text",
+                                { staticClass: "text-center card-equipo" },
                                 [
                                   _c(
-                                    "v-icon",
-                                    { attrs: { color: "white", large: "" } },
-                                    [_vm._v("mdi-linkedin")]
+                                    "div",
+                                    { staticClass: "d-block mx-auto" },
+                                    [
+                                      _c(
+                                        "span",
+                                        {
+                                          staticClass:
+                                            "as-text_normal_2 font-weight-bold white--text",
+                                        },
+                                        [_vm._v("Gerardo")]
+                                      ),
+                                      _vm._v(" "),
+                                      _c("br"),
+                                      _vm._v(" "),
+                                      _c(
+                                        "span",
+                                        {
+                                          staticClass:
+                                            "as-text_normal_2 pl-7 font-weight-bold white--text",
+                                        },
+                                        [_vm._v("Álvarez")]
+                                      ),
+                                    ]
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "div",
+                                    {
+                                      staticClass:
+                                        "text-justify white--text text-16 py-4",
+                                    },
+                                    [
+                                      _c("span", [
+                                        _vm._v(
+                                          "\n                                        Ejecutivo y consultor de tecnología\n                                        con\n                                        "
+                                        ),
+                                        _c("strong", [
+                                          _vm._v("18 años de experiencia"),
+                                        ]),
+                                        _vm._v(
+                                          "\n                                        en el sector financiero. Ingeniero\n                                        de Sistemas titulado, Magister en\n                                        administración de empresas con\n                                        mención en gestión avanzada de\n                                        proyectos.\n                                        "
+                                        ),
+                                        _c("strong", [
+                                          _vm._v(
+                                            "\n                                            Líder de equipos ágiles con\n                                            enfoque a resultados y\n                                            satisfacción del cliente.\n                                        "
+                                          ),
+                                        ]),
+                                      ]),
+                                    ]
+                                  ),
+                                ]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "v-card-actions",
+                                { staticClass: "align-end" },
+                                [
+                                  _c(
+                                    "v-btn",
+                                    {
+                                      staticClass:
+                                        "elevation-0 px-2 position-linkedin",
+                                      staticStyle: {
+                                        "min-width": "auto !important",
+                                      },
+                                      attrs: {
+                                        large: "",
+                                        color: "#0073b2",
+                                        link: "",
+                                        href: "https://www.linkedin.com/in/gerardo-alvarez/",
+                                        target: "_blank",
+                                      },
+                                    },
+                                    [
+                                      _c(
+                                        "v-icon",
+                                        {
+                                          attrs: { color: "white", large: "" },
+                                        },
+                                        [_vm._v("mdi-linkedin")]
+                                      ),
+                                    ],
+                                    1
                                   ),
                                 ],
                                 1
@@ -1252,121 +1422,127 @@ var render = function () {
                         ],
                         1
                       ),
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c("v-divider", {
-                    staticClass: "divider",
-                    attrs: { vertical: _vm.vertical, color: _vm.color },
-                  }),
-                  _vm._v(" "),
-                  _c(
-                    "v-col",
-                    [
+                      _vm._v(" "),
+                      _c("v-divider", {
+                        staticClass: "divider",
+                        attrs: { vertical: _vm.vertical, color: _vm.color },
+                      }),
+                      _vm._v(" "),
                       _c(
-                        "v-card",
-                        {
-                          staticClass:
-                            "elevation-0 mx-auto pt-8 d-flex flex-wrap space-between card-equipo-container",
-                          attrs: { color: "transparent" },
-                        },
+                        "v-col",
                         [
                           _c(
-                            "div",
-                            { staticClass: "mx-auto" },
+                            "v-card",
+                            {
+                              staticClass:
+                                "elevation-0 mx-auto pt-8 d-flex flex-wrap space-between card-equipo-container",
+                              attrs: { color: "transparent" },
+                            },
                             [
-                              _c("v-img", {
-                                staticClass: "rounded-circle",
-                                attrs: {
-                                  src: "/app/victor_alvarez.png",
-                                  height: _vm.height,
-                                  width: _vm.width,
-                                },
-                              }),
-                            ],
-                            1
-                          ),
-                          _vm._v(" "),
-                          _c(
-                            "v-card-text",
-                            { staticClass: "text-center card-equipo" },
-                            [
-                              _c("div", { staticClass: "d-block mx-auto" }, [
-                                _c(
-                                  "span",
-                                  {
-                                    staticClass:
-                                      "as-text_normal_2 font-weight-bold white--text",
-                                  },
-                                  [_vm._v("Victor")]
-                                ),
-                                _vm._v(" "),
-                                _c("br"),
-                                _vm._v(" "),
-                                _c(
-                                  "span",
-                                  {
-                                    staticClass:
-                                      "as-text_normal_2 pl-7 font-weight-bold white--text",
-                                  },
-                                  [_vm._v("Álvarez")]
-                                ),
-                              ]),
-                              _vm._v(" "),
                               _c(
                                 "div",
-                                {
-                                  staticClass:
-                                    "text-justify white--text text-16 py-4",
-                                },
+                                { staticClass: "mx-auto" },
                                 [
-                                  _c("span", [
-                                    _vm._v(
-                                      "\n                                    Ejecutivo, consultor financiero y contable con\n                                    "
-                                    ),
-                                    _c("strong", [
-                                      _vm._v("25 años de experiencia"),
-                                    ]),
-                                    _vm._v(
-                                      " Contador con\n                                    estudios especializados en la Contraloría General de la\n                                    República. Auditor Interno en empresas Petroleras\n                                    Comerciales y de Construcción. Asesora a empresas en su\n                                    crecimiento y la reducción de sus costos.\n                                    "
-                                    ),
-                                    _c("strong", [
-                                      _vm._v(
-                                        "\n                                        Experto en la optimización de procesos, reingeniería\n                                        organizacional y saneamiento tributario.\n                                    "
-                                      ),
-                                    ]),
-                                  ]),
-                                ]
+                                  _c("v-img", {
+                                    staticClass: "rounded-circle",
+                                    attrs: {
+                                      src: "/app/victor_alvarez.png",
+                                      height: _vm.height,
+                                      width: _vm.width,
+                                    },
+                                  }),
+                                ],
+                                1
                               ),
-                            ]
-                          ),
-                          _vm._v(" "),
-                          _c(
-                            "v-card-actions",
-                            { staticClass: "align-end" },
-                            [
+                              _vm._v(" "),
                               _c(
-                                "v-btn",
-                                {
-                                  staticClass:
-                                    "elevation-0 px-2 position-linkedin",
-                                  staticStyle: {
-                                    "min-width": "auto !important",
-                                  },
-                                  attrs: {
-                                    large: "",
-                                    color: "#0073b2",
-                                    link: "",
-                                    href: "https://www.linkedin.com/in/victor-alvarez-rojas/",
-                                    target: "_blank",
-                                  },
-                                },
+                                "v-card-text",
+                                { staticClass: "text-center card-equipo" },
                                 [
                                   _c(
-                                    "v-icon",
-                                    { attrs: { color: "white", large: "" } },
-                                    [_vm._v("mdi-linkedin")]
+                                    "div",
+                                    { staticClass: "d-block mx-auto" },
+                                    [
+                                      _c(
+                                        "span",
+                                        {
+                                          staticClass:
+                                            "as-text_normal_2 font-weight-bold white--text",
+                                        },
+                                        [_vm._v("Victor")]
+                                      ),
+                                      _vm._v(" "),
+                                      _c("br"),
+                                      _vm._v(" "),
+                                      _c(
+                                        "span",
+                                        {
+                                          staticClass:
+                                            "as-text_normal_2 pl-7 font-weight-bold white--text",
+                                        },
+                                        [_vm._v("Álvarez")]
+                                      ),
+                                    ]
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "div",
+                                    {
+                                      staticClass:
+                                        "text-justify white--text text-16 py-4",
+                                    },
+                                    [
+                                      _c("span", [
+                                        _vm._v(
+                                          "\n                                        Ejecutivo, consultor financiero y\n                                        contable con\n                                        "
+                                        ),
+                                        _c("strong", [
+                                          _vm._v("25 años de experiencia"),
+                                        ]),
+                                        _vm._v(
+                                          "\n                                        Contador con estudios especializados\n                                        en la Contraloría General de la\n                                        República. Auditor Interno en\n                                        empresas Petroleras Comerciales y de\n                                        Construcción. Asesora a empresas en\n                                        su crecimiento y la reducción de sus\n                                        costos.\n                                        "
+                                        ),
+                                        _c("strong", [
+                                          _vm._v(
+                                            "\n                                            Experto en la optimización de\n                                            procesos, reingeniería\n                                            organizacional y saneamiento\n                                            tributario.\n                                        "
+                                          ),
+                                        ]),
+                                      ]),
+                                    ]
+                                  ),
+                                ]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "v-card-actions",
+                                { staticClass: "align-end" },
+                                [
+                                  _c(
+                                    "v-btn",
+                                    {
+                                      staticClass:
+                                        "elevation-0 px-2 position-linkedin",
+                                      staticStyle: {
+                                        "min-width": "auto !important",
+                                      },
+                                      attrs: {
+                                        large: "",
+                                        color: "#0073b2",
+                                        link: "",
+                                        href: "https://www.linkedin.com/in/victor-alvarez-rojas/",
+                                        target: "_blank",
+                                      },
+                                    },
+                                    [
+                                      _c(
+                                        "v-icon",
+                                        {
+                                          attrs: { color: "white", large: "" },
+                                        },
+                                        [_vm._v("mdi-linkedin")]
+                                      ),
+                                    ],
+                                    1
                                   ),
                                 ],
                                 1
@@ -1377,121 +1553,127 @@ var render = function () {
                         ],
                         1
                       ),
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c("v-divider", {
-                    staticClass: "divider",
-                    attrs: { vertical: _vm.vertical, color: _vm.color },
-                  }),
-                  _vm._v(" "),
-                  _c(
-                    "v-col",
-                    [
+                      _vm._v(" "),
+                      _c("v-divider", {
+                        staticClass: "divider",
+                        attrs: { vertical: _vm.vertical, color: _vm.color },
+                      }),
+                      _vm._v(" "),
                       _c(
-                        "v-card",
-                        {
-                          staticClass:
-                            "elevation-0 mx-auto pt-8 d-flex flex-wrap space-between card-equipo-container",
-                          attrs: { color: "transparent" },
-                        },
+                        "v-col",
                         [
                           _c(
-                            "div",
-                            { staticClass: "mx-auto" },
+                            "v-card",
+                            {
+                              staticClass:
+                                "elevation-0 mx-auto pt-8 d-flex flex-wrap space-between card-equipo-container",
+                              attrs: { color: "transparent" },
+                            },
                             [
-                              _c("v-img", {
-                                staticClass: "rounded-circle",
-                                attrs: {
-                                  src: "/app/jorge_carrera.jpg",
-                                  height: _vm.height,
-                                  width: _vm.width,
-                                },
-                              }),
-                            ],
-                            1
-                          ),
-                          _vm._v(" "),
-                          _c(
-                            "v-card-text",
-                            { staticClass: "text-center card-equipo" },
-                            [
-                              _c("div", { staticClass: "d-block mx-auto" }, [
-                                _c(
-                                  "span",
-                                  {
-                                    staticClass:
-                                      "as-text_normal_2 font-weight-bold white--text",
-                                  },
-                                  [_vm._v("Jorge")]
-                                ),
-                                _vm._v(" "),
-                                _c("br"),
-                                _vm._v(" "),
-                                _c(
-                                  "span",
-                                  {
-                                    staticClass:
-                                      "as-text_normal_2 pl-7 font-weight-bold white--text",
-                                  },
-                                  [_vm._v("Carrera")]
-                                ),
-                              ]),
-                              _vm._v(" "),
                               _c(
                                 "div",
-                                {
-                                  staticClass:
-                                    "text-justify white--text text-16 py-4",
-                                },
+                                { staticClass: "mx-auto" },
                                 [
-                                  _c("span", [
-                                    _vm._v(
-                                      "\n                                    Ejecutivo, consultor, docente y auditor en entidades\n                                    privadas y públicas con más de\n                                    "
-                                    ),
-                                    _c("strong", [
-                                      _vm._v("35 años de experiencia"),
-                                    ]),
-                                    _vm._v(
-                                      " en la dirección de\n                                    empresas. Contador Público Colegiado, Auditor Certificado,\n                                    Maestría en Contabilidad y Doctorado en Administración.\n                                    Experiencia como Gerente apoderado de una Corporación\n                                    Global.\n                                    "
-                                    ),
-                                    _c("strong", [
-                                      _vm._v(
-                                        "\n                                        Líder en Dirección de Control de Gestión y mitigación de\n                                        riesgos.\n                                    "
-                                      ),
-                                    ]),
-                                  ]),
-                                ]
+                                  _c("v-img", {
+                                    staticClass: "rounded-circle",
+                                    attrs: {
+                                      src: "/app/jorge_carrera.jpg",
+                                      height: _vm.height,
+                                      width: _vm.width,
+                                    },
+                                  }),
+                                ],
+                                1
                               ),
-                            ]
-                          ),
-                          _vm._v(" "),
-                          _c(
-                            "v-card-actions",
-                            { staticClass: "align-end" },
-                            [
+                              _vm._v(" "),
                               _c(
-                                "v-btn",
-                                {
-                                  staticClass:
-                                    "elevation-0 px-2 position-linkedin",
-                                  staticStyle: {
-                                    "min-width": "auto !important",
-                                  },
-                                  attrs: {
-                                    large: "",
-                                    color: "#0073b2",
-                                    link: "",
-                                    href: "http://linkedin.com/in/jorge-carreras-aa96a7204",
-                                    target: "_blank",
-                                  },
-                                },
+                                "v-card-text",
+                                { staticClass: "text-center card-equipo" },
                                 [
                                   _c(
-                                    "v-icon",
-                                    { attrs: { color: "white", large: "" } },
-                                    [_vm._v("mdi-linkedin")]
+                                    "div",
+                                    { staticClass: "d-block mx-auto" },
+                                    [
+                                      _c(
+                                        "span",
+                                        {
+                                          staticClass:
+                                            "as-text_normal_2 font-weight-bold white--text",
+                                        },
+                                        [_vm._v("Jorge")]
+                                      ),
+                                      _vm._v(" "),
+                                      _c("br"),
+                                      _vm._v(" "),
+                                      _c(
+                                        "span",
+                                        {
+                                          staticClass:
+                                            "as-text_normal_2 pl-7 font-weight-bold white--text",
+                                        },
+                                        [_vm._v("Carrera")]
+                                      ),
+                                    ]
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "div",
+                                    {
+                                      staticClass:
+                                        "text-justify white--text text-16 py-4",
+                                    },
+                                    [
+                                      _c("span", [
+                                        _vm._v(
+                                          "\n                                        Ejecutivo, consultor, docente y\n                                        auditor en entidades privadas y\n                                        públicas con más de\n                                        "
+                                        ),
+                                        _c("strong", [
+                                          _vm._v("35 años de experiencia"),
+                                        ]),
+                                        _vm._v(
+                                          "\n                                        en la dirección de empresas.\n                                        Contador Público Colegiado, Auditor\n                                        Certificado, Maestría en\n                                        Contabilidad y Doctorado en\n                                        Administración. Experiencia como\n                                        Gerente apoderado de una Corporación\n                                        Global.\n                                        "
+                                        ),
+                                        _c("strong", [
+                                          _vm._v(
+                                            "\n                                            Líder en Dirección de Control de\n                                            Gestión y mitigación de riesgos.\n                                        "
+                                          ),
+                                        ]),
+                                      ]),
+                                    ]
+                                  ),
+                                ]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "v-card-actions",
+                                { staticClass: "align-end" },
+                                [
+                                  _c(
+                                    "v-btn",
+                                    {
+                                      staticClass:
+                                        "elevation-0 px-2 position-linkedin",
+                                      staticStyle: {
+                                        "min-width": "auto !important",
+                                      },
+                                      attrs: {
+                                        large: "",
+                                        color: "#0073b2",
+                                        link: "",
+                                        href: "http://linkedin.com/in/jorge-carreras-aa96a7204",
+                                        target: "_blank",
+                                      },
+                                    },
+                                    [
+                                      _c(
+                                        "v-icon",
+                                        {
+                                          attrs: { color: "white", large: "" },
+                                        },
+                                        [_vm._v("mdi-linkedin")]
+                                      ),
+                                    ],
+                                    1
                                   ),
                                 ],
                                 1
@@ -1508,10 +1690,10 @@ var render = function () {
                 ],
                 1
               ),
-            ],
-            1
+            ]
           ),
-        ]
+        ],
+        1
       ),
       _vm._v(" "),
       _c("FooterGlobal"),

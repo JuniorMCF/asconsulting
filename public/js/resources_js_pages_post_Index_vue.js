@@ -99,6 +99,95 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
@@ -108,7 +197,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       phone_send: "tel:+51926302115",
       wame: "https://wa.me/51926302115",
       email: "reactivatunegocio@asconsulting.pe",
-      address: "Av. Alfredo Benavides 3695. Surco."
+      address: "Av. Alfredo Benavides 3695. Santiago de Surco. Lima, Perú."
     };
   },
   methods: {
@@ -122,8 +211,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
             switch (_context.prev = _context.next) {
               case 0:
                 shareData = {
-                  title: 'A&S Consulting Group',
-                  text: 'Solicita tu asesoría',
+                  title: "A&S Consulting Group",
+                  text: "Solicita tu asesoría",
                   url: _this.email
                 };
                 _context.prev = 1;
@@ -150,7 +239,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     },
     goToLocation: function goToLocation() {
       this.$router.push({
-        name: 'contacto'
+        name: "contacto"
       });
     }
   },
@@ -718,6 +807,263 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -765,12 +1111,15 @@ __webpack_require__.r(__webpack_exports__);
     this.$store.dispatch("app/openPage", {
       page: window.location.pathname,
       link: window.location.host + window.location.pathname
-    });
+    }); // vepicker.addEventListener("click",onHandleClickVEPicker)
+
+    document.addEventListener("click", this.onHandleClickVEPicker);
   },
   destroyed: function destroyed() {
     this.$store.dispatch("app/closePage", {
       visita_id: this.$store.state.app.visita_id
     });
+    document.removeEventListener('click', this.onHandleClickVEPicker);
   },
   methods: {
     getPath: function getPath() {
@@ -788,6 +1137,19 @@ __webpack_require__.r(__webpack_exports__);
       var string_comment = this.comment == null ? "" : this.comment;
       this.comment = string_comment + emoji.data;
       this.showEmojis = false;
+    },
+    showingEmojis: function showingEmojis() {
+      this.showEmojis = true;
+    },
+    onHandleClickVEPicker: function onHandleClickVEPicker(event) {
+      var vepicker = document.getElementById("vpicker");
+      var btnvpicker = document.getElementById("btnvpicker");
+      var outsideClickVEpicker = typeof event.composedPath === "function" && !event.composedPath().includes(vepicker);
+      var insideClickBtnVEPicker = typeof event.composedPath === "function" && !event.composedPath().includes(btnvpicker);
+
+      if (outsideClickVEpicker && insideClickBtnVEPicker) {
+        this.showEmojis = false;
+      }
     },
     cancelComment: function cancelComment() {
       var _this = this;
@@ -809,7 +1171,7 @@ __webpack_require__.r(__webpack_exports__);
       this.isComment = false;
     },
     getSharedPost: function getSharedPost(route) {
-      return location.protocol + '//' + location.host + "/post/" + route;
+      return location.protocol + "//" + location.host + "/post/" + route;
     },
     copyText: function copyText() {
       navigator.clipboard.writeText(this.getSharedPost(this.post.route));
@@ -819,7 +1181,7 @@ __webpack_require__.r(__webpack_exports__);
       var _tag = tag.tag.substring(1);
 
       this.$router.push({
-        name: 'show-blog-tag',
+        name: "show-blog-tag",
         params: {
           tag: _tag
         }
@@ -1016,7 +1378,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.ql-editor {\n    height: auto !important;\n}\n.showEmoji {\n    position: absolute;\n    margin-left: -40px;\n    z-index: 10;\n    max-height: 250px;\n}\n.ql-editor>p img {\n    max-width: 100%;\n}\n@media screen and(max-width:800px) {\n.ql-editor>p img {\n        width: 300px;\n}\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.ql-editor {\n    height: auto !important;\n}\n.showEmoji {\n    position: absolute;\n    margin-left: -40px;\n    z-index: 10;\n    max-height: 250px;\n}\n.ql-editor > p img {\n    max-width: 100%;\n}\n@media screen and(max-width:800px) {\n.ql-editor > p img {\n        width: 300px;\n}\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -22926,27 +23288,16 @@ var render = function () {
     [
       _c(
         "v-row",
-        { staticClass: "pa-0 ma-0 content-wrap-2 mx-auto footer-container" },
-        [
-          _c(
-            "v-col",
-            { staticClass: "col-12 pa-0 ma-0 rotate-180 container-bandwith" },
-            [_c("v-img", { attrs: { src: "/app/bandwith.png " } })],
-            1
-          ),
-        ],
-        1
-      ),
-      _vm._v(" "),
-      _c(
-        "v-row",
-        { staticClass: "primary pa-0 ma-0 content-wrap-2 mx-auto" },
+        {
+          staticClass:
+            "grey darken-4 pa-0 ma-0 mx-auto justify-center align-start py-10",
+        },
         [
           _c(
             "v-col",
             {
               staticClass:
-                "col-12 col-md-6 d-flex flex-wrap justify-center align-center",
+                "col-12 col-md-2 col-xl-2 d-flex flex-wrap justify-center align-center",
             },
             [
               _c(
@@ -22960,166 +23311,205 @@ var render = function () {
                 ],
                 1
               ),
+            ]
+          ),
+          _vm._v(" "),
+          _c(
+            "v-col",
+            {
+              staticClass:
+                "col-12 col-md-3 col-xl-3 d-flex flex-column justify-center align-start",
+            },
+            [
+              _c("p", { staticClass: "white--text font-weight-bold px-4" }, [
+                _vm._v("CONTACTO"),
+              ]),
               _vm._v(" "),
-              _c("span", { staticClass: "white--text as-footer_text px-4" }, [
-                _vm._v(
-                  "\n                Copyright ©" +
-                    _vm._s(_vm.yearActual) +
-                    " by A&S Consulting Group.\n            "
-                ),
+              _c(
+                "a",
+                {
+                  staticClass: "white--text px-4",
+                  on: {
+                    click: function ($event) {
+                      $event.preventDefault()
+                      return _vm.goToLocation()
+                    },
+                  },
+                },
+                [
+                  _c(
+                    "v-icon",
+                    { attrs: { small: "", color: "white", left: "" } },
+                    [_vm._v("mdi-map-marker")]
+                  ),
+                  _vm._v(" " + _vm._s(_vm.address) + "\n            "),
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "a",
+                {
+                  staticClass: "white--text px-4",
+                  attrs: { href: _vm.phone_send },
+                },
+                [
+                  _c(
+                    "v-icon",
+                    { attrs: { small: "", color: "white", left: "" } },
+                    [_vm._v("mdi-phone")]
+                  ),
+                  _vm._v(" " + _vm._s(_vm.phone_contact) + "\n            "),
+                ],
+                1
+              ),
+            ]
+          ),
+          _vm._v(" "),
+          _c(
+            "v-col",
+            {
+              staticClass:
+                "col-12 col-md-3 col-xl-3 d-flex flex-column justify-center align-start",
+            },
+            [
+              _c("p", { staticClass: "white--text font-weight-bold px-4" }, [
+                _vm._v("LEGAL"),
+              ]),
+              _vm._v(" "),
+              _c("a", { staticClass: "white--text px-4" }, [
+                _vm._v(" Términos y condiciones "),
+              ]),
+              _vm._v(" "),
+              _c("a", { staticClass: "white--text px-4" }, [
+                _vm._v(" Privacidad "),
               ]),
             ]
           ),
           _vm._v(" "),
           _c(
             "v-col",
-            { staticClass: "col-12 col-md-6 text-center text-md-left " },
+            {
+              staticClass:
+                "col-12 col-md-3 col-xl-3 d-flex flex-column justify-center align-start",
+            },
             [
-              _c("v-col", [
-                _c(
-                  "span",
-                  {
-                    staticClass:
-                      "white--text d-block d-md-inline-flex align-center justify-center",
-                  },
-                  [
-                    _c(
-                      "v-btn",
-                      {
-                        staticClass: "white--text",
-                        attrs: {
-                          fab: "",
-                          text: "",
-                          small: "",
-                          link: "",
-                          href: _vm.phone_send,
-                        },
-                      },
-                      [
-                        _c("v-icon", { attrs: { color: "white" } }, [
-                          _vm._v("mdi-phone-message"),
-                        ]),
-                      ],
-                      1
-                    ),
-                    _vm._v(
-                      "\n                    " +
-                        _vm._s(_vm.phone_contact) +
-                        "\n                "
-                    ),
-                  ],
-                  1
-                ),
-                _vm._v(" "),
-                _c(
-                  "span",
-                  {
-                    staticClass:
-                      "white--text d-block d-md-inline-flex align-center justify-center",
-                  },
-                  [
-                    _c(
-                      "v-btn",
-                      {
-                        staticClass: "white--text",
-                        attrs: { fab: "", text: "", small: "", link: "" },
-                        on: {
-                          click: function ($event) {
-                            $event.preventDefault()
-                            return _vm.openEmail()
-                          },
-                        },
-                      },
-                      [
-                        _c("v-icon", { attrs: { color: "white" } }, [
-                          _vm._v("mdi-email-open"),
-                        ]),
-                      ],
-                      1
-                    ),
-                    _vm._v(
-                      "\n                    " +
-                        _vm._s(_vm.email) +
-                        "\n                "
-                    ),
-                  ],
-                  1
-                ),
+              _c("p", { staticClass: "white--text font-weight-bold px-4" }, [
+                _vm._v("SÍGUENOS"),
               ]),
               _vm._v(" "),
-              _c("v-col", [
-                _c(
-                  "span",
-                  {
-                    staticClass:
-                      "white--text d-block d-md-inline-flex align-center justify-center",
-                  },
-                  [
-                    _c(
-                      "v-btn",
-                      {
-                        staticClass: "white--text",
-                        attrs: {
-                          fab: "",
-                          text: "",
-                          small: "",
-                          href: _vm.wame,
-                          target: "_blank",
-                        },
+              _c(
+                "div",
+                { staticClass: "d-flex flex-wrap px-4" },
+                [
+                  _c(
+                    "v-btn",
+                    {
+                      staticClass: "elevation-0",
+                      attrs: {
+                        fab: "",
+                        small: "",
+                        text: "",
+                        color: "primary",
+                        href: "https://www.facebook.com/AS-Consulting-Group-141818089928155",
+                        target: "_blank",
                       },
-                      [
-                        _c("v-icon", { attrs: { color: "white" } }, [
-                          _vm._v("mdi-whatsapp"),
-                        ]),
-                      ],
-                      1
-                    ),
-                    _vm._v(
-                      "\n                    " +
-                        _vm._s(_vm.phone_contact) +
-                        "\n                "
-                    ),
-                  ],
-                  1
-                ),
-                _vm._v(" "),
-                _c(
-                  "span",
-                  {
-                    staticClass:
-                      "white--text d-block d-md-inline-flex align-center justify-center",
-                  },
-                  [
-                    _c(
-                      "v-btn",
-                      {
-                        staticClass: "white--text",
-                        attrs: { fab: "", text: "", small: "", link: "" },
-                        on: {
-                          click: function ($event) {
-                            $event.preventDefault()
-                            return _vm.goToLocation()
-                          },
-                        },
+                    },
+                    [
+                      _c("v-icon", { attrs: { color: "white" } }, [
+                        _vm._v("mdi-facebook"),
+                      ]),
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "v-btn",
+                    {
+                      staticClass: "elevation-0",
+                      attrs: {
+                        fab: "",
+                        small: "",
+                        text: "",
+                        color: "primary",
+                        href: "https://www.instagram.com/asconsultinggroup/",
+                        target: "_blank",
                       },
-                      [
-                        _c("v-icon", { attrs: { color: "white" } }, [
-                          _vm._v("mdi-map-marker"),
-                        ]),
-                      ],
-                      1
-                    ),
-                    _vm._v(
-                      "\n                    " +
-                        _vm._s(_vm.address) +
-                        "\n                "
-                    ),
-                  ],
-                  1
-                ),
-              ]),
-            ],
-            1
+                    },
+                    [
+                      _c("v-icon", { attrs: { color: "white" } }, [
+                        _vm._v("mdi-instagram"),
+                      ]),
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "v-btn",
+                    {
+                      staticClass: "elevation-0",
+                      attrs: {
+                        fab: "",
+                        small: "",
+                        text: "",
+                        color: "primary",
+                        href: "https://www.linkedin.com/company/as.consulting/",
+                        target: "_blank",
+                      },
+                    },
+                    [
+                      _c("v-icon", { attrs: { color: "white" } }, [
+                        _vm._v("mdi-linkedin"),
+                      ]),
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "v-btn",
+                    {
+                      staticClass: "elevation-0",
+                      attrs: {
+                        fab: "",
+                        small: "",
+                        text: "",
+                        color: "primary",
+                        href: "https://www.youtube.com/channel/UCLGe4u_VDbkoJWE2LkMni9w/featured?view_as=subscriber",
+                        target: "_blank",
+                      },
+                    },
+                    [
+                      _c("v-icon", { attrs: { color: "white" } }, [
+                        _vm._v("mdi-youtube"),
+                      ]),
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "v-btn",
+                    {
+                      staticClass: "elevation-0",
+                      attrs: {
+                        fab: "",
+                        small: "",
+                        text: "",
+                        color: "primary",
+                        href: "https://twitter.com/pymedigitalAS",
+                        target: "_blank",
+                      },
+                    },
+                    [
+                      _c("v-icon", { attrs: { color: "white" } }, [
+                        _vm._v("mdi-twitter"),
+                      ]),
+                    ],
+                    1
+                  ),
+                ],
+                1
+              ),
+            ]
           ),
         ],
         1
@@ -23527,54 +23917,63 @@ var render = function () {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c(
-    "v-container",
-    { staticClass: "content-wrap-2 pa-0 mx-auto" },
+    "div",
     [
       _c(
-        "v-row",
-        { staticClass: "pa-0 ma-0 content-wrap-0 mx-auto elevation-0" },
+        "v-container",
+        { staticClass: "content-wrap-2 pa-0 mx-auto my-16" },
         [
           _c(
-            "v-col",
+            "v-row",
             {
-              staticClass: "col-12 col-md-12 py-0 px-md-2 px-0",
-              attrs: { justify: "space-around" },
+              staticClass:
+                "pa-0 ma-0 content-wrap-0 mx-auto elevation-0 pt-md-15",
             },
             [
               _c(
-                "v-sheet",
-                { staticClass: "py-4 px-1", attrs: { elevation: "0" } },
+                "v-col",
+                {
+                  staticClass: "col-12 col-md-12 py-0 px-md-2 px-0",
+                  attrs: { justify: "space-around" },
+                },
                 [
                   _c(
-                    "v-chip-group",
-                    {
-                      attrs: {
-                        "show-arrows": "",
-                        "active-class": "primary--text",
-                      },
-                    },
-                    _vm._l(_vm.categorias, function (categoria, i) {
-                      return _c(
-                        "v-chip",
+                    "v-sheet",
+                    { staticClass: "py-4 px-1", attrs: { elevation: "0" } },
+                    [
+                      _c(
+                        "v-chip-group",
                         {
-                          key: i,
-                          staticClass:
-                            "px-6 v-size--small py-6 rounded-0 text-uppercase font-weight-bold white primary--text",
-                          on: {
-                            click: function ($event) {
-                              $event.preventDefault()
-                              return _vm.goToPublicaciones(categoria)
-                            },
+                          attrs: {
+                            "show-arrows": "",
+                            "active-class": "primary--text",
                           },
                         },
-                        [
-                          _vm._v(
-                            "\n                        " +
-                              _vm._s(categoria.nombre)
-                          ),
-                        ]
-                      )
-                    }),
+                        _vm._l(_vm.categorias, function (categoria, i) {
+                          return _c(
+                            "v-chip",
+                            {
+                              key: i,
+                              staticClass:
+                                "px-6 v-size--small py-6 rounded-0 text-uppercase font-weight-bold white black--text",
+                              on: {
+                                click: function ($event) {
+                                  $event.preventDefault()
+                                  return _vm.goToPublicaciones(categoria)
+                                },
+                              },
+                            },
+                            [
+                              _vm._v(
+                                "\n                            " +
+                                  _vm._s(categoria.nombre)
+                              ),
+                            ]
+                          )
+                        }),
+                        1
+                      ),
+                    ],
                     1
                   ),
                 ],
@@ -23583,267 +23982,280 @@ var render = function () {
             ],
             1
           ),
-        ],
-        1
-      ),
-      _vm._v(" "),
-      _vm.loadingFilterPosts
-        ? _c(
-            "v-row",
-            {
-              staticClass: "pa-0 ma-0 content-wrap-article mx-auto elevation-0",
-              staticStyle: { "min-height": "calc(100vh - 250px)" },
-            },
-            [
-              _c(
-                "v-col",
+          _vm._v(" "),
+          _vm.loadingFilterPosts
+            ? _c(
+                "v-row",
                 {
                   staticClass:
-                    "col-12 ma-0 pa-4 px-md-16 d-flex flex-wrap align-center",
-                },
-                [
-                  _c("v-card-text", { staticClass: "content-wrap-0 mx-auto" }, [
-                    _c(
-                      "div",
-                      { staticStyle: { height: "50px" } },
-                      [
-                        _c("lottie-animation", {
-                          ref: "anim",
-                          attrs: {
-                            loop: true,
-                            autoPlay: true,
-                            loopDelayMin: 2.5,
-                            loopDelayMax: 5,
-                            speed: 1,
-                            width: 50,
-                            height: 50,
-                            animationData: __webpack_require__(/*! ../../lottie/loading.json */ "./public/lottie/loading.json"),
-                          },
-                        }),
-                      ],
-                      1
-                    ),
-                  ]),
-                ],
-                1
-              ),
-            ],
-            1
-          )
-        : _vm._e(),
-      _vm._v(" "),
-      !_vm.loadingFilterPosts
-        ? _c(
-            "v-row",
-            {
-              staticClass: "pa-0 ma-0 content-wrap-article mx-auto elevation-0",
-            },
-            [
-              _c(
-                "v-col",
-                {
-                  staticClass:
-                    "col-12 ma-0 pa-4 px-md-16 d-flex flex-wrap align-center",
+                    "pa-0 ma-0 content-wrap-article mx-auto elevation-0",
+                  staticStyle: { "min-height": "calc(100vh - 250px)" },
                 },
                 [
                   _c(
-                    "v-list-item",
+                    "v-col",
+                    {
+                      staticClass:
+                        "col-12 ma-0 pa-4 px-md-16 d-flex flex-wrap align-center",
+                    },
                     [
                       _c(
-                        "v-list-item-avatar",
-                        { attrs: { color: "grey" } },
-                        [
-                          _vm.post.user_foto != null
-                            ? _c(
-                                "v-avatar",
-                                { staticClass: "pa-1" },
-                                [
-                                  _c("v-img", {
-                                    attrs: {
-                                      src: _vm.post.user_foto,
-                                      alt: _vm.post.name,
-                                      "aspect-ratio": "1",
-                                    },
-                                  }),
-                                ],
-                                1
-                              )
-                            : _c(
-                                "v-avatar",
-                                { staticClass: "grey lighten-3 pa-1" },
-                                [
-                                  _c(
-                                    "svg",
-                                    {
-                                      staticClass: "s2FZSQ",
-                                      attrs: {
-                                        version: "1.1",
-                                        xmlns: "http://www.w3.org/2000/svg",
-                                        "xmlns:xlink":
-                                          "http://www.w3.org/1999/xlink",
-                                        x: "0px",
-                                        y: "0px",
-                                        viewBox: "0 0 60 60",
-                                        "enable-background": "new 0 0 60 60;",
-                                        "xml:space": "preserve",
-                                        height: "36",
-                                        width: "36",
-                                      },
-                                    },
-                                    [
-                                      _c("g", [
-                                        _c("ellipse", {
-                                          attrs: {
-                                            fill: "#979797",
-                                            cx: "30.7",
-                                            cy: "22.3",
-                                            rx: "11.5",
-                                            ry: "11.6",
-                                          },
-                                        }),
-                                        _vm._v(" "),
-                                        _c("g", [
-                                          _c("ellipse", {
-                                            attrs: {
-                                              fill: "none",
-                                              cx: "30.7",
-                                              cy: "22.3",
-                                              rx: "11.5",
-                                              ry: "11.6",
-                                            },
-                                          }),
-                                          _vm._v(" "),
-                                          _c("path", {
-                                            attrs: {
-                                              fill: "#979797",
-                                              d: "M29.9,37.1c-9,0-17,3.9-21.4,10.1c-0.5,0.7-1,1.4-1.4,2.1c0.5,0.7,1.1,1.3,1.7,1.9c1,1,2.1,2,3.3,2.8\n\t\t\tc5,3.7,11.2,6,17.9,6s12.9-2.2,17.9-6c1.2-0.9,2.2-1.8,3.3-2.8c0.3-0.3,0.6-0.6,0.9-0.9c-0.4-0.7-0.8-1.4-1.3-2.1\n\t\t\tC46.3,41.6,38.6,37.1,29.9,37.1z",
-                                            },
-                                          }),
-                                          _vm._v(" "),
-                                          _c("path", {
-                                            attrs: {
-                                              fill: "#D8D8D8",
-                                              d: "M30,0C13.4,0,0,13.4,0,30c0,0.5,0,1,0,1.5c0,0.2,0,0.3,0,0.5c0,0.3,0,0.7,0.1,1c0,0.2,0,0.4,0.1,0.6\n\t\t\tc0,0.3,0.1,0.6,0.1,0.9c0,0.2,0.1,0.4,0.1,0.6c0,0.3,0.1,0.6,0.1,0.8c0,0.2,0.1,0.4,0.1,0.6c0.1,0.3,0.1,0.5,0.2,0.8\n\t\t\tc0,0.2,0.1,0.4,0.1,0.6c0.1,0.3,0.2,0.6,0.2,0.8c0.1,0.2,0.1,0.4,0.2,0.5c0.1,0.3,0.2,0.6,0.3,0.9c0.1,0.1,0.1,0.3,0.2,0.4\n\t\t\tc0.2,0.4,0.3,0.8,0.5,1.2c0,0,0,0,0,0c0.2,0.4,0.4,0.8,0.6,1.3c0.1,0.1,0.1,0.3,0.2,0.4c0.1,0.3,0.3,0.6,0.4,0.8\n\t\t\tc0.1,0.2,0.2,0.3,0.3,0.5c0.1,0.2,0.3,0.5,0.4,0.7c0.1,0.2,0.2,0.3,0.3,0.5c0.1,0.2,0.3,0.5,0.4,0.7c0.1,0.2,0.2,0.3,0.3,0.5\n\t\t\tc0.2,0.2,0.3,0.4,0.5,0.7C5.9,47.8,6,48,6.1,48.1c0.2,0.2,0.3,0.4,0.5,0.7c0.1,0.1,0.2,0.3,0.3,0.4c0,0,0.1,0.1,0.1,0.1\n\t\t\tc0.4-0.7,0.9-1.4,1.4-2.1c4.5-6.2,12.4-10.1,21.4-10.1c8.8,0,16.5,4.5,20.9,11.1c0.5,0.7,0.9,1.4,1.3,2.1c0,0,0,0,0.1-0.1\n\t\t\tc0.1-0.1,0.3-0.3,0.4-0.4c0.2-0.2,0.4-0.4,0.5-0.6c0.1-0.2,0.3-0.3,0.4-0.5c0.2-0.2,0.3-0.4,0.5-0.6c0.1-0.2,0.2-0.3,0.4-0.5\n\t\t\tc0.2-0.2,0.3-0.4,0.5-0.6c0.1-0.2,0.2-0.4,0.3-0.5c0.1-0.2,0.3-0.4,0.4-0.7c0.1-0.2,0.2-0.4,0.3-0.5c0.1-0.2,0.3-0.4,0.4-0.7\n\t\t\tc0.1-0.2,0.2-0.4,0.3-0.6c0.1-0.2,0.2-0.5,0.4-0.7c0.1-0.2,0.2-0.4,0.3-0.6c0.1-0.2,0.2-0.5,0.3-0.7c0.1-0.2,0.2-0.4,0.3-0.6\n\t\t\tc0.1-0.2,0.2-0.5,0.3-0.7c0.1-0.2,0.2-0.4,0.2-0.6c0.1-0.2,0.2-0.5,0.3-0.7c0.1-0.2,0.1-0.4,0.2-0.6c0.1-0.3,0.1-0.5,0.2-0.8\n\t\t\tc0.1-0.2,0.1-0.4,0.2-0.6c0.1-0.3,0.1-0.5,0.2-0.8c0-0.2,0.1-0.4,0.1-0.6c0.1-0.3,0.1-0.5,0.1-0.8c0-0.2,0.1-0.4,0.1-0.6\n\t\t\tc0-0.3,0.1-0.6,0.1-0.9c0-0.2,0.1-0.4,0.1-0.6c0-0.3,0.1-0.7,0.1-1c0-0.2,0-0.3,0-0.5c0-0.5,0-1,0-1.5C60,13.4,46.6,0,30,0z\n\t\t\t M30.7,33.9c-6.4,0-11.5-5.2-11.5-11.6c0-6.4,5.2-11.6,11.5-11.6s11.5,5.2,11.5,11.6C42.3,28.7,37.1,33.9,30.7,33.9z",
-                                            },
-                                          }),
-                                        ]),
-                                      ]),
-                                    ]
-                                  ),
-                                ]
-                              ),
-                        ],
-                        1
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "v-list-item-content",
-                        [
-                          _c("v-list-item-title", {
-                            domProps: {
-                              textContent: _vm._s(
-                                _vm.post.name + " " + _vm.post.last_name
-                              ),
-                            },
-                          }),
-                          _vm._v(" "),
-                          _c("v-list-item-subtitle", {
-                            domProps: {
-                              textContent: _vm._s(
-                                _vm.formatDate(_vm.post.fecha_publicacion) +
-                                  " - " +
-                                  _vm.getInt(_vm.post.lectura) +
-                                  " min de lectura"
-                              ),
-                            },
-                          }),
-                        ],
-                        1
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "v-list-item-action",
+                        "v-card-text",
+                        { staticClass: "content-wrap-0 mx-auto" },
                         [
                           _c(
-                            "v-menu",
-                            {
-                              attrs: { bottom: "", left: "" },
-                              scopedSlots: _vm._u(
-                                [
-                                  {
-                                    key: "activator",
-                                    fn: function (ref) {
-                                      var on = ref.on
-                                      var attrs = ref.attrs
-                                      return [
-                                        _c(
-                                          "v-btn",
-                                          _vm._g(
-                                            _vm._b(
-                                              {
-                                                staticClass:
-                                                  "elevation-0 primary--text",
-                                                attrs: {
-                                                  dark: "",
-                                                  icon: "",
-                                                  text: "",
-                                                  fab: "",
-                                                  small: "",
-                                                },
-                                              },
-                                              "v-btn",
-                                              attrs,
-                                              false
-                                            ),
-                                            on
-                                          ),
-                                          [
-                                            _c("v-icon", [
-                                              _vm._v("mdi-dots-vertical"),
-                                            ]),
-                                          ],
-                                          1
-                                        ),
-                                      ]
-                                    },
-                                  },
-                                ],
-                                null,
-                                false,
-                                796546822
-                              ),
-                            },
+                            "div",
+                            { staticStyle: { height: "50px" } },
                             [
-                              _vm._v(" "),
-                              _c(
-                                "v-list",
-                                { staticClass: "pa-0 ma-0" },
-                                [
-                                  _c(
-                                    "v-list-item",
-                                    { attrs: { link: "" } },
+                              _c("lottie-animation", {
+                                ref: "anim",
+                                attrs: {
+                                  loop: true,
+                                  autoPlay: true,
+                                  loopDelayMin: 2.5,
+                                  loopDelayMax: 5,
+                                  speed: 1,
+                                  width: 50,
+                                  height: 50,
+                                  animationData: __webpack_require__(/*! ../../../../lottie/loading.json */ "./public/lottie/loading.json"),
+                                },
+                              }),
+                            ],
+                            1
+                          ),
+                        ]
+                      ),
+                    ],
+                    1
+                  ),
+                ],
+                1
+              )
+            : _vm._e(),
+          _vm._v(" "),
+          !_vm.loadingFilterPosts
+            ? _c(
+                "v-row",
+                {
+                  staticClass:
+                    "pa-0 ma-0 content-wrap-article mx-auto elevation-0",
+                },
+                [
+                  _c(
+                    "v-col",
+                    {
+                      staticClass:
+                        "col-12 ma-0 pa-4 px-md-16 d-flex flex-wrap align-center",
+                    },
+                    [
+                      _c(
+                        "v-list-item",
+                        [
+                          _c(
+                            "v-list-item-avatar",
+                            { attrs: { color: "grey" } },
+                            [
+                              _vm.post.user_foto != null
+                                ? _c(
+                                    "v-avatar",
+                                    { staticClass: "pa-1" },
+                                    [
+                                      _c("v-img", {
+                                        attrs: {
+                                          src: _vm.post.user_foto,
+                                          alt: _vm.post.name,
+                                          "aspect-ratio": "1",
+                                        },
+                                      }),
+                                    ],
+                                    1
+                                  )
+                                : _c(
+                                    "v-avatar",
+                                    { staticClass: "grey lighten-3 pa-1" },
                                     [
                                       _c(
-                                        "v-list-item-title",
+                                        "svg",
                                         {
-                                          staticClass: "caption",
-                                          on: {
-                                            click: function ($event) {
-                                              $event.preventDefault()
-                                              return _vm.showSharedDialog(
-                                                _vm.post
-                                              )
-                                            },
+                                          staticClass: "s2FZSQ",
+                                          attrs: {
+                                            version: "1.1",
+                                            xmlns: "http://www.w3.org/2000/svg",
+                                            "xmlns:xlink":
+                                              "http://www.w3.org/1999/xlink",
+                                            x: "0px",
+                                            y: "0px",
+                                            viewBox: "0 0 60 60",
+                                            "enable-background":
+                                              "new 0 0 60 60;",
+                                            "xml:space": "preserve",
+                                            height: "36",
+                                            width: "36",
                                           },
                                         },
                                         [
+                                          _c("g", [
+                                            _c("ellipse", {
+                                              attrs: {
+                                                fill: "#979797",
+                                                cx: "30.7",
+                                                cy: "22.3",
+                                                rx: "11.5",
+                                                ry: "11.6",
+                                              },
+                                            }),
+                                            _vm._v(" "),
+                                            _c("g", [
+                                              _c("ellipse", {
+                                                attrs: {
+                                                  fill: "none",
+                                                  cx: "30.7",
+                                                  cy: "22.3",
+                                                  rx: "11.5",
+                                                  ry: "11.6",
+                                                },
+                                              }),
+                                              _vm._v(" "),
+                                              _c("path", {
+                                                attrs: {
+                                                  fill: "#979797",
+                                                  d: "M29.9,37.1c-9,0-17,3.9-21.4,10.1c-0.5,0.7-1,1.4-1.4,2.1c0.5,0.7,1.1,1.3,1.7,1.9c1,1,2.1,2,3.3,2.8\n\t\t\tc5,3.7,11.2,6,17.9,6s12.9-2.2,17.9-6c1.2-0.9,2.2-1.8,3.3-2.8c0.3-0.3,0.6-0.6,0.9-0.9c-0.4-0.7-0.8-1.4-1.3-2.1\n\t\t\tC46.3,41.6,38.6,37.1,29.9,37.1z",
+                                                },
+                                              }),
+                                              _vm._v(" "),
+                                              _c("path", {
+                                                attrs: {
+                                                  fill: "#D8D8D8",
+                                                  d: "M30,0C13.4,0,0,13.4,0,30c0,0.5,0,1,0,1.5c0,0.2,0,0.3,0,0.5c0,0.3,0,0.7,0.1,1c0,0.2,0,0.4,0.1,0.6\n\t\t\tc0,0.3,0.1,0.6,0.1,0.9c0,0.2,0.1,0.4,0.1,0.6c0,0.3,0.1,0.6,0.1,0.8c0,0.2,0.1,0.4,0.1,0.6c0.1,0.3,0.1,0.5,0.2,0.8\n\t\t\tc0,0.2,0.1,0.4,0.1,0.6c0.1,0.3,0.2,0.6,0.2,0.8c0.1,0.2,0.1,0.4,0.2,0.5c0.1,0.3,0.2,0.6,0.3,0.9c0.1,0.1,0.1,0.3,0.2,0.4\n\t\t\tc0.2,0.4,0.3,0.8,0.5,1.2c0,0,0,0,0,0c0.2,0.4,0.4,0.8,0.6,1.3c0.1,0.1,0.1,0.3,0.2,0.4c0.1,0.3,0.3,0.6,0.4,0.8\n\t\t\tc0.1,0.2,0.2,0.3,0.3,0.5c0.1,0.2,0.3,0.5,0.4,0.7c0.1,0.2,0.2,0.3,0.3,0.5c0.1,0.2,0.3,0.5,0.4,0.7c0.1,0.2,0.2,0.3,0.3,0.5\n\t\t\tc0.2,0.2,0.3,0.4,0.5,0.7C5.9,47.8,6,48,6.1,48.1c0.2,0.2,0.3,0.4,0.5,0.7c0.1,0.1,0.2,0.3,0.3,0.4c0,0,0.1,0.1,0.1,0.1\n\t\t\tc0.4-0.7,0.9-1.4,1.4-2.1c4.5-6.2,12.4-10.1,21.4-10.1c8.8,0,16.5,4.5,20.9,11.1c0.5,0.7,0.9,1.4,1.3,2.1c0,0,0,0,0.1-0.1\n\t\t\tc0.1-0.1,0.3-0.3,0.4-0.4c0.2-0.2,0.4-0.4,0.5-0.6c0.1-0.2,0.3-0.3,0.4-0.5c0.2-0.2,0.3-0.4,0.5-0.6c0.1-0.2,0.2-0.3,0.4-0.5\n\t\t\tc0.2-0.2,0.3-0.4,0.5-0.6c0.1-0.2,0.2-0.4,0.3-0.5c0.1-0.2,0.3-0.4,0.4-0.7c0.1-0.2,0.2-0.4,0.3-0.5c0.1-0.2,0.3-0.4,0.4-0.7\n\t\t\tc0.1-0.2,0.2-0.4,0.3-0.6c0.1-0.2,0.2-0.5,0.4-0.7c0.1-0.2,0.2-0.4,0.3-0.6c0.1-0.2,0.2-0.5,0.3-0.7c0.1-0.2,0.2-0.4,0.3-0.6\n\t\t\tc0.1-0.2,0.2-0.5,0.3-0.7c0.1-0.2,0.2-0.4,0.2-0.6c0.1-0.2,0.2-0.5,0.3-0.7c0.1-0.2,0.1-0.4,0.2-0.6c0.1-0.3,0.1-0.5,0.2-0.8\n\t\t\tc0.1-0.2,0.1-0.4,0.2-0.6c0.1-0.3,0.1-0.5,0.2-0.8c0-0.2,0.1-0.4,0.1-0.6c0.1-0.3,0.1-0.5,0.1-0.8c0-0.2,0.1-0.4,0.1-0.6\n\t\t\tc0-0.3,0.1-0.6,0.1-0.9c0-0.2,0.1-0.4,0.1-0.6c0-0.3,0.1-0.7,0.1-1c0-0.2,0-0.3,0-0.5c0-0.5,0-1,0-1.5C60,13.4,46.6,0,30,0z\n\t\t\t M30.7,33.9c-6.4,0-11.5-5.2-11.5-11.6c0-6.4,5.2-11.6,11.5-11.6s11.5,5.2,11.5,11.6C42.3,28.7,37.1,33.9,30.7,33.9z",
+                                                },
+                                              }),
+                                            ]),
+                                          ]),
+                                        ]
+                                      ),
+                                    ]
+                                  ),
+                            ],
+                            1
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "v-list-item-content",
+                            [
+                              _c("v-list-item-title", {
+                                domProps: {
+                                  textContent: _vm._s(
+                                    _vm.post.name + " " + _vm.post.last_name
+                                  ),
+                                },
+                              }),
+                              _vm._v(" "),
+                              _c("v-list-item-subtitle", {
+                                domProps: {
+                                  textContent: _vm._s(
+                                    _vm.formatDate(_vm.post.fecha_publicacion) +
+                                      " - " +
+                                      _vm.getInt(_vm.post.lectura) +
+                                      " min de lectura"
+                                  ),
+                                },
+                              }),
+                            ],
+                            1
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "v-list-item-action",
+                            [
+                              _c(
+                                "v-menu",
+                                {
+                                  attrs: { bottom: "", left: "" },
+                                  scopedSlots: _vm._u(
+                                    [
+                                      {
+                                        key: "activator",
+                                        fn: function (ref) {
+                                          var on = ref.on
+                                          var attrs = ref.attrs
+                                          return [
+                                            _c(
+                                              "v-btn",
+                                              _vm._g(
+                                                _vm._b(
+                                                  {
+                                                    staticClass:
+                                                      "elevation-0 black--text",
+                                                    attrs: {
+                                                      dark: "",
+                                                      icon: "",
+                                                      text: "",
+                                                      fab: "",
+                                                      small: "",
+                                                    },
+                                                  },
+                                                  "v-btn",
+                                                  attrs,
+                                                  false
+                                                ),
+                                                on
+                                              ),
+                                              [
+                                                _c("v-icon", [
+                                                  _vm._v("mdi-dots-vertical"),
+                                                ]),
+                                              ],
+                                              1
+                                            ),
+                                          ]
+                                        },
+                                      },
+                                    ],
+                                    null,
+                                    false,
+                                    2321295597
+                                  ),
+                                },
+                                [
+                                  _vm._v(" "),
+                                  _c(
+                                    "v-list",
+                                    { staticClass: "pa-0 ma-0" },
+                                    [
+                                      _c(
+                                        "v-list-item",
+                                        { attrs: { link: "" } },
+                                        [
                                           _c(
-                                            "v-icon",
-                                            { attrs: { small: "", left: "" } },
-                                            [_vm._v("mdi-share")]
-                                          ),
-                                          _vm._v(
-                                            "Compartir entrada\n                                "
+                                            "v-list-item-title",
+                                            {
+                                              staticClass: "caption",
+                                              on: {
+                                                click: function ($event) {
+                                                  $event.preventDefault()
+                                                  return _vm.showSharedDialog(
+                                                    _vm.post
+                                                  )
+                                                },
+                                              },
+                                            },
+                                            [
+                                              _c(
+                                                "v-icon",
+                                                {
+                                                  staticClass: "black--text",
+                                                  attrs: {
+                                                    small: "",
+                                                    left: "",
+                                                  },
+                                                },
+                                                [_vm._v("mdi-share")]
+                                              ),
+                                              _vm._v(
+                                                "Compartir entrada\n                                    "
+                                              ),
+                                            ],
+                                            1
                                           ),
                                         ],
                                         1
@@ -23865,355 +24277,130 @@ var render = function () {
                   ),
                 ],
                 1
-              ),
-            ],
-            1
-          )
-        : _vm._e(),
-      _vm._v(" "),
-      !_vm.loadingFilterPosts
-        ? _c(
-            "v-row",
-            {
-              staticClass: "pa-0 ma-0 content-wrap-article mx-auto elevation-0",
-            },
-            [
-              _c(
-                "v-col",
-                {
-                  staticClass: "col-12 ma-0 pa-4 px-md-16 pb-md-16",
-                  staticStyle: { "min-height": "588px" },
-                },
-                [
-                  _c(
-                    "v-card-text",
-                    { staticClass: "pa-0" },
-                    [
-                      _c(
-                        "div",
-                        {
-                          staticClass: "display-1 mb-5 alternative--text mb-4",
-                        },
-                        [_vm._v(_vm._s(_vm.post.titulo))]
-                      ),
-                      _vm._v(" "),
-                      _c("v-img", { attrs: { src: _vm.post.foto } }),
-                      _vm._v(" "),
-                      _c("div", {
-                        staticClass: "ql-editor pa-0 py-6",
-                        domProps: { innerHTML: _vm._s(this.post.contenido) },
-                      }),
-                      _vm._v(" "),
-                      _vm.post.file
-                        ? _c(
-                            "div",
-                            {
-                              staticStyle: {
-                                position: "relative",
-                                overflow: "hidden",
-                                width: "100%",
-                              },
-                            },
-                            [
-                              _c("embed", {
-                                staticStyle: { height: "500px", width: "100%" },
-                                attrs: { src: _vm.post.file },
-                              }),
-                            ]
-                          )
-                        : _vm._e(),
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "v-card-text",
-                    { staticClass: "pa-0" },
-                    [
-                      _c(
-                        "v-chip-group",
-                        { attrs: { column: "" } },
-                        _vm._l(_vm.tags, function (tag) {
-                          return _c(
-                            "div",
-                            { key: tag.id },
-                            [
-                              _c("v-hover", {
-                                scopedSlots: _vm._u(
-                                  [
-                                    {
-                                      key: "default",
-                                      fn: function (ref) {
-                                        var hover = ref.hover
-                                        return [
-                                          _c(
-                                            "v-chip",
-                                            {
-                                              staticClass:
-                                                "black elevation-0 px-6 py-4 rounded-0 subtitle-2",
-                                              class: {
-                                                "grey lighten-2 ": hover,
-                                              },
-                                              attrs: {
-                                                color: "black",
-                                                outlined: "",
-                                              },
-                                              on: {
-                                                click: function ($event) {
-                                                  return _vm.goToTag(tag)
-                                                },
-                                              },
-                                            },
-                                            [_vm._v(_vm._s(tag.tag))]
-                                          ),
-                                        ]
-                                      },
-                                    },
-                                  ],
-                                  null,
-                                  true
-                                ),
-                              }),
-                            ],
-                            1
-                          )
-                        }),
-                        0
-                      ),
-                    ],
-                    1
-                  ),
-                ],
-                1
-              ),
-            ],
-            1
-          )
-        : _vm._e(),
-      _vm._v(" "),
-      !_vm.loadingFilterPosts
-        ? _c(
-            "v-row",
-            {
-              staticClass: "pa-0 ma-0 content-wrap-article mx-auto elevation-0",
-            },
-            [
-              _c(
-                "v-col",
-                { staticClass: "col-12 ma-0 pa-0 px-md-16" },
-                [_c("v-divider", { attrs: { horizontal: "" } })],
-                1
-              ),
-              _vm._v(" "),
-              _c(
-                "v-col",
+              )
+            : _vm._e(),
+          _vm._v(" "),
+          !_vm.loadingFilterPosts
+            ? _c(
+                "v-row",
                 {
                   staticClass:
-                    "col-12 ma-0 pa-2 d-flex flex-wrap space-between align-center pa-4 px-md-16",
+                    "pa-0 ma-0 content-wrap-article mx-auto elevation-0",
                 },
                 [
                   _c(
-                    "ShareNetwork",
+                    "v-col",
                     {
-                      attrs: {
-                        network: "facebook",
-                        url: _vm.getSharedPost(_vm.post.route),
-                        title: _vm.post.titulo,
-                        description: _vm.post.contenido,
-                      },
+                      staticClass: "col-12 ma-0 pa-4 px-md-16 pb-md-16",
+                      staticStyle: { "min-height": "588px" },
                     },
                     [
                       _c(
-                        "v-btn",
-                        {
-                          staticClass: "elevation-0 mr-2",
-                          attrs: { fab: "", small: "" },
-                        },
-                        [
-                          _c("v-icon", { attrs: { color: "primary" } }, [
-                            _vm._v("mdi-facebook"),
-                          ]),
-                        ],
-                        1
-                      ),
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "ShareNetwork",
-                    {
-                      attrs: {
-                        network: "twitter",
-                        url: _vm.getSharedPost(_vm.post.route),
-                        title: _vm.post.titulo,
-                        description: _vm.post.contenido,
-                      },
-                    },
-                    [
-                      _c(
-                        "v-btn",
-                        {
-                          staticClass: "elevation-0 mx-2",
-                          attrs: { fab: "", small: "" },
-                        },
-                        [
-                          _c("v-icon", { attrs: { color: "primary" } }, [
-                            _vm._v("mdi-twitter"),
-                          ]),
-                        ],
-                        1
-                      ),
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "ShareNetwork",
-                    {
-                      attrs: {
-                        network: "linkedin",
-                        url: _vm.getSharedPost(_vm.post.route),
-                        title: _vm.post.titulo,
-                        description: _vm.post.contenido,
-                      },
-                    },
-                    [
-                      _c(
-                        "v-btn",
-                        {
-                          staticClass: "elevation-0 mx-2",
-                          attrs: { fab: "", small: "" },
-                        },
-                        [
-                          _c("v-icon", { attrs: { color: "primary" } }, [
-                            _vm._v("mdi-linkedin"),
-                          ]),
-                        ],
-                        1
-                      ),
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "v-btn",
-                    {
-                      staticClass: "elevation-0 mx-2",
-                      attrs: { fab: "", small: "" },
-                      on: {
-                        click: function ($event) {
-                          $event.preventDefault()
-                          return _vm.copyText()
-                        },
-                      },
-                    },
-                    [
-                      _c("v-icon", { attrs: { color: "primary" } }, [
-                        _vm._v("mdi-link-variant"),
-                      ]),
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c("v-spacer"),
-                  _vm._v(" "),
-                  _vm._l(_vm.post.categorias, function (categoria) {
-                    return _c(
-                      "v-btn",
-                      {
-                        key: "categoria-" + categoria.id,
-                        staticClass: "caption",
-                        attrs: { text: "", color: "primary" },
-                        on: {
-                          click: function ($event) {
-                            $event.preventDefault()
-                            return _vm.goToCategorys(categoria)
-                          },
-                        },
-                      },
-                      [_vm._v(_vm._s(categoria.nombre_categoria))]
-                    )
-                  }),
-                ],
-                2
-              ),
-              _vm._v(" "),
-              _c(
-                "v-col",
-                { staticClass: "col-12 ma-0 pa-0 px-md-16" },
-                [_c("v-divider", { attrs: { horizontal: "" } })],
-                1
-              ),
-            ],
-            1
-          )
-        : _vm._e(),
-      _vm._v(" "),
-      !_vm.loadingFilterPosts
-        ? _c(
-            "v-row",
-            {
-              staticClass: "pa-0 ma-0 content-wrap-article mx-auto elevation-0",
-            },
-            [
-              _c(
-                "v-col",
-                {
-                  staticClass:
-                    "col-12 pa-2 d-flex flex-wrap space-between align-center pa-4 px-md-16 pb-md-16",
-                },
-                [
-                  _c("span", { staticClass: "mr-2 primary--text" }, [
-                    _vm._v(
-                      _vm._s(_vm.post.visualizaciones.length) +
-                        " visualizaciones"
-                    ),
-                  ]),
-                  _vm._v(" "),
-                  _c("span", { staticClass: "primary--text" }, [
-                    _vm._v(_vm._s(_vm.post.comments.length) + " comentarios"),
-                  ]),
-                  _vm._v(" "),
-                  _c("v-spacer"),
-                  _vm._v(" "),
-                  _c(
-                    "span",
-                    {
-                      staticClass: "primary--text",
-                      attrs: { fab: "", small: "" },
-                    },
-                    [
-                      _vm._v(
-                        "\n                " +
-                          _vm._s(_vm.post.favoritos.length) +
-                          "\n                "
-                      ),
-                      _c(
-                        "v-btn",
-                        {
-                          staticClass: "elevation-0 ml-2",
-                          attrs: { fab: "", small: "" },
-                        },
+                        "v-card-text",
+                        { staticClass: "pa-0" },
                         [
                           _c(
-                            "v-icon",
+                            "div",
                             {
-                              attrs: { color: "error" },
-                              on: {
-                                click: function ($event) {
-                                  $event.preventDefault()
-                                  return _vm.isFavorite()
-                                },
-                              },
+                              staticClass:
+                                "display-1 mb-5 alternative--text mb-4",
                             },
                             [
                               _vm._v(
                                 "\n                        " +
-                                  _vm._s(_vm.icon_heart) +
+                                  _vm._s(_vm.post.titulo) +
                                   "\n                    "
                               ),
                             ]
+                          ),
+                          _vm._v(" "),
+                          _c("v-img", { attrs: { src: _vm.post.foto } }),
+                          _vm._v(" "),
+                          _c("div", {
+                            staticClass: "ql-editor pa-0 py-6",
+                            domProps: {
+                              innerHTML: _vm._s(this.post.contenido),
+                            },
+                          }),
+                          _vm._v(" "),
+                          _vm.post.file
+                            ? _c(
+                                "div",
+                                {
+                                  staticStyle: {
+                                    position: "relative",
+                                    overflow: "hidden",
+                                    width: "100%",
+                                  },
+                                },
+                                [
+                                  _c("embed", {
+                                    staticStyle: {
+                                      height: "500px",
+                                      width: "100%",
+                                    },
+                                    attrs: { src: _vm.post.file },
+                                  }),
+                                ]
+                              )
+                            : _vm._e(),
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "v-card-text",
+                        { staticClass: "pa-0" },
+                        [
+                          _c(
+                            "v-chip-group",
+                            { attrs: { column: "" } },
+                            _vm._l(_vm.tags, function (tag) {
+                              return _c(
+                                "div",
+                                { key: tag.id },
+                                [
+                                  _c("v-hover", {
+                                    scopedSlots: _vm._u(
+                                      [
+                                        {
+                                          key: "default",
+                                          fn: function (ref) {
+                                            var hover = ref.hover
+                                            return [
+                                              _c(
+                                                "v-chip",
+                                                {
+                                                  staticClass:
+                                                    "black elevation-0 px-6 py-4 rounded-0 subtitle-2",
+                                                  class: {
+                                                    "grey lighten-2 ": hover,
+                                                  },
+                                                  attrs: {
+                                                    color: "black",
+                                                    outlined: "",
+                                                  },
+                                                  on: {
+                                                    click: function ($event) {
+                                                      return _vm.goToTag(tag)
+                                                    },
+                                                  },
+                                                },
+                                                [_vm._v(_vm._s(tag.tag))]
+                                              ),
+                                            ]
+                                          },
+                                        },
+                                      ],
+                                      null,
+                                      true
+                                    ),
+                                  }),
+                                ],
+                                1
+                              )
+                            }),
+                            0
                           ),
                         ],
                         1
@@ -24223,239 +24410,286 @@ var render = function () {
                   ),
                 ],
                 1
-              ),
-            ],
-            1
-          )
-        : _vm._e(),
-      _vm._v(" "),
-      !_vm.loadingFilterPosts
-        ? _c(
-            "v-row",
-            {
-              staticClass: "pa-0 ma-0 content-wrap-article mx-auto elevation-0",
-            },
-            [
-              _c(
-                "v-col",
-                { staticClass: "col-12 mt-3 pa-4 px-md-16" },
+              )
+            : _vm._e(),
+          _vm._v(" "),
+          !_vm.loadingFilterPosts
+            ? _c(
+                "v-row",
+                {
+                  staticClass:
+                    "pa-0 ma-0 content-wrap-article mx-auto elevation-0",
+                },
                 [
                   _c(
-                    "v-card-text",
-                    { staticClass: "pa-0 align-center d-flex flex-wrap" },
-                    [
-                      _c("span", { staticClass: "primary--text title" }, [
-                        _vm._v("Comentarios"),
-                      ]),
-                    ]
+                    "v-col",
+                    { staticClass: "col-12 ma-0 pa-0 px-md-16" },
+                    [_c("v-divider", { attrs: { horizontal: "" } })],
+                    1
                   ),
                   _vm._v(" "),
-                  _c("v-divider", {
-                    staticClass: "my-0 py-0",
-                    attrs: { horizontal: "" },
-                  }),
-                ],
-                1
-              ),
-              _vm._v(" "),
-              _c(
-                "v-col",
-                { staticClass: "col-12 d-flex flex-wrap pa-4 px-md-16" },
-                [
-                  _c("v-avatar", { staticClass: "grey lighten-3 pa-1" }, [
-                    _c(
-                      "svg",
-                      {
-                        staticClass: "s2FZSQ",
-                        attrs: {
-                          version: "1.1",
-                          xmlns: "http://www.w3.org/2000/svg",
-                          "xmlns:xlink": "http://www.w3.org/1999/xlink",
-                          x: "0px",
-                          y: "0px",
-                          viewBox: "0 0 60 60",
-                          "enable-background": "new 0 0 60 60;",
-                          "xml:space": "preserve",
-                          height: "36",
-                          width: "36",
-                        },
-                      },
-                      [
-                        _c("g", [
-                          _c("ellipse", {
-                            attrs: {
-                              fill: "#979797",
-                              cx: "30.7",
-                              cy: "22.3",
-                              rx: "11.5",
-                              ry: "11.6",
-                            },
-                          }),
-                          _vm._v(" "),
-                          _c("g", [
-                            _c("ellipse", {
-                              attrs: {
-                                fill: "none",
-                                cx: "30.7",
-                                cy: "22.3",
-                                rx: "11.5",
-                                ry: "11.6",
-                              },
-                            }),
-                            _vm._v(" "),
-                            _c("path", {
-                              attrs: {
-                                fill: "#979797",
-                                d: "M29.9,37.1c-9,0-17,3.9-21.4,10.1c-0.5,0.7-1,1.4-1.4,2.1c0.5,0.7,1.1,1.3,1.7,1.9c1,1,2.1,2,3.3,2.8\n\t\t\tc5,3.7,11.2,6,17.9,6s12.9-2.2,17.9-6c1.2-0.9,2.2-1.8,3.3-2.8c0.3-0.3,0.6-0.6,0.9-0.9c-0.4-0.7-0.8-1.4-1.3-2.1\n\t\t\tC46.3,41.6,38.6,37.1,29.9,37.1z",
-                              },
-                            }),
-                            _vm._v(" "),
-                            _c("path", {
-                              attrs: {
-                                fill: "#D8D8D8",
-                                d: "M30,0C13.4,0,0,13.4,0,30c0,0.5,0,1,0,1.5c0,0.2,0,0.3,0,0.5c0,0.3,0,0.7,0.1,1c0,0.2,0,0.4,0.1,0.6\n\t\t\tc0,0.3,0.1,0.6,0.1,0.9c0,0.2,0.1,0.4,0.1,0.6c0,0.3,0.1,0.6,0.1,0.8c0,0.2,0.1,0.4,0.1,0.6c0.1,0.3,0.1,0.5,0.2,0.8\n\t\t\tc0,0.2,0.1,0.4,0.1,0.6c0.1,0.3,0.2,0.6,0.2,0.8c0.1,0.2,0.1,0.4,0.2,0.5c0.1,0.3,0.2,0.6,0.3,0.9c0.1,0.1,0.1,0.3,0.2,0.4\n\t\t\tc0.2,0.4,0.3,0.8,0.5,1.2c0,0,0,0,0,0c0.2,0.4,0.4,0.8,0.6,1.3c0.1,0.1,0.1,0.3,0.2,0.4c0.1,0.3,0.3,0.6,0.4,0.8\n\t\t\tc0.1,0.2,0.2,0.3,0.3,0.5c0.1,0.2,0.3,0.5,0.4,0.7c0.1,0.2,0.2,0.3,0.3,0.5c0.1,0.2,0.3,0.5,0.4,0.7c0.1,0.2,0.2,0.3,0.3,0.5\n\t\t\tc0.2,0.2,0.3,0.4,0.5,0.7C5.9,47.8,6,48,6.1,48.1c0.2,0.2,0.3,0.4,0.5,0.7c0.1,0.1,0.2,0.3,0.3,0.4c0,0,0.1,0.1,0.1,0.1\n\t\t\tc0.4-0.7,0.9-1.4,1.4-2.1c4.5-6.2,12.4-10.1,21.4-10.1c8.8,0,16.5,4.5,20.9,11.1c0.5,0.7,0.9,1.4,1.3,2.1c0,0,0,0,0.1-0.1\n\t\t\tc0.1-0.1,0.3-0.3,0.4-0.4c0.2-0.2,0.4-0.4,0.5-0.6c0.1-0.2,0.3-0.3,0.4-0.5c0.2-0.2,0.3-0.4,0.5-0.6c0.1-0.2,0.2-0.3,0.4-0.5\n\t\t\tc0.2-0.2,0.3-0.4,0.5-0.6c0.1-0.2,0.2-0.4,0.3-0.5c0.1-0.2,0.3-0.4,0.4-0.7c0.1-0.2,0.2-0.4,0.3-0.5c0.1-0.2,0.3-0.4,0.4-0.7\n\t\t\tc0.1-0.2,0.2-0.4,0.3-0.6c0.1-0.2,0.2-0.5,0.4-0.7c0.1-0.2,0.2-0.4,0.3-0.6c0.1-0.2,0.2-0.5,0.3-0.7c0.1-0.2,0.2-0.4,0.3-0.6\n\t\t\tc0.1-0.2,0.2-0.5,0.3-0.7c0.1-0.2,0.2-0.4,0.2-0.6c0.1-0.2,0.2-0.5,0.3-0.7c0.1-0.2,0.1-0.4,0.2-0.6c0.1-0.3,0.1-0.5,0.2-0.8\n\t\t\tc0.1-0.2,0.1-0.4,0.2-0.6c0.1-0.3,0.1-0.5,0.2-0.8c0-0.2,0.1-0.4,0.1-0.6c0.1-0.3,0.1-0.5,0.1-0.8c0-0.2,0.1-0.4,0.1-0.6\n\t\t\tc0-0.3,0.1-0.6,0.1-0.9c0-0.2,0.1-0.4,0.1-0.6c0-0.3,0.1-0.7,0.1-1c0-0.2,0-0.3,0-0.5c0-0.5,0-1,0-1.5C60,13.4,46.6,0,30,0z\n\t\t\t M30.7,33.9c-6.4,0-11.5-5.2-11.5-11.6c0-6.4,5.2-11.6,11.5-11.6s11.5,5.2,11.5,11.6C42.3,28.7,37.1,33.9,30.7,33.9z",
-                              },
-                            }),
-                          ]),
-                        ]),
-                      ]
-                    ),
-                  ]),
-                  _vm._v(" "),
                   _c(
-                    "div",
+                    "v-col",
                     {
-                      staticClass: "align-center",
-                      staticStyle: { width: "calc(100% - 50px) !important" },
+                      staticClass:
+                        "col-12 ma-0 pa-2 d-flex flex-wrap space-between align-center pa-4 px-md-16",
                     },
                     [
-                      _c("v-text-field", {
-                        staticClass: "ml-4 my-0 py-2",
-                        attrs: {
-                          "hide-details": "auto",
-                          placeholder: "Escribir un comentario",
-                          maxlength: "500",
-                          counter: "",
-                        },
-                        on: {
-                          focus: function ($event) {
-                            _vm.isComment = true
+                      _c(
+                        "ShareNetwork",
+                        {
+                          attrs: {
+                            network: "facebook",
+                            url: _vm.getSharedPost(_vm.post.route),
+                            title: _vm.post.titulo,
+                            description: _vm.post.contenido,
                           },
                         },
-                        model: {
-                          value: _vm.comment,
-                          callback: function ($$v) {
-                            _vm.comment = $$v
-                          },
-                          expression: "comment",
-                        },
-                      }),
-                      _vm._v(" "),
-                      _vm.isComment
-                        ? _c(
-                            "v-card-text",
+                        [
+                          _c(
+                            "v-btn",
                             {
-                              staticClass:
-                                "py-0 d-flex flex-wrap space-between",
+                              staticClass: "elevation-0 mr-2",
+                              attrs: { fab: "", small: "" },
+                            },
+                            [
+                              _c("v-icon", { attrs: { color: "primary" } }, [
+                                _vm._v("mdi-facebook"),
+                              ]),
+                            ],
+                            1
+                          ),
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "ShareNetwork",
+                        {
+                          attrs: {
+                            network: "twitter",
+                            url: _vm.getSharedPost(_vm.post.route),
+                            title: _vm.post.titulo,
+                            description: _vm.post.contenido,
+                          },
+                        },
+                        [
+                          _c(
+                            "v-btn",
+                            {
+                              staticClass: "elevation-0 mx-2",
+                              attrs: { fab: "", small: "" },
+                            },
+                            [
+                              _c("v-icon", { attrs: { color: "primary" } }, [
+                                _vm._v("mdi-twitter"),
+                              ]),
+                            ],
+                            1
+                          ),
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "ShareNetwork",
+                        {
+                          attrs: {
+                            network: "linkedin",
+                            url: _vm.getSharedPost(_vm.post.route),
+                            title: _vm.post.titulo,
+                            description: _vm.post.contenido,
+                          },
+                        },
+                        [
+                          _c(
+                            "v-btn",
+                            {
+                              staticClass: "elevation-0 mx-2",
+                              attrs: { fab: "", small: "" },
+                            },
+                            [
+                              _c("v-icon", { attrs: { color: "primary" } }, [
+                                _vm._v("mdi-linkedin"),
+                              ]),
+                            ],
+                            1
+                          ),
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "v-btn",
+                        {
+                          staticClass: "elevation-0 mx-2",
+                          attrs: { fab: "", small: "" },
+                          on: {
+                            click: function ($event) {
+                              $event.preventDefault()
+                              return _vm.copyText()
+                            },
+                          },
+                        },
+                        [
+                          _c("v-icon", { attrs: { color: "primary" } }, [
+                            _vm._v("mdi-link-variant"),
+                          ]),
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c("v-spacer"),
+                      _vm._v(" "),
+                      _vm._l(_vm.post.categorias, function (categoria) {
+                        return _c(
+                          "v-btn",
+                          {
+                            key: "categoria-" + categoria.id,
+                            staticClass: "caption",
+                            attrs: { text: "", color: "black" },
+                            on: {
+                              click: function ($event) {
+                                $event.preventDefault()
+                                return _vm.goToCategorys(categoria)
+                              },
+                            },
+                          },
+                          [_vm._v(_vm._s(categoria.nombre_categoria))]
+                        )
+                      }),
+                    ],
+                    2
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "v-col",
+                    { staticClass: "col-12 ma-0 pa-0 px-md-16" },
+                    [_c("v-divider", { attrs: { horizontal: "" } })],
+                    1
+                  ),
+                ],
+                1
+              )
+            : _vm._e(),
+          _vm._v(" "),
+          !_vm.loadingFilterPosts
+            ? _c(
+                "v-row",
+                {
+                  staticClass:
+                    "pa-0 ma-0 content-wrap-article mx-auto elevation-0",
+                },
+                [
+                  _c(
+                    "v-col",
+                    {
+                      staticClass:
+                        "col-12 pa-2 d-flex flex-wrap space-between align-center pa-4 px-md-16 pb-md-16",
+                    },
+                    [
+                      _c("span", { staticClass: "mr-2 black--text" }, [
+                        _vm._v(
+                          _vm._s(_vm.post.visualizaciones.length) +
+                            " visualizaciones"
+                        ),
+                      ]),
+                      _vm._v(" "),
+                      _c("span", { staticClass: "black--text" }, [
+                        _vm._v(
+                          _vm._s(_vm.post.comments.length) + " comentarios"
+                        ),
+                      ]),
+                      _vm._v(" "),
+                      _c("v-spacer"),
+                      _vm._v(" "),
+                      _c(
+                        "span",
+                        {
+                          staticClass: "black--text",
+                          attrs: { fab: "", small: "" },
+                        },
+                        [
+                          _vm._v(
+                            "\n                    " +
+                              _vm._s(_vm.post.favoritos.length) +
+                              "\n                    "
+                          ),
+                          _c(
+                            "v-btn",
+                            {
+                              staticClass: "elevation-0 ml-2",
+                              attrs: { fab: "", small: "" },
                             },
                             [
                               _c(
-                                "div",
+                                "v-icon",
+                                {
+                                  attrs: { color: "error" },
+                                  on: {
+                                    click: function ($event) {
+                                      $event.preventDefault()
+                                      return _vm.isFavorite()
+                                    },
+                                  },
+                                },
                                 [
-                                  _c(
-                                    "v-btn",
-                                    {
-                                      staticClass: "elevation-0",
-                                      attrs: { fab: "", small: "", text: "" },
-                                      on: {
-                                        click: function ($event) {
-                                          $event.preventDefault()
-                                          _vm.showEmojis = !_vm.showEmojis
-                                        },
-                                      },
-                                    },
-                                    [
-                                      _c("v-icon", [
-                                        _vm._v("mdi-emoticon-outline"),
-                                      ]),
-                                    ],
-                                    1
+                                  _vm._v(
+                                    "\n                            " +
+                                      _vm._s(_vm.icon_heart) +
+                                      "\n                        "
                                   ),
-                                  _vm._v(" "),
-                                  _vm.showEmojis
-                                    ? _c("VEmojiPicker", {
-                                        staticClass: "showEmoji",
-                                        on: { select: _vm.selectEmoji },
-                                      })
-                                    : _vm._e(),
-                                ],
-                                1
-                              ),
-                              _vm._v(" "),
-                              _c("v-spacer"),
-                              _vm._v(" "),
-                              _c(
-                                "v-btn",
-                                {
-                                  staticClass:
-                                    "text-normal elevation-0 rounded-0",
-                                  attrs: { text: "", color: "primary" },
-                                  on: {
-                                    click: function ($event) {
-                                      $event.preventDefault()
-                                      return _vm.cancelComment()
-                                    },
-                                  },
-                                },
-                                [_vm._v("Cancelar")]
-                              ),
-                              _vm._v(" "),
-                              _c(
-                                "v-btn",
-                                {
-                                  staticClass:
-                                    "text-normal elevation-0 rounded-0 ml-2",
-                                  attrs: { color: "primary" },
-                                  on: {
-                                    click: function ($event) {
-                                      $event.preventDefault()
-                                      return _vm.sendComment()
-                                    },
-                                  },
-                                },
-                                [_vm._v("Publicar")]
+                                ]
                               ),
                             ],
                             1
-                          )
-                        : _vm._e(),
+                          ),
+                        ],
+                        1
+                      ),
                     ],
                     1
                   ),
                 ],
                 1
-              ),
-            ],
-            1
-          )
-        : _vm._e(),
-      _vm._v(" "),
-      !_vm.loadingFilterPosts
-        ? _c(
-            "v-row",
-            {
-              staticClass: "pa-0 ma-0 content-wrap-article mx-auto elevation-0",
-            },
-            _vm._l(_vm.post.comments, function (comment) {
-              return _c(
-                "v-col",
+              )
+            : _vm._e(),
+          _vm._v(" "),
+          !_vm.loadingFilterPosts
+            ? _c(
+                "v-row",
                 {
-                  key: "comment" + comment.id,
-                  staticClass: "col-12 d-flex flex-wrap pa-4 px-md-16",
+                  staticClass:
+                    "pa-0 ma-0 content-wrap-article mx-auto elevation-0 pb-16",
                 },
                 [
-                  comment.autor === "Anónimo"
-                    ? _c("v-avatar", { staticClass: "grey lighten-3 pa-1" }, [
+                  _c(
+                    "v-col",
+                    { staticClass: "col-12 mt-3 pa-4 px-md-16" },
+                    [
+                      _c(
+                        "v-card-text",
+                        { staticClass: "pa-0 align-center d-flex flex-wrap" },
+                        [
+                          _c("span", { staticClass: "black--text title" }, [
+                            _vm._v("Comentarios"),
+                          ]),
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c("v-divider", {
+                        staticClass: "my-0 py-0",
+                        attrs: { horizontal: "" },
+                      }),
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "v-col",
+                    { staticClass: "col-12 d-flex flex-wrap pa-4 px-md-16" },
+                    [
+                      _c("v-avatar", { staticClass: "grey lighten-3 pa-1" }, [
                         _c(
                           "svg",
                           {
@@ -24499,74 +24733,151 @@ var render = function () {
                                 _c("path", {
                                   attrs: {
                                     fill: "#979797",
-                                    d: "M29.9,37.1c-9,0-17,3.9-21.4,10.1c-0.5,0.7-1,1.4-1.4,2.1c0.5,0.7,1.1,1.3,1.7,1.9c1,1,2.1,2,3.3,2.8\n        c5,3.7,11.2,6,17.9,6s12.9-2.2,17.9-6c1.2-0.9,2.2-1.8,3.3-2.8c0.3-0.3,0.6-0.6,0.9-0.9c-0.4-0.7-0.8-1.4-1.3-2.1\n        C46.3,41.6,38.6,37.1,29.9,37.1z",
+                                    d: "M29.9,37.1c-9,0-17,3.9-21.4,10.1c-0.5,0.7-1,1.4-1.4,2.1c0.5,0.7,1.1,1.3,1.7,1.9c1,1,2.1,2,3.3,2.8\n\t\t\tc5,3.7,11.2,6,17.9,6s12.9-2.2,17.9-6c1.2-0.9,2.2-1.8,3.3-2.8c0.3-0.3,0.6-0.6,0.9-0.9c-0.4-0.7-0.8-1.4-1.3-2.1\n\t\t\tC46.3,41.6,38.6,37.1,29.9,37.1z",
                                   },
                                 }),
                                 _vm._v(" "),
                                 _c("path", {
                                   attrs: {
                                     fill: "#D8D8D8",
-                                    d: "M30,0C13.4,0,0,13.4,0,30c0,0.5,0,1,0,1.5c0,0.2,0,0.3,0,0.5c0,0.3,0,0.7,0.1,1c0,0.2,0,0.4,0.1,0.6\n        c0,0.3,0.1,0.6,0.1,0.9c0,0.2,0.1,0.4,0.1,0.6c0,0.3,0.1,0.6,0.1,0.8c0,0.2,0.1,0.4,0.1,0.6c0.1,0.3,0.1,0.5,0.2,0.8\n        c0,0.2,0.1,0.4,0.1,0.6c0.1,0.3,0.2,0.6,0.2,0.8c0.1,0.2,0.1,0.4,0.2,0.5c0.1,0.3,0.2,0.6,0.3,0.9c0.1,0.1,0.1,0.3,0.2,0.4\n        c0.2,0.4,0.3,0.8,0.5,1.2c0,0,0,0,0,0c0.2,0.4,0.4,0.8,0.6,1.3c0.1,0.1,0.1,0.3,0.2,0.4c0.1,0.3,0.3,0.6,0.4,0.8\n        c0.1,0.2,0.2,0.3,0.3,0.5c0.1,0.2,0.3,0.5,0.4,0.7c0.1,0.2,0.2,0.3,0.3,0.5c0.1,0.2,0.3,0.5,0.4,0.7c0.1,0.2,0.2,0.3,0.3,0.5\n        c0.2,0.2,0.3,0.4,0.5,0.7C5.9,47.8,6,48,6.1,48.1c0.2,0.2,0.3,0.4,0.5,0.7c0.1,0.1,0.2,0.3,0.3,0.4c0,0,0.1,0.1,0.1,0.1\n        c0.4-0.7,0.9-1.4,1.4-2.1c4.5-6.2,12.4-10.1,21.4-10.1c8.8,0,16.5,4.5,20.9,11.1c0.5,0.7,0.9,1.4,1.3,2.1c0,0,0,0,0.1-0.1\n        c0.1-0.1,0.3-0.3,0.4-0.4c0.2-0.2,0.4-0.4,0.5-0.6c0.1-0.2,0.3-0.3,0.4-0.5c0.2-0.2,0.3-0.4,0.5-0.6c0.1-0.2,0.2-0.3,0.4-0.5\n        c0.2-0.2,0.3-0.4,0.5-0.6c0.1-0.2,0.2-0.4,0.3-0.5c0.1-0.2,0.3-0.4,0.4-0.7c0.1-0.2,0.2-0.4,0.3-0.5c0.1-0.2,0.3-0.4,0.4-0.7\n        c0.1-0.2,0.2-0.4,0.3-0.6c0.1-0.2,0.2-0.5,0.4-0.7c0.1-0.2,0.2-0.4,0.3-0.6c0.1-0.2,0.2-0.5,0.3-0.7c0.1-0.2,0.2-0.4,0.3-0.6\n        c0.1-0.2,0.2-0.5,0.3-0.7c0.1-0.2,0.2-0.4,0.2-0.6c0.1-0.2,0.2-0.5,0.3-0.7c0.1-0.2,0.1-0.4,0.2-0.6c0.1-0.3,0.1-0.5,0.2-0.8\n        c0.1-0.2,0.1-0.4,0.2-0.6c0.1-0.3,0.1-0.5,0.2-0.8c0-0.2,0.1-0.4,0.1-0.6c0.1-0.3,0.1-0.5,0.1-0.8c0-0.2,0.1-0.4,0.1-0.6\n        c0-0.3,0.1-0.6,0.1-0.9c0-0.2,0.1-0.4,0.1-0.6c0-0.3,0.1-0.7,0.1-1c0-0.2,0-0.3,0-0.5c0-0.5,0-1,0-1.5C60,13.4,46.6,0,30,0z\n        M30.7,33.9c-6.4,0-11.5-5.2-11.5-11.6c0-6.4,5.2-11.6,11.5-11.6s11.5,5.2,11.5,11.6C42.3,28.7,37.1,33.9,30.7,33.9z",
+                                    d: "M30,0C13.4,0,0,13.4,0,30c0,0.5,0,1,0,1.5c0,0.2,0,0.3,0,0.5c0,0.3,0,0.7,0.1,1c0,0.2,0,0.4,0.1,0.6\n\t\t\tc0,0.3,0.1,0.6,0.1,0.9c0,0.2,0.1,0.4,0.1,0.6c0,0.3,0.1,0.6,0.1,0.8c0,0.2,0.1,0.4,0.1,0.6c0.1,0.3,0.1,0.5,0.2,0.8\n\t\t\tc0,0.2,0.1,0.4,0.1,0.6c0.1,0.3,0.2,0.6,0.2,0.8c0.1,0.2,0.1,0.4,0.2,0.5c0.1,0.3,0.2,0.6,0.3,0.9c0.1,0.1,0.1,0.3,0.2,0.4\n\t\t\tc0.2,0.4,0.3,0.8,0.5,1.2c0,0,0,0,0,0c0.2,0.4,0.4,0.8,0.6,1.3c0.1,0.1,0.1,0.3,0.2,0.4c0.1,0.3,0.3,0.6,0.4,0.8\n\t\t\tc0.1,0.2,0.2,0.3,0.3,0.5c0.1,0.2,0.3,0.5,0.4,0.7c0.1,0.2,0.2,0.3,0.3,0.5c0.1,0.2,0.3,0.5,0.4,0.7c0.1,0.2,0.2,0.3,0.3,0.5\n\t\t\tc0.2,0.2,0.3,0.4,0.5,0.7C5.9,47.8,6,48,6.1,48.1c0.2,0.2,0.3,0.4,0.5,0.7c0.1,0.1,0.2,0.3,0.3,0.4c0,0,0.1,0.1,0.1,0.1\n\t\t\tc0.4-0.7,0.9-1.4,1.4-2.1c4.5-6.2,12.4-10.1,21.4-10.1c8.8,0,16.5,4.5,20.9,11.1c0.5,0.7,0.9,1.4,1.3,2.1c0,0,0,0,0.1-0.1\n\t\t\tc0.1-0.1,0.3-0.3,0.4-0.4c0.2-0.2,0.4-0.4,0.5-0.6c0.1-0.2,0.3-0.3,0.4-0.5c0.2-0.2,0.3-0.4,0.5-0.6c0.1-0.2,0.2-0.3,0.4-0.5\n\t\t\tc0.2-0.2,0.3-0.4,0.5-0.6c0.1-0.2,0.2-0.4,0.3-0.5c0.1-0.2,0.3-0.4,0.4-0.7c0.1-0.2,0.2-0.4,0.3-0.5c0.1-0.2,0.3-0.4,0.4-0.7\n\t\t\tc0.1-0.2,0.2-0.4,0.3-0.6c0.1-0.2,0.2-0.5,0.4-0.7c0.1-0.2,0.2-0.4,0.3-0.6c0.1-0.2,0.2-0.5,0.3-0.7c0.1-0.2,0.2-0.4,0.3-0.6\n\t\t\tc0.1-0.2,0.2-0.5,0.3-0.7c0.1-0.2,0.2-0.4,0.2-0.6c0.1-0.2,0.2-0.5,0.3-0.7c0.1-0.2,0.1-0.4,0.2-0.6c0.1-0.3,0.1-0.5,0.2-0.8\n\t\t\tc0.1-0.2,0.1-0.4,0.2-0.6c0.1-0.3,0.1-0.5,0.2-0.8c0-0.2,0.1-0.4,0.1-0.6c0.1-0.3,0.1-0.5,0.1-0.8c0-0.2,0.1-0.4,0.1-0.6\n\t\t\tc0-0.3,0.1-0.6,0.1-0.9c0-0.2,0.1-0.4,0.1-0.6c0-0.3,0.1-0.7,0.1-1c0-0.2,0-0.3,0-0.5c0-0.5,0-1,0-1.5C60,13.4,46.6,0,30,0z\n\t\t\t M30.7,33.9c-6.4,0-11.5-5.2-11.5-11.6c0-6.4,5.2-11.6,11.5-11.6s11.5,5.2,11.5,11.6C42.3,28.7,37.1,33.9,30.7,33.9z",
                                   },
                                 }),
                               ]),
                             ]),
                           ]
                         ),
-                      ])
-                    : _c(
-                        "v-avatar",
-                        { staticClass: "grey lighten-3 pa-1" },
-                        [
-                          _c("v-img", {
-                            attrs: {
-                              src: comment.foto_autor,
-                              alt: comment.autor,
-                              height: "40",
-                              width: "40",
-                            },
-                          }),
-                        ],
-                        1
-                      ),
-                  _vm._v(" "),
-                  _c(
-                    "div",
-                    { staticStyle: { width: "calc(100% - 50px) !important" } },
-                    [
+                      ]),
+                      _vm._v(" "),
                       _c(
-                        "v-card",
+                        "div",
                         {
-                          staticClass: "elevation-0 caption black--text ml-4",
-                          attrs: {
-                            solo: "",
-                            "auto-grow": "",
-                            filled: "",
-                            disabled: "",
-                            color: "white",
-                            rows: "1",
-                            "max-height": "200",
+                          staticClass: "align-center",
+                          staticStyle: {
+                            width: "calc(100% - 50px) !important",
                           },
                         },
                         [
-                          _c("h3", { staticClass: "font-weight-bold" }, [
-                            _vm._v(_vm._s(comment.autor)),
-                          ]),
-                          _vm._v(" "),
-                          _c(
-                            "div",
-                            {
-                              staticStyle: {
-                                overflow: "hidden",
-                                "text-overflow": "ellipsis",
-                                display: "-webkit-box",
-                                "-webkit-line-clamp": "8",
-                                "-webkit-box-orient": "vertical",
+                          _c("v-text-field", {
+                            staticClass: "ml-4 my-0 py-2",
+                            attrs: {
+                              "hide-details": "auto",
+                              placeholder: "Escribir un comentario",
+                              maxlength: "500",
+                              counter: "",
+                            },
+                            on: {
+                              focus: function ($event) {
+                                _vm.isComment = true
                               },
                             },
-                            [_c("p", [_vm._v(_vm._s(comment.comentario))])]
+                            model: {
+                              value: _vm.comment,
+                              callback: function ($$v) {
+                                _vm.comment = $$v
+                              },
+                              expression: "comment",
+                            },
+                          }),
+                          _vm._v(" "),
+                          _c(
+                            "v-card-text",
+                            {
+                              directives: [
+                                {
+                                  name: "show",
+                                  rawName: "v-show",
+                                  value: _vm.isComment,
+                                  expression: "isComment",
+                                },
+                              ],
+                              staticClass:
+                                "py-0 d-flex flex-wrap space-between",
+                            },
+                            [
+                              _c(
+                                "div",
+                                [
+                                  _c(
+                                    "v-btn",
+                                    {
+                                      staticClass: "elevation-0",
+                                      attrs: {
+                                        fab: "",
+                                        small: "",
+                                        text: "",
+                                        id: "btnvpicker",
+                                      },
+                                      on: {
+                                        click: function ($event) {
+                                          $event.preventDefault()
+                                          return _vm.showingEmojis()
+                                        },
+                                      },
+                                    },
+                                    [
+                                      _c("v-icon", [
+                                        _vm._v("mdi-emoticon-outline"),
+                                      ]),
+                                    ],
+                                    1
+                                  ),
+                                  _vm._v(" "),
+                                  _c("VEmojiPicker", {
+                                    directives: [
+                                      {
+                                        name: "show",
+                                        rawName: "v-show",
+                                        value: _vm.showEmojis,
+                                        expression: "showEmojis",
+                                      },
+                                    ],
+                                    staticClass: "showEmoji",
+                                    attrs: { id: "vpicker" },
+                                    on: { select: _vm.selectEmoji },
+                                  }),
+                                ],
+                                1
+                              ),
+                              _vm._v(" "),
+                              _c("v-spacer"),
+                              _vm._v(" "),
+                              _c(
+                                "v-btn",
+                                {
+                                  staticClass:
+                                    "text-normal elevation-0 rounded-0",
+                                  attrs: { text: "", color: "primary" },
+                                  on: {
+                                    click: function ($event) {
+                                      $event.preventDefault()
+                                      return _vm.cancelComment()
+                                    },
+                                  },
+                                },
+                                [_vm._v("Cancelar")]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "v-btn",
+                                {
+                                  staticClass:
+                                    "text-normal elevation-0 rounded-0 ml-2",
+                                  attrs: { color: "primary" },
+                                  on: {
+                                    click: function ($event) {
+                                      $event.preventDefault()
+                                      return _vm.sendComment()
+                                    },
+                                  },
+                                },
+                                [_vm._v("Publicar")]
+                              ),
+                            ],
+                            1
                           ),
-                        ]
+                        ],
+                        1
                       ),
                     ],
                     1
@@ -24574,10 +24885,164 @@ var render = function () {
                 ],
                 1
               )
-            }),
-            1
-          )
-        : _vm._e(),
+            : _vm._e(),
+          _vm._v(" "),
+          !_vm.loadingFilterPosts
+            ? _c(
+                "v-row",
+                {
+                  staticClass:
+                    "pa-0 ma-0 content-wrap-article mx-auto elevation-0",
+                },
+                _vm._l(_vm.post.comments, function (comment) {
+                  return _c(
+                    "v-col",
+                    {
+                      key: "comment" + comment.id,
+                      staticClass: "col-12 d-flex flex-wrap pa-4 px-md-16",
+                    },
+                    [
+                      comment.autor === "Anónimo"
+                        ? _c(
+                            "v-avatar",
+                            { staticClass: "grey lighten-3 pa-1" },
+                            [
+                              _c(
+                                "svg",
+                                {
+                                  staticClass: "s2FZSQ",
+                                  attrs: {
+                                    version: "1.1",
+                                    xmlns: "http://www.w3.org/2000/svg",
+                                    "xmlns:xlink":
+                                      "http://www.w3.org/1999/xlink",
+                                    x: "0px",
+                                    y: "0px",
+                                    viewBox: "0 0 60 60",
+                                    "enable-background": "new 0 0 60 60;",
+                                    "xml:space": "preserve",
+                                    height: "36",
+                                    width: "36",
+                                  },
+                                },
+                                [
+                                  _c("g", [
+                                    _c("ellipse", {
+                                      attrs: {
+                                        fill: "#979797",
+                                        cx: "30.7",
+                                        cy: "22.3",
+                                        rx: "11.5",
+                                        ry: "11.6",
+                                      },
+                                    }),
+                                    _vm._v(" "),
+                                    _c("g", [
+                                      _c("ellipse", {
+                                        attrs: {
+                                          fill: "none",
+                                          cx: "30.7",
+                                          cy: "22.3",
+                                          rx: "11.5",
+                                          ry: "11.6",
+                                        },
+                                      }),
+                                      _vm._v(" "),
+                                      _c("path", {
+                                        attrs: {
+                                          fill: "#979797",
+                                          d: "M29.9,37.1c-9,0-17,3.9-21.4,10.1c-0.5,0.7-1,1.4-1.4,2.1c0.5,0.7,1.1,1.3,1.7,1.9c1,1,2.1,2,3.3,2.8\n        c5,3.7,11.2,6,17.9,6s12.9-2.2,17.9-6c1.2-0.9,2.2-1.8,3.3-2.8c0.3-0.3,0.6-0.6,0.9-0.9c-0.4-0.7-0.8-1.4-1.3-2.1\n        C46.3,41.6,38.6,37.1,29.9,37.1z",
+                                        },
+                                      }),
+                                      _vm._v(" "),
+                                      _c("path", {
+                                        attrs: {
+                                          fill: "#D8D8D8",
+                                          d: "M30,0C13.4,0,0,13.4,0,30c0,0.5,0,1,0,1.5c0,0.2,0,0.3,0,0.5c0,0.3,0,0.7,0.1,1c0,0.2,0,0.4,0.1,0.6\n        c0,0.3,0.1,0.6,0.1,0.9c0,0.2,0.1,0.4,0.1,0.6c0,0.3,0.1,0.6,0.1,0.8c0,0.2,0.1,0.4,0.1,0.6c0.1,0.3,0.1,0.5,0.2,0.8\n        c0,0.2,0.1,0.4,0.1,0.6c0.1,0.3,0.2,0.6,0.2,0.8c0.1,0.2,0.1,0.4,0.2,0.5c0.1,0.3,0.2,0.6,0.3,0.9c0.1,0.1,0.1,0.3,0.2,0.4\n        c0.2,0.4,0.3,0.8,0.5,1.2c0,0,0,0,0,0c0.2,0.4,0.4,0.8,0.6,1.3c0.1,0.1,0.1,0.3,0.2,0.4c0.1,0.3,0.3,0.6,0.4,0.8\n        c0.1,0.2,0.2,0.3,0.3,0.5c0.1,0.2,0.3,0.5,0.4,0.7c0.1,0.2,0.2,0.3,0.3,0.5c0.1,0.2,0.3,0.5,0.4,0.7c0.1,0.2,0.2,0.3,0.3,0.5\n        c0.2,0.2,0.3,0.4,0.5,0.7C5.9,47.8,6,48,6.1,48.1c0.2,0.2,0.3,0.4,0.5,0.7c0.1,0.1,0.2,0.3,0.3,0.4c0,0,0.1,0.1,0.1,0.1\n        c0.4-0.7,0.9-1.4,1.4-2.1c4.5-6.2,12.4-10.1,21.4-10.1c8.8,0,16.5,4.5,20.9,11.1c0.5,0.7,0.9,1.4,1.3,2.1c0,0,0,0,0.1-0.1\n        c0.1-0.1,0.3-0.3,0.4-0.4c0.2-0.2,0.4-0.4,0.5-0.6c0.1-0.2,0.3-0.3,0.4-0.5c0.2-0.2,0.3-0.4,0.5-0.6c0.1-0.2,0.2-0.3,0.4-0.5\n        c0.2-0.2,0.3-0.4,0.5-0.6c0.1-0.2,0.2-0.4,0.3-0.5c0.1-0.2,0.3-0.4,0.4-0.7c0.1-0.2,0.2-0.4,0.3-0.5c0.1-0.2,0.3-0.4,0.4-0.7\n        c0.1-0.2,0.2-0.4,0.3-0.6c0.1-0.2,0.2-0.5,0.4-0.7c0.1-0.2,0.2-0.4,0.3-0.6c0.1-0.2,0.2-0.5,0.3-0.7c0.1-0.2,0.2-0.4,0.3-0.6\n        c0.1-0.2,0.2-0.5,0.3-0.7c0.1-0.2,0.2-0.4,0.2-0.6c0.1-0.2,0.2-0.5,0.3-0.7c0.1-0.2,0.1-0.4,0.2-0.6c0.1-0.3,0.1-0.5,0.2-0.8\n        c0.1-0.2,0.1-0.4,0.2-0.6c0.1-0.3,0.1-0.5,0.2-0.8c0-0.2,0.1-0.4,0.1-0.6c0.1-0.3,0.1-0.5,0.1-0.8c0-0.2,0.1-0.4,0.1-0.6\n        c0-0.3,0.1-0.6,0.1-0.9c0-0.2,0.1-0.4,0.1-0.6c0-0.3,0.1-0.7,0.1-1c0-0.2,0-0.3,0-0.5c0-0.5,0-1,0-1.5C60,13.4,46.6,0,30,0z\n        M30.7,33.9c-6.4,0-11.5-5.2-11.5-11.6c0-6.4,5.2-11.6,11.5-11.6s11.5,5.2,11.5,11.6C42.3,28.7,37.1,33.9,30.7,33.9z",
+                                        },
+                                      }),
+                                    ]),
+                                  ]),
+                                ]
+                              ),
+                            ]
+                          )
+                        : _c(
+                            "v-avatar",
+                            { staticClass: "grey lighten-3 pa-1" },
+                            [
+                              _c("v-img", {
+                                attrs: {
+                                  src: comment.foto_autor,
+                                  alt: comment.autor,
+                                  height: "40",
+                                  width: "40",
+                                },
+                              }),
+                            ],
+                            1
+                          ),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        {
+                          staticStyle: {
+                            width: "calc(100% - 50px) !important",
+                          },
+                        },
+                        [
+                          _c(
+                            "v-card",
+                            {
+                              staticClass:
+                                "elevation-0 caption black--text ml-4",
+                              attrs: {
+                                solo: "",
+                                "auto-grow": "",
+                                filled: "",
+                                disabled: "",
+                                color: "white",
+                                rows: "1",
+                                "max-height": "200",
+                              },
+                            },
+                            [
+                              _c("h3", { staticClass: "font-weight-bold" }, [
+                                _vm._v(
+                                  "\n                            " +
+                                    _vm._s(comment.autor) +
+                                    "\n                        "
+                                ),
+                              ]),
+                              _vm._v(" "),
+                              _c(
+                                "div",
+                                {
+                                  staticStyle: {
+                                    overflow: "hidden",
+                                    "text-overflow": "ellipsis",
+                                    display: "-webkit-box",
+                                    "-webkit-line-clamp": "8",
+                                    "-webkit-box-orient": "vertical",
+                                  },
+                                },
+                                [_c("p", [_vm._v(_vm._s(comment.comentario))])]
+                              ),
+                            ]
+                          ),
+                        ],
+                        1
+                      ),
+                    ],
+                    1
+                  )
+                }),
+                1
+              )
+            : _vm._e(),
+        ],
+        1
+      ),
       _vm._v(" "),
       _c("FooterGlobal"),
       _vm._v(" "),

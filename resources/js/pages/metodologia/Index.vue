@@ -1,12 +1,13 @@
 <template>
-    <v-container class="content-wrap-2 pa-0 mx-auto">
-        <v-row class="pa-0 ma-0 content-wrap-2 mx-auto">
+    <div>
+    <v-container class="content-wrap-2 pa-0 mx-auto py-16">
+        <!-- <v-row class="pa-0 ma-0 content-wrap-2 mx-auto">
             <v-col class="col-12 pa-0 ma-0">
                 <v-card color="primary" height="25" class="elevation-2 rounded-0"></v-card>
             </v-col>
-        </v-row>
+        </v-row> -->
 
-        <v-row class="pa-0 ma-0 content-wrap-0 mx-auto align-center mt-8">
+        <v-row class="pa-0 ma-0 content-wrap-0 mx-auto align-center my-16">
             <v-col class="col-12 col-md-6 text-center my-4 mx-auto">
                 <span class="primary--text text-uppercase as-text_extralarge line-height_1">Nuestra</span>
                 <br />
@@ -114,11 +115,14 @@
             </v-col>
         </v-row>
 
-        <!--include footer-->
-        <FooterGlobal></FooterGlobal>
 
-        <ChatComponent></ChatComponent>
     </v-container>
+
+         <!--include footer-->
+         <FooterGlobal></FooterGlobal>
+
+<ChatComponent></ChatComponent>
+</div>
 </template>
 
 <script>
@@ -210,7 +214,7 @@ export default {
     height: 350px;
 }
 .steps-container {
-    background-color: #ededed !important;
+    background-color: #e3e2e2 !important;
 }
 .theme--light.v-timeline:before {
     background: #000068;

@@ -98,6 +98,95 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
@@ -107,7 +196,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       phone_send: "tel:+51926302115",
       wame: "https://wa.me/51926302115",
       email: "reactivatunegocio@asconsulting.pe",
-      address: "Av. Alfredo Benavides 3695. Surco."
+      address: "Av. Alfredo Benavides 3695. Santiago de Surco. Lima, Perú."
     };
   },
   methods: {
@@ -121,8 +210,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
             switch (_context.prev = _context.next) {
               case 0:
                 shareData = {
-                  title: 'A&S Consulting Group',
-                  text: 'Solicita tu asesoría',
+                  title: "A&S Consulting Group",
+                  text: "Solicita tu asesoría",
                   url: _this.email
                 };
                 _context.prev = 1;
@@ -149,7 +238,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     },
     goToLocation: function goToLocation() {
       this.$router.push({
-        name: 'contacto'
+        name: "contacto"
       });
     }
   },
@@ -175,6 +264,28 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _components_global_ChatComponent_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../components/global/ChatComponent.vue */ "./resources/js/components/global/ChatComponent.vue");
 /* harmony import */ var _components_global_FooterGlobal_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../components/global/FooterGlobal.vue */ "./resources/js/components/global/FooterGlobal.vue");
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -400,7 +511,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.overlap-servicios {\n    position: absolute;\n    top: 0px;\n    z-index: 1;\n    height: 481px;\n    width: 100%;\n    background-color: rgba(0, 0, 102, 0.44) !important;\n}\n.img-overlap {\n    position: absolute;\n    z-index: 0;\n    top: 0px;\n    height: 481px;\n    width: 100%;\n    background-color: rgba(0, 0, 102, 0.44) !important;\n}\n.content-servicio {\n    position: absolute;\n    top: 0px;\n    z-index: 2;\n    height: 481px;\n    width: 100%;\n}\n.container-servicio {\n    height: 481px;\n    width: 100%;\n}\n.li-circle {\n    list-style-type: none;\n    position: relative;\n}\n.li-circle::before {\n    content: \"⬤\";\n    position: absolute;\n    left: -1.2rem; /* Adjust this value so that it appears where you want. */\n    font-size: 0.5rem; /* Adjust this value so that it appears what size you want. */\n}\n.bottom_button {\n    position: absolute;\n    bottom: 2.5rem;\n    left: 0;\n    right: 0;\n    margin: 0px auto 0px auto;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.overlap-servicios {\n    position: absolute;\n    top: 0px;\n    z-index: 1;\n    height: 481px;\n    width: 100%;\n    background-color: rgba(0, 0, 102, 0.3) !important;\n    transition: all 0.5s;\n}\n.img-overlap {\n    position: absolute;\n    z-index: 0;\n    top: 0px;\n    height: 481px;\n    width: 100%;\n    background-color:transparent !important;\n}\n.content-servicio {\n    position: absolute;\n    top: 0px;\n    z-index: 2;\n    height: 481px;\n    width: 100%;\n}\n.container-servicio {\n    height: 481px;\n    width: 100%;\n}\n.li-circle {\n    list-style-type: none;\n    position: relative;\n}\n.li-circle::before {\n    content: \"⬤\";\n    position: absolute;\n    left: -1.2rem; /* Adjust this value so that it appears where you want. */\n    font-size: 0.5rem; /* Adjust this value so that it appears what size you want. */\n}\n.bottom_button {\n    position: absolute;\n    bottom: 2.5rem;\n    left: 0;\n    right: 0;\n    margin: 0px auto 0px auto;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -772,27 +883,16 @@ var render = function () {
     [
       _c(
         "v-row",
-        { staticClass: "pa-0 ma-0 content-wrap-2 mx-auto footer-container" },
-        [
-          _c(
-            "v-col",
-            { staticClass: "col-12 pa-0 ma-0 rotate-180 container-bandwith" },
-            [_c("v-img", { attrs: { src: "/app/bandwith.png " } })],
-            1
-          ),
-        ],
-        1
-      ),
-      _vm._v(" "),
-      _c(
-        "v-row",
-        { staticClass: "primary pa-0 ma-0 content-wrap-2 mx-auto" },
+        {
+          staticClass:
+            "grey darken-4 pa-0 ma-0 mx-auto justify-center align-start py-10",
+        },
         [
           _c(
             "v-col",
             {
               staticClass:
-                "col-12 col-md-6 d-flex flex-wrap justify-center align-center",
+                "col-12 col-md-2 col-xl-2 d-flex flex-wrap justify-center align-center",
             },
             [
               _c(
@@ -806,166 +906,205 @@ var render = function () {
                 ],
                 1
               ),
+            ]
+          ),
+          _vm._v(" "),
+          _c(
+            "v-col",
+            {
+              staticClass:
+                "col-12 col-md-3 col-xl-3 d-flex flex-column justify-center align-start",
+            },
+            [
+              _c("p", { staticClass: "white--text font-weight-bold px-4" }, [
+                _vm._v("CONTACTO"),
+              ]),
               _vm._v(" "),
-              _c("span", { staticClass: "white--text as-footer_text px-4" }, [
-                _vm._v(
-                  "\n                Copyright ©" +
-                    _vm._s(_vm.yearActual) +
-                    " by A&S Consulting Group.\n            "
-                ),
+              _c(
+                "a",
+                {
+                  staticClass: "white--text px-4",
+                  on: {
+                    click: function ($event) {
+                      $event.preventDefault()
+                      return _vm.goToLocation()
+                    },
+                  },
+                },
+                [
+                  _c(
+                    "v-icon",
+                    { attrs: { small: "", color: "white", left: "" } },
+                    [_vm._v("mdi-map-marker")]
+                  ),
+                  _vm._v(" " + _vm._s(_vm.address) + "\n            "),
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "a",
+                {
+                  staticClass: "white--text px-4",
+                  attrs: { href: _vm.phone_send },
+                },
+                [
+                  _c(
+                    "v-icon",
+                    { attrs: { small: "", color: "white", left: "" } },
+                    [_vm._v("mdi-phone")]
+                  ),
+                  _vm._v(" " + _vm._s(_vm.phone_contact) + "\n            "),
+                ],
+                1
+              ),
+            ]
+          ),
+          _vm._v(" "),
+          _c(
+            "v-col",
+            {
+              staticClass:
+                "col-12 col-md-3 col-xl-3 d-flex flex-column justify-center align-start",
+            },
+            [
+              _c("p", { staticClass: "white--text font-weight-bold px-4" }, [
+                _vm._v("LEGAL"),
+              ]),
+              _vm._v(" "),
+              _c("a", { staticClass: "white--text px-4" }, [
+                _vm._v(" Términos y condiciones "),
+              ]),
+              _vm._v(" "),
+              _c("a", { staticClass: "white--text px-4" }, [
+                _vm._v(" Privacidad "),
               ]),
             ]
           ),
           _vm._v(" "),
           _c(
             "v-col",
-            { staticClass: "col-12 col-md-6 text-center text-md-left " },
+            {
+              staticClass:
+                "col-12 col-md-3 col-xl-3 d-flex flex-column justify-center align-start",
+            },
             [
-              _c("v-col", [
-                _c(
-                  "span",
-                  {
-                    staticClass:
-                      "white--text d-block d-md-inline-flex align-center justify-center",
-                  },
-                  [
-                    _c(
-                      "v-btn",
-                      {
-                        staticClass: "white--text",
-                        attrs: {
-                          fab: "",
-                          text: "",
-                          small: "",
-                          link: "",
-                          href: _vm.phone_send,
-                        },
-                      },
-                      [
-                        _c("v-icon", { attrs: { color: "white" } }, [
-                          _vm._v("mdi-phone-message"),
-                        ]),
-                      ],
-                      1
-                    ),
-                    _vm._v(
-                      "\n                    " +
-                        _vm._s(_vm.phone_contact) +
-                        "\n                "
-                    ),
-                  ],
-                  1
-                ),
-                _vm._v(" "),
-                _c(
-                  "span",
-                  {
-                    staticClass:
-                      "white--text d-block d-md-inline-flex align-center justify-center",
-                  },
-                  [
-                    _c(
-                      "v-btn",
-                      {
-                        staticClass: "white--text",
-                        attrs: { fab: "", text: "", small: "", link: "" },
-                        on: {
-                          click: function ($event) {
-                            $event.preventDefault()
-                            return _vm.openEmail()
-                          },
-                        },
-                      },
-                      [
-                        _c("v-icon", { attrs: { color: "white" } }, [
-                          _vm._v("mdi-email-open"),
-                        ]),
-                      ],
-                      1
-                    ),
-                    _vm._v(
-                      "\n                    " +
-                        _vm._s(_vm.email) +
-                        "\n                "
-                    ),
-                  ],
-                  1
-                ),
+              _c("p", { staticClass: "white--text font-weight-bold px-4" }, [
+                _vm._v("SÍGUENOS"),
               ]),
               _vm._v(" "),
-              _c("v-col", [
-                _c(
-                  "span",
-                  {
-                    staticClass:
-                      "white--text d-block d-md-inline-flex align-center justify-center",
-                  },
-                  [
-                    _c(
-                      "v-btn",
-                      {
-                        staticClass: "white--text",
-                        attrs: {
-                          fab: "",
-                          text: "",
-                          small: "",
-                          href: _vm.wame,
-                          target: "_blank",
-                        },
+              _c(
+                "div",
+                { staticClass: "d-flex flex-wrap px-4" },
+                [
+                  _c(
+                    "v-btn",
+                    {
+                      staticClass: "elevation-0",
+                      attrs: {
+                        fab: "",
+                        small: "",
+                        text: "",
+                        color: "primary",
+                        href: "https://www.facebook.com/AS-Consulting-Group-141818089928155",
+                        target: "_blank",
                       },
-                      [
-                        _c("v-icon", { attrs: { color: "white" } }, [
-                          _vm._v("mdi-whatsapp"),
-                        ]),
-                      ],
-                      1
-                    ),
-                    _vm._v(
-                      "\n                    " +
-                        _vm._s(_vm.phone_contact) +
-                        "\n                "
-                    ),
-                  ],
-                  1
-                ),
-                _vm._v(" "),
-                _c(
-                  "span",
-                  {
-                    staticClass:
-                      "white--text d-block d-md-inline-flex align-center justify-center",
-                  },
-                  [
-                    _c(
-                      "v-btn",
-                      {
-                        staticClass: "white--text",
-                        attrs: { fab: "", text: "", small: "", link: "" },
-                        on: {
-                          click: function ($event) {
-                            $event.preventDefault()
-                            return _vm.goToLocation()
-                          },
-                        },
+                    },
+                    [
+                      _c("v-icon", { attrs: { color: "white" } }, [
+                        _vm._v("mdi-facebook"),
+                      ]),
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "v-btn",
+                    {
+                      staticClass: "elevation-0",
+                      attrs: {
+                        fab: "",
+                        small: "",
+                        text: "",
+                        color: "primary",
+                        href: "https://www.instagram.com/asconsultinggroup/",
+                        target: "_blank",
                       },
-                      [
-                        _c("v-icon", { attrs: { color: "white" } }, [
-                          _vm._v("mdi-map-marker"),
-                        ]),
-                      ],
-                      1
-                    ),
-                    _vm._v(
-                      "\n                    " +
-                        _vm._s(_vm.address) +
-                        "\n                "
-                    ),
-                  ],
-                  1
-                ),
-              ]),
-            ],
-            1
+                    },
+                    [
+                      _c("v-icon", { attrs: { color: "white" } }, [
+                        _vm._v("mdi-instagram"),
+                      ]),
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "v-btn",
+                    {
+                      staticClass: "elevation-0",
+                      attrs: {
+                        fab: "",
+                        small: "",
+                        text: "",
+                        color: "primary",
+                        href: "https://www.linkedin.com/company/as.consulting/",
+                        target: "_blank",
+                      },
+                    },
+                    [
+                      _c("v-icon", { attrs: { color: "white" } }, [
+                        _vm._v("mdi-linkedin"),
+                      ]),
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "v-btn",
+                    {
+                      staticClass: "elevation-0",
+                      attrs: {
+                        fab: "",
+                        small: "",
+                        text: "",
+                        color: "primary",
+                        href: "https://www.youtube.com/channel/UCLGe4u_VDbkoJWE2LkMni9w/featured?view_as=subscriber",
+                        target: "_blank",
+                      },
+                    },
+                    [
+                      _c("v-icon", { attrs: { color: "white" } }, [
+                        _vm._v("mdi-youtube"),
+                      ]),
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "v-btn",
+                    {
+                      staticClass: "elevation-0",
+                      attrs: {
+                        fab: "",
+                        small: "",
+                        text: "",
+                        color: "primary",
+                        href: "https://twitter.com/pymedigitalAS",
+                        target: "_blank",
+                      },
+                    },
+                    [
+                      _c("v-icon", { attrs: { color: "white" } }, [
+                        _vm._v("mdi-twitter"),
+                      ]),
+                    ],
+                    1
+                  ),
+                ],
+                1
+              ),
+            ]
           ),
         ],
         1
@@ -997,187 +1136,216 @@ var render = function () {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c(
-    "v-container",
-    { staticClass: "content-wrap-2 pa-0 mx-auto" },
+    "div",
     [
       _c(
-        "v-row",
-        { staticClass: "pa-0 ma-0 content-wrap-2 mx-auto" },
+        "v-container",
+        { staticClass: "content-wrap-2 pa-0 mx-auto py-16" },
         [
           _c(
-            "v-col",
-            { staticClass: "col-12 pa-0 ma-0 container-bandwith" },
-            [_c("v-img", { attrs: { src: "/app/bandwith.png " } })],
-            1
-          ),
-        ],
-        1
-      ),
-      _vm._v(" "),
-      _c(
-        "v-row",
-        { staticClass: "pa-0 ma-0 content-wrap-0 mx-auto align-center mb-10" },
-        [
-          _c(
-            "v-col",
-            { staticClass: "col-12 col-md-6 text-center text-md-left my-4" },
+            "v-row",
+            {
+              staticClass:
+                "pa-0 ma-0 content-wrap-0 mx-auto align-center my-16",
+            },
             [
               _c(
-                "span",
+                "v-col",
                 {
-                  staticClass:
-                    "primary--text text-uppercase as-text_extralarge line-height_1",
+                  staticClass: "col-12 col-md-6 text-center text-md-left my-4",
                 },
-                [_vm._v("Nuestros")]
-              ),
-              _vm._v(" "),
-              _c("br"),
-              _vm._v(" "),
-              _c(
-                "span",
-                {
-                  staticClass:
-                    "pl-6 primary--text font-weight-bold text-uppercase as-text_extralarge line-height_1 after-right_block",
-                },
-                [_vm._v("servicios")]
-              ),
-            ]
-          ),
-          _vm._v(" "),
-          _c(
-            "v-col",
-            { staticClass: "col-12 col-md-6 text-center text-md-left my-4" },
-            [
-              _c(
-                "p",
-                { staticClass: "primary--text text-justify as-p_normal ma-0" },
                 [
-                  _vm._v(
-                    "Conoce los diferentes servicios que tenemos para ti y tu empresa."
+                  _c(
+                    "span",
+                    {
+                      staticClass:
+                        "primary--text text-uppercase as-text_extralarge line-height_1",
+                    },
+                    [_vm._v("Nuestros")]
+                  ),
+                  _vm._v(" "),
+                  _c("br"),
+                  _vm._v(" "),
+                  _c(
+                    "span",
+                    {
+                      staticClass:
+                        "pl-6 primary--text font-weight-bold text-uppercase as-text_extralarge line-height_1 after-right_block",
+                    },
+                    [_vm._v("servicios")]
                   ),
                 ]
               ),
-            ]
-          ),
-        ],
-        1
-      ),
-      _vm._v(" "),
-      _c(
-        "v-row",
-        { staticClass: "pa-0 ma-0  content-wrap-0 mx-auto align-center mb-10" },
-        _vm._l(_vm.servicios, function (servicio, index) {
-          return _c(
-            "v-col",
-            { key: index, staticClass: "col-12 col-md-6 px-2" },
-            [
+              _vm._v(" "),
               _c(
-                "v-card",
-                { staticClass: "elevation-0 rounded-0 container-servicio" },
+                "v-col",
+                {
+                  staticClass: "col-12 col-md-6 text-center text-md-left my-4",
+                },
                 [
                   _c(
-                    "v-card-text",
-                    { staticClass: "pa-10 text-center content-servicio" },
+                    "p",
+                    {
+                      staticClass: "black--text text-justify as-p_normal ma-0",
+                    },
                     [
-                      _c(
-                        "v-card-text",
-                        { staticClass: "px-8 pt-8 py-0 pb-5" },
-                        [
-                          _c(
-                            "h3",
-                            {
-                              staticClass:
-                                "white--text font-weight-bold as-text_extralarge",
-                            },
-                            [_vm._v(_vm._s(servicio.title))]
-                          ),
-                          _vm._v(" "),
-                          _c(
-                            "h5",
-                            {
-                              staticClass:
-                                "white--text font-weight-bold as-p_normal text-left px-md-6 px-0",
-                            },
-                            [_vm._v(_vm._s(servicio.subtitle))]
-                          ),
-                        ]
+                      _vm._v(
+                        "\n                    Conoce los diferentes servicios que tenemos para ti y tu\n                    empresa.\n                "
                       ),
-                      _vm._v(" "),
-                      _c(
-                        "v-card-text",
-                        { staticClass: "px-6 pl-md-13 pr-10 py-0" },
-                        [
-                          _c(
-                            "ul",
-                            { staticClass: "as-p_normal" },
-                            _vm._l(servicio.details, function (element, index) {
-                              return _c(
-                                "li",
-                                {
-                                  key: index,
-                                  staticClass:
-                                    "white--text text-left as-p_normal li-circle py-1",
-                                },
-                                [_vm._v(_vm._s(element.text))]
-                              )
-                            }),
-                            0
-                          ),
-                        ]
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "v-card-actions",
-                        { staticClass: "pa-0 bottom_button" },
-                        [
-                          _c("v-spacer"),
-                          _vm._v(" "),
-                          _vm._l(servicio.actions, function (action, index) {
-                            return _c(
-                              "v-btn",
-                              {
-                                key: index,
-                                staticClass: "elevation-0 white--text px-10",
-                                attrs: {
-                                  outlined: "",
-                                  rounded: "",
-                                  large: "",
-                                  link: "",
-                                  to: action.src,
-                                },
-                              },
-                              [_vm._v(_vm._s(action.title))]
-                            )
-                          }),
-                          _vm._v(" "),
-                          _c("v-spacer"),
-                        ],
-                        2
-                      ),
-                    ],
-                    1
+                    ]
                   ),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "overlap-servicios" }),
-                  _vm._v(" "),
+                ]
+              ),
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "v-row",
+            {
+              staticClass:
+                "pa-0 ma-0 content-wrap-0 mx-auto align-center mb-10",
+            },
+            _vm._l(_vm.servicios, function (servicio, index) {
+              return _c(
+                "v-col",
+                { key: index, staticClass: "col-12 col-md-6 px-2" },
+                [
                   _c(
-                    "div",
-                    { staticClass: "img-overlap" },
+                    "v-card",
+                    { staticClass: "elevation-0 rounded-0 container-servicio" },
                     [
-                      _c("v-img", {
-                        staticClass: "img-overlap",
-                        attrs: { src: servicio.src },
-                      }),
+                      _c(
+                        "v-card-text",
+                        { staticClass: "pa-10 text-center content-servicio" },
+                        [
+                          _c(
+                            "v-card-text",
+                            { staticClass: "px-8 pt-8 py-0 pb-5" },
+                            [
+                              _c(
+                                "h3",
+                                {
+                                  staticClass:
+                                    "white--text font-weight-bold as-text_extralarge",
+                                },
+                                [
+                                  _vm._v(
+                                    "\n                                " +
+                                      _vm._s(servicio.title) +
+                                      "\n                            "
+                                  ),
+                                ]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "h5",
+                                {
+                                  staticClass:
+                                    "white--text font-weight-bold as-p_normal text-left px-md-6 px-0",
+                                },
+                                [
+                                  _vm._v(
+                                    "\n                                " +
+                                      _vm._s(servicio.subtitle) +
+                                      "\n                            "
+                                  ),
+                                ]
+                              ),
+                            ]
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "v-card-text",
+                            { staticClass: "px-6 pl-md-13 pr-10 py-0" },
+                            [
+                              _c(
+                                "ul",
+                                { staticClass: "as-p_normal" },
+                                _vm._l(
+                                  servicio.details,
+                                  function (element, index) {
+                                    return _c(
+                                      "li",
+                                      {
+                                        key: index,
+                                        staticClass:
+                                          "white--text text-left as-p_normal li-circle py-1",
+                                      },
+                                      [
+                                        _vm._v(
+                                          "\n                                    " +
+                                            _vm._s(element.text) +
+                                            "\n                                "
+                                        ),
+                                      ]
+                                    )
+                                  }
+                                ),
+                                0
+                              ),
+                            ]
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "v-card-actions",
+                            { staticClass: "pa-0 bottom_button" },
+                            [
+                              _c("v-spacer"),
+                              _vm._v(" "),
+                              _vm._l(
+                                servicio.actions,
+                                function (action, index) {
+                                  return _c(
+                                    "v-btn",
+                                    {
+                                      key: index,
+                                      staticClass:
+                                        "elevation-0 white--text px-10",
+                                      attrs: {
+                                        outlined: "",
+                                        rounded: "",
+                                        large: "",
+                                        link: "",
+                                        to: action.src,
+                                      },
+                                    },
+                                    [_vm._v(_vm._s(action.title))]
+                                  )
+                                }
+                              ),
+                              _vm._v(" "),
+                              _c("v-spacer"),
+                            ],
+                            2
+                          ),
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "overlap-servicios" }),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        { staticClass: "img-overlap" },
+                        [
+                          _c("v-img", {
+                            staticClass: "img-overlap",
+                            attrs: { src: servicio.src },
+                          }),
+                        ],
+                        1
+                      ),
                     ],
                     1
                   ),
                 ],
                 1
-              ),
-            ],
+              )
+            }),
             1
-          )
-        }),
+          ),
+        ],
         1
       ),
       _vm._v(" "),

@@ -1,58 +1,72 @@
 <template>
     <div class="header-nav">
-        <v-app-bar color="transparent" light class="elevation-0 pa-0 app-bar_container" height="87">
-            <v-container fluid class="content-wrap mx-auto pa-0 px-md-5">
-                <v-card-text class="d-flex justify-center align-center pa-0 flex-wrap py-4">
-                    <v-app-bar-nav-icon
-                        color="white"
-                        class="d-lg-none d-inline-flex"
-                        @click="drawer = !drawer"
-                    ></v-app-bar-nav-icon>
-
+        <v-app-bar
+            color="transparent"
+            light
+            class="elevation-0 pa-0 app-bar_container"
+            height="87"
+        >
+            <v-container fluid class="content-wrap mx-auto pa-0 px-md-5 py-0">
+                <v-card-text
+                    class="d-flex justify-center align-center pa-0 flex-wrap pt-lg-16"
+                >
                     <v-toolbar-title class="d-flex align-center">
                         <router-link to="/">
-                            <div class="img-logo_navbar">
-                                <v-img src="/app/logo_home.png"></v-img>
-                            </div>
+                            <div class="container-logo">
+                                <div class="img-logo_navbar">
+                                    <v-img src="/app/logo_home.png"></v-img>
+                                </div>
 
-                            <p class="text-center ma-0">
-                                <span class="logo_title">Consulting Group</span>
-                            </p>
+                                <p class="text-center ma-0 my-lg-0">
+                                    <span class="logo_title"
+                                        >Consulting Group</span
+                                    >
+                                </p>
+                            </div>
                         </router-link>
                     </v-toolbar-title>
 
                     <v-spacer></v-spacer>
 
-                    <ul class="d-none d-lg-inline-flex">
-                        <li v-for="(item, index) in items" :key="'items' + index">
+                    <ul class="d-none d-lg-inline-flex header_custom">
+                        <li
+                            v-for="(item, index) in items"
+                            :key="'items' + index"
+                        >
                             <v-hover v-slot="{ hover }">
                                 <router-link :to="item.route">
-                                    <v-menu open-on-hover bottom offset-y rounded="0" dark>
-                                        <template v-slot:activator="{ on, attrs }">
-                                            <span
-                                                :class="{ item_hover: hover }"
-                                                v-bind="attrs"
-                                                v-on="on"
-                                                class="item_style py-4 active"
-                                                v-if="'/' + item.name === active"
-                                            >{{ item.title }}</span>
+                                    <v-menu
+                                        open-on-hover
+                                        bottom
+                                        offset-y
+                                        rounded="0"
+                                        class="primary--text"
+                                        min-width="250"
+                                    >
+                                        <template
+                                            v-slot:activator="{ on, attrs }"
+                                        >
                                             <span
                                                 :class="{ item_hover: hover }"
                                                 v-bind="attrs"
                                                 v-on="on"
                                                 class="item_style py-4"
-                                                v-else
-                                            >{{ item.title }}</span>
+                                                >{{ item.title }}</span
+                                            >
                                         </template>
 
                                         <v-list v-if="item.elements.length > 0">
                                             <v-list-item
                                                 color="primary"
-                                                v-for="(links, index) in item.elements"
+                                                v-for="(
+                                                    links, index
+                                                ) in item.elements"
                                                 :key="'elements' + index"
                                                 :to="links.route"
                                             >
-                                                <v-list-item-title>{{ links.title }}</v-list-item-title>
+                                                <v-list-item-title>{{
+                                                    links.title
+                                                }}</v-list-item-title>
                                             </v-list-item>
                                         </v-list>
                                     </v-menu>
@@ -60,7 +74,16 @@
                             </v-hover>
                         </li>
                     </ul>
-                    <v-spacer></v-spacer>
+
+                    <v-spacer class="d-lg-none d-inline-flex"></v-spacer>
+
+                    <v-app-bar-nav-icon
+                        color="white"
+                        class="d-lg-none d-inline-flex"
+                        @click="drawer = !drawer"
+                    ></v-app-bar-nav-icon>
+
+                    <!-- <v-spacer></v-spacer>
 
                     <v-btn
                         fab
@@ -116,7 +139,7 @@
                         target="_blank"
                     >
                         <v-icon color="white">mdi-twitter</v-icon>
-                    </v-btn>
+                    </v-btn> -->
                 </v-card-text>
             </v-container>
         </v-app-bar>
@@ -125,29 +148,51 @@
         <v-navigation-drawer
             v-model="drawer"
             fixed
+            right
             temporary
             dark
-            color="primary"
-            style="z-index:100"
-            width="300"
+            color="black"
+            style="z-index: 100"
+            width="100%"
         >
             <v-list dense class="pt-0">
                 <v-list-item-content class="transparent">
-                    <v-list-item-title link to="/" class="title d-flex justify-center align-center">
+                    <v-list-item-title
+                        link
+                        to="/"
+                        class="title d-flex justify-center align-center"
+                    >
                         <v-card
                             class="elevation-0 rounded-0"
                             color="transparent"
                             height="50"
                             width="70"
                             contain
-
                         >
-                            <v-img src="/app/white_logo.png" ></v-img>
+                            <v-img src="/app/white_logo.png"></v-img>
                         </v-card>
                     </v-list-item-title>
                     <p
                         class="ma-0 white--text caption text-center font-weight-bold"
-                    >Consulting Group</p>
+                    >
+                        Consulting Group
+                    </p>
+                    <v-fab-transition>
+                        <v-btn
+                            @click.prevent="drawer = !drawer"
+                            fab
+                            right
+                            absolute
+                            small
+                            dark
+                            color="black"
+                            class="elevation-0 pa-0"
+                        >
+                            <v-icon x-large class="pa-0" color="white"
+                                >mdi-close-circle-outline</v-icon
+                            >
+                        </v-btn>
+                    </v-fab-transition>
                 </v-list-item-content>
             </v-list>
 
@@ -155,15 +200,18 @@
                 <v-list-item
                     v-for="item in first_items"
                     :key="item.title"
-                    active-class="success white--text"
+                    active-class="white black--text"
                     :to="item.route"
                 >
-                    <v-list-item-title class="caption white--text font-weight-bold">{{ item.title }}</v-list-item-title>
+                    <v-list-item-title
+                        class="caption black--text font-weight-bold"
+                        >{{ item.title }}</v-list-item-title
+                    >
                 </v-list-item>
                 <v-list-group
                     v-for="item in items_group"
                     :key="item.title"
-                    active-class="success  primary--text"
+                    active-class="black  white--text"
                     v-model="item.active"
                 >
                     <template v-slot:activator>
@@ -180,7 +228,7 @@
                         v-for="child in item.subitems"
                         :key="child.title"
                         :to="child.route"
-                        active-class="success primary--text"
+                        active-class="black primary--text"
                     >
                         <v-list-item-content class="rounded-0">
                             <v-list-item-title
@@ -196,10 +244,13 @@
                 <v-list-item
                     v-for="item in second_items"
                     :key="item.title"
-                    active-class="success white--text"
+                    active-class="black white--text"
                     :to="item.route"
                 >
-                    <v-list-item-title class="caption white--text font-weight-bold">{{ item.title }}</v-list-item-title>
+                    <v-list-item-title
+                        class="caption white--text font-weight-bold"
+                        >{{ item.title }}</v-list-item-title
+                    >
                 </v-list-item>
             </v-list>
         </v-navigation-drawer>
@@ -290,32 +341,28 @@ export default {
                     title: "Clientes",
                     icon: "mdi-account",
                     active: false,
-                    subitems: [
-                    ],
+                    subitems: [],
                 },
                 {
                     route: "/publicaciones",
                     title: "Publicaciones",
                     icon: "mdi-account",
                     active: false,
-                    subitems: [
-                    ],
+                    subitems: [],
                 },
                 {
                     route: "/trabaja-con-nosotros",
                     title: "Trabaja con nosotros",
                     icon: "mdi-account",
                     active: false,
-                    subitems: [
-                    ],
+                    subitems: [],
                 },
                 {
                     route: "/contacto",
                     title: "Contacto",
                     icon: "mdi-account",
                     active: false,
-                    subitems: [
-                    ],
+                    subitems: [],
                 },
             ],
             items_group: [
@@ -337,9 +384,7 @@ export default {
                             active: false,
                             icon: "mdi-account",
                         },
-
                     ],
-
                 },
                 {
                     route: "/servicios",
@@ -367,8 +412,6 @@ export default {
                         },
                     ],
                 },
-
-
             ],
             redes: [
                 {
@@ -382,7 +425,7 @@ export default {
         this.onResize();
         window.addEventListener("resize", this.onResize);
     },
-    mounted() { },
+    mounted() {},
     methods: {
         onResize() {
             if (window.innerWidth > 960) {
@@ -390,12 +433,12 @@ export default {
             }
         },
         goToTitle(item) {
-            this.$router.push(item.route).catch(error => {
+            this.$router.push(item.route).catch((error) => {
                 if (error.name != "NavigationDuplicated") {
                     throw error;
                 }
             });
-        }
+        },
     },
     computed: {
         active() {
@@ -406,8 +449,20 @@ export default {
 </script>
 
 <style scoped>
+.header_custom::after{
+    position: absolute;
+    content: "";
+    height: 2px;
+    width: calc(100% - 550px);
+    right: 115px;
+    bottom: -20px;
+    background: #ffffff;
+}
+
+
 .logo_title {
-    font-size: 0.7rem;
+    font-size: 0.8rem;
+    font-weight: bold;
     color: white;
 }
 .item_style {
@@ -439,25 +494,48 @@ ul li a span {
     padding: 0px 20px 0px 20px;
 }
 .item_hover {
-    color: #b9d956;
-    transition: all 0.4s ease 0s;
+
+    transition: all 0.2s ease 0s;
+    border-bottom: 6px white solid;
 }
 .active {
     color: #b9d956;
+    border-bottom: 6px white solid;
 }
 .img-logo_navbar {
+    position: relative;
+    margin: 0 auto;
+    margin-top: 60px;
     width: 91px;
     height: 47px;
 }
+.container-logo {
+    position: absolute;
+    top: -16px;
+    display: block;
+    width: 200px;
+    height: 190px;
+    background: #000068;
+}
 
 @media screen and (max-width: 992px) {
+    .container-logo {
+        position: absolute;
+        top: -4px;
+        display: block;
+        width: 95px;
+        height: 100px;
+    }
     .img-logo_navbar {
+        position: relative;
+        margin: 0 auto;
+        margin-top: 30px;
         width: 60px;
         height: 30px;
     }
     .logo_title {
-        font-size: 0.5rem;
-        color: white;
+        font-size: 0.6rem;
+        font-weight: bold;
     }
 }
 </style>

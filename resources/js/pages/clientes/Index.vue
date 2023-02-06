@@ -1,140 +1,341 @@
 <template>
-    <v-container class="content-wrap-2 pa-0 mx-auto">
-        <v-row class="pa-0 ma-0 content-wrap-2 mx-auto">
+    <div>
+        <v-container fluid class="pa-0 mx-auto py-16">
+            <!-- <v-row class="pa-0 ma-0 content-wrap-2 mx-auto">
             <v-col class="col-12 pa-0 ma-0 container-bandwith">
                 <v-img src="/app/bandwith.png "></v-img>
             </v-col>
-        </v-row>
+        </v-row> -->
 
-        <v-row class="pa-0 ma-0 content-wrap-0 mx-auto align-center mb-10">
-            <v-col class="col-12 col-md-6 text-center text-md-left my-4">
-                <span class="primary--text text-uppercase as-text_extralarge line-height_1">Nuestros</span>
-                <br />
+            <v-row class="pa-0 ma-0 content-wrap-0 mx-auto align-center my-16">
+                <v-col class="col-12 col-md-6 text-center text-md-left my-4">
+                    <span
+                        class="primary--text text-uppercase as-text_extralarge line-height_1"
+                        >Nuestros</span
+                    >
+                    <br />
 
-                <span
-                    class="pl-6 primary--text font-weight-bold text-uppercase as-text_extralarge line-height_1 after-right_block"
-                >clientes</span>
-            </v-col>
+                    <span
+                        class="pl-6 primary--text font-weight-bold text-uppercase as-text_extralarge line-height_1 after-right_block"
+                        >clientes</span
+                    >
+                </v-col>
 
-            <v-col class="col-12 col-md-6 text-center text-md-left my-4">
-                <p
-                    class="primary--text text-justify as-p_normal ma-0"
-                >Ellos confian en nosotros para conseguir sus objetivos.</p>
-            </v-col>
-        </v-row>
+                <v-col class="col-12 col-md-6 text-center text-md-left my-4">
+                    <p
+                        class="black--text text-md-justify text-center as-p_normal ma-0"
+                    >
+                        Ellos confian en nosotros para conseguir sus objetivos.
+                    </p>
+                </v-col>
+            </v-row>
 
-        <v-row class="pa-0 ma-0 content-wrap-0 mx-auto align-center mb-10 justify-content-center">
-            <v-card-text class="pa-3 my-5">
-                <span
-                    class="primary--text as-text_underline-init font-weight-bold text-uppercase"
-                >Empresas internacionales</span>
-            </v-card-text>
-            <v-col
-                class="col-12 col-md-6"
-                v-for="empresa in empresas_inter"
-                :key="'inter' + empresa.id"
+            <v-row
+                class="pa-0 ma-0 content-wrap-0 mx-auto align-center mb-10 justify-content-center"
             >
-                <v-img :src="empresa.src" height="145" contain></v-img>
-            </v-col>
-
-            <v-card-text class="pa-3 my-5">
-                <span
-                    class="primary--text as-text_underline-init font-weight-bold text-uppercase"
-                >Empresas nacionales</span>
-            </v-card-text>
-
-            <v-col class="col-6 col-md-4" v-for="empresa in empresas_nac" :key="'nac' + empresa.id">
-                <v-img :src="empresa.src" height="150" contain></v-img>
-            </v-col>
-        </v-row>
-
-        <v-row class="pa-0 ma-0 content-wrap-2 mx-auto align-center mb-10 justify-content-center">
-            <v-col class="col-12 my-4">
-                <v-card-text class="pa-3 text-center">
-                    <span class="as-text_underline_app primary--text">TESTIMONIOS</span>
+                <v-card-text class="pa-3 my-5 my-md-15">
+                    <span
+                        class="primary--text as-text_underline-init font-weight-bold text-normal"
+                        >Empresas Internacionales</span
+                    >
                 </v-card-text>
-            </v-col>
-        </v-row>
-        <v-row class="pa-0 ma-0 content-wrap-2 container-testimonios">
-            <div class="flux-overlap-video content-wrap-2"></div>
-            <carousel-3d
-                class="content-testimonios"
-                :autoplay="true"
-                :autoplay-timeout="3000"
-                :width="width_carousel"
-                :height="height_carousel"
-            >
-                <slide
-                    v-for="(testimonio, i) in testimonios"
-                    :index="i"
-                    :key="'test' + i"
-                    class="v-card border-card pa-0"
+                <v-col
+                    class="col-12 col-md-6"
+                    v-for="empresa in empresas_inter"
+                    :key="'inter' + empresa.id"
                 >
-                    <v-card-text class="text-center pb-0">
-                        <v-avatar class="mx-auto white" height="200" width="200">
-                            <v-img :src="testimonio.foto" contain class="mx-auto"></v-img>
-                        </v-avatar>
-                    </v-card-text>
-                    <v-card-text class="text-center content-card mx-auto">
-                        <h1 class="secondary--text font-weight-bold my-2">{{ testimonio.nombre }}</h1>
-                        <h1 class="white--text font-weight-bold my-2">{{ testimonio.cargo }}</h1>
+                    <v-img :src="empresa.src" height="145" contain></v-img>
+                </v-col>
 
-                        <p class="white--text my-2 mt-4">"{{ testimonio.comentario }}"</p>
-                        <p class="white--text font-weight-bold my-2">{{ testimonio.fecha }}</p>
-                    </v-card-text>
-                    <v-card-text class="pt-0 text-justify content-card mx-auto">
-                        <p>
-                            <span class="secondary--text">Proyecto:</span>
+                <v-card-text class="pa-3 my-5 my-md-15">
+                    <span
+                        class="primary--text as-text_underline-init font-weight-bold text-normal"
+                        >Empresas Nacionales</span
+                    >
+                </v-card-text>
 
-                            <span
-                                v-for="(element, index) in testimonio.proyect"
-                                :key="'proy' + index"
+                <v-col
+                    class="col-6 col-md-4"
+                    v-for="empresa in empresas_nac"
+                    :key="'nac' + empresa.id"
+                >
+                    <v-img :src="empresa.src" height="150" contain></v-img>
+                </v-col>
+            </v-row>
+
+            <v-row
+                class="pa-0 ma-0 content-wrap-2 mx-auto align-center my-10 justify-content-center"
+            >
+                <v-col class="col-12 my-4">
+                    <v-card-text class="pa-3 text-center">
+                        <span class="as-text_underline_app primary--text"
+                            >TESTIMONIOS</span
+                        >
+                    </v-card-text>
+                </v-col>
+            </v-row>
+
+            <v-row
+                class="pa-0 ma-0 my-16 mx-auto container-testimonios align-center justify-center"
+            >
+                <v-carousel
+                    cycle
+                    hide-delimiter-background
+                    show-arrows-on-hover
+                    height="600"
+                    :light="!$vuetify.theme.dark"
+                    color="primary"
+                >
+                    <template v-slot:prev="{ on, attrs }">
+                        <v-btn
+                            class="rounded-0"
+                            fab
+                            small
+                            color="primary"
+                            v-bind="attrs"
+                            v-on="on"
+                            ><v-icon>mdi-arrow-left</v-icon></v-btn
+                        >
+                    </template>
+                    <template v-slot:next="{ on, attrs }">
+                        <v-btn
+                            class="rounded-0"
+                            fab
+                            small
+                            color="primary"
+                            v-bind="attrs"
+                            v-on="on"
+                            ><v-icon>mdi-arrow-right</v-icon></v-btn
+                        >
+                    </template>
+                    <v-carousel-item
+                        v-for="(testimonio, i) in testimonios"
+                        :key="'testimonios-' + i"
+                        reverse-transition="fade-transition"
+                        transition="fade-transition"
+                    >
+                        <v-sheet
+                            class="mx-auto sheet_shadow"
+                            width="80"
+                            rounded="circle"
+                            style="position: relative; top: 40px;"
+                        >
+                            <v-avatar
+                                class="mx-auto white"
+                                height="80"
+                                width="80"
                             >
-                                <span class="white--text" v-if="element.type == 'normal'">
-                                    {{
-                                        element.text
-                                    }}
-                                </span>
-                                <span class="white--text font-weight-bold" v-else>
-                                    {{
-                                        element.text
-                                    }}
-                                </span>
-                            </span>
-                        </p>
+                                <v-img
+                                    :src="testimonio.foto"
+                                    contain
+                                    class="mx-auto"
+                                >
+                                    <div
+                                        class="fill-height bottom-gradient"
+                                    ></div>
+                                </v-img>
+                            </v-avatar>
+                        </v-sheet>
+                        <v-sheet
+                            color="white"
+                            shaped
+                            height="77%"
+                            class="mx-auto pa-5 py-12 pa-sm-10 py-sm-16 pa-md-10 py-md-16 pa-lg-16 pa-xl-16 sheet_testimonio sheet_shadow"
+                        >
+                            <v-card-text class="text-center py-0">
+                                <h1
+                                    class="text-h6 black--text font-weight-bold"
+                                >
+                                    {{ testimonio.nombre }}
+                                </h1>
+                                <h1
+                                    class="text-subtitle-1 black--text font-weight-bold"
+                                >
+                                    {{ testimonio.cargo }}
+                                </h1>
+                            </v-card-text>
 
-                        <p>
-                            <span class="secondary--text">Cliente:</span>
-
-                            <span
-                                v-for="(element, index) in testimonio.cliente"
-                                :key="'cli' + index"
+                            <v-card-text
+                                class="text-center mx-auto pa-0 ma-0 py-4"
                             >
-                                <span class="white--text" v-if="element.type == 'normal'">
-                                    {{
-                                        element.text
-                                    }}
-                                </span>
-                                <span class="white--text font-weight-bold" v-else>
-                                    {{
-                                        element.text
-                                    }}
-                                </span>
-                            </span>
-                        </p>
-                    </v-card-text>
-                </slide>
-            </carousel-3d>
-            <video autoplay muted loop id="myVideo" class="col-12 pa-0">
-                <source src="/app/testimonios.mp4" type="video/mp4" />
-            </video>
-        </v-row>
+                                <p
+                                    class="black--text text-subtitle-1 ma-0 line-height_1_3"
+                                >
+                                    {{ testimonio.comentario }}
+                                </p>
+                            </v-card-text>
+                            <v-card-text class="text-justify mx-auto pa-0 ma-0">
+                                <p class="ma-0 text-center py-2">
+                                    <span
+                                        class="black--text font-weight-bold text-subtitle-1 line-height_1"
+                                        >Proyecto:</span
+                                    >
 
+                                    <span
+                                        v-for="(
+                                            element, index
+                                        ) in testimonio.proyect"
+                                        :key="'proy' + index"
+                                    >
+                                        <span
+                                            class="black--text text-subtitle-1 line-height_1"
+                                            v-if="element.type == 'normal'"
+                                        >
+                                            {{ element.text }}
+                                        </span>
+                                        <span
+                                            class="primary--text font-weight-bold text-subtitle-1 line-height_1"
+                                            v-else
+                                        >
+                                            {{ element.text }}
+                                        </span>
+                                    </span>
+                                </p>
+
+                                <p class="ma-0 text-center py-2">
+                                    <span
+                                        class="black--text font-weight-bold text-subtitle-1 line-height_1"
+                                        >Cliente:</span
+                                    >
+
+                                    <span
+                                        v-for="(
+                                            element, index
+                                        ) in testimonio.cliente"
+                                        :key="'cli' + index"
+                                    >
+                                        <span
+                                            class="black--text text-subtitle-1 line-height_1"
+                                            v-if="element.type == 'normal'"
+                                        >
+                                            {{ element.text }}
+                                        </span>
+                                        <span
+                                            class="primary--text font-weight-bold text-subtitle-1 line-height_1"
+                                            v-else
+                                        >
+                                            {{ element.text }}
+                                        </span>
+                                    </span>
+                                </p>
+                            </v-card-text>
+                            <p
+                                class="black--text text-caption ma-0 text-end pt-sm-8 pt-md-8"
+                            >
+                                {{ testimonio.fecha }}
+                            </p>
+                        </v-sheet>
+                    </v-carousel-item>
+                </v-carousel>
+            </v-row>
+
+            <!-- <v-row class="pa-0 ma-0 container-testimonios mb-16">
+                <div class="flux-overlap-video"></div>
+                <carousel-3d
+                    :disable3d="true"
+                     class="content-testimonios"
+                    :autoplay="true"
+                    :autoplay-timeout="3000"
+                    :width="width_carousel"
+                    :height="height_carousel"
+                >
+                    <slide
+                        v-for="(testimonio, i) in testimonios"
+                        :index="i"
+                        :key="'test' + i"
+                        class="v-card border-card pa-0"
+                    >
+                        <v-card-text class="text-center pb-0">
+                            <v-avatar
+                                class="mx-auto white"
+                                height="200"
+                                width="200"
+                            >
+                                <v-img
+                                    :src="testimonio.foto"
+                                    contain
+                                    class="mx-auto"
+                                ></v-img>
+                            </v-avatar>
+                        </v-card-text>
+                        <v-card-text class="text-center content-card mx-auto">
+                            <h1 class="secondary--text font-weight-bold my-2">
+                                {{ testimonio.nombre }}
+                            </h1>
+                            <h1 class="white--text font-weight-bold my-2">
+                                {{ testimonio.cargo }}
+                            </h1>
+
+                            <p class="white--text my-2 mt-4">
+                                "{{ testimonio.comentario }}"
+                            </p>
+                            <p class="white--text font-weight-bold my-2">
+                                {{ testimonio.fecha }}
+                            </p>
+                        </v-card-text>
+                        <v-card-text
+                            class="pt-0 text-justify content-card mx-auto"
+                        >
+                            <p>
+                                <span class="secondary--text">Proyecto:</span>
+
+                                <span
+                                    v-for="(
+                                        element, index
+                                    ) in testimonio.proyect"
+                                    :key="'proy' + index"
+                                >
+                                    <span
+                                        class="white--text"
+                                        v-if="element.type == 'normal'"
+                                    >
+                                        {{ element.text }}
+                                    </span>
+                                    <span
+                                        class="white--text font-weight-bold"
+                                        v-else
+                                    >
+                                        {{ element.text }}
+                                    </span>
+                                </span>
+                            </p>
+
+                            <p>
+                                <span class="secondary--text">Cliente:</span>
+
+                                <span
+                                    v-for="(
+                                        element, index
+                                    ) in testimonio.cliente"
+                                    :key="'cli' + index"
+                                >
+                                    <span
+                                        class="white--text"
+                                        v-if="element.type == 'normal'"
+                                    >
+                                        {{ element.text }}
+                                    </span>
+                                    <span
+                                        class="white--text font-weight-bold"
+                                        v-else
+                                    >
+                                        {{ element.text }}
+                                    </span>
+                                </span>
+                            </p>
+                        </v-card-text>
+                    </slide>
+                </carousel-3d>
+                <video autoplay muted loop id="myVideo" class="col-12 pa-0">
+                    <source src="/app/testimonios.mp4" type="video/mp4" />
+                </video>
+            </v-row> -->
+        </v-container>
         <!--include footer-->
         <FooterGlobal></FooterGlobal>
 
         <ChatComponent></ChatComponent>
-    </v-container>
+    </div>
 </template>
 
 <script>
@@ -244,10 +445,10 @@ export default {
             {
                 foto: "/app/javier_zapata_2.png",
                 nombre: "Javier Zapata",
-                cargo: "(Director de Decor Inox)",
+                cargo: "Director de Decor Inox",
                 comentario:
                     "Excelente trabajo de la empresa consultora A&S Consulting Group, el proyecto termino con éxito, ahora nos brindan asesoría en temas contables y tributarios",
-                fecha: "(diciembre 2019)",
+                fecha: "01.12.19",
                 proyect: [
                     {
                         text: "Rediseño de procesos administrativos y contables,  toma de inventario de productos y activos fijos.",
@@ -268,10 +469,10 @@ export default {
             {
                 foto: "/app/sergio_banuet_2.jpg",
                 nombre: "Sergio Banuet",
-                cargo: "(Director de ISG)",
+                cargo: "Director de ISG",
                 comentario:
                     "La calidad, experiencia y compromiso de A&S Consulting Group fue determinante para el éxito del proyecto. Consideramos sin duda continuar contratándolos para proyectos adicionales en la Región",
-                fecha: "(febrero 2020)",
+                fecha: "10.02.20",
                 proyect: [
                     {
                         text: "Transición de los servicios de telecomunicaciones y mudanza del Datacenter de ",
@@ -297,10 +498,10 @@ export default {
             {
                 foto: "/app/alejandro_camones_2.png",
                 nombre: "Alejandro Camones",
-                cargo: "(Gerente General Cam Motors)",
+                cargo: "Gerente General Cam Motors",
                 comentario:
                     "La consultoría  ha sido tremendamente provechosa, la misma nos ha permitido definir una hoja de ruta precisa y medir los avances de las labores en forma efectiva.",
-                fecha: "(octubre 2019)",
+                fecha: "11.10.19",
                 proyect: [
                     {
                         text: "Análisis financiero, saneamiento contable así como la reestructuración empresarial.",
@@ -336,14 +537,13 @@ export default {
         /**for visite */
         this.$store.dispatch("app/openPage", {
             page: window.location.pathname,
-            link: window.location.host + window.location.pathname
-        })
-
+            link: window.location.host + window.location.pathname,
+        });
     },
     destroyed() {
         this.$store.dispatch("app/closePage", {
-            visita_id: this.$store.state.app.visita_id
-        })
+            visita_id: this.$store.state.app.visita_id,
+        });
     },
     methods: {
         getPath() {
@@ -364,16 +564,16 @@ export default {
 };
 </script>
 
-<style >
+<style>
 #myVideo {
     position: absolute;
     z-index: 0;
-    max-width: 1480px;
-    height: auto;
+    width: 100%;
+    max-height: 850px;
 }
 .container-testimonios {
-    width: 1480px;
-    height: 723px;
+    width: 70%;
+    height: auto;
 }
 .content-testimonios {
     position: absolute;
@@ -404,23 +604,27 @@ export default {
     background-color: rgba(0, 0, 102, 0.38) !important;
 }
 
-.carousel-3d-slider{
+.carousel-3d-slider {
     max-height: 700px !important;
 }
-.carousel-3d-container{
-max-height: 700px !important;
-}
-.carousel-3d-slide ,.v-card ,.border-card  {
+.carousel-3d-container {
     max-height: 700px !important;
+}
+.carousel-3d-slide,
+.v-card,
+.border-card {
+    max-height: 700px !important;
+}
+.sheet_testimonio {
+    max-width: 600px;
+}
+.sheet_shadow{
+    box-shadow: 0 0 5px 5px rgba(0, 0, 102, 0.38) !important;
 }
 
 @media screen and (max-width: 1480px) {
     .container-testimonios {
-        background-image: url("/app/bg_video.jpg");
-        background-repeat: no-repeat;
-        background-size: 100% 100%;
         width: 100%;
-        height: 700px;
     }
     .content-testimonios {
         position: absolute;
@@ -437,6 +641,9 @@ max-height: 700px !important;
         height: 700px !important;
         width: 100%;
         background-color: rgba(0, 0, 102, 0.38) !important;
+    }
+    .sheet_testimonio {
+        width: 90%;
     }
 }
 </style>
