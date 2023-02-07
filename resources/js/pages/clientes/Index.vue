@@ -448,7 +448,7 @@ export default {
                 cargo: "Director de Decor Inox",
                 comentario:
                     "Excelente trabajo de la empresa consultora A&S Consulting Group, el proyecto termino con éxito, ahora nos brindan asesoría en temas contables y tributarios",
-                fecha: "01.12.19",
+                fecha: "01 dic, 2019",
                 proyect: [
                     {
                         text: "Rediseño de procesos administrativos y contables,  toma de inventario de productos y activos fijos.",
@@ -472,7 +472,7 @@ export default {
                 cargo: "Director de ISG",
                 comentario:
                     "La calidad, experiencia y compromiso de A&S Consulting Group fue determinante para el éxito del proyecto. Consideramos sin duda continuar contratándolos para proyectos adicionales en la Región",
-                fecha: "10.02.20",
+                fecha: "10 feb, 2020",
                 proyect: [
                     {
                         text: "Transición de los servicios de telecomunicaciones y mudanza del Datacenter de ",
@@ -501,7 +501,7 @@ export default {
                 cargo: "Gerente General Cam Motors",
                 comentario:
                     "La consultoría  ha sido tremendamente provechosa, la misma nos ha permitido definir una hoja de ruta precisa y medir los avances de las labores en forma efectiva.",
-                fecha: "11.10.19",
+                fecha: "11 oct, 2019",
                 proyect: [
                     {
                         text: "Análisis financiero, saneamiento contable así como la reestructuración empresarial.",

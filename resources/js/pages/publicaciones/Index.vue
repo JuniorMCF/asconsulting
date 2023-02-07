@@ -89,7 +89,7 @@
         >
             <v-col v-if="post_filtered.length == 0" class="col-12 pa-4 ma-0">
                 <v-card
-                    class="rounded-0 elevation-0 card-as d-flex flex-md-row flex-column align-center justify-center"
+                    class="rounded-0 elevation-5 d-flex flex-md-row flex-column align-center justify-center"
                     style="height: 450px"
                 >
                     <v-card-text class="text-center">

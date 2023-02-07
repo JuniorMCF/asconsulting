@@ -17,77 +17,26 @@
 
                     <span
                         class="pl-6 primary--text font-weight-bold text-uppercase as-text_extralarge line-height_1 after-right_block"
-                        >servicios</span
+                        >productos</span
                     >
                 </v-col>
 
                 <v-col class="col-12 col-md-6 text-center text-md-left my-4">
                     <p class="black--text text-justify as-p_normal ma-0">
-                        Conoce los diferentes servicios que tenemos para ti y tu
-                        empresa.
+                        Nuestros desarrollos <strong>tecnológicos.</strong>
                     </p>
                 </v-col>
             </v-row>
 
-            <v-row class="pa-0 ma-0 content-wrap-0 mx-auto align-center mb-10">
+            <v-row class="pa-0 ma-0 content-wrap-0 mx-auto align-center mb-10"
+                style="min-height:400px"
+            >
                 <v-col
                     class="col-12 col-md-6 px-2"
-                    v-for="(servicio, index) in servicios"
+                    v-for="(products, index) in products"
                     :key="index"
                 >
-                    <v-card class="elevation-0 rounded-0 container-servicio">
-                        <v-card-text class="pa-10 text-center content-servicio">
-                            <v-card-text class="px-8 pt-8 py-0 pb-5">
-                                <h3
-                                    class="white--text font-weight-bold as-text_extralarge"
-                                >
-                                    {{ servicio.title }}
-                                </h3>
-                                <h5
-                                    class="white--text font-weight-bold as-p_normal text-left px-md-6 px-0"
-                                >
-                                    {{ servicio.subtitle }}
-                                </h5>
-                            </v-card-text>
 
-                            <v-card-text class="px-6 pl-md-13 pr-10 py-0">
-                                <ul class="as-p_normal">
-                                    <li
-                                        class="white--text text-left as-p_normal li-circle py-1"
-                                        v-for="(
-                                            element, index
-                                        ) in servicio.details"
-                                        :key="index"
-                                    >
-                                        {{ element.text }}
-                                    </li>
-                                </ul>
-                            </v-card-text>
-
-                            <v-card-actions class="pa-0 bottom_button">
-                                <v-spacer></v-spacer>
-                                <v-btn
-                                    outlined
-                                    rounded
-                                    large
-                                    link
-                                    :to="action.src"
-                                    class="elevation-0 white--text px-10"
-                                    v-for="(action, index) in servicio.actions"
-                                    :key="index"
-                                    >{{ action.title }}</v-btn
-                                >
-                                <v-spacer></v-spacer>
-                            </v-card-actions>
-                        </v-card-text>
-                        <div class="overlap-servicios"></div>
-                        <div class="img-overlap">
-                            <v-img
-                                :src="servicio.src"
-                                class="img-overlap"
-                            ></v-img>
-                        </div>
-                    </v-card>
                 </v-col>
             </v-row>
         </v-container>
@@ -104,7 +53,7 @@ import FooterGlobal from "../../components/global/FooterGlobal.vue";
 export default {
     components: { ChatComponent, FooterGlobal },
     data: () => ({
-        servicios: [
+        products: [
             {
                 src: "/app/tecnologia.jpg",
                 title: "Tecnología",
@@ -215,7 +164,7 @@ export default {
     z-index: 1;
     height: 481px;
     width: 100%;
-    background-color: rgba(0, 0, 102, 0.5) !important;
+    background-color: rgba(0, 0, 102, 0.3) !important;
     transition: all 0.5s;
 }
 .img-overlap {

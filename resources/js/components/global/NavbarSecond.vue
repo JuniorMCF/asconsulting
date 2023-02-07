@@ -17,11 +17,11 @@
                                     <v-img src="/app/logo_home.png"></v-img>
                                 </div>
 
-                                <p class="text-center ma-0 my-lg-0">
+                                <!-- <p class="text-center ma-0 my-lg-0">
                                     <span class="logo_title"
                                         >Consulting Group</span
                                     >
-                                </p>
+                                </p> -->
                             </div>
                         </router-link>
                     </v-toolbar-title>
@@ -152,7 +152,7 @@
             right
             temporary
             dark
-            color="black"
+            color="grey darken-4"
             style="z-index: 100"
             width="100%"
         >
@@ -166,18 +166,18 @@
                         <v-card
                             class="elevation-0 rounded-0"
                             color="transparent"
-                            height="50"
-                            width="70"
+                            height="80"
+                            width="80"
                             contain
                         >
                             <v-img src="/app/white_logo.png"></v-img>
                         </v-card>
                     </v-list-item-title>
-                    <p
+                    <!-- <p
                         class="ma-0 white--text caption text-center font-weight-bold"
                     >
                         Consulting Group
-                    </p>
+                    </p> -->
                     <v-fab-transition>
                         <v-btn
                             @click.prevent="drawer = !drawer"
@@ -186,7 +186,7 @@
                             absolute
                             small
                             dark
-                            color="black"
+                            color="grey darken-4"
                             class="elevation-0 pa-0"
                         >
                             <v-icon x-large class="pa-0" color="white"
@@ -201,19 +201,20 @@
                 <v-list-item
                     v-for="item in first_items"
                     :key="item.title"
-                    active-class="white black--text"
+                    active-class="white grey--text"
                     :to="item.route"
                 >
                     <v-list-item-title
-                        class="caption black--text font-weight-bold"
+                        class="caption white--text font-weight-bold"
                         >{{ item.title }}</v-list-item-title
                     >
                 </v-list-item>
                 <v-list-group
                     v-for="item in items_group"
                     :key="item.title"
-                    active-class="black  white--text"
+                    active-class="grey  white--text"
                     v-model="item.active"
+                    :append-icon="item.subitems.length > 0 ? '$expand' : ''"
                 >
                     <template v-slot:activator>
                         <v-list-item-content class="rounded-0">
@@ -224,12 +225,11 @@
                             ></v-list-item-title>
                         </v-list-item-content>
                     </template>
-
                     <v-list-item
                         v-for="child in item.subitems"
                         :key="child.title"
                         :to="child.route"
-                        active-class="black white--text"
+                        active-class="grey white--text"
                     >
                         <v-list-item-content class="rounded-0">
                             <v-list-item-title
@@ -245,7 +245,7 @@
                 <v-list-item
                     v-for="item in second_items"
                     :key="item.title"
-                    active-class="black white--text"
+                    active-class="grey white--text"
                     :to="item.route"
                 >
                     <v-list-item-title
@@ -286,6 +286,17 @@ export default {
                     ],
                 },
                 {
+                    title: "Productos",
+                    route: "/productos",
+                    name: "productos",
+                    elements: [
+                        // {
+                        //     title: "Aplicaciones",
+                        //     route: "/aplicaciones",
+                        // },
+                    ],
+                },
+                {
                     title: "Servicios",
                     route: "/servicios",
                     name: "servicios",
@@ -316,12 +327,12 @@ export default {
                     name: "publicaciones",
                     elements: [],
                 },
-                {
-                    title: "Trabaja con nosotros",
-                    route: "/trabaja-con-nosotros",
-                    name: "trabaja-con-nosotros",
-                    elements: [],
-                },
+                // {
+                //     title: "Trabaja con nosotros",
+                //     route: "/trabaja-con-nosotros",
+                //     name: "trabaja-con-nosotros",
+                //     elements: [],
+                // },
                 {
                     title: "Contacto",
                     route: "/contacto",
@@ -351,13 +362,13 @@ export default {
                     active: false,
                     subitems: [],
                 },
-                {
-                    route: "/trabaja-con-nosotros",
-                    title: "Trabaja con nosotros",
-                    icon: "mdi-account",
-                    active: false,
-                    subitems: [],
-                },
+                // {
+                //     route: "/trabaja-con-nosotros",
+                //     title: "Trabaja con nosotros",
+                //     icon: "mdi-account",
+                //     active: false,
+                //     subitems: [],
+                // },
                 {
                     route: "/contacto",
                     title: "Contacto",
@@ -386,6 +397,12 @@ export default {
                             icon: "mdi-account",
                         },
                     ],
+                },
+                {
+                    title: "Productos",
+                    route: "/productos",
+                    name: "productos",
+                    subitems: [],
                 },
                 {
                     route: "/servicios",
@@ -450,7 +467,7 @@ export default {
 </script>
 
 <style scoped>
-.header_custom::after{
+.header_custom::after {
     position: absolute;
     content: "";
     height: 2px;
@@ -459,7 +476,6 @@ export default {
     bottom: -20px;
     background: #000000;
 }
-
 
 .logo_title {
     font-size: 0.8rem;
@@ -495,13 +511,12 @@ ul li a span {
     padding: 0px 20px 0px 20px;
 }
 .item_hover {
-
     transition: all 0.2s ease 0s;
     border-bottom: 6px #000000 solid;
 }
 .active {
     color: #000000;
-    border-bottom: 6px #FFFFFF solid;
+    border-bottom: 6px #ffffff solid;
 }
 .img-logo_navbar {
     position: relative;

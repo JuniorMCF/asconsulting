@@ -188,6 +188,13 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
@@ -240,6 +247,11 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     goToLocation: function goToLocation() {
       this.$router.push({
         name: "contacto"
+      });
+    },
+    goToWork: function goToWork() {
+      this.$router.push({
+        name: "trabaja-con-nosotros"
       });
     }
   },
@@ -1272,7 +1284,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.card-as {\n    border: solid 1px #000066 !important;\n}\n.ql-editor {\n    height: auto !important;\n}\n.content-detail {\n    max-height: 150px;\n    overflow: hidden;\n}\n.contenido-container {\n    max-width: 460px;\n    padding: 0px 16px 0px 16px;\n    max-height: 90px;\n    overflow: hidden;\n    font-size: 0.65rem !important;\n}\n@media screen and (max-width: 960px) {\n.contenido-container {\n        max-width: 890px;\n        padding: 0px 16px 0px 16px;\n        max-height: 90px;\n        overflow: hidden;\n        font-size: 0.65rem !important;\n}\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n/* .card-as {\n    border: solid 1px #000066 !important;\n} */\n.ql-editor {\n    height: auto !important;\n}\n.content-detail {\n    max-height: 150px;\n    overflow: hidden;\n}\n.contenido-container {\n    max-width: 460px;\n    padding: 0px 16px 0px 16px;\n    max-height: 90px;\n    overflow: hidden;\n    font-size: 0.65rem !important;\n}\n@media screen and (max-width: 960px) {\n.contenido-container {\n        max-width: 890px;\n        padding: 0px 16px 0px 16px;\n        max-height: 90px;\n        overflow: hidden;\n        font-size: 0.65rem !important;\n}\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -20760,7 +20772,34 @@ var render = function () {
             "v-col",
             {
               staticClass:
-                "col-12 col-md-3 col-xl-3 d-flex flex-column justify-center align-start",
+                "col-12 col-md-2 col-xl-2 d-flex flex-column justify-center align-start",
+            },
+            [
+              _c("p", { staticClass: "white--text font-weight-bold px-4" }, [
+                _vm._v("TRABAJA CON NOSOTROS"),
+              ]),
+              _vm._v(" "),
+              _c(
+                "a",
+                {
+                  staticClass: "white--text px-4",
+                  on: {
+                    click: function ($event) {
+                      $event.preventDefault()
+                      return _vm.goToWork()
+                    },
+                  },
+                },
+                [_vm._v(" Solicitud de admisión ")]
+              ),
+            ]
+          ),
+          _vm._v(" "),
+          _c(
+            "v-col",
+            {
+              staticClass:
+                "col-12 col-md-2 col-xl-2 d-flex flex-column justify-center align-start",
             },
             [
               _c("p", { staticClass: "white--text font-weight-bold px-4" }, [
@@ -21373,7 +21412,7 @@ var render = function () {
                             "v-card",
                             {
                               staticClass:
-                                "rounded-0 elevation-0 card-as d-flex flex-md-row flex-column align-center justify-center",
+                                "rounded-0 elevation-0  d-flex flex-md-row flex-column align-center justify-center",
                               staticStyle: { height: "450px" },
                             },
                             [
@@ -21418,7 +21457,7 @@ var render = function () {
                                           "v-card",
                                           {
                                             staticClass:
-                                              "rounded-0 elevation-0 card-as d-flex flex-md-row flex-column",
+                                              "rounded-0 elevation-5 d-flex flex-md-row flex-column",
                                           },
                                           [
                                             _c(
@@ -22065,7 +22104,7 @@ var render = function () {
                                     "v-card",
                                     {
                                       staticClass:
-                                        "rounded-0 elevation-0 card-as d-flex flex-md-row flex-column",
+                                        "rounded-0 elevation-5 d-flex flex-md-row flex-column",
                                     },
                                     [
                                       _c(

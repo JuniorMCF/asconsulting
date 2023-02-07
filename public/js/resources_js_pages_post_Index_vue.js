@@ -188,6 +188,13 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
@@ -240,6 +247,11 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     goToLocation: function goToLocation() {
       this.$router.push({
         name: "contacto"
+      });
+    },
+    goToWork: function goToWork() {
+      this.$router.push({
+        name: "trabaja-con-nosotros"
       });
     }
   },
@@ -23391,7 +23403,34 @@ var render = function () {
             "v-col",
             {
               staticClass:
-                "col-12 col-md-3 col-xl-3 d-flex flex-column justify-center align-start",
+                "col-12 col-md-2 col-xl-2 d-flex flex-column justify-center align-start",
+            },
+            [
+              _c("p", { staticClass: "white--text font-weight-bold px-4" }, [
+                _vm._v("TRABAJA CON NOSOTROS"),
+              ]),
+              _vm._v(" "),
+              _c(
+                "a",
+                {
+                  staticClass: "white--text px-4",
+                  on: {
+                    click: function ($event) {
+                      $event.preventDefault()
+                      return _vm.goToWork()
+                    },
+                  },
+                },
+                [_vm._v(" Solicitud de admisión ")]
+              ),
+            ]
+          ),
+          _vm._v(" "),
+          _c(
+            "v-col",
+            {
+              staticClass:
+                "col-12 col-md-2 col-xl-2 d-flex flex-column justify-center align-start",
             },
             [
               _c("p", { staticClass: "white--text font-weight-bold px-4" }, [

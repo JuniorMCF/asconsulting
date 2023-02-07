@@ -127,24 +127,41 @@
                                                 :key="i"
                                                 class="mx-auto"
                                             >
-                                                <v-btn
-                                                    color="white"
-                                                    class="primary--text font-weight-bold rounded-0"
-                                                    :large="
-                                                        $vuetify.breakpoint
-                                                            .xl ||
-                                                        $vuetify.breakpoint
-                                                            .lg ||
-                                                        $vuetify.breakpoint.md
-                                                    "
-                                                    :small="
-                                                        $vuetify.breakpoint.xs
-                                                    "
-                                                    depressed
-                                                    block
-                                                    :href="action.href"
-                                                    >{{ action.title }}</v-btn
-                                                >
+                                                <v-hover v-slot="{ hover }">
+                                                    <v-btn
+                                                        :color="
+                                                            hover
+                                                                ? 'primary'
+                                                                : 'white'
+                                                        "
+                                                        class="font-weight-bold rounded-0"
+                                                        :large="
+                                                            $vuetify.breakpoint
+                                                                .xl ||
+                                                            $vuetify.breakpoint
+                                                                .lg ||
+                                                            $vuetify.breakpoint
+                                                                .md
+                                                        "
+                                                        :small="
+                                                            $vuetify.breakpoint
+                                                                .xs
+                                                        "
+                                                        :outlined=" hover ? false : true"
+
+
+                                                        :class="
+                                                            hover
+                                                                ? 'white--text'
+                                                                : 'white--text'
+                                                        "
+                                                        block
+                                                        :href="action.href"
+                                                        >{{
+                                                            action.title
+                                                        }}</v-btn
+                                                    >
+                                                </v-hover>
                                             </span>
                                         </div>
                                     </div>
@@ -213,9 +230,9 @@
                 style="min-height: 400px"
             >
                 <v-col
-                    class="col-12 col-xl-4 col-lg-6 d-flex align-start justify-center fade-in"
+                    class="col-12 col-xl-4 col-lg-6 d-flex align-start justify-center fade-in pr-md-4 pr-lg-10 pr-xl-15"
                     v-for="(post, idx) in bestsPost"
-                    style="min-height: 200px"
+                    style="min-height: 800px"
                     :key="'b-post' + idx"
                 >
                     <PostComponent
@@ -249,18 +266,23 @@
             <v-row
                 class="pa-0 ma-0 mx-auto justify-end align-center testimonio"
             >
-
                 <v-col class="col-12 col-sm-10 col-md-8 col-lg-7 col-xl-7 pa-0">
                     <div class="testimonio_content">
-                        <p class="text-xl-h4 text-lg-h4 text-sm-h5 text-h6 white--text font-italic">
-                        "Excellent firm.<br/> Great depth and sophistication, <br/>very
-                        experienced at working with international parties and in
-                        English.<br/> They are among the top tier of law firms in
-                        Peru."
-                    </p>
-                    <p class="text-xl-h5 text-lg-h5 text-sm-h6 text-subtitle-1 white--text">(Legal 500, 2022)</p>
+                        <p
+                            class="text-xl-h4 text-lg-h4 text-sm-h5 text-h6 white--text font-italic"
+                        >
+                            "Excellent firm.<br />
+                            Great depth and sophistication, <br />very
+                            experienced at working with international parties
+                            and in English.<br />
+                            They are among the top tier of law firms in Peru."
+                        </p>
+                        <p
+                            class="text-xl-h5 text-lg-h5 text-sm-h6 text-subtitle-1 white--text"
+                        >
+                            (Legal 500, 2022)
+                        </p>
                     </div>
-
                 </v-col>
             </v-row>
 
@@ -764,7 +786,7 @@ export default {
         vfCaptions: [
             {
                 image: "/app/logo_home.png",
-                subtitle_image: "Consulting Group",
+                subtitle_image: null,
                 title: null,
                 subtitle: [
                     {
@@ -1047,18 +1069,15 @@ export default {
     background-position: center;
     background-repeat: no-repeat;
     height: 500px;
-
 }
-.testimonio_content{
+.testimonio_content {
     padding: 50px 100px 50px 10px;
-
 }
 @media screen and (max-width: 600px) {
     .testimonio {
         height: 300px;
-
     }
-    .testimonio_content{
+    .testimonio_content {
         padding: 20px 20px 0px 20px;
     }
 }
@@ -1135,7 +1154,7 @@ export default {
 }
 
 .image-as {
-    height: 103px;
+    height: 100px;
     width: 200px;
 }
 .flux-container {

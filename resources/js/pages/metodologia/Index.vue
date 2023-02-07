@@ -1,39 +1,93 @@
 <template>
     <div>
-    <v-container class="content-wrap-2 pa-0 mx-auto py-16">
-        <!-- <v-row class="pa-0 ma-0 content-wrap-2 mx-auto">
+        <v-container class="content-wrap-2 pa-0 mx-auto py-16">
+            <!-- <v-row class="pa-0 ma-0 content-wrap-2 mx-auto">
             <v-col class="col-12 pa-0 ma-0">
                 <v-card color="primary" height="25" class="elevation-2 rounded-0"></v-card>
             </v-col>
         </v-row> -->
 
-        <v-row class="pa-0 ma-0 content-wrap-0 mx-auto align-center my-16">
-            <v-col class="col-12 col-md-6 text-center my-4 mx-auto">
-                <span class="primary--text text-uppercase as-text_extralarge line-height_1">Nuestra</span>
-                <br />
+            <v-row class="pa-0 ma-0 content-wrap-0 mx-auto align-center my-16">
+                <v-col class="col-12 col-md-6 text-center my-4 mx-auto">
+                    <span
+                        class="primary--text text-uppercase as-text_extralarge line-height_1"
+                        >Nuestra</span
+                    >
+                    <br />
 
-                <span
-                    class="pl-6 primary--text font-weight-bold text-uppercase as-text_extralarge line-height_1 after-center_block"
-                >Metodología</span>
-            </v-col>
-        </v-row>
-        <v-row class="pa-0 ma-0 content-wrap-0 mx-auto align-center my-0">
-            <v-col class="col-12 col-md-6 text-center my-4 mx-auto px-10">
-                <p class="alternative--text text-justify as-p_normal ma-0">
-                    Promovemos el trabajo colaborativo, que considera las necesidades
-                    cambiantes de nuestros clientes y del mercado.​
-                </p>
-                <br />
-                <p class="alternative--text text-justify as-p_normal ma-0">
-                    Nuestras tres líneas de servicio integradas - tecnología, finanzas y
-                    procesos - utilizan la siguiente metodología:
-                </p>
-            </v-col>
-        </v-row>
+                    <span
+                        class="pl-6 primary--text font-weight-bold text-uppercase as-text_extralarge line-height_1 after-center_block"
+                        >Metodología</span
+                    >
+                </v-col>
+            </v-row>
+            <v-row class="pa-0 ma-0 content-wrap-0 mx-auto align-center my-0">
+                <v-col class="col-12 col-md-8 text-center my-4 mx-auto ">
+                    <p class="black--text text-justify as-p_normal ma-0">
+                        Promovemos el trabajo colaborativo, que considera las
+                        necesidades cambiantes de nuestros clientes y del
+                        mercado.​
+                    </p>
+                    <br />
+                    <p class="black--text text-justify as-p_normal ma-0">
+                        Nuestras tres líneas de servicio integradas -
+                        <strong> tecnología, finanzas y procesos </strong> -
+                        utilizan la siguiente metodología:
+                    </p>
+                </v-col>
+            </v-row>
 
-        <v-row class="pa-0 ma-0 content-wrap-0 mx-auto align-center my-0">
-            <v-col class="col-12">
-                <v-card class="steps-container elevation-10 rounded-lg pa-4 pa-md-10">
+            <v-row
+                class="pa-0 ma-0 content-wrap-0 mx-auto justify-center align-center my-0"
+            >
+                <v-col
+                    class="col-12 col-md-8 as-text_underline-init-large line-height_1 primary--text"
+                >
+                    FASES
+                </v-col>
+
+                <v-col class="col-12 col-md-8">
+                    <v-timeline
+                        class="white"
+                        align-top
+                        :dense="$vuetify.breakpoint.smAndDown"
+                    >
+                        <v-timeline-item
+                            v-for="(item, i) in steps"
+                            :key="i"
+                            large
+                        >
+                            <template v-slot:icon>
+                                <v-avatar
+                                    :color="item.color"
+                                    class="white--text font-weight-bold text-center"
+                                >
+                                    <span>{{ item.img }}</span>
+                                </v-avatar>
+                            </template>
+                            <v-card :color="item.color" dark outlined>
+                                <v-card-text
+                                    class="text-overline font-weight-bold px-3 py-1 white--text"
+                                >
+                                    {{ item.title }}
+                                </v-card-text>
+                                <v-card-text class="white text--primary">
+                                    <p>
+                                        {{ item.content }}
+                                    </p>
+                                    <!-- <v-btn
+                                        :color="item.color"
+                                        class="mx-0"
+                                        outlined
+                                    >
+                                        Button
+                                    </v-btn> -->
+                                </v-card-text>
+                            </v-card>
+                        </v-timeline-item>
+                    </v-timeline>
+
+                    <!-- <v-card class="steps-container elevation-10 rounded-lg pa-4 pa-md-10">
                     <p
                         class="as-text_underline-init-large line-height_1 primary--text my-0 card-title-fases"
                     >FASES</p>
@@ -111,18 +165,16 @@
                             >Propuesta de valor integral.</span>
                         </div>
                     </div>
-                </v-card>
-            </v-col>
-        </v-row>
+                </v-card> -->
+                </v-col>
+            </v-row>
+        </v-container>
 
+        <!--include footer-->
+        <FooterGlobal></FooterGlobal>
 
-    </v-container>
-
-         <!--include footer-->
-         <FooterGlobal></FooterGlobal>
-
-<ChatComponent></ChatComponent>
-</div>
+        <ChatComponent></ChatComponent>
+    </div>
 </template>
 
 <script>
@@ -136,7 +188,7 @@ export default {
     data: () => ({
         steps: [
             {
-                color: "primary",
+                color: "secondary",
                 icon_title: "",
                 title: "ESTABLECER",
                 content: "Alcance, estructura y objetivos del servicio.",
@@ -144,16 +196,16 @@ export default {
                 img: "01",
             },
             {
-                color: "primary",
+                color: "accent",
                 icon_title: "",
                 title: "RECOPILAR",
                 content:
-                    "La info_steprmación actual y relevante de la empresa para el desarrollo del servicio (financiera, procesos y tecnología).",
+                    "La información actual y relevante de la empresa para el desarrollo del servicio (financiera, procesos y tecnología).",
                 position: "left",
                 img: "02",
             },
             {
-                color: "primary",
+                color: "sky",
                 icon_title: "",
                 title: "EVALUAR",
                 content:
@@ -162,7 +214,7 @@ export default {
                 img: "03",
             },
             {
-                color: "primary",
+                color: "secondary_light",
                 icon_title: "",
                 title: "PROPONER",
                 content: "La propuesta de valor integral.",
@@ -182,22 +234,21 @@ export default {
 
     mounted() {
         this.getPath();
-         this.$store.dispatch(
+        this.$store.dispatch(
             "app/changeTitlePage",
             "Metodología de trabajo A&S"
         );
         document.title = this.$store.state.app.title_page;
         /**for visite */
         this.$store.dispatch("app/openPage", {
-              page: window.location.pathname,
-            link: window.location.host + window.location.pathname
-        })
-
+            page: window.location.pathname,
+            link: window.location.host + window.location.pathname,
+        });
     },
     destroyed() {
         this.$store.dispatch("app/closePage", {
-            visita_id: this.$store.state.app.visita_id
-        })
+            visita_id: this.$store.state.app.visita_id,
+        });
     },
     methods: {
         getPath() {
@@ -217,7 +268,6 @@ export default {
     background-color: #e3e2e2 !important;
 }
 .theme--light.v-timeline:before {
-    background: #000068;
     padding-top: 10px;
 }
 .card-title-fases {

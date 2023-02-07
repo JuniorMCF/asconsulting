@@ -43,7 +43,14 @@
                 <a class="white--text px-4"> Privacidad </a>
             </v-col>
             <v-col
-                class="col-12 col-md-3 col-xl-3 d-flex flex-column justify-center align-start"
+                class="col-12 col-md-2 col-xl-2 d-flex flex-column justify-center align-start"
+            >
+                <p class="white--text font-weight-bold px-4">TRABAJA CON NOSOTROS</p>
+
+                <a class="white--text px-4" @click.prevent="goToWork()"> Solicitud de admisión </a>
+            </v-col>
+            <v-col
+                class="col-12 col-md-2 col-xl-2 d-flex flex-column justify-center align-start"
             >
                 <p class="white--text font-weight-bold px-4">SÍGUENOS</p>
                 <div class="d-flex flex-wrap px-4">
@@ -171,6 +178,11 @@ export default {
                 name: "contacto",
             });
         },
+        goToWork(){
+            this.$router.push({
+                name: "trabaja-con-nosotros",
+            });
+        }
     },
     computed: {
         yearActual() {

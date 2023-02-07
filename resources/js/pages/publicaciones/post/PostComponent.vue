@@ -2,7 +2,7 @@
     <div>
         <v-hover v-slot="{ hover }">
             <v-card
-                class="rounded-0 elevation-0 card-as d-flex flex-md-row flex-column"
+                class="rounded-0 elevation-5  d-flex flex-md-row flex-column"
             >
                 <v-card-text class="pa-0">
                     <v-img
@@ -248,9 +248,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.card-as {
-    border: solid 1px #000066 !important;
-}
+// .card-as {
+//     border: solid 1px #000066 !important;
+// }
 .ql-editor {
     height: auto !important;
 }
