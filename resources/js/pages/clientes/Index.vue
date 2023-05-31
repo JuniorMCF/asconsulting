@@ -116,14 +116,14 @@
                     >
                         <v-sheet
                             class="mx-auto sheet_shadow"
-                            width="80"
+                            width="150"
                             rounded="circle"
                             style="position: relative; top: 40px;"
                         >
                             <v-avatar
                                 class="mx-auto white"
-                                height="80"
-                                width="80"
+                                height="150"
+                                width="150"
                             >
                                 <v-img
                                     :src="testimonio.foto"

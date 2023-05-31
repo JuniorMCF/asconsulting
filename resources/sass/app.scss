@@ -179,7 +179,7 @@ header {
 
 .content-desc-subtitle {
     padding: 10px 0px 10px 0px;
-    width: 315px !important;
+    width: 450px !important;
     line-height: 1.2;
 }
 
@@ -372,6 +372,14 @@ header {
 
     .content-desc-subtitle {
         padding: 0;
+        display: inline-block;
+        max-width: 57vw;
+        /* Establece el ancho máximo deseado */
+        overflow-wrap: break-word;
+        word-break: break-all;
+        hyphens: auto;
+        /* Activa la separación silábica */
+
     }
 
     .btn-actions {
@@ -434,6 +442,7 @@ header {
     .as-p_normal {
         font-size: 0.9rem;
     }
+
     .as-text_underline-init {
         font-size: 1.4rem;
         font-weight: bold;
@@ -489,6 +498,7 @@ header {
 .fade-enter-active {
     transition: opacity 1.0s ease;
 }
+
 .fade-leave-active {
     transition: opacity 0.1s ease;
 }
@@ -497,6 +507,7 @@ header {
 .fade-leave-to {
     opacity: 0;
 }
+
 /**for carousel vuetify**/
 // .v-carousel__controls__item.v-btn.v-btn--icon {
 //     background-color: #ebece9; /* Background color of non-active ones */
@@ -506,7 +517,8 @@ header {
 // }
 
 .v-carousel__controls__item.v-btn.v-btn--icon.v-btn--active {
-    color: #000068; /* Colour for active one */
+    color: #000068;
+    /* Colour for active one */
 }
 
 // .v-carousel__controls__item.v-btn.v-btn--icon:hover {
@@ -528,6 +540,7 @@ header {
     0% {
         opacity: 0;
     }
+
     100% {
         opacity: 1;
     }

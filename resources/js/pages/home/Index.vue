@@ -3,7 +3,7 @@
         <v-container fluid class="fixed-top pa-0">
             <v-row class="pa-0 ma-0">
                 <v-col class="col-12 pa-0 ma-0">
-                    <!-- <div class="flux-overlap"></div> -->
+                    <div class="flux-overlap"></div>
 
                     <vue-flux
                         :options="vfOptions"
@@ -18,9 +18,7 @@
                             slot="controls"
                             :slider="$refs.slider_main"
                         ></custom-controls>
-                        <!-- <template v-slot:controls>
-                            <flux-controls />
-                        </template> -->
+
                         <template v-slot:caption>
                             <flux-caption v-slot="captionProps">
                                 <div class="flux-content">
@@ -147,9 +145,9 @@
                                                             $vuetify.breakpoint
                                                                 .xs
                                                         "
-                                                        :outlined=" hover ? false : true"
-
-
+                                                        :outlined="
+                                                            hover ? false : true
+                                                        "
                                                         :class="
                                                             hover
                                                                 ? 'white--text'
@@ -230,9 +228,9 @@
                 style="min-height: 400px"
             >
                 <v-col
-                    class="col-12 col-xl-4 col-lg-6 d-flex align-start justify-center fade-in pr-md-4 pr-lg-10 pr-xl-15"
+                    class="col-12 col-xl-4 col-lg-4 col-md-6 d-flex align-start justify-center fade-in pr-md-4 pr-lg-10 pr-xl-15"
                     v-for="(post, idx) in bestsPost"
-                    style="min-height: 800px"
+                    style="min-height: 500px"
                     :key="'b-post' + idx"
                 >
                     <PostComponent
@@ -505,15 +503,10 @@
             </v-row> -->
 
             <v-row
-                class="pa-0 ma-0 mx-auto justify-center align-start py-16 grey"
+                class="pa-0 ma-0 mx-auto justify-center align-center py-16 grey"
             >
-                <v-col class="col-12 col-md-6 pa-0 pr-md-16">
-                    <v-img
-                        src="https://www.vinateatoyama.com/wp-content/uploads/2022/06/home-nuestras-areas-v2-1024x682.jpg"
-                    ></v-img>
-                </v-col>
                 <v-col
-                    class="col-12 col-md-6 pa-md-0 pt-10 align-center px-md-4"
+                    class="offset-md-6 offset-lg-5 offset-xl-5 col-12 col-md-6 col-lg-5 col-xl-4 px-md-16"
                 >
                     <v-card-text
                         class="text-uppercase white--text text-start py-0"
@@ -524,6 +517,31 @@
                             >Servicios</span
                         >
                     </v-card-text>
+                </v-col>
+                <v-col
+                    class="col-12 col-md-6 col-lg-5 col-xl-5 pa-0 px-4 px-md-0"
+                >
+                    <div class="youtube-container">
+                        <div class="video-player-container">
+                            <youtube
+                                class="youtube"
+                                :video-id="selectedVideoOptions.id"
+                                ref="youtube"
+                                :player-vars="{ autoplay: 1 }"
+                                @playing="playing"
+                            ></youtube>
+                        </div>
+                        <div class="video-list-container">
+                            <video-list
+                                :videos="videos"
+                                @videoSelected="updateSelectedVideo"
+                            ></video-list>
+                        </div>
+                    </div>
+                </v-col>
+                <v-col
+                    class="col-12 col-md-6 col-lg-5 col-xl-4 pa-md-0 pt-10 align-center px-md-16"
+                >
                     <div class="pt-8 container_services">
                         <v-card-text
                             class="pb-1 py-0 px-1 pr-xl-16"
@@ -746,6 +764,8 @@ import FooterGlobal from "../../components/global/FooterGlobal.vue";
 import ChatComponent from "../../components/global/ChatComponent.vue";
 import PostComponent from "./post/PostComponent.vue";
 import CustomControls from "./utils/CustomControls.vue";
+import VideoList from "./components/VideoList.vue";
+
 export default {
     components: {
         VueFlux,
@@ -759,6 +779,7 @@ export default {
         ChatComponent,
         PostComponent,
         CustomControls,
+        VideoList,
     },
     data: () => ({
         mounted: false,
@@ -778,11 +799,33 @@ export default {
         vfOptions: {
             autoplay: true,
             allowToSkipTransition: true,
-            delay: 4000,
+            delay: 8000,
             autohideTime: 0,
         },
-        vfImages: ["/app/file1.webp", "/app/file2.webp"],
-        vfTransitions: ["fade", "fade"],
+        vfImages: [
+            "/app/1as.png",
+            "/app/2as.png",
+            "/app/3as.png",
+            "/app/4as.png",
+            "/app/5as.png",
+            "/app/6as.png",
+            "/app/7as.jpg",
+            "/app/8as.png",
+            "/app/9as.jpg",
+            "/app/10as.png",
+        ],
+        vfTransitions: [
+            "fade",
+            "fade",
+            "fade",
+            "fade",
+            "fade",
+            "fade",
+            "fade",
+            "fade",
+            "fade",
+            "fade",
+        ],
         vfCaptions: [
             {
                 image: "/app/logo_home.png",
@@ -794,19 +837,32 @@ export default {
                         type: "normal",
                     },
                     {
-                        text: " peruana ",
+                        text: " peruana",
                         type: "strong",
                     },
+
                     {
-                        text: " que brinda servicios de ",
+                        text: " que brinda",
                         type: "normal",
                     },
                     {
-                        text: "consultoría",
+                        text: " servicios de",
+                        type: "normal",
+                    },
+                    {
+                        text: " consultoría",
                         type: "strong",
                     },
                     {
-                        text: " especializada.",
+                        text: " y productos digitales.",
+                        type: "normal",
+                    },
+                    {
+                        text: " ¡Descubre el potencial de tu negocio",
+                        type: "p",
+                    },
+                    {
+                        text: " y alcanza tus metas con nuestro apoyo experto!",
                         type: "normal",
                     },
                 ],
@@ -823,22 +879,50 @@ export default {
                 subtitle_image: null,
                 title: [
                     {
-                        text: "REACTIVA TU",
+                        text: "Transformación",
                         type: "normal",
                     },
                     {
-                        text: "PYME",
+                        text: "Digital",
                         type: "underline",
                     },
                 ],
                 subtitle: [
                     {
-                        text: "Conoce como reactivar",
+                        text: "Aprovecha el potencial del",
+                        type: "p",
+                    },
+                    {
+                        text: " comercio electrónico",
+                        type: "strong",
+                    },
+                    {
+                        text: " y llega a nuevos clientes,",
                         type: "normal",
                     },
                     {
-                        text: " tu negocio y llevarlo al siguiente nivel",
-                        type: "salto_linea",
+                        text: " aumentando tus ventas y consolidando",
+                        type: "p",
+                    },
+                    {
+                        text: " tu presencia en el mercado.",
+                        type: "p",
+                    },
+                    {
+                        text: " ¡Descubre cómo nuestra",
+                        type: "normal",
+                    },
+                    {
+                        text: " tienda digital",
+                        type: "strong",
+                    },
+                    {
+                        text: " puede transformar tu",
+                        type: "normal",
+                    },
+                    {
+                        text: " negocio hoy mismo!",
+                        type: "p",
                     },
                 ],
                 actions: [
@@ -848,13 +932,464 @@ export default {
                     },
                 ],
             },
-        ],
+            {
+                image: null,
+                subtitle_image: null,
+                title: [
+                    {
+                        text: "Seguridad ",
+                        type: "normal",
+                    },
+                    {
+                        text: "Laboral",
+                        type: "underline",
+                    },
+                ],
+                subtitle: [
+                    {
+                        text: "Asegura la",
+                        type: "normal",
+                    },
+                    {
+                        text: " protección",
+                        type: "strong",
+                    },
+                    {
+                        text: " y",
+                        type: "normal",
+                    },
+                    {
+                        text: " bienestar",
+                        type: "strong",
+                    },
+                    {
+                        text: " de tus colaboradores con nuestro",
+                        type: "p",
+                    },
+                    {
+                        text: " servicio de implementación",
+                        type: "p",
+                    },
+                    {
+                        text: " de seguridad y salud en el trabajo",
+                        type: "p",
+                    },
+                    {
+                        text: " y cumple con la regulación.",
+                        type: "p",
+                    },
 
-        /**for services */
-        vfOptions_services: {
-            autoplay: true,
-            allowToSkipTransition: true,
-            delay: 3000,
+                    {
+                        text: " ¡Confía en nosotros",
+                        type: "p",
+                    },
+
+                    {
+                        text: " y crea un entorno de trabajo",
+                        type: "normal",
+                    },
+
+                    {
+                        text: " seguro",
+                        type: "strong",
+                    },
+                    {
+                        text: " y",
+                        type: "normal",
+                    },
+                    {
+                        text: " saludable",
+                        type: "strong!",
+                    },
+                ],
+                actions: [
+                    {
+                        title: "Solicita tu asesoria",
+                        href: "#solicita-asesoria",
+                    },
+                ],
+            },
+            {
+                image: null,
+                subtitle_image: null,
+                title: [
+                    {
+                        text: "Cartas fianza confiables",
+                        type: "underline",
+                    },
+                ],
+                subtitle: [
+                    {
+                        text: "Potencia tus proyectos",
+                        type: "normal",
+                    },
+                    {
+                        text: " y asegura tu solvencia económica",
+                        type: "p",
+                    },
+                    {
+                        text: "con nuestro servicio especializado en",
+                        type: "normal",
+                    },
+                    {
+                        text: " gestión de cartas fianza.",
+                        type: "strong",
+                    },
+                    {
+                        text: " ¡Confía en nosotros ",
+                        type: "p",
+                    },
+                    {
+                        text: " y simplifica tu proceso de",
+                        type: "normal",
+                    },
+                    {
+                        text: " garantías financieras!",
+                        type: "strong",
+                    },
+                ],
+                actions: [
+                    {
+                        title: "Solicita tu asesoria",
+                        href: "#solicita-asesoria",
+                    },
+                ],
+            },
+            {
+                image: null,
+                subtitle_image: null,
+                title: [
+                    {
+                        text: "Eficiencia digital garantizada",
+                        type: "underline",
+                    },
+                ],
+                subtitle: [
+                    {
+                        text: "Impulsa la",
+                        type: "normal",
+                    },
+                    {
+                        text: " eficiencia",
+                        type: "strong",
+                    },
+                    {
+                        text: " y",
+                        type: "normal",
+                    },
+
+                    {
+                        text: " la",
+                        type: "normal",
+                    },
+                    {
+                        text: " innovación",
+                        type: "strong",
+                    },
+                    {
+                        text: " en tu empresa.",
+                        type: "normal",
+                    },
+                    {
+                        text: " Identificamos áreas de mejora",
+                        type: "p",
+                    },
+                    {
+                        text: " y aplicamos soluciones",
+                        type: "normal",
+                    },
+                    {
+                        text: " para aumentar la",
+                        type: "p",
+                    },
+                    {
+                        text: " productividad.",
+                        type: "strong",
+                    },
+                ],
+                actions: [
+                    {
+                        title: "Solicita tu asesoria",
+                        href: "#solicita-asesoria",
+                    },
+                ],
+            },
+            {
+                image: null,
+                subtitle_image: null,
+                title: [
+                    {
+                        text: "Transformación ",
+                        type: "normal",
+                    },
+                    {
+                        text: "Empresarial",
+                        type: "underline",
+                    },
+                ],
+                subtitle: [
+                    {
+                        text: " Identificamos áreas de mejora",
+                        type: "normal",
+                    },
+                    {
+                        text: " y aplicamos soluciones",
+                        type: "p",
+                    },
+                    {
+                        text: " para aumentar la",
+                        type: "p",
+                    },
+
+                    {
+                        text: " productividad",
+                        type: "strong",
+                    },
+                    {
+                        text: " reducir errores",
+                        type: "normal",
+                    },
+                    {
+                        text: " y fomentar la innovación.",
+                        type: "p",
+                    },
+
+                    {
+                        text: " ¡Descubre cómo transformar tus",
+                        type: "normal",
+                    },
+                    {
+                        text: " operaciones para alcanzar",
+                        type: "p",
+                    },
+                    {
+                        text: " el éxito empresarial!",
+                        type: "p",
+                    },
+                ],
+                actions: [
+                    {
+                        title: "Solicita tu asesoria",
+                        href: "#solicita-asesoria",
+                    },
+                ],
+            },
+            {
+                image: null,
+                subtitle_image: null,
+                title: [
+                    {
+                        text: "Tableros de control",
+                        type: "normal",
+                    },
+                    {
+                        text: "inteligentes",
+                        type: "underline",
+                    },
+                ],
+                subtitle: [
+                    {
+                        text: " Potencia el control de tu empresa,",
+                        type: "normal",
+                    },
+                    {
+                        text: " implementando tableros de control.",
+                        type: "p",
+                    },
+                    {
+                        text: " Toma decisiones basadas en datos",
+                        type: "p",
+                    },
+
+                    {
+                        text: " y mejora tu negocio",
+                        type: "p",
+                    },
+
+                ],
+                actions: [
+                    {
+                        title: "Solicita tu asesoria",
+                        href: "#solicita-asesoria",
+                    },
+                ],
+            },
+            {
+                image: null,
+                subtitle_image: null,
+                title: [
+                    {
+                        text: "Fortalece tu",
+                        type: "normal",
+                    },
+                    {
+                        text: "Equipo",
+                        type: "underline",
+                    },
+                ],
+                subtitle: [
+                    {
+                        text: "Capacita",
+                        type: "strong",
+                    },
+                    {
+                        text: " a tu equipo,",
+                        type: "normal",
+                    },
+                    {
+                        text: " en temas empresariales clave",
+                        type: "p",
+                    },
+                    {
+                        text: " y fortalece las habilidades",
+                        type: "p",
+                    },
+
+                    {
+                        text: " necesarias par alcanzar",
+                        type: "p",
+                    },
+                    {
+                        text: " el exito en un mercado",
+                        type: "normal",
+                    },
+                    {
+                        text: " competitivo.",
+                        type: "strong",
+                    },
+
+                ],
+                actions: [
+                    {
+                        title: "Solicita tu asesoria",
+                        href: "#solicita-asesoria",
+                    },
+                ],
+            },
+            {
+                image: null,
+                subtitle_image: null,
+                title: [
+                    {
+                        text: "Outsourcing",
+                        type: "normal",
+                    },
+                    {
+                        text: "Empresarial",
+                        type: "underline",
+                    },
+                ],
+                subtitle: [
+                    {
+                        text: "Simplifica",
+                        type: "normal",
+                    },
+                    {
+                        text: " tu carga de trabajo,",
+                        type: "strong",
+                    },
+                    {
+                        text: " optimiza tu empresa con outsourcing,",
+                        type: "p",
+                    },
+                    {
+                        text: " confía en nuestro equipo de expertos",
+                        type: "p",
+                    },
+
+                    {
+                        text: " para brindarte soluciones eficientes",
+                        type: "p",
+                    },
+                    {
+                        text: " y enfócate en",
+                        type: "normal",
+                    },
+                    {
+                        text: " hacer crecer tu negocio.",
+                        type: "strong",
+                    },
+
+                ],
+                actions: [
+                    {
+                        title: "Solicita tu asesoria",
+                        href: "#solicita-asesoria",
+                    },
+                ],
+            },
+            {
+                image: null,
+                subtitle_image: null,
+                title: [
+                    {
+                        text: "Selección de ",
+                        type: "normal",
+                    },
+                    {
+                        text: "Personal",
+                        type: "underline",
+                    },
+                ],
+                subtitle: [
+                    {
+                        text: "Encuentra al talento ideal",
+                        type: "normal",
+                    },
+                    {
+                        text: " para tu empresa con nuestro",
+                        type: "p",
+                    },
+                    {
+                        text: " servicio de selección de personal.",
+                        type: "p",
+                    },
+                    {
+                        text: " Expertos te ayudarán",
+                        type: "p",
+                    },
+                    {
+                        text: " a encontrar candidatos",
+                        type: "p",
+                    },
+                    {
+                        text: " calificados",
+                        type: "strong",
+                    },
+                    {
+                        text: " y",
+                        type: "normal",
+                    },
+                    {
+                        text: " comprometidos,",
+                        type: "strong",
+                    },
+                    {
+                        text: " asegurando el éxito de tu equipo",
+                        type: "p",
+                    },
+                    {
+                        text: " y el",
+                        type: "normal",
+                    },
+                    {
+                        text: " crecimiento de tu negocio.",
+                        type: "strong",
+                    },
+
+
+                ],
+                actions: [
+                    {
+                        title: "Solicita tu asesoria",
+                        href: "#solicita-asesoria",
+                    },
+                ],
+            },
+        ],
+        videos: [],
+        selectedVideoId: {
+            id: "",
         },
         vfImages_services: [
             "/app/tecnologia.webp",
@@ -937,6 +1472,7 @@ export default {
             page: window.location.pathname,
             link: window.location.host + window.location.pathname,
         });
+        this.fetchVideos();
         this.getData();
     },
     destroyed() {
@@ -944,7 +1480,58 @@ export default {
             visita_id: this.$store.state.app.visita_id,
         });
     },
+    computed: {
+        selectedVideoOptions() {
+            // Obtener el video seleccionado
+            const selectedVideo = this.videos.find(
+                (video) => video.id === this.selectedVideoId
+            );
+
+            // Verificar si se encontró un video seleccionado y si tiene opciones
+            if (selectedVideo) {
+                return selectedVideo;
+            }
+
+            // Si no se encontró un video seleccionado o no tiene opciones, devolver un objeto vacío
+            return { id: "" };
+        },
+        player() {
+            return this.$refs.youtube.player;
+        },
+    },
     methods: {
+        fetchVideos() {
+            const playlistId = "PL3om8bMADAd4xrD7DL4sKDa7P-IH4t9_j";
+            const maxResults = 3; // Número máximo de resultados a obtener
+            const API_KEY = "AIzaSyB6sTrxyXA_2fKGdWr8mvJKOFy0ysbxv-8";
+            const url = `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=${playlistId}&maxResults=${maxResults}&order=date&key=${API_KEY}`;
+
+            axios
+                .get(url)
+                .then((response) => {
+                    console.log(response.data.items);
+                    this.videos = response.data.items.map((item) => ({
+                        id: item.snippet.resourceId.videoId,
+                        title: item.snippet.title,
+                        src: `https://www.youtube.com/watch?v=${item.snippet.resourceId.videoId}`,
+                        portada: item.snippet.thumbnails.standard.url,
+                    }));
+                })
+                .catch((error) => {
+                    console.error("Error al obtener los videos:", error);
+                });
+        },
+
+        updateSelectedVideo(videoId) {
+            this.selectedVideoId = videoId;
+        },
+        playVideo() {
+            this.player.playVideo();
+        },
+        playing() {
+            console.log("\o/ we are watching!!!");
+        },
+
         getData() {
             axios
                 .get("api/posts/bests")
@@ -1062,6 +1649,24 @@ export default {
 </script>
 
 <style>
+.youtube-container {
+    display: flex;
+    flex-direction: column;
+    align-items: left; /* Centra los elementos horizontalmente */
+}
+
+.video-player-container {
+    flex: 1;
+    width: 100%; /* Ocupa el ancho completo del contenedor padre */
+    max-width: 100%; /* Ajusta el ancho máximo para que sea responsive */
+    height: auto;
+}
+
+/* Estilos adicionales para hacer el contenedor responsive */
+.video-player-container .youtube {
+    width: 100%;
+    min-height: 350px;
+}
 .testimonio {
     background: url("https://www.estudiorodrigo.com/wp-content/uploads/2019/01/DSC0203.jpg");
     background-size: cover;
@@ -1124,10 +1729,11 @@ export default {
 }
 .flux-overlap {
     position: absolute;
+    /* background-image: linear-gradient(0.50turn, rgba(0, 0, 102, 1),transparent,transparent, transparent, transparent); */
     z-index: 5;
     height: 100%;
     width: 100%;
-    background-color: rgba(0, 0, 102, 0.1) !important;
+    background-color: rgba(0, 0, 102, 0.38) !important;
 }
 .flux-overlap-servicios {
     position: absolute;
@@ -1244,5 +1850,10 @@ export default {
     transform: translateX(5px);
 
     transition: all 0.3s;
+}
+.video-list-container{
+    overflow-x: auto; /* Permite el desplazamiento horizontal */
+  white-space: nowrap; /* Evita que los elementos se envuelvan a la siguiente línea */
+  height: 200px; /* Establece una altura fija para el contenedor */
 }
 </style>

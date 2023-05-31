@@ -13,6 +13,10 @@ Vue.component('App', require('./components/App.vue').default)
 
 import vuetify from './vuetify'
 
+import VueYoutube from 'vue-youtube'
+
+Vue.use(VueYoutube)
+
 import x5GMaps from 'x5-gmaps';
 // Option 1: Just your key
 Vue.use(x5GMaps, 'AIzaSyD-eEDri6PibSJ0lYpe3jU0DWnMytFljpM');

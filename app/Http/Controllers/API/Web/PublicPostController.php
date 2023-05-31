@@ -16,6 +16,7 @@ use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Stevebauman\Location\Facades\Location;
+use GuzzleHttp\Client;
 
 class PublicPostController extends Controller
 {
@@ -166,6 +167,7 @@ class PublicPostController extends Controller
 
 
         return response()->json([
+            "reels"=>[],
             "posts" => $posts,
             "categorias" => $categorias,
             "ip" => $request->ip()

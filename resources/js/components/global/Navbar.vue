@@ -166,10 +166,8 @@
                             class="elevation-0 rounded-0"
                             color="transparent"
                             height="80"
-                            width="80"
-
                         >
-                            <v-img src="/app/white_logo.png" cover></v-img>
+                            <v-img src="/app/logo_home.png" height="80"></v-img>
                         </v-card>
                     </v-list-item-title>
                     <!-- <p
@@ -284,17 +282,17 @@ export default {
                         },
                     ],
                 },
-                {
-                    title: "Productos",
-                    route: "/productos",
-                    name: "productos",
-                    elements: [
-                        // {
-                        //     title: "Aplicaciones",
-                        //     route: "/aplicaciones",
-                        // },
-                    ],
-                },
+                // {
+                //     title: "Productos",
+                //     route: "/productos",
+                //     name: "productos",
+                //     elements: [
+                //         // {
+                //         //     title: "Aplicaciones",
+                //         //     route: "/aplicaciones",
+                //         // },
+                //     ],
+                // },
                 {
                     title: "Servicios",
                     route: "/servicios",
@@ -397,12 +395,12 @@ export default {
                         },
                     ],
                 },
-                {
-                    title: "Productos",
-                    route: "/productos",
-                    name: "productos",
-                    subitems: [],
-                },
+                // {
+                //     title: "Productos",
+                //     route: "/productos",
+                //     name: "productos",
+                //     subitems: [],
+                // },
                 {
                     route: "/servicios",
                     title: "Servicios",
@@ -522,9 +520,9 @@ ul li a span {
 .img-logo_navbar {
     position: relative;
     margin: 0 auto;
-    margin-top: 60px;
-    width: 91px;
-    height: 47px;
+    margin-top: 25px;
+    width: 150px;
+    height: 150px;
 }
 .container-logo {
     position: absolute;
@@ -546,9 +544,9 @@ ul li a span {
     .img-logo_navbar {
         position: relative;
         margin: 0 auto;
-        margin-top: 30px;
-        width: 60px;
-        height: 30px;
+        margin-top: 10px;
+        width: 80px;
+        height: 80px;
     }
     .logo_title {
         font-size: 0.6rem;
